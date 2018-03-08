@@ -1,0 +1,38 @@
+@startuml
+
+left to right direction
+
+skinparam packageStyle rectangle
+actor Usuario as User
+actor :Usuario Registrado: as Registrado
+
+rectangle Sistema{
+    usecase (Registrarse) as RegUser
+    usecase (Buscar sensor) as BusqSensor
+    usecase (Filtro de localización y/o tipo) as Filtro1
+    usecase (Iniciar sesión) as Sesion
+    usecase (Añadir a favoritos) as Fav
+    usecase (Filtro de visibilidad y/o favoritos) as Filtro2
+    usecase (Añadir sensor) as RegSensor
+    usecase (Registrar medición) as RegMedicion
+    usecase (Eliminar sensor) as EliSensor
+    usecase (Modificar perfil) as EditPer
+    
+    User -- RegUser
+    User -- BusqSensor
+    BusqSensor <. Filtro1 : extends
+    Filtro2 .right.> BusqSensor : extends
+    Registrado -- Sesion
+    Registrado -- Fav
+    Registrado -- RegSensor
+    Registrado -- RegMedicion
+    Registrado -- EliSensor
+    Registrado -- EditPer
+
+    User <|-up- Registrado
+
+    note right of Filtro2 : Solo si el ususario se encuentra registrado.
+
+}
+
+@enduml
