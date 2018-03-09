@@ -9,6 +9,7 @@ actor :Usuario Registrado: as Registrado
 rectangle Sistema{
     usecase (Registrarse) as RegUser
     usecase (Buscar sensor) as BusqSensor
+    usecase (Buscar ususario) as BusqUser
     usecase (Filtro de localización y/o tipo) as Filtro1
     usecase (Iniciar sesión) as Sesion
     usecase (Añadir a favoritos) as Fav
@@ -17,21 +18,23 @@ rectangle Sistema{
     usecase (Registrar medición) as RegMedicion
     usecase (Eliminar sensor) as EliSensor
     usecase (Modificar perfil) as EditPer
+    usecase (Votar sensores) as VotarSensors
     
     User -- RegUser
     User -- BusqSensor
-    BusqSensor <. Filtro1 : extends
-    Filtro2 .right.> BusqSensor : extends
+    BusqSensor <. Filtro1 : << extends >>
+    Filtro2 .right.> BusqSensor : << extends >>
+    User -- BusqUser
     Registrado -- Sesion
     Registrado -- Fav
     Registrado -- RegSensor
     Registrado -- RegMedicion
     Registrado -- EliSensor
     Registrado -- EditPer
-
+    Registrado -- VotarSensors
     User <|-up- Registrado
 
-    note right of Filtro2 : Solo si el ususario se encuentra registrado.
+    note right of Filtro2 : Solo si el usuario se encuentra registrado.
 
 }
 
