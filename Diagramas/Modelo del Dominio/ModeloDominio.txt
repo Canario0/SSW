@@ -1,0 +1,37 @@
+@startuml
+skinparam classAttributeIconSize 0
+class Usuario{
+    - nickName :String
+    - email :String
+    - password :String
+    - nombre :String
+    - apellidos :String
+    - direccion :String
+    - fechaNacimiento :String
+    - empresa :String
+    - telefono :int
+}
+
+class Sensor{
+    - id :int
+    - nombre :String
+    - descripcion :String
+    - tipo :SensorType
+    - visible :boolean
+    - localizacion : int[2]
+}
+
+class Medicion{
+    
+}
+
+enum SensorType{
+    Humedad
+    Temperatura
+    Luminosidad
+    Contaminacion
+    Acustico
+}
+
+
+@enduml
