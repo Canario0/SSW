@@ -1,5 +1,8 @@
 @startuml
+left to right direction
 skinparam classAttributeIconSize 0
+
+
 class Usuario{
     - nickName :String
     - email :String
@@ -18,11 +21,15 @@ class Sensor{
     - descripcion :String
     - tipo :SensorType
     - visible :boolean
-    - localizacion : int[2]
+    - localizacion :int[2]
+    - likes :int
+    - dislikes :int
 }
 
 class Medicion{
-    
+    fechaActual :Date
+    fechaMedicion :Date
+    valor :Double
 }
 
 enum SensorType{
@@ -33,5 +40,7 @@ enum SensorType{
     Acustico
 }
 
-
+Usuario "1" *-- "0..*" Sensor
+Sensor "1" *-- "1..*" Medicion
+Usuario "1" --> "1..*" Sensor : favorito >
 @enduml
