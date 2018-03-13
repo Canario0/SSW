@@ -19,19 +19,27 @@ rectangle Sistema{
     usecase (Eliminar sensor) as EliSensor
     usecase (Modificar perfil) as EditPer
     usecase (Votar sensores) as VotarSensors
+
+    usecase (Cerrar Sesión) as CerrarSesion
+    usecase (Ir al home) as PaginaPrincipal
     
     User -- RegUser
     User -- BusqSensor
     BusqSensor <. Filtro1 : << extends >>
     Filtro2 .right.> BusqSensor : << extends >>
     User -- BusqUser
+    User -- PaginaPrincipal
     Registrado -- Sesion
+    Registrado -- CerrarSesion
     Registrado -- Fav
     Registrado -- RegSensor
     Registrado -- RegMedicion
-    Registrado -- EliSensor
     Registrado -- EditPer
+    Registrado -- EliSensor
     Registrado -- VotarSensors
+    
+
+
     User <|-up- Registrado
 
     note right of Filtro2 : Solo si el usuario se encuentra registrado.
