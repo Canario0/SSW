@@ -27,7 +27,6 @@ rectangle Sistema{
     User -- BusqSensor
     BusqSensor <. Filtro1 : << extends >>
     Filtro2 .right.> BusqSensor : << extends >>
-    User -- BusqUser
     User -- PaginaPrincipal
     Registrado -- Sesion
     Registrado -- CerrarSesion
