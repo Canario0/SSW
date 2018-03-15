@@ -21,9 +21,8 @@ class Sensor{
     - descripcion :String
     - tipo :SensorType
     - visible :boolean
-    - localizacion :int[2]
+    - localizacion :float[2]
     - likes :int
-    - dislikes :int
 }
 
 class Medicion{
@@ -42,5 +41,6 @@ enum SensorType{
 
 Usuario "1" *-- "0..*" Sensor
 Sensor "1" *-- "1..*" Medicion
-Usuario "1" --> "1..*" Sensor : favorito >
+Usuario "1" x--> "1..*" Sensor : favorito >
+Usuario "1" x--> "0..1" Sensor : dar like >
 @enduml
