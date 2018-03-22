@@ -18,83 +18,37 @@
 
 <!-- WEBPAGE'S BODY -->
 
-<body>
+<body >
 
     <!-- Upper action bar with button -->
     <header> 
-            <nav>
                 <div id="titulo"><p>SMART <b>MAPS</b></p></div>
-                <div id="perfil">
-                    <p id="buttonHeader1">Sign In</p>
-                    <p id="buttonHeader2">Sign Up</p>
-                </div>
-            </nav>
     </header>
 
 
     <!-- Left action bar, static until the next release -->
-    <section>
-        <div id="actionBar">
-            <form action="" method="">
-                <input id="buscador" type="search" placeholder="Búsqueda ...">
-                <input id="ir" type="submit" value="Ir">
-            </form> 
-                <div>
-                    <input type="checkbox" id="cbox" value="second_checkbox"> <label for="cbox2">Filtro 1</label>
-                </div>
-                <div>
-                    <input type="checkbox" id="cbox" value="second_checkbox"> <label for="cbox2">Filtro 2</label>
-                </div>
-                <div>
-                    <input type="checkbox" id="cbox" value="second_checkbox"> <label for="cbox2">Filtro 3</label>
-                </div>
-                <div>
-                    <input type="checkbox" id="cbox" value="second_checkbox"> <label for="cbox2">Filtro 4</label>
-                </div>
-                <div>
-                    <input type="checkbox" id="cbox" value="second_checkbox"> <label for="cbox2">Filtro 5</label>
-                </div>
-                <div>
-                    <input type="checkbox" id="cbox" value="second_checkbox"> <label for="cbox2">Filtro 6</label>
-                </div>
+    
 
-                <div id="buttonHeader3">
-                    <p>Aplicar Filtros</p>
-                </div>
-        </div>
-    </section>
-
-
-    <div id="map"></div>
+    <!-- <div id="map"></div>
     <script>
         var map;
         function initMap() {
-            var madrid = { lat: 40.331, lng: -3.706 };
+            var valladolid = { lat:  41.6522966863625, lng: -4.7285413742 };
             var map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 4,
-                center: madrid
+                zoom: 9,
+                center: valladolid
             });
             var marker = new google.maps.Marker({
-                position: madrid,
+                position: valladolid,
                 map: map
             });
         }
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBRjO3Gm24tyvsh4gvX31esp3dFS-oyJ3g&callback=initMap" async
-        defer></script>
+        defer></script> -->
 
 
 
-    <!--
-        <footer>
-            <div>
-                <nav>
-                    <p>&copy; 2017 SSW UVa</p>
-                    <p>Smart Maps</p>
-                </nav>
-            </div>
-        </footer>
-        -->
 </body>
 
 </html>

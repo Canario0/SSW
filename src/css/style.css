@@ -1,15 +1,17 @@
 body {
     font-family:'Roboto', sans-serif;
     font-weight:300;
+    background-image: url("img/pipo.jpg");
+    background-repeat: repeat;
+    background-color: transparent #cccccc;
+    background-size: contain; 
 }
-
-header nav {
-    display: flex;
-    border-bottom: solid black 2px;
-} 
 
 #titulo{
     width: 70%;
+    float: left;
+    background-color: green;
+    
 }
 
 #titulo p {
@@ -113,11 +115,6 @@ body section div {
     justify-content: center;
 }
 
-#buscador {
-    width: 60%;
-    justify-content: center;
-    margin: 2em 1em;
-}
 
 body section div #ir {
     width: 15%;
@@ -126,14 +123,15 @@ body section div #ir {
 
 
 #map {
-    width: 84.85%;
+    width: 100%;
     height: 100%;
 }
 
 html, body {
-    height: 94.5%;
+    height: 100%;
     margin: 0;
     padding: 0;
+    
 }
 
 body section div div {
