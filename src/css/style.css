@@ -1,16 +1,16 @@
 body {
     font-family:'Roboto', sans-serif;
     font-weight:300;
-    background-image: url("img/pipo.jpg");
-    background-repeat: repeat;
+    background-image: url("../img/pipo.jpg");
+    background-repeat:no-repeat;
     background-color: transparent #cccccc;
-    background-size: contain; 
+    background-size: cover; 
 }
 
 #titulo{
     width: 70%;
     float: left;
-    background-color: green;
+
     
 }
 
