@@ -3,10 +3,10 @@ body {
     font-weight:300;
 }
 
-header nav {
-    display: flex;
+#cabecera {
+	display: flex;
     border-bottom: solid black 2px;
-} 
+}
 
 #titulo{
 	width: 70%;
@@ -39,7 +39,7 @@ header nav {
     cursor: pointer;
 }
 
-#buttonCerrarSesion {
+#botonCerrarSesion {
     transition-property: background-color, color;
     transition-duration: 0.4s;
     transition-timing-function: ease-out;
@@ -61,7 +61,7 @@ header nav {
     box-shadow: 2px 2px 5px rgb(143, 141, 141);
   }
   
-#buttonCerrarSesion:hover {
+#botonCerrarSesion:hover {
     cursor: pointer;
     position: relative;
     transition-property: background-color, color;
@@ -80,7 +80,7 @@ header nav {
 	height: 5em;
 }
 
-#noHeader{
+#cuerpo{
 	background-color: #FF00FF;
 	display: flex;
 	padding: 3em;
@@ -93,7 +93,7 @@ header nav {
 
 #imgPipoBig img{
 	width: 70%;
-	padding: 3em;
+	padding: 1em 3em 3em 3em;
 }
 
 #content{
@@ -103,5 +103,35 @@ header nav {
 }
 
 #pestañas{
+	justify-content: center;
 	display: flex;
+	background-color: #FF0000;
+}
+
+#pestaña{
+	margin: 1em;
+	font-size: 2em;
+ 	background-color: #0000FF;
+	border-bottom: 0.1em ridge;
+}
+
+#pestaña:hover{
+	cursor:pointer;
+}
+
+#tablaSensores{
+	font-size: 1.2em;
+	display:flex;
+	justify-content:center;
+	background-color: #0000FF;
+}
+th, td{
+	padding:1em 10em 1em 1em;
+	text-align: left;
+}
+tr:nth-child(even) {background-color: #ddd;}
+tr:hover {background-color: #aaa;}
+th {
+    background-color: #4CAF50;
+    color: white;
 }
