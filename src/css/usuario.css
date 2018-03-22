@@ -10,13 +10,11 @@ body {
 
 #titulo{
 	width: 70%;
-	background-color: #FF0000;
 }
 
 #titulo p {
     margin: 1em 1em;
     font-size: 2em;
-	background-color: #00FF00;
 }
 
 #titulo p: hover{
@@ -28,11 +26,6 @@ body {
 	padding: 0em 2em 0em 0em;
     justify-content: flex-end;
     display: flex;   
-	background-color: #00FF00;
-}
-
-#perfil p{
-	background-color: #FF0000;
 }
 
 #perfil p:hover {
@@ -81,14 +74,12 @@ body {
 }
 
 #cuerpo{
-	background-color: #FF00FF;
 	display: flex;
 	padding: 3em;
 }
 
 #imgPipoBig{
 	width: 30%;
-	background-color: #0000FF;
 }
 
 #imgPipoBig img{
@@ -98,20 +89,17 @@ body {
 
 #content{
 	width: 70%;
-	background-color: #00FF00;
 	justify-content: flex-end;
 }
 
 #pestañas{
 	justify-content: center;
 	display: flex;
-	background-color: #FF0000;
 }
 
 #pestaña{
 	margin: 1em;
 	font-size: 2em;
- 	background-color: #0000FF;
 	border-bottom: 0.1em ridge;
 }
 
@@ -123,15 +111,27 @@ body {
 	font-size: 1.2em;
 	display:flex;
 	justify-content:center;
-	background-color: #0000FF;
 }
 th, td{
 	padding:1em 10em 1em 1em;
 	text-align: left;
 }
-tr:nth-child(even) {background-color: #ddd;}
-tr:hover {background-color: #aaa;}
 th {
-    background-color: #4CAF50;
     color: white;
 }
+
+/*
+#titulo{background-color: #FF0000;}
+#titulo p{background-color: #00FF00;}
+#perfil{background-color: #00FF00;}
+#perfil p{background-color: #FF0000;}
+#cuerpo{background-color: #FF00FF;}
+#imgPipoBig{background-color: #0000FF;}
+th{background-color: #4CAF50;}
+tr:nth-child(even) {background-color: #ddd;}
+tr:hover {background-color: #aaa;}
+#tablaSensores{background-color: #0000FF;}
+#pestaña{background-color: #0000FF;}
+#pestañas{background-color: #FF0000;}
+#content{background-color: #00FF00;}
+*/
