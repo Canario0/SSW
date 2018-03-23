@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<!-- WEBPAGE'S HEAD -->
+
+<head>
+
+    <!-- Page's title -->
+    <title>Smart Maps</title>
+
+    <!-- Character ccodifcation -->
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8" />
+
+    <!-- Links to necessary files to run the webpage -->
+	<link rel="stylesheet" type="text/css" href="css/usuario.css" />
+  <link rel="icon" type="image/png" href="img/logo.png" />
+</head>
+
+<!-- WEBPAGE'S BODY -->
+
+<body>
+
+    <!-- Upper action bar with button -->
+    <div id="cabecera">
+	    <div id="titulo">
+		    <p id ="tituloTexto">SMART <b>MAPS</b></p>
+		</div>
+		<div id="perfil">
+			<p id="botonCerrarSesion">Cerrar Sesión</p>
+			<p id="imgPipo"><img src="img/pipo.jpg" alt="PIPO!"></p>
+		</div>
+	</div>
+
+    <!-- Left sensor preview bar, static until the next release -->
+    <div id="cuerpo">
+      <div id="imgPipoBig">
+			  <img src="img/pipo.jpg" alt="SENSOR">
+		  </div>
+
+    <!-- Different tabs within the profile -->
+    <div id="content">
+      <div id="pestañas">
+        <p id="pestaña">Sensores</p>
+        <p id="pestaña">Rutas Favoritas</p>
+        <p id="pestaña">Configuración</p>
+      </div>
+
+        <div id="textBoxes">
+          <div id="row"></div>
+              <input id="textBox" type="text" name="textbox1">
+              <div class="select">
+                <select id="combobox">
+                  <option value="">Seleccione uno:</option>
+                  <option value="opcion-1">1</option>
+                  <option value="opcion-2">2</option>
+                  <option value="opcion-n">3</option>
+                </select>
+                <div class="select">
+                <select id="combobox">
+                  <option value="">Seleccione uno:</option>
+                  <option value="opcion-1">Opción 1</option>
+                  <option value="opcion-2">Opción 2</option>
+                  <option value="opcion-n">Opción N</option>
+                </select>
+                <div class="select">
+                <select id="combobox">
+                  <option value="">Seleccione uno:</option>
+                  <option value="opcion-1">Opción 1</option>
+                  <option value="opcion-2">Opción 2</option>
+                  <option value="opcion-n">Opción N</option>
+                </select>
+                </div>
+              </div>
+              <!--
+              <input id="spinbox" type="number" min="0" max="10" step="1" value="1" size=4 name="spinbox2">
+              <input id="spinbox" type="number" min="0" max="10">
+            -->
+
+          </div>
+              <input id="textBox" type="text" name="textbox2">
+              <input id="textBox" type="text" name="textbox3">
+              <input id="textBox" type="text" name="textbox4">
+        </div>
+        <div id="map">
+          <!-- Aquí va el mapa -->
+          <input id="textBox" type="text" name="textbox5">
+        </div>
+      </div>
+    </div>
+
+
+    <script>
+        var map;
+        function initMap() {
+            var madrid = { lat: 40.331, lng: -3.706 };
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 4,
+                center: madrid
+            });
+            var marker = new google.maps.Marker({
+                position: madrid,
+                map: map
+            });
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBRjO3Gm24tyvsh4gvX31esp3dFS-oyJ3g&callback=initMap" async
+        defer></script>
+
+</body>
+
+</html>
