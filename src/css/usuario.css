@@ -47,7 +47,7 @@ body {
     font-family: sans-serif;
     font-size: 1em;
     text-decoration: none;
-    padding: 0.8em 3em;
+    padding: 1em 3em;
     border: solid 2px rgb(85, 84, 84);
     margin: 1.8em 1em;
     border-radius: 10px;
@@ -84,7 +84,12 @@ body {
 
 #imgPipoBig img{
 	width: 70%;
-	padding: 1em 3em 3em 3em;
+	padding: 1em 3em 1em 3em;
+}
+
+#underpipo {
+  text-align: center;
+  font-size: 1em;
 }
 
 #content{
@@ -120,26 +125,79 @@ th {
     color: white;
 }
 
-#textBoxes{
-    display: flex;
+#row {
+  display: flex;
+  height: 20%;
 }
 
-#textBox {
-    padding: 1em 1em 1em 1em;
-    margin: 2em;
+#etiqueta {
+  text-align: center;
+  font-size: 1em;
+  margin-left: 4em;
+  width: 7em;
+  text-align: left;
+  /*margin-right: 5%*/
 }
 
+#textbox {
+  margin-top: 0.5em;
+  margin-bottom: 2.5em;
+  margin-left: 1em;
+  /*height: 1em;
+  padding: 1em 0em 0em 1em;
+  background-color: #00FF00;
+  margin-top: 0.5em;
+  font-size: 1.2em;*/
+}
 
-.select select {
-  padding: 5em 8em;
-  width: 130%;
-  border: none;
+#combobox {
+  margin-top: 0.5em;
+  margin-left: 1em;
+  width: auto;
+  height: 3em;;
+  border: solid;
   box-shadow: none;
   background-color: transparent;
   background-image: none;
   appearance: none;
 }
 
+
+#botonGuardarCambios {
+    transition-property: background-color, color;
+    transition-duration: 0.4s;
+    transition-timing-function: ease-out;
+    -webkit-transition-property: background-color, color;
+    -webkit-transition-duration: 0.4s;
+    -o-transition-property: background-color, color;
+    -o-transition-duration: 0.4s;
+    text-align: center;
+    background-color: #7db6eb;
+    color: black;
+    border-color:black;
+    font-family: sans-serif;
+    font-size: 1em;
+    text-decoration: none;
+    padding: 1em 3em;
+    border: solid 2px rgb(85, 84, 84);
+    margin: 1.8em 40em;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgb(143, 141, 141);
+  }
+
+#botonGuardarCambios:hover {
+    cursor: pointer;
+    position: relative;
+    transition-property: background-color, color;
+    transition-duration: 0.4s;
+    transition-timing-function: ease-out;
+    -webkit-transition-property: background-color, color;
+    -webkit-transition-duration: 0.4s;
+    -o-transition-property: background-color, color;
+    -o-transition-duration: 0.4s;
+    background-color:white;
+    color:black;
+}
 
 /*
 #titulo{background-color: #FF0000;}
