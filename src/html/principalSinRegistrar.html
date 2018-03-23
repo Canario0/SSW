@@ -12,8 +12,8 @@
     <meta charset="utf-8" />
 
     <!-- Links to necessary files to run the webpage -->
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <link rel="icon" type="image/png" href="img/logo.png" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="icon" type="image/png" href="logo.png" />
 </head>
 
 <!-- WEBPAGE'S BODY -->
@@ -25,9 +25,10 @@
             <nav>
                 <div id="titulo"><p>SMART <b>MAPS</b></p></div>
                 <div id="perfil">
-                    <p id="buttonHeader1">Sign In</p>
-                    <p id="buttonHeader2">Sign Up</p>
+                    <p id="buttonHeader1">Registrarse</p>
+                    <p id="buttonHeader2">Iniciar Sesión</p>
                 </div>
+
             </nav>
     </header>
 
@@ -35,33 +36,33 @@
     <!-- Left action bar, static until the next release -->
     <section>
         <div id="actionBar">
-            <form action="" method="">
-                <input id="buscador" type="search" placeholder="Búsqueda ...">
+            <form action="">
+                <input id="buscador" type="text" name="fname">
                 <input id="ir" type="submit" value="Ir">
             </form> 
-                <div>
-                    <input type="checkbox" id="cbox" value="second_checkbox"> <label for="cbox2">Filtro 1</label>
-                </div>
-                <div>
-                    <input type="checkbox" id="cbox" value="second_checkbox"> <label for="cbox2">Filtro 2</label>
-                </div>
-                <div>
-                    <input type="checkbox" id="cbox" value="second_checkbox"> <label for="cbox2">Filtro 3</label>
-                </div>
-                <div>
-                    <input type="checkbox" id="cbox" value="second_checkbox"> <label for="cbox2">Filtro 4</label>
-                </div>
-                <div>
-                    <input type="checkbox" id="cbox" value="second_checkbox"> <label for="cbox2">Filtro 5</label>
-                </div>
-                <div>
-                    <input type="checkbox" id="cbox" value="second_checkbox"> <label for="cbox2">Filtro 6</label>
-                </div>
-
-                <div id="buttonHeader3">
-                    <p>Aplicar Filtros</p>
-                </div>
-        </div>
+            <div class="titulosBarraLateral">
+                <p>Tipo de Sensor</p>
+            </div>
+            <hr>
+            <input type="checkbox" id="cbox" value="cbox1"><label for="cbox1">Temperatura</label><br>
+            <input type="checkbox" id="cbox" value="cbox2"><label for="cbox2">Humedad</label><br>
+            <input type="checkbox" id="cbox" value="cbox3"><label for="cbox3">Iluminación</label><br>
+            <input type="checkbox" id="cbox" value="cbox4"><label for="cbox4">Contaminación</label><br>
+            <input type="checkbox" id="cbox" value="cbox5"><label for="cbox5">Ruido</label><br>
+            <div class="titulosBarraLateral">
+                <p>Radio Acción</p>
+            </div>
+            <hr>
+            <div>
+              <p>Activar / Desactivar</p>
+              <label class="switch">
+                <input type="checkbox">
+                <span class="slider round"></span>
+              </label><br>
+            </div>
+              <input type="range" min="1" max="100" value="50" class="slider3" id="myRange">
+              <p id="buttonFilters">Aplicar Filtros</p>
+          </div>
     </section>
 
 

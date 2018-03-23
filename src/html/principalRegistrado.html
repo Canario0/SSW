@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<!-- WEBPAGE'S HEAD -->
+
+<head>
+
+    <!-- Page's title -->
+    <title>Smart Maps</title>
+
+    <!-- Character ccodifcation -->
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8" />
+
+    <!-- Links to necessary files to run the webpage -->
+    <link rel="stylesheet" type="text/css" href="style1.css" />
+    <link rel="icon" type="image/png" href="logo.png" />
+</head>
+
+<!-- WEBPAGE'S BODY -->
+
+<body>
+
+    <!-- Upper action bar with button -->
+    <header> 
+            <nav>
+                <div id="titulo"><p>SMART <b>MAPS</b></p></div>
+                <div id="perfil">
+                    <p id="buttonHeader1">Mi Perfil</p>
+                    <p id="buttonHeader1">Sensores Favoritos</p>
+                    <p id="buttonHeader1">Añadir Sensor</p>
+                    <p id="buttonHeader1">Configuración</p>
+                    <p id="buttonHeader1">Cerrar Sesión</p>
+                </div>
+                <div>
+                    <img src="logo" alt="Logotipo de HTML5" width="50" height="50">
+                </div>
+            </nav>
+    </header>
+
+
+    <!-- Left action bar, static until the next release -->
+    <section>
+        <div id="actionBar">
+            <form action="">
+                <input id="buscador" type="text" name="fname">
+                <input id="ir" type="submit" value="Ir">
+            </form> 
+            <div class="titulosBarraLateral">
+                <p>Tipo de Sensor</p>
+            </div>
+            <hr>
+            <input type="checkbox" id="cbox" value="cbox1"><label for="cbox1">Temperatura</label><br>
+            <input type="checkbox" id="cbox" value="cbox2"><label for="cbox2">Humedad</label><br>
+            <input type="checkbox" id="cbox" value="cbox3"><label for="cbox3">Iluminación</label><br>
+            <input type="checkbox" id="cbox" value="cbox4"><label for="cbox4">Contaminación</label><br>
+            <input type="checkbox" id="cbox" value="cbox5"><label for="cbox5">Ruido</label><br>
+            <div class="titulosBarraLateral">
+                <p>Visibilidad</p>
+            </div>
+            <hr>
+            <input type="checkbox" id="cbox" value="cbox6"><label for="cbox6">Mis Sensores</label><br>
+            <input type="checkbox" id="cbox" value="cbox7"><label for="cbox7">Favoritos</label><br>
+            <input type="checkbox" id="cbox" value="cbox8"><label for="cbox8">Todos</label><br>
+            <div class="titulosBarraLateral">
+                <p>Radio Acción</p>
+            </div>
+            <hr>
+            <div>
+              <p>Activar / Desactivar</p>
+              <label class="switch">
+                <input type="checkbox">
+                <span class="slider round"></span>
+              </label><br>
+            </div>
+            <input type="range" min="1" max="100" value="50" class="slider2" id="myRange">
+              <p id="buttonFilters">Aplicar Filtros</p>
+            
+              
+          </div>
+    </section>
+
+
+    <div id="map"></div>
+    <script>
+        var map;
+        function initMap() {
+            var madrid = { lat: 40.331, lng: -3.706 };
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 4,
+                center: madrid
+            });
+            var marker = new google.maps.Marker({
+                position: madrid,
+                map: map
+            });
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBRjO3Gm24tyvsh4gvX31esp3dFS-oyJ3g&callback=initMap" async
+        defer></script>
+
+
+
+    <!--
+        <footer>
+            <div>
+                <nav>
+                    <p>&copy; 2017 SSW UVa</p>
+                    <p>Smart Maps</p>
+                </nav>
+            </div>
+        </footer>
+        -->
+</body>
+
+</html>
