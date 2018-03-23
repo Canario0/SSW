@@ -25,6 +25,7 @@ header nav {
     margin: 0.5em 1em;
     justify-content: flex-end;
     display: flex;   
+    margin-right: 7em;
 }
 
 #perfil p:hover {
@@ -133,6 +134,14 @@ body section div div {
 .switch {
     margin-top: 0.8em;
     margin-left: 1em;
+}
+
+nav #userImage {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 1em;
+    padding-right: 1em; 
+    width: 9%;
 }
 
 #buttonFilters {
