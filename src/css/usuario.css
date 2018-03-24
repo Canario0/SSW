@@ -1,35 +1,35 @@
-body {
-    font-family:'Roboto', sans-serif;
-    font-weight:300;
+/*USUARIO*/
+body{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
 }
 
-#cabecera {
+#cabecera{
+	width: 100%;
 	display: flex;
-    border-bottom: solid black 2px;
+	position: fixed; /*Flotante*/
+	margin: -0.5em 0em 0em -0.5em; /*Desplazamiento para quitar huecos*/
+	background-color: #FFFFFF; /*Para que al hacer scroll no se vea el contenido de la página por detrás*/
+	border-bottom: solid black 2px;
+	justify-content: space-between; /*Título a la izquierda y bototes a la derecha*/
 }
 
 #titulo{
-	width: 70%;
+	font-size: 2em;
+	padding: 0em 0em 0em 2em; /*Margen a la izquierda*/
 }
 
-#titulo p {
-    margin: 1em 1em;
-    font-size: 2em;
-}
-
-#titulo p: hover{
-	cursor: pointer;
+#titulo p:hover{
+	cursor:pointer;
 }
 
 #perfil{
-	width: 30%;
-	padding: 0em 2em 0em 0em;
-    justify-content: flex-end;
-    display: flex;
+	display: flex;
+	padding: 0em 2em 0em 0em; /*Margen a la derecha*/
 }
 
-#perfil p:hover {
-    cursor: pointer;
+#perfil:hover{
+	cursor:pointer;
 }
 
 #botonCerrarSesion {
@@ -74,58 +74,67 @@ body {
 }
 
 #cuerpo{
+	padding: 10em 0; /*Padding arriba para que no se meta en la cabecera*/
 	display: flex;
-	padding: 3em;
 }
 
 #imgPipoBig{
-	width: 30%;
+	width: 20%; /*20% del total horizontal de la pantalla*/
+	height: 25em; /*Para que no se vaya hasta abajo si la página es larga*/
+	margin: 3em;
+	padding: 2em 0;
+	border-radius: 2em;
+	background-color: #7db6eb;
+	text-align: center;
 }
 
 #imgPipoBig img{
-	width: 70%;
-	padding: 1em 3em 1em 3em;
-}
-
-#underpipo {
-  text-align: center;
-  font-size: 1em;
-  padding-right: 1.5em;
+	width: 80%; /*80% del contenedor de la imagen*/
 }
 
 #content{
-	width: 70%;
-	justify-content: flex-end;
+	width: 80%; /*80% del total horizontal de la pantalla*/
 }
 
 #pestañas{
-	justify-content: center;
 	display: flex;
+	padding: 0 15em 0 15em;
+	justify-content: space-around;
 }
 
 #pestaña{
-	margin: 1em;
 	font-size: 2em;
-	border-bottom: 0.1em ridge;
+	border-bottom: 0.1em ridge #7db6eb;
 }
 
 #pestaña:hover{
 	cursor:pointer;
 }
 
+/*MIS SENSORES*/
 #tablaSensores{
 	font-size: 1.2em;
 	display:flex;
 	justify-content:center;
 }
-th, td{
+#tablaSensores th{
+	padding:1em 15em 1em 1em;
+	text-align: left;
+}
+
+#tablaSensores td{
 	padding:1em 10em 1em 1em;
 	text-align: left;
 }
-th {
+
+#tablaSensores th {
+	background-color: #7db6eb;
     color: white;
 }
+#tablaSensores tr:nth-child(odd) {background-color: #BBBBBB;}
+#tablaSensores tr:hover {background-color: #888888;}
 
+/*CONFIGURAR PERFIL*/
 #row {
   display: flex;
   height: 20%;
@@ -201,17 +210,12 @@ th {
 }
 
 /*
-#titulo{background-color: #FF0000;}
-#titulo p{background-color: #00FF00;}
-#perfil{background-color: #00FF00;}
-#perfil p{background-color: #FF0000;}
-#cuerpo{background-color: #FF00FF;}
-#imgPipoBig{background-color: #0000FF;}
-th{background-color: #4CAF50;}
-tr:nth-child(even) {background-color: #ddd;}
-tr:hover {background-color: #aaa;}
-#tablaSensores{background-color: #0000FF;}
-#pestaña{background-color: #0000FF;}
-#pestañas{background-color: #FF0000;}
-#content{background-color: #00FF00;}
+#cabecera{background-color:#FF0000}
+ #titulo{background-color:#00FF00}
+  #titulo p{background-color:#0000FF}
+ #perfil{background-color:#00FF00}
+#cuerpo{background-color:#0000FF}
+ #content{background-color:#FF0000}
+  #pestañas{background-color:#00FF00}
+   #pestaña{background-color:#0000FF}
 */
