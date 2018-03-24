@@ -1,0 +1,1000 @@
+   36  clear
+   37  vim refresh.sh 
+   38  exit
+   39  sudo apt install git
+   40  exit
+   41  javac
+   42  clear
+   43  exi
+   44  exit
+   45  cd Descargas/
+   46  sudo dpkg -i astah-professional_7.2.0.1ff236-0_all.deb 
+   47  clear
+   48  sudo apt install default-jdk
+   49  sudo dpkg -i astah-professional_7.2.0.1ff236-0_all.deb 
+   50  clear
+   51  sudo apt update
+   52  sudo apt upgrade
+   53  sudo dpkg --configure -a
+   54  dropbox status
+   55  vim refresh.sh
+   56  sudo apt install vim
+   57  vim refresh.sh
+   58  sh -f refresh.sh 
+   59  vim refresh.sh 
+   60  chmod u+x refresh.sh 
+   61  ./refresh.sh 
+   62  dropbox start
+   63  clear
+   64  ./refresh.sh 
+   65  cd Dropbox/
+   66  l
+   67  l Universidad/
+   68  l
+   69  clear
+   70  l
+   71  cd Universidad/
+   72  l
+   73  cd TerceroIngeniería/
+   74  l
+   75  cd SegundoCuatrimestre/
+   76  ls
+   77  clear
+   78  exit
+   79  cd Dropbox/Universidad/TerceroIngeniería/SegundoCuatrimestre/
+   80  pwd
+   81  exit
+   82  sudo apt update
+   83  sudo apt upgrade
+   84  sudo dpkg --configure -a
+   85  sudo apt upgrade
+   86  javac
+   87  clear
+   88  vim Hola.java
+   89  javac Hola.java 
+   90  java Hola 
+   91  rm Hola.
+   92  rm Hola.*
+   93  clear
+   94  ls
+   95  cd Descargas/
+   96  ls
+   97  sudo dpkg -i astah-professional_7.2.0.1ff236-0_all.deb 
+   98  clear
+   99  cd 
+  100  vim .bash_aliases
+  101  source .bash_aliases 
+  102  semp
+  103  cd /home/sergio/Dropbox/Universidad/TerceroIngeniería/
+  104  cd SegundoCuatrimestre/
+  105  vim .bash_ali
+  106  cd
+  107  vim .bash_aliases 
+  108  source .bash_aliases 
+  109  semp
+  110  cd ..
+  111  cd
+  112  vim .bash_aliases 
+  113  clear
+  114  source .bash_aliases
+  115  ssh-keygen -t rsa -b 4096 
+  116  clear
+  117  ssh-copy-id root@virtual.lab.inf.uva.es -p 34521
+  118  clear
+  119  vim .bash_aliases
+  120  source .bash_aliases 
+  121  msemp
+  122  ssh-copy-id usuario@virtual.lab.inf.uva.es -p 31071
+  123  vim .bash_aliases 
+  124  source .bash_aliases 
+  125  mesi
+  126  clear
+  127  dropbox status
+  128  clear
+  129  exit
+  130  dropbox status
+  131  exit
+  132  sudo apt isntall git
+  133  sudo apt install git
+  134  exit
+  135  cd Dropbox/
+  136  ls
+  137  cd ..
+  138  ls
+  139  ./refresh.sh 
+  140  exit
+  141  ./refresh.sh 
+  142  dropbox status
+  143  clear
+  144  ./refresh.sh 
+  145  exit
+  146  ssh pi@192.168.1.37
+  147  man nmap
+  148  sudo apt install nmap
+  149  ssh pi@192.168.1.37
+  150  clear
+  151  exit
+  152  msemp
+  153  scp -P 34521 root@virtual.lab.inf.uva.es:/usr/src/linux-rpi-4.1.y/arch/arm/boot/dts/dts-y-overlays.tar.gz .
+  154  ls
+  155  ssh-copy-id pi@raspberry
+  156  ssh-copy-id pi@192.168.1.37
+  157  scp dts-y-overlays.tar.gz pi@192.168.1.37:/boot
+  158  sudo scp dts-y-overlays.tar.gz pi@192.168.1.37:/boot
+  159  sudo scp dts-y-overlays.tar.gz pi@192.168.1.37:/home/pi
+  160  cd /usr/src/
+  161  ls
+  162  msemp
+  163  clear
+  164  ls
+  165  cd 
+  166  ls
+  167  scp -P 34521 root@virtual.lab.inf.uva.es:/usr/src/linux-rpi-4.1.y-modules/lib/modulos-y-firmware-nuevos.tar.gz .
+  168  l
+  169  scp modulos-y-firmware-nuevos.tar.gz pi@192.168.1.37:/home/pi
+  170  msemp
+  171  scp -P 34521 root@virtual.lab.inf.uva.es:/usr/src/linux-rpi-4.1.y/nuevoKernel.img
+  172  scp -P 34521 root@virtual.lab.inf.uva.es:/usr/src/linux-rpi-4.1.y/nuevoKernel.img .
+  173  thunar .
+  174  exit
+  175  ssh pi@raspberry
+  176  ssh pi@192.168.1.37
+  177  exit
+  178  vim kernel-Esteban-Pellejero.img 
+  179  exit
+  180  ssh pi@192.168.1.37
+  181  exit
+  182  ping 8.8.8.
+  183  ping 8.8.8.8
+  184  exit
+  185  sudo apt isntall wine
+  186  sudo apt install wine
+  187  exit
+  188  wine Balsamiq_Mockups_3.5.15.exe 
+  189  mpicc
+  190  sudo apt install libmpich-dev
+  191  exit
+  192  cd Escritorio/
+  193  ls
+  194  cd Escritorio/
+  195  l
+  196  mpicc hola.c -o hola
+  197  man cb
+  198  cb
+  199  indent
+  200  sudo apt install indent
+  201  indent hola.c 
+  202  mpicc hola.c -o hola
+  203  mpiexec -n 3 ./hola
+  204  cd Escritorio/
+  205  l
+  206  rm *
+  207  l
+  208  exit
+  209  poweroff
+  210  sudo tlp bat
+  211  sudo apt install sensors
+  212  sudo apt isntall tlp
+  213  sudo apt install tlp
+  214  tlp bat
+  215  sudo tlp bat
+  216  exit
+  217  dropbox status
+  218  exit
+  219  dropbox status
+  220  clear
+  221  exit
+  222  dropbox status
+  223  exit
+  224  cd bin/
+  225  ls
+  226  ./studio.sh 
+  227  chmod u+x Minecraft.jar 
+  228  exit
+  229  ./studio.sh 
+  230  sudo apt install graphviz
+  231  exit
+  232  java -jar plantuml.jar -testdot
+  233  exit
+  234  python gui_damas.py 
+  235  exit
+  236  vim Cliente.
+  237  vim Cliente.java 
+  238  python UDPclient.py 
+  239  clear
+  240  vim UDPclient.py 
+  241  python UDPclient.py 
+  242  vim UDPclient.py 
+  243  python UDPclient.py 
+  244  vim UDPclient.py 
+  245  exit
+  246  vim Udp_client.java
+  247  cd Dropbox/Universidad/Lenguajes\ Programación/Python/
+  248  l
+  249  javac Udp_client.java 
+  250  python UDPserver.py 
+  251  cd Dropbox/Universidad/Lenguajes\ Programación/Python/
+  252  java Udp_client 
+  253  python UDPserver.py 
+  254  vim UDPserver.py 
+  255  python UDPserver.py 
+  256  vim UDPserver.py 
+  257  python UDPserver.py 
+  258  vim UDPserver.py 
+  259  exit
+  260  ./studio.sh 
+  261  exit
+  262  dmesg
+  263  exit
+  264  ssh-copy-id -p 47001 server@serverandroid.ddns.net 
+  265  vim .bash_aliases 
+  266  source .bash_aliases
+  267  server
+  268  clear
+  269  exit
+  270  sudo dpkg -i google-webdesigner_current_amd64.deb 
+  271  sudo apt -f install
+  272  sudo dpkg -i google-webdesigner_current_amd64.deb 
+  273  cd Dropbox/Universidad/Lenguajes\ Programación/Python/
+  274  ls
+  275  clear
+  276  ls
+  277  clear
+  278  vim UDPserver.py 
+  279  scp -P 47001 server@serverandroid.ddns.net
+  280  scp -P 47001 UDPserver.py server@serverandroid.ddns.net:/home/server
+  281  server
+  282  cd Dropbox/Universidad/Lenguajes\ Programación/Python/
+  283  l
+  284  java Udp_client 
+  285  clear
+  286  vim Udp_client.java 
+  287  ls -la
+  288  rm .Udp_client.java.swp 
+  289  clear
+  290  vim Udp_client.java 
+  291  javac Udp_client.java 
+  292  vim Udp_client.java 
+  293  mv Udp_client.java AndroidClient.java
+  294  javac Udp_client.java 
+  295  javac AndroidClient.java 
+  296  vim AndroidClient.java 
+  297  javac AndroidClient.java 
+  298  vim AndroidClient.java 
+  299  javac AndroidClient.java 
+  300  vim AndroidClient.java 
+  301  javac AndroidClient.java 
+  302  vim AndroidClient.java 
+  303  javac AndroidClient.java 
+  304  vim AndroidClient.java 
+  305  javac AndroidClient.java 
+  306  vim AndroidClient.java 
+  307  javac AndroidClient.java 
+  308  vim AndroidClient.java 
+  309  javac AndroidClient.java 
+  310  vim AndroidClient.java 
+  311  javac AndroidClient.java 
+  312  vim AndroidClient.java 
+  313  javac AndroidClient.java 
+  314  vim AndroidClient.java 
+  315  java AndroidClient 
+  316  vim AndroidClient.java 
+  317  javac AndroidClient.java 
+  318  java AndroidClient 
+  319  vim AndroidClient.java 
+  320  java AndroidClient 
+  321  javac AndroidClient.java 
+  322  java AndroidClient 
+  323  vim AndroidClient.java 
+  324  javac AndroidClient.java 
+  325  vim AndroidClient.java 
+  326  javac AndroidClient.java 
+  327  java AndroidClient 
+  328  vim AndroidClient.java 
+  329  javac AndroidClient.java 
+  330  java AndroidClient 
+  331  vim AndroidClient.java 
+  332  java AndroidClient 
+  333  javac AndroidClient.java 
+  334  java AndroidClient 
+  335  clear
+  336  vim AndroidClient.java 
+  337  vim UDPserver.py 
+  338  pyton UDPserver.py 
+  339  python UDPserver.py 
+  340  vim UDPserver.py 
+  341  python UDPserver.py 
+  342  vim UDPserver.py 
+  343  python UDPserver.py 
+  344  clear
+  345  python UDPserver.py 
+  346  clear
+  347  python UDPserver.py 
+  348  vim UDPserver.py 
+  349  java AndroidClient 
+  350  ls
+  351  java Udp_client 
+  352  vim AndroidClient.java 
+  353  javac AndroidClient.java 
+  354  java AndroidClient 
+  355  vim AndroidClient.java 
+  356  javac AndroidClient.java 
+  357  java AndroidClient 
+  358  vim AndroidClient.java 
+  359  java AndroidClient 
+  360  vim AndroidClient.java 
+  361  javac AN
+  362  javac AndroidClient.java 
+  363  java AndroidClient 
+  364  vim AndroidClient.java 
+  365  javac AndroidClient.java 
+  366  java AndroidClient 
+  367  vim AndroidClient.java 
+  368  javac AndroidClient.java 
+  369  java AndroidClient 
+  370  vim AN
+  371  vim AndroidClient.java 
+  372  cat AndroidClient.
+  373  cat AndroidClient.java 
+  374  javac AndroidClient.java 
+  375  java AndroidClient 
+  376  vim AndroidClient.java 
+  377  javac AndroidClient.java 
+  378  vim AndroidClient.java 
+  379  javac AndroidClient.java 
+  380  java AndroidClient 
+  381  vim AndroidClient.java 
+  382  javac AndroidClient.java 
+  383  vim AndroidClient.java 
+  384  javac AndroidClient.java 
+  385  mv AndroidClient.java EchoClient.java
+  386  javac AndroidClient.java 
+  387  javac EchoClient.java 
+  388  python UDPserver.py 
+  389  vim UDPserver.py 
+  390  sudo add-apt-repository ppa:webupd8team/brackets
+  391  sudo apt update
+  392  sudo apt upgrade
+  393  sudo apt install brackets
+  394  exit
+  395  sudo apt install chromium-browser
+  396  sudo add-apt-repository ppadanielrichter2007/grub-customizer
+  397  sudo add-apt-repository ppa:danielrichter2007/grub-customizer
+  398  sudo update
+  399  sudo apt update
+  400  sudo apt install grub-customizer 
+  401  ls 
+  402  ./jmeter
+  403  clear
+  404  ls
+  405  vim jmeter
+  406  exit
+  407  jair 
+  408  mesi
+  409  jair
+  410  vim .bash_aliases
+  411  source .bash_aliases
+  412  ssh-copy-id sergest@jair.lab.inf.uva.es
+  413  clear
+  414  jair
+  415  mesi
+  416  jair
+  417  mpicc
+  418  mpicc --version
+  419  mpirun --version
+  420  exit
+  421  cpar
+  422  cd 
+  423  l
+  424  cpar
+  425  l
+  426  cd libros/
+  427  l
+  428  evince An_Introduction_to_GCC-Brian_Gough.pdf 
+  429  ssw
+  430  clear
+  431  exit
+  432  sudo apt install mpich
+  433  clear
+  434  cpar
+  435  l
+  436  clear
+  437  l
+  438  cd laboratorio/
+  439  l
+  440  cd Lab3-MPI/
+  441  l
+  442  clear
+  443  mkdir sesion1
+  444  cd sesion1/
+  445  clear
+  446  vim ej1.c
+  447  mpicc ej1.c -o ej1
+  448  mpiexec -n 5 ej1
+  449  mpiexec -n 5 ./ej1
+  450  mpiexec -n 3 ./ej1
+  451  mpiexec -n 9 ./ej1
+  452  mpiexec -n 8 ./ej1
+  453  mpiexec -n 5 ./ej1
+  454  clear
+  455  wget ftp://ftp.mcs.anl-gov/pub/mpi/mpe/mpe2.tar.gz
+  456  wget ftp://ftp.mcs.anl.gov/pub/mpi/mpe/mpe2.tar.gz
+  457  clear
+  458  vim ej2.c
+  459  indent ej2.c 
+  460  vim ej2.c
+  461  mpicc ej2.c -o ej2
+  462  mpiexec -n 2 ./ej2
+  463  vim ej2.c
+  464  mpiexec -n 10 ./ej2
+  465  clear
+  466  vim ej2.c
+  467  mpiexec -n 2 ./ej2
+  468  mpicc ej2.c -o ej2
+  469  vim ej2.c
+  470  mpicc ej2.c -o ej2
+  471  mpiexec -n 10 ./ej2
+  472  vim ej2.c
+  473  mpicc ej2.c -o ej2
+  474  mpiexec -n 10 ./ej2
+  475  vim ej2.c
+  476  vim ej1.c
+  477  exit
+  478  sudo apt install x2goclient
+  479  exit
+  480  cpar
+  481  cd laboratorio/
+  482  cd Lab3-MPI/
+  483  l
+  484  cd sesion1/
+  485  clear
+  486  mpicc ej2.c
+  487  mpiexec -n 8 ./ej2
+  488  mpicc ej2.c
+  489  mpiexec -n 8 ./ej2
+  490  mpicc ej2.c
+  491  mpiexec -n 8 ./ej2
+  492  mpicc ej2.c
+  493  mpiexec -n 8 ./ej2
+  494  mpicc ej2.c
+  495  mpiexec -n 8 ./a.out 
+  496  clear
+  497  mpicc ej2.c
+  498  mpiexec -n 8 ./a.out 
+  499  mpicc ej2.c
+  500  mpiexec -n 8 ./a.out 
+  501  mpicc ej2.c
+  502  mpiexec -n 8 ./a.out 
+  503  w
+  504  server
+  505  jair
+  506  clear
+  507  cd 
+  508  scp .vimrc sergest@jair.lab.inf.uva.es
+  509  jair
+  510  exit
+  511  cpar
+  512  cd l
+  513  cd laboratorio/
+  514  l
+  515  cd Lab3-MPI/
+  516  l
+  517  cd sesion1/
+  518  l
+  519  mpicc ej2.c
+  520  mpiexec -n 8
+  521  mpiexec -n 8 ./a.out 
+  522  df -h
+  523  fdisk -l
+  524  sudo fdisk -l
+  525  dmesg 
+  526  fdisk -l
+  527  sudo fdisk -l
+  528  df -h
+  529  dmesg 
+  530  exit
+  531  git remote add https://github.com/Canario0/SSW
+  532  git init 
+  533  git remote add https://github.com/Canario0/SSW
+  534  git remote add origin https://github.com/Canario0/SSW
+  535  git pull origin
+  536  git
+  537  l
+  538  la
+  539  cd .git/
+  540  l
+  541  cd branches/
+  542  l
+  543  cd ..
+  544  l
+  545  cd objects/
+  546  l
+  547  cd ..
+  548  l
+  549  cd ..
+  550  l
+  551  git add Teaser1.html style.css logo.png 
+  552  git commit -m "PRIMEROS LASLALA"
+  553  git config --global user.email "sergi2312@gmail.com"
+  554  git commit -m "PRIMEROS LASLALA"
+  555  git push 
+  556  git commit -m "PRIMEROS LASLALA"
+  557  git push develop
+  558  git push origin develop
+  559  git 
+  560  exit
+  561  ssw
+  562  l
+  563  cd laboratorios/
+  564  l
+  565  clear
+  566  l
+  567  lear
+  568  clear
+  569  git status
+  570  clear
+  571  l
+  572  clear
+  573  l
+  574  clear
+  575  l
+  576  rm .git/
+  577  rm -rf .git/
+  578  clear
+  579  git fetch https://github.com/Canario0/SSW.git
+  580  git checkout https://github.com/Canario0/SSW.git
+  581  git init
+  582  git checkout https://github.com/Canario0/SSW.git
+  583  clear
+  584  git remote add origin git@github.com:Canario0/SSW.git
+  585  git pull
+  586  git remote add origin git@github.com:Canario0/SSW.git
+  587  clear
+  588  rm .git
+  589  git clone https://github.com/Canario0/SSW.git
+  590  l
+  591  la
+  592  cd SSW/
+  593  l
+  594  git branch develop
+  595  l
+  596  ls
+  597  cd ..
+  598  l
+  599  git pull 
+  600  git pull origin master
+  601  git pull origin HEAD 
+  602  git pull origin master
+  603  sudo tlp bat
+  604  clear
+  605  exit
+  606  exit
+  607  reboot
+  608  sudo apt install thunderbird
+  609  exit
+  610  java Cliente 
+  611  exit
+  612  javac *
+  613  clear
+  614  rm *.class
+  615  javac *
+  616  javac -d .
+  617  clear
+  618  java Servidor 
+  619  clear
+  620  netstat -tulpn
+  621  clear
+  622  javac *.java
+  623  java Servidor 
+  624  exit
+  625  server
+  626  clear
+  627  exit
+  628  java Cliente 
+  629  clear
+  630  server
+  631  clear
+  632  cd 
+  633  server
+  634  cd /media/sergio/5C721B2F721B0D80/Universidad/2º\ Ingeniería/Segundo\ cuatrimestre/SDIS/Prácticas/Laboratorios\ y\ Pruebas/clienteserver/
+  635  l
+  636  clear
+  637  javac *.java
+  638  clear
+  639  rm *class
+  640  javac Cliente.java 
+  641  l
+  642  çmkdir cliente
+  643  mkdir cliente
+  644  mkdir servidor
+  645  mv Cliente.* cliente/
+  646  l
+  647  mv Servidor.java SirvienteAndroid.java Sirviente.java servidor/
+  648  clear
+  649  l
+  650  cd cliente/
+  651  l
+  652  vscode Cliente.java 
+  653  clear
+  654  l
+  655  cd ../servidor/
+  656  ls
+  657  rm Sirviente.java 
+  658  clear
+  659  javac *.java
+  660  ls
+  661  cd ..
+  662  l
+  663  scp -P 47001 servidor/ serverandroid.ddns.net:/home/server/
+  664  scp -P 47001 servidor/ server@serverandroid.ddns.net:/home/server/
+  665  clear
+  666  scp -P 47001 servidor/* server@serverandroid.ddns.net:/home/server/
+  667  clear
+  668  l
+  669  cd cliente/
+  670  l
+  671  java Cliente 
+  672  clear
+  673  ifconfig
+  674  java Cliente 
+  675  clear
+  676  nmap -O serverandroid.ddns.net
+  677  sudo nmap -O serverandroid.ddns.net
+  678  ping 8.8.8.8
+  679  ifconfig
+  680  clear
+  681  java Cliente 
+  682  clear
+  683  java Cliente 
+  684  exit
+  685  server
+  686  exit
+  687  cd Descargas/
+  688  l
+  689  scp -P 47001
+  690  l
+  691  grep sqlite* .
+  692  grep sqlite* 
+  693  ls | grep sqlite
+  694  scp -P 47001 sqlite-jdbc-3.21.0.jar server@serverandroid.ddns.net:/home/server/server/
+  695  exit
+  696  cd Descra
+  697  cd Descargas/
+  698  l
+  699  mv sqlite-jdbc-3.21.0.jar /media/sergio/5C721B2F721B0D80/Universidad/2º\ Ingeniería/Segundo\ cuatrimestre/SDIS/Prácticas/
+  700  l
+  701  cd /media/sergio/5C721B2F721B0D80/Universidad/2º\ Ingeniería/Segundo\ cuatrimestre/SDIS/Prácticas/
+  702  l
+  703  cdar Laboratorios\ y\ Pruebas/clienteserver/
+  704  cd Laboratorios\ y\ Pruebas/
+  705  cd
+  706  cd Laboratorios\ y\ Pruebas/clienteserver/
+  707  cd /media/sergio/5C721B2F721B0D80/Universidad/2º\ Ingeniería/Segundo\ cuatrimestre/SDIS/Prácticas/
+  708  cd Laboratorios\ y\ Pruebas/
+  709  l
+  710  cd clienteserver/
+  711  l
+  712  mv sqlite-jdbc-3.21.0.jar servidor/
+  713  exit
+  714  server
+  715  time
+  716  dat
+  717  date
+  718  clear
+  719  date
+  720  server
+  721  l
+  722  javac Cliente.java 
+  723  java Cliente 
+  724  clear
+  725  l
+  726  java Cliente 
+  727  javac Cliente.java 
+  728  java Cliente 
+  729  clear
+  730  vim Cliente.java 
+  731  javac Cliente.java 
+  732  java Cliente 
+  733  clear
+  734  cd ../servidor/
+  735  sqlite3 debugLog.db 
+  736  clear
+  737  javac Cl
+  738  clear
+  739  l
+  740  cd ../cliente/
+  741  javac Cliente.java 
+  742  java Cliente 
+  743  javac Cliente.java 
+  744  java Cliente 
+  745  jjavac Cliente.
+  746  javac Cliente.java 
+  747  java Cliente 
+  748  vim Cliente.java 
+  749  javac Cliente.java 
+  750  java Cliente 
+  751  javac Cliente.java 
+  752  java Cliente 
+  753  javac Cliente.java 
+  754  java Cliente 
+  755  vim Cliente.java 
+  756  javac Cliente.java 
+  757  java Cliente 
+  758  vim Cliente.java 
+  759  java Cliente 
+  760  clear
+  761  l
+  762  clear
+  763  l
+  764  javac -d . Servidor.java 
+  765  l
+  766  rm *.class
+  767  javac Servidor.java 
+  768  l
+  769  vim Servidor.java 
+  770  javac Servidor.java 
+  771  javac -d . *.java
+  772  java Servidor 
+  773  clear
+  774  l
+  775  clear
+  776  l
+  777  java -classpath ".:sqlite-jdbc-3.21.0.jar" Servidor
+  778  clear
+  779  javac Servidor.java 
+  780  javac -d . Servidor.java 
+  781  java -classpath ".:sqlite-jdbc-3.21.0.jar" Servidor
+  782  clear
+  783  javac -d . Servidor.java 
+  784  java -classpath ".:sqlite-jdbc-3.21.0.jar" Servidor
+  785  clear
+  786  javac *.java
+  787  java -classpath ".:sqlite-jdbc-3.21.0.jar" Servidor
+  788  l
+  789  vim SirvienteAndroid.java 
+  790  vjavac *.java
+  791  javac *.java
+  792  java Servidor 
+  793  java -classpath ".:sqlite-jdbc-3.21.0.jar" Servidor
+  794  javac -d . Servidor.java 
+  795  clear
+  796  javac *.java
+  797  java -classpath ".:sqlite-jdbc-3.21.0.jar" Servidor
+  798  javac *.java
+  799  java -classpath ".:sqlite-jdbc-3.21.0.jar" Servidor
+  800  clear
+  801  l
+  802  rm test.db 
+  803  sudo apt install sqlite3
+  804  clear
+  805  sqlite3 debugLog.db
+  806  CLEAR
+  807  clear
+  808  l
+  809  sqlite3 debugLog.db 
+  810  clear
+  811  l
+  812  javac -d . Servidor.java 
+  813  java -classpath ".:sqlite-jdbc-3.21.0.jar" Servidor
+  814  javac -d . Servidor.java 
+  815  java -classpath ".:sqlite-jdbc-3.21.0.jar" Servidor
+  816  clear
+  817  javac -d . Servidor.java 
+  818  java -classpath ".:sqlite-jdbc-3.21.0.jar" Servidor
+  819  sqlite3 debugLog.db 
+  820  clear
+  821  javac -d . Servidor.java 
+  822  java -classpath ".:sqlite-jdbc-3.21.0.jar" Servidor
+  823  javac -d . Servidor.java 
+  824  java -classpath ".:sqlite-jdbc-3.21.0.jar" Servidor
+  825  sqlite3 debugLog.db 
+  826  clear
+  827  javac -d . Servidor.java 
+  828  java -classpath ".:sqlite-jdbc-3.21.0.jar" Servidor
+  829  javac -d . Servidor.java 
+  830  java -classpath ".:sqlite-jdbc-3.21.0.jar" Servidor
+  831  javac -d . Servidor.java 
+  832  java -classpath ".:sqlite-jdbc-3.21.0.jar" Servidor
+  833  clear
+  834  javac -d . Servidor.java 
+  835  clear
+  836  java -classpath ".:sqlite-jdbc-3.21.0.jar" Servidor
+  837  clear
+  838  l
+  839  scp -P 47001 *.java server@serverandroid.ddns.net:/home/server/server
+  840  java -classpath ".:sqlite-jdbc-3.21.0.jar" Servidor
+  841  clear
+  842  sqlite3 debugLog.db 
+  843  cd Dropbox/
+  844  l
+  845  cd Universidad/
+  846  l
+  847  cd TerceroIngeniería/
+  848  l
+  849  cd SegundoCuatrimestre/
+  850  l
+  851  cd ..
+  852  l
+  853  cd ..
+  854  l
+  855  cd Lenguajes\ Programación/
+  856  l
+  857  cd ANd
+  858  cd Android/
+  859  l
+  860  ls -l
+  861  cat cuentaAndroidRdWalker.txt 
+  862  exit
+  863  ./studio.sh 
+  864  server
+  865  exit
+  866  server
+  867  clear
+  868  exit
+  869  ssw
+  870  ls
+  871  cd laboratorios/
+  872  l
+  873  rm .git
+  874  mkdir github
+  875  cd github/
+  876  l
+  877  git init
+  878  git remote add git@github.com:Canario0/SSW.git
+  879  git remote add origin git@github.com:Canario0/SSW.git
+  880  git pull origin develop
+  881  git clone git@github.com:Canario0/SSW.git
+  882  git remote add origin https://github.com/Canario0/SSW.git
+  883  git clone https://github.com/Canario0/SSW.git
+  884  l
+  885  cd SSW/
+  886  l
+  887  cd 
+  888  cd .ssh/
+  889  l
+  890  car id_rsa.pub 
+  891  cat id_rsa.pub 
+  892  cd
+  893  ss
+  894  clear
+  895  ss
+  896  ssw
+  897  l
+  898  cd laboratorios/
+  899  l
+  900  cd github/
+  901  l
+  902  rmdir SSW/
+  903  rm -rf SSW/
+  904  clear
+  905  git pull origin develop
+  906  l
+  907  cd src/
+  908  l
+  909  clear
+  910  l
+  911  cd ..
+  912  l
+  913  cd src/
+  914  l
+  915  clear
+  916  l
+  917  ssw
+  918  cd laboratorios/
+  919  l
+  920  cd gi
+  921  cd github/
+  922  ls
+  923  cd src
+  924  l
+  925  cd ..
+  926  l
+  927  cp principalSinRegistrar.html principalRegistrado.html style.css style1.css github/src/
+  928  cd github/src/
+  929  l
+  930  mv *.css css
+  931  clear
+  932  l
+  933  rm Teaser1.html 
+  934  clear
+  935  l
+  936  clear
+  937  l
+  938  git push origin develop
+  939  cd ..
+  940  l
+  941  git add . 
+  942  git status
+  943  l
+  944  cd src/
+  945  l
+  946  cd ..
+  947  l
+  948  git commit -m "LALALALALAL"
+  949  git branch
+  950  git checkout develop 
+  951  git branch
+  952  git push origin develop
+  953  git add .
+  954  git commit -m "LELELELELE"
+  955  git push origin 
+  956  git push origin develop
+  957  l
+  958  cd src/
+  959  l
+  960  git checkout master 
+  961  ls
+  962  cp principalSinRegistrar.html principalRegistrado.html css/style.css css/style1.css ../../..
+  963  git checkout develop
+  964  git branch
+  965  l
+  966  rm Teaser1.html 
+  967  cd ..
+  968  l
+  969  cd github/
+  970  l
+  971  cd src/
+  972  cp ../../principalSinRegistrar.html ../../principalRegistrado.html ../../style.css ../../style1.css .
+  973  l
+  974  mv *.css css
+  975  l
+  976  mkdir html
+  977  mv *.html html/
+  978  l
+  979  cd ..
+  980  l
+  981  git add .
+  982  git status
+  983  git commit -m "LOLOLOLOLOLO"
+  984  git push origin
+  985  exit
+  986  vim principalSinRegistrar.html 
+  987  vim principalRegistrado.html 
+  988  cleasr
+  989  clear
+  990  exit
+  991  cd bin/
+  992  l
+  993  ./studio.sh 
+  994  cd Documentos/android-studio/
+  995  l
+  996  cd bin/
+  997  l
+  998  exit
+  999  history > historial 
+ 1000  exit
+ 1001  cd
+ 1002  vim historial 
+ 1003  exit
+ 1004  ssw
+ 1005  l
+ 1006  rm *.html *.css
+ 1007  clear
+ 1008  l
+ 1009  cd laboratorios/
+ 1010  l
+ 1011  cd github/
+ 1012  l
+ 1013  c src/
+ 1014  cd src/
+ 1015  l
+ 1016  clear
+ 1017  cd img/
+ 1018  l
+ 1019  clear
+ 1020  cd ..
+ 1021  l
+ 1022  git add .
+ 1023  git status
+ 1024  git commit -m "Página principal CASI acabada, falta ajustar tamaños en la vertical"
+ 1025  git branch 
+ 1026  git push origin
+ 1027  clear
+ 1028  exit
+ 1029  ssw
+ 1030  l
+ 1031  cd laboratorios/
+ 1032  l
+ 1033  cd github/
+ 1034  l
+ 1035  history > historial
