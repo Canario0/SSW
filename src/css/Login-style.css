@@ -44,6 +44,8 @@ body section {
     margin-right: 10%;
     margin-top: 1%;
     padding: 4%;
+    padding-left: 2%;
+    padding-right: 2%;
     border: solid black 1px;
     border-radius: 10px;
     background-color: white;
