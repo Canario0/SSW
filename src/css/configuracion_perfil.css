@@ -112,6 +112,42 @@ body{
 }
 
 /*MIS SENSORES*/
+#opciones{
+  display:flex;
+  justify-content: center;
+}
+
+.añadirSensor{
+  font-size: 1.5em;
+  cursor: pointer;
+}
+#botonAñadir{
+  -webkit-transition-duration: 0.4s;
+  background-color: #7db6eb;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgb(143, 141, 141);
+  border: solid 2px rgb(85, 84, 84);
+  cursor:pointer;
+  width: 2em;
+  margin: 1em 1em;
+  text-align: center;
+}
+#botonAñadir:hover{
+  background-color:white;
+}
+#botonAñadir:active{
+  transform:translateY(2px);
+  -webkit-transition-duration: 0s;
+  background-color:white;
+  box-shadow: 0 0 0 black;
+  transform: translateY(2px);
+}
+
+#buscador{
+  border-radius: 10px;
+  margin: 2em 15em;
+  width: 25em;
+}
 #tablaSensores{
 	font-size: 1.2em;
 	display:flex;

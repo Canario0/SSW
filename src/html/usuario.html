@@ -12,26 +12,24 @@
     <meta charset="utf-8" />
 
     <!-- Links to necessary files to run the webpage -->
-	<link rel="stylesheet" type="text/css" href="../css/usuario.css" />
+	<link rel="stylesheet" type="text/css" href="../css/configuracion_perfil.css" />
     <link rel="icon" type="image/png" href="../img/logo.png" />
 </head>
 
 <!-- WEBPAGE'S BODY -->
 
 <body>
-    <div id="cabecera">
-	    <div id="titulo">
-		    <p id ="tituloTexto">SMART <b>MAPS</b></p>
-		</div>
+	<div id="cabecera">
+		<p id ="titulo">SMART <b>MAPS</b></p>
 		<div id="perfil">
 			<p id="botonCerrarSesion">Cerrar Sesión</p>
-			<p id="imgPipo"><img src="../img/pipo.jpg" alt="PIPO!"></p>
+      <p id="imgPipo"><img src="../img/user.png" alt="PIPO!"></p>
 		</div>
 	</div>
 
 	<div id="cuerpo">
 		<div id="imgPipoBig">
-			<img src="../img/pipo.jpg" alt="PIPO!">
+			<img src="../img/user.png" alt="PIPO!">
 			<p id="underpipo">Foto de perfil</p>
 		</div>
 
@@ -40,6 +38,11 @@
 				<p id=pestaña>Mis Sensores</p>
 				<p id=pestaña>Sensores Favoritos</p>
 				<p id=pestaña>Configurar Perfil</p>
+			</div>
+			<div id="opciones">
+				<p class="añadirSensor" id="botonAñadir">+</p>
+				<p class="añadirSensor" id="textoAñadir">Añadir Sensor</p>
+				<input id="buscador" type="text" value="Buscar sensor...">
 			</div>
 			<div id="tablaSensores">
 				<table id="tabla">

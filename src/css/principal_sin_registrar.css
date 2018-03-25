@@ -6,7 +6,7 @@ body {
 header nav {
     display: flex;
     border-bottom: solid black 2px;
-} 
+}
 
 #titulo{
     width: 70%;
@@ -131,11 +131,6 @@ hr {
     margin-bottom: 0.8em;
 }
 
-#buscador {
-    width: 60%;
-    justify-content: center;
-    margin: 2em 1em;
-}
 
 body section div #ir {
     width: 15%;
@@ -144,7 +139,7 @@ body section div #ir {
 
 
 #map {
-    width: 84.85%;
+    width: 84.5%;
     height: 100%;
 }
 
@@ -152,6 +147,7 @@ html, body {
     height: 94.5%;
     margin: 0;
     padding: 0;
+    
 }
 
 body section div div {
