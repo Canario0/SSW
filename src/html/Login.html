@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<!-- WEBPAGE'S HEAD -->
+
+<head>
+
+    <!-- Page's title -->
+    <title>Smart Maps</title>
+
+    <!-- Character ccodifcation -->
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8" />
+
+    <!-- Links to necessary files to run the webpage -->
+    <link rel="stylesheet" type="text/css" href="../css/Login-style.css" />
+    <link rel="icon" type="image/png" href="../img/logo.png" />
+</head>
+
+<!-- WEBPAGE'S BODY -->
+
+<body>
+
+    <!-- Upper action bar with button -->
+    <header>
+        <div id="titulo">
+            <p>SMART
+                <b>MAPS</b>
+            </p>
+        </div>
+    </header>
+
+
+<section>
+    <span id="tituloLogin">Iniciar Sesión</span>
+    <form method="POST" action="/principalRegistrado.html">
+        <p class="textoTitulo">Nick-Name:</p> 
+        <p><input class="texto-login" name="nick-name" type="text" size="25"></p>
+        <p class="textoTitulo">Contraseña:
+        <a id="recuperar" href="">recuperar</a></p> 
+        <p><input class="texto-login" name="contraseña" type="password" size="25"></p>
+        <p><input type="submit" value="Iniciar"></p>
+        <p id="foot">¿No eres miembro? <a id="registrarse" href="">Registrarse ahora.</a></p>
+    </form>
+</section>
+
+</body>
+
+</html>
