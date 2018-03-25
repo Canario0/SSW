@@ -1,11 +1,15 @@
 body {
     font-family:'Roboto', sans-serif;
     font-weight:300;
+    background-image: url(../img/fondo.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
 
 header nav {
     display: flex;
     border-bottom: solid black 2px;
+    background-color: white;
 } 
 
 #titulo{
@@ -68,8 +72,15 @@ header nav {
     color:black;
   }
 
+#buttonHeader1:active{
+    transform:translateY(2px);
+    -webkit-transition-duration: 0s;
+    background-color:white;
+    box-shadow: 0 0 0 black;
+    transform: translateY(2px);
+}
+
 body section {
-    height: 100%;
     float: left;
     min-height: 100%;
     width: 15%;  
@@ -108,12 +119,12 @@ body section div #ir {
 
 
 #map {
-    width: 84.85%;
+    width: auto;
     height: 100%;
 }
 
 html, body {
-    height: 94.5%;
+    height: 92.5%;
     margin: 0;
     padding: 0;
 }

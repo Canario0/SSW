@@ -1,11 +1,15 @@
 body {
     font-family:'Roboto', sans-serif;
     font-weight:300;
+    background-image: url(../img/fondo.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
 
 header nav {
     display: flex;
     border-bottom: solid black 2px;
+    background-color: white;
 }
 
 #titulo{

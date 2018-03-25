@@ -2,6 +2,9 @@
 body{
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
+    background-image: url("../img/fondo.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
 
 #cabecera{
@@ -47,11 +50,13 @@ body{
     font-family: sans-serif;
     font-size: 1em;
     text-decoration: none;
-    padding: 1em 3em;
+    padding: 1em 2em;
     border: solid 2px rgb(85, 84, 84);
-    margin: 1.8em 1em;
+    margin-top: 1.8em;
+    margin-bottom: 1.8em;
+    margin-right: 5em;
     border-radius: 10px;
-    box-shadow: 2px 2px 5px rgb(143, 141, 141);
+    box-shadow: 2px 2px 5px rgb(32, 23, 23);
   }
 
 #botonCerrarSesion:hover {
@@ -74,7 +79,7 @@ body{
 }
 
 #cuerpo{
-	padding: 10em 0; /*Padding arriba para que no se meta en la cabecera*/
+	padding: 8em 0; /*Padding arriba para que no se meta en la cabecera*/
 	display: flex;
 }
 
@@ -84,16 +89,22 @@ body{
 	margin: 3em;
 	padding: 2em 0;
 	border-radius: 2em;
-	background-color: #7db6eb;
-	text-align: center;
+	/* background-color: #7db6eb; */
+  text-align: center;
 }
 
 #imgPipoBig img{
 	width: 80%; /*80% del contenedor de la imagen*/
 }
 
+#underpipo {
+  font-weight: bold;
+  font-size: 1.5em;
+  margin-top: 2em;
+}
+
 #content{
-	width: 80%; /*80% del total horizontal de la pantalla*/
+  width: 80%; /*80% del total horizontal de la pantalla*/
 }
 
 #pestañas{
@@ -102,12 +113,17 @@ body{
 	justify-content: space-around;
 }
 
-#pestaña{
+#pestañaSel{
 	font-size: 2em;
 	border-bottom: 0.1em ridge #7db6eb;
 }
 
-#pestaña:hover{
+#pestaña{
+	font-size: 2em;
+	border-bottom: 0.1em ridge black;
+}
+
+#pestañaSel:hover, #pestaña:hover{
 	cursor:pointer;
 }
 
@@ -135,7 +151,7 @@ body{
 #botonAñadir:hover{
   background-color:white;
 }
-#botonAñadir:active{
+#botonAñadir:active, #botonCerrarSesion:active {
   transform:translateY(2px);
   -webkit-transition-duration: 0s;
   background-color:white;
@@ -154,12 +170,12 @@ body{
 	justify-content:center;
 }
 #tablaSensores th{
-	padding:1em 15em 1em 1em;
+	padding:1em 6em 1em 1em;
 	text-align: left;
 }
 
 #tablaSensores td{
-	padding:1em 10em 1em 1em;
+	padding:1em 1em 1em 1em;
 	text-align: left;
 }
 
@@ -167,11 +183,29 @@ body{
 	background-color: #7db6eb;
     color: white;
 }
+
+#tablaSensores tr {
+  background-color: white;
+}
 #tablaSensores tr:nth-child(odd) {background-color: #BBBBBB;}
 #tablaSensores tr:hover {background-color: #888888;}
 
 /*CONFIGURAR PERFIL*/
-#row {
+.row {
+  display: flex;
+  margin-top: 1em;
+  height: 20%;
+}
+
+
+#firstRow {
+  display: flex;
+  margin-top: 3em;
+  height: 20%;
+}
+
+
+#lastRow {
   display: flex;
   height: 20%;
 }
@@ -182,13 +216,16 @@ body{
   margin-left: 4em;
   width: 7em;
   text-align: left;
-  /*margin-right: 5%*/
+  font-size: 1.2em;
+  /* margin-right: 5% */
 }
 
 #textbox {
   margin-top: 0.5em;
   margin-bottom: 2.5em;
   margin-left: 1em;
+  width: 25em;
+  height: 2em;
   /*height: 1em;
   padding: 1em 0em 0em 1em;
   background-color: #00FF00;
@@ -199,11 +236,11 @@ body{
 #combobox {
   margin-top: 0.5em;
   margin-left: 1em;
-  width: auto;
-  height: 3em;;
+  width: 8em;
+  height: 3em;
   border: solid;
   box-shadow: none;
-  background-color: transparent;
+  background-color: white;
   background-image: none;
   appearance: none;
 }
@@ -226,9 +263,9 @@ body{
     text-decoration: none;
     padding: 1em 3em;
     border: solid 2px rgb(85, 84, 84);
-    margin: 1.8em 40em;
+    margin: 0 40em;
     border-radius: 10px;
-    box-shadow: 2px 2px 5px rgb(143, 141, 141);
+    box-shadow: 2px 2px 5px rgb(32, 23, 23);
   }
 
 #botonGuardarCambios:hover {
@@ -244,14 +281,3 @@ body{
     background-color:white;
     color:black;
 }
-
-/*
-#cabecera{background-color:#FF0000}
- #titulo{background-color:#00FF00}
-  #titulo p{background-color:#0000FF}
- #perfil{background-color:#00FF00}
-#cuerpo{background-color:#0000FF}
- #content{background-color:#FF0000}
-  #pestañas{background-color:#00FF00}
-   #pestaña{background-color:#0000FF}
-*/
