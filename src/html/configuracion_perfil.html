@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<!-- WEBPAGE'S HEAD -->
+
+<head>
+
+    <!-- Page's title -->
+    <title>Smart Maps</title>
+
+    <!-- Character ccodifcation -->
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8" />
+
+    <!-- Links to necessary files to run the webpage -->
+  <link rel="stylesheet" type="text/css" href="../css/usuario.css" />
+  <link rel="icon" type="image/png" href="../img/logo.png" />
+</head>
+
+<!-- WEBPAGE'S BODY -->
+
+<body>
+    <!-- Upper action bar with button -->
+    <div id="cabecera">
+      <div id="titulo">
+        <p id ="tituloTexto">SMART <b>MAPS</b></p>
+    </div>
+    <div id="perfil">
+      <p id="botonCerrarSesion">Cerrar Sesión</p>
+      <p id="imgPipo"><img src="../img/user.png" alt="PIPO!"></p>
+    </div>
+  </div>
+
+    <!-- Left sensor preview bar, static until the next release -->
+    <div id="cuerpo">
+      <div id="imgPipoBig">
+        <img src="../img/user.png" alt="SENSOR">
+        <p id="underpipo">Foto de perfil</p>
+      </div>
+
+    <!-- Different tabs within the profile -->
+    <div id="content">
+      <div id="pestañas">
+        <p id="pestaña">Mis Sensores</p>
+        <p id="pestaña">Sensores Favoritos</p>
+        <p id="pestaña">Configurar Perfil</p>
+      </div>
+
+      <div id="row">
+        <p id="etiqueta"> Nombre: </p>
+        <input id="textbox" type="text">
+        <p id="etiqueta"> Fecha de nacimiento: </p>
+        <select id="combobox">
+          <option value="opcion-1">Día</option>
+        </select>
+
+        <select id="combobox">
+          <option value="opcion-1">Mes</option>
+        </select>
+
+        <select id="combobox">
+          <option value="opcion-1">Año</option>
+        </select>
+      </div>
+
+      <div id="row">
+        <p id="etiqueta"> Apellido 1: </p>
+        <input id="textbox" type="text">
+        <p id="etiqueta"> Nick-name: </p>
+        <input id="textbox" type="text">
+      </div>
+
+      <div id="row">
+        <p id="etiqueta"> Apellido 2: </p>
+        <input id="textbox" type="text">
+        <p id="etiqueta"> Dirección: </p>
+        <input id="textbox" type="text">
+      </div>
+
+      <div id="row">
+        <p id="etiqueta"> Empresa: </p>
+        <input id="textbox" type="text">
+        <p id="etiqueta"> Tfno: </p>
+        <input id="textbox" type="text">
+      </div>
+
+    </div>
+  </div>
+  <div id="bottom">
+    <p id="botonGuardarCambios">Guardar Cambios</p>
+  </div>
+
+</body>
+
+</html>
