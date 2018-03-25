@@ -41,8 +41,8 @@ body section {
     flex-wrap: wrap;
     justify-content: center;
     min-height: 50%;  
-    margin-right: 20%;
-    margin-top: 6%;
+    margin-right: 10%;
+    margin-top: 1%;
     padding: 4%;
     border: solid black 1px;
     border-radius: 10px;
@@ -73,11 +73,24 @@ section a:hover{
 #tituloLogin{
     width: 100%;
     display: block;
-    font-size: 30px;
+    font-size: 40px;
     color:#555555;
-    text-align: center
+    text-align: center;
+    padding-top: 5px;
 }
 
+.textoTitulo{
+    font-family: Montserrat-SemiBold;
+    font-size: 30px;
+    color: #555555;
+    line-height: 2;
+}
+
+#foot{
+    margin-top: 3em;
+    font-family: Poppins-Regular;
+    color: #999999;
+}
 /* ------------------------------------- */
 
 /* Inputs */
@@ -89,12 +102,42 @@ input{
 .texto-login{
     border: solid black 1px;
     border-radius: 10px;
+    line-height: 2;
 }
 
 .texto-login:focus{
     border-color:  #7db6eb;
 }
 
+input[type=submit]{
+    align-content: center;
+    transition-property: background-color, color;
+    transition-duration: 0.4s;
+    transition-timing-function: ease-out;
+    -webkit-transition-property: background-color, color;
+    -webkit-transition-duration: 0.4s;
+    -o-transition-property: background-color, color;
+    -o-transition-duration: 0.4s;
+    text-align: center;
+    background-color: #7db6eb;
+    color: black;
+    border-color:black;
+    font-family: sans-serif;
+    font-size: 1em;
+    text-decoration: none;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 5.5em;
+    padding-right: 5.5em;
+    margin-left: 0.5em;
+    margin-top: 2em;
+    border: solid 2px rgb(85, 84, 84);
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgb(32, 23, 23);
+}
 
+input[type=submit]:hover{
+    background-color:white;
+}
 
 /* ------------------------------------- */
