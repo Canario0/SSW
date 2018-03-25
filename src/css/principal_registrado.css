@@ -119,14 +119,15 @@ body section div #ir {
 
 
 #map {
-    width: auto;
+    width: 84.5%;
     height: 100%;
 }
 
 html, body {
-    height: 92.5%;
+    height: 93%;
     margin: 0;
     padding: 0;
+    
 }
 
 body section div div {
