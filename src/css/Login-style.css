@@ -1,6 +1,14 @@
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family:'Roboto', sans-serif;
+}
+
 body {
     font-weight:300;
-    background-image: url("../img/pipo.jpg");
+    /* background-image: url("../img/pipo.jpg"); */
     background-repeat:no-repeat;
     background-color: transparent #cccccc;
     background-size: cover; 
@@ -9,6 +17,8 @@ body {
 #titulo{
     width: 100%;
     float: left;
+    margin-left: 5%;
+    margin-top: 2%;
 
     
 }
@@ -19,20 +29,24 @@ body {
 }
 
 
+
+
+/* ------------------------------------- */
+
 body section {
-    height: 50%;
+    height: auto;
     width: fit-content;
-    float: center;
-    min-height: 50%;
-    width: 15%;  
-}
-
-
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    font-family:'Roboto', sans-serif;
+    float: right;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    min-height: 50%;  
+    margin-right: 20%;
+    margin-top: 6%;
+    padding: 4%;
+    border: solid black 1px;
+    border-radius: 10px;
+    background-color: white;
 }
 
 /* ------------------------------------- */
@@ -51,5 +65,36 @@ section a:hover{
     color:  #7db6eb;
     border-color: #7db6eb;
 }
+
+/* ------------------------------------- */
+
+/* Texto formulario */
+
+#tituloLogin{
+    width: 100%;
+    display: block;
+    font-size: 30px;
+    color:#555555;
+    text-align: center
+}
+
+/* ------------------------------------- */
+
+/* Inputs */
+
+input{
+    border: none;
+}
+
+.texto-login{
+    border: solid black 1px;
+    border-radius: 10px;
+}
+
+.texto-login:focus{
+    border-color:  #7db6eb;
+}
+
+
 
 /* ------------------------------------- */
