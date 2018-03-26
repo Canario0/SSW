@@ -14,7 +14,7 @@ header nav {
 } 
 
 #titulo{
-    width: 10%; /* cambiado de 20 a 10 */
+    width: 20%; /* cambiado de 20 a 10 */
     margin:0px;
 }
 
@@ -31,7 +31,7 @@ header nav {
     margin: 0.5em 1em;
     justify-content: flex-end;
     display: flex;   
-    margin-right: 7em;
+    margin-right: 4.9em;
 }
 
 #perfil p:hover {
