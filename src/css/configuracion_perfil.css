@@ -187,6 +187,7 @@ body{
 #tablaSensores tr {
   background-color: white;
 }
+
 #tablaSensores tr:nth-child(odd) {background-color: #BBBBBB;}
 #tablaSensores tr:hover {background-color: #888888;}
 
