@@ -20,10 +20,9 @@ body{
 #titulo{
 	font-size: 2em;
 	padding: 0em 0em 0em 2em; /*Margen a la izquierda*/
-}
-
-#titulo p:hover{
-	cursor:pointer;
+	text-decoration: none;
+	color: black;
+	cursor: pointer;
 }
 
 #perfil{
