@@ -19,7 +19,9 @@ body{
 
 #titulo{
 	font-size: 2em;
-	padding: 0em 0em 0em 2em; /*Margen a la izquierda*/
+	padding-left: 2em;
+	margin-top: auto;
+	margin-bottom:auto;
 	text-decoration: none;
 	color: black;
 	cursor: pointer;
@@ -51,8 +53,8 @@ body{
     text-decoration: none;
     padding: 1em 2em;
     border: solid 2px rgb(85, 84, 84);
-    margin-top: 1.8em;
-    margin-bottom: 1.8em;
+	margin-top: auto;
+	margin-bottom: auto;
     margin-right: 5em;
     border-radius: 10px;
     box-shadow: 2px 2px 5px rgb(32, 23, 23);
@@ -284,6 +286,10 @@ body{
 }
 
 /*
+#cabecera{background: #00FF00;}
+ #titulo{background: #FF0000;}
+ #perfil{background: #FF0000;}
+  #imgPipo{background: #FF00FF;}
 #cuerpo{background: #0000FF;}
  #imgPipoBig{background: #00FF00;}
   #underpipo{background: #FF0000;}
