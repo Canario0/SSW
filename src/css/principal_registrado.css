@@ -6,6 +6,7 @@ body {
     background-size: 100%;
 }
 
+
 header nav {
     display: flex;
     border-bottom: solid black 2px;
@@ -13,7 +14,8 @@ header nav {
 } 
 
 #titulo{
-    width: 20%;
+    width: 20%; /* cambiado de 20 a 10 */
+    margin:0px;
 }
 
 #titulo p:hover {
@@ -29,7 +31,7 @@ header nav {
     margin: 0.5em 1em;
     justify-content: flex-end;
     display: flex;   
-    margin-right: 7em;
+    margin-right: 4.9em;
 }
 
 #perfil p:hover {
