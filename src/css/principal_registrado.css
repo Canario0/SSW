@@ -31,7 +31,7 @@ header nav {
     margin: 0.5em 1em;
     justify-content: flex-end;
     display: flex;   
-    margin-right: 4.9em;
+    margin-right: 4.9em; /* subirlo causa overflow */
 }
 
 #perfil p:hover {
