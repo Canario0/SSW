@@ -12,6 +12,7 @@ body {
     background-repeat:no-repeat;
     background-color: transparent #cccccc;
     background-size: cover; 
+    overflow-x: hidden;
 }
 
 #titulo{
@@ -49,6 +50,7 @@ body section {
     border: solid black 1px;
     border-radius: 10px;
     background-color: white;
+    overflow: hidden;
 }
 
 /* ------------------------------------- */
