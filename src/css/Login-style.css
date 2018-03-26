@@ -4,6 +4,9 @@ html, body {
     margin: 0;
     padding: 0;
     font-family:'Roboto', sans-serif;
+    background-image: url(../img/fondoLogin.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
 
 body {
@@ -77,15 +80,17 @@ section a:hover{
 #tituloLogin{
     width: 100%;
     display: block;
-    font-size: 40px;
+    font-size: 2.5em;
     color:#555555;
     text-align: center;
     padding-top: 5px;
+    color: #7db6eb;
+    font-weight: bold;
 }
 
 .textoTitulo{
-    font-family: Montserrat-SemiBold;
-    font-size: 30px;
+    /* font-family: Montserrat-SemiBold; */
+    font-size: 2em;
     color: #555555;
     line-height: 2;
 }
