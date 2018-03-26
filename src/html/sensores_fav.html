@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<!-- WEBPAGE'S HEAD -->
+
+<head>
+
+    <!-- Page's title -->
+    <title>Smart Maps</title>
+
+    <!-- Character ccodifcation -->
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8" />
+
+    <!-- Links to necessary files to run the webpage -->
+	<link rel="stylesheet" type="text/css" href="../css/configuracion_perfil.css" />
+    <link rel="icon" type="image/png" href="../img/logo.png" />
+</head>
+
+<!-- WEBPAGE'S BODY -->
+
+<body>
+	<div id="cabecera">
+		<p id ="titulo">SMART <b>MAPS</b></p>
+		<div id="perfil">
+			<p id="botonCerrarSesion" href="principalSinRegistrar.html">Cerrar Sesión</p>
+      <p id="imgPipo" href="usuario.html"><img src="../img/user1.png" alt="PIPO!"></p>
+		</div>
+	</div>
+
+	<div id="cuerpo">
+		<div id="imgPipoBig">
+			<img src="../img/user1.png" alt="PIPO!">
+			<p id="underpipo">Jhon21</p>
+		</div>
+
+		<div id="content">
+			<div id="pestañas">
+				<p id=pestaña>Mis Sensores</p>
+				<p id=pestañaSel>Sensores Favoritos</p>
+				<p id=pestaña>Configurar Perfil</p>
+			</div>
+			<div id="opciones">
+				<p class="añadirSensor" id="botonAñadir">+</p>
+				<p class="añadirSensor" id="textoAñadir">Añadir Sensor Favorito</p>
+				<input id="buscador" type="text" placeholder="Buscar sensor...">
+			</div>
+			<div id="tablaSensores">
+				<table id="tabla">
+				  <tr>
+				    <th>Sensor</th>
+				    <th>Estado</th>
+				    <th>Tiempo de funcionamiento</th>
+            <th>Dueño</th>
+				    <th>Eliminar de Favoritos</th>
+				  </tr>
+				  <tr>
+				    <td>Temperatura - RF875</td>
+				    <td>Funcionando</td>
+				    <td>2 horas</td>
+            <td>Persona</td>
+				    <td id="botonAñadir">-</td>
+				  </tr>
+				  <tr>
+				    <td>Humedad - KW965</td>
+				    <td>Fallo</td>
+				    <td>3 días</td>
+            <td>Persona</td>
+				    <td id="botonAñadir">-</td>
+				  </tr>
+				  <tr>
+				    <td>Iluminación - BF852</td>
+				    <td>Funcionando</td>
+				    <td>5.8 horas</td>
+            <td>Persona Negra</td>
+				    <td id="botonAñadir">-</td>
+				  </tr>
+				  <tr>
+				    <td>Contaminación - PA785</td>
+				    <td>Funcionando</td>
+				    <td>3 minutos</td>
+            <td>Persona Judía</td>
+				    <td id="botonAñadir">-</td>
+				  </tr>
+				  <tr>
+				    <td>Acústico - NS090</td>
+				    <td>Reparación</td>
+				    <td>1 Año 3 días</td>
+            <td>Persona</td>
+				    <td id="botonAñadir">-</td>
+				  </tr>
+
+				</table>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

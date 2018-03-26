@@ -109,22 +109,23 @@ body{
 
 #pestañas{
 	display: flex;
-	padding: 0 15em 0 15em;
+	padding: 2em 5em;
 	justify-content: space-around;
 }
 
-#pestañaSel{
-	font-size: 2em;
-	border-bottom: 0.1em ridge #7db6eb;
-}
-
-#pestaña{
+.pestaña, .pestaña:link, .pestaña:visited{
 	font-size: 2em;
 	border-bottom: 0.1em ridge black;
+	text-decoration: none;
+	color: black;
 }
 
-#pestañaSel:hover, #pestaña:hover{
+.pestaña:hover{
 	cursor:pointer;
+}
+
+#pestañaSel{
+	border-bottom: 0.1em ridge #7db6eb;
 }
 
 /*MIS SENSORES*/
@@ -187,6 +188,7 @@ body{
 #tablaSensores tr {
   background-color: white;
 }
+
 #tablaSensores tr:nth-child(odd) {background-color: #BBBBBB;}
 #tablaSensores tr:hover {background-color: #888888;}
 
@@ -281,3 +283,13 @@ body{
     background-color:white;
     color:black;
 }
+
+/*
+#cuerpo{background: #0000FF;}
+ #imgPipoBig{background: #00FF00;}
+  #underpipo{background: #FF0000;}
+ #content{background: #FF0000;}
+  #pestañas{background: #00FF00;}
+   .pestaña{background: #FFFF00;}
+  #opciones{background: #00FFFF;}
+*/
