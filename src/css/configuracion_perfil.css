@@ -117,6 +117,10 @@ body{
 	justify-content: center;
 }
 
+#tituloSensor {
+	font-size: 2em;
+}
+
 #botonAñadir{
 	font-size: 1.5em;
 	border-radius: 5px;
@@ -148,8 +152,12 @@ body{
 #tablaSensores td{
 	text-align: left;
 	padding: 0.5em;
+	text-align: center;
 }
 
+#nombreSensor {
+	font-weight: bold;
+}
 #botonEliminar{
 	font-size: 1.5em;
 	margin: 0 1.5em;
@@ -220,6 +228,22 @@ body{
 	margin: 0 40em;
 }
 
+#chartContainer {
+	margin-top: 4em;
+	height: 25em;
+	width: 80%;
+}
+
+.tablaYultimasMedidas {
+	display: flex;
+}
+
+#tablaMedidas{
+	display:flex;
+	justify-content:center;
+	margin-top: 4em;
+	width: 10%;
+}
 /*
 #cabecera{background: #00FF00;}
  #titulo{background: #FF0000;}
@@ -233,3 +257,8 @@ body{
    .pestaña{background: #FFFF00;}
   #opciones{background: #00FFFF;}
 */
+#botonesYfavoritos { 
+	background-color: aqua;
+}
+
+
