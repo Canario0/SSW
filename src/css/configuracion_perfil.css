@@ -150,9 +150,11 @@ body{
   margin: 1em 1em;
   text-align: center;
 }
+
 #botonAñadir:hover{
   background-color:white;
 }
+
 #botonAñadir:active, #botonCerrarSesion:active {
   transform:translateY(2px);
   -webkit-transition-duration: 0s;
@@ -174,16 +176,13 @@ body{
 #tablaSensores th{
 	padding:1em 6em 1em 1em;
 	text-align: left;
+  background-color: #7db6eb;
+  color: white;
 }
 
 #tablaSensores td{
 	padding:1em 1em 1em 1em;
 	text-align: left;
-}
-
-#tablaSensores th {
-	background-color: #7db6eb;
-    color: white;
 }
 
 #tablaSensores tr {
