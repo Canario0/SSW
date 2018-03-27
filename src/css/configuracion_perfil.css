@@ -7,6 +7,29 @@ body{
     background-size: 100%;
 }
 
+.boton{
+    color: black;
+	background-color: #7db6eb;
+    border-color:black;
+    border: solid 2px rgb(85, 84, 84);
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgb(32, 23, 23);
+	text-align: center;
+    text-decoration: none;
+	margin-top: auto;
+	margin-bottom: auto;
+	cursor: pointer;
+	-webkit-transition-duration: 0.4s;
+}
+.boton:hover{
+	background-color: white;
+}
+.boton:active{
+	transform:translateY(2px);
+	box-shadow: 0 0 0 black;
+	-webkit-transition-duration: 0s;
+}
+
 #cabecera{
 	width: 100%;
 	display: flex;
@@ -29,49 +52,12 @@ body{
 
 #perfil{
 	display: flex;
-	padding: 0em 2em 0em 0em; /*Margen a la derecha*/
-}
-
-#perfil:hover{
-	cursor:pointer;
+	padding-right: 2em;
 }
 
 #botonCerrarSesion {
-    transition-property: background-color, color;
-    transition-duration: 0.4s;
-    transition-timing-function: ease-out;
-    -webkit-transition-property: background-color, color;
-    -webkit-transition-duration: 0.4s;
-    -o-transition-property: background-color, color;
-    -o-transition-duration: 0.4s;
-    text-align: center;
-    background-color: #7db6eb;
-    color: black;
-    border-color:black;
-    font-family: sans-serif;
-    font-size: 1em;
-    text-decoration: none;
     padding: 1em 2em;
-    border: solid 2px rgb(85, 84, 84);
-	margin-top: auto;
-	margin-bottom: auto;
     margin-right: 5em;
-    border-radius: 10px;
-    box-shadow: 2px 2px 5px rgb(32, 23, 23);
-  }
-
-#botonCerrarSesion:hover {
-    cursor: pointer;
-    position: relative;
-    transition-property: background-color, color;
-    transition-duration: 0.4s;
-    transition-timing-function: ease-out;
-    -webkit-transition-property: background-color, color;
-    -webkit-transition-duration: 0.4s;
-    -o-transition-property: background-color, color;
-    -o-transition-duration: 0.4s;
-    background-color:white;
-    color:black;
 }
 
 #imgPipo img {
@@ -90,8 +76,7 @@ body{
 	margin: 3em;
 	padding: 2em 0;
 	border-radius: 2em;
-	/* background-color: #7db6eb; */
-  text-align: center;
+	text-align: center;
 }
 
 #imgPipoBig img{
@@ -119,9 +104,6 @@ body{
 	border-bottom: 0.1em ridge black;
 	text-decoration: none;
 	color: black;
-}
-
-.pestaña:hover{
 	cursor:pointer;
 }
 
@@ -131,66 +113,51 @@ body{
 
 /*MIS SENSORES*/
 #opciones{
-  display:flex;
-  justify-content: center;
+	display:flex;
+	justify-content: center;
 }
 
-.añadirSensor{
-  font-size: 1.5em;
-  cursor: pointer;
-}
 #botonAñadir{
-  -webkit-transition-duration: 0.4s;
-  background-color: #7db6eb;
-  border-radius: 5px;
-  box-shadow: 2px 2px 5px rgb(143, 141, 141);
-  border: solid 2px rgb(85, 84, 84);
-  cursor:pointer;
-  width: 2em;
-  margin: 1em 1em;
-  text-align: center;
+	font-size: 1.5em;
+	border-radius: 5px;
+	width: 2em;
+	margin-right: 1em;
 }
-
-#botonAñadir:hover{
-  background-color:white;
-}
-
-#botonAñadir:active, #botonCerrarSesion:active {
-  transform:translateY(2px);
-  -webkit-transition-duration: 0s;
-  background-color:white;
-  box-shadow: 0 0 0 black;
-  transform: translateY(2px);
+#textoAñadir{
+	font-size: 1.5em;
 }
 
 #buscador{
-  border-radius: 10px;
-  margin: 2em 15em;
-  width: 25em;
+	border-radius: 10px;
+	margin: 2em 15em;
+	width: 25em;
 }
+
 #tablaSensores{
 	font-size: 1.2em;
 	display:flex;
 	justify-content:center;
 }
+
 #tablaSensores th{
-	padding:1em 6em 1em 1em;
-	text-align: left;
-  background-color: #7db6eb;
-  color: white;
+	padding: 1em 3em;
+	background-color: #7db6eb;
+	color: white;
 }
 
 #tablaSensores td{
-	padding:1em 1em 1em 1em;
 	text-align: left;
+	padding: 0.5em;
 }
 
-#tablaSensores tr {
-  background-color: white;
+#botonEliminar{
+	font-size: 1.5em;
+	margin: 0 1.5em;
+	border-radius: 5px;
 }
-
+#tablaSensores tr:nth-child(even){background-color: #FFFFFF;}
 #tablaSensores tr:nth-child(odd) {background-color: #BBBBBB;}
-#tablaSensores tr:hover {background-color: #888888;}
+/*#tablaSensores tr:hover {background-color: #888888;}*/
 
 /*CONFIGURAR PERFIL*/
 .row {
@@ -249,39 +216,8 @@ body{
 
 
 #botonGuardarCambios {
-    transition-property: background-color, color;
-    transition-duration: 0.4s;
-    transition-timing-function: ease-out;
-    -webkit-transition-property: background-color, color;
-    -webkit-transition-duration: 0.4s;
-    -o-transition-property: background-color, color;
-    -o-transition-duration: 0.4s;
-    text-align: center;
-    background-color: #7db6eb;
-    color: black;
-    border-color:black;
-    font-family: sans-serif;
-    font-size: 1em;
-    text-decoration: none;
-    padding: 1em 3em;
-    border: solid 2px rgb(85, 84, 84);
-    margin: 0 40em;
-    border-radius: 10px;
-    box-shadow: 2px 2px 5px rgb(32, 23, 23);
-  }
-
-#botonGuardarCambios:hover {
-    cursor: pointer;
-    position: relative;
-    transition-property: background-color, color;
-    transition-duration: 0.4s;
-    transition-timing-function: ease-out;
-    -webkit-transition-property: background-color, color;
-    -webkit-transition-duration: 0.4s;
-    -o-transition-property: background-color, color;
-    -o-transition-duration: 0.4s;
-    background-color:white;
-    color:black;
+	padding: 1em 3em;
+	margin: 0 40em;
 }
 
 /*
