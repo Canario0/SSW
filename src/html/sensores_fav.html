@@ -12,7 +12,9 @@
     <meta charset="utf-8" />
 
     <!-- Links to necessary files to run the webpage -->
-	<link rel="stylesheet" type="text/css" href="../css/configuracion_perfil.css" />
+	<link rel="stylesheet" type="text/css" href="../css/perfil.css" />
+	<link rel="stylesheet" type="text/css" href="../css/botones.css" />
+	<link rel="stylesheet" type="text/css" href="../css/cabecera.css" />
     <link rel="icon" type="image/png" href="../img/logo.png" />
 </head>
 
@@ -20,10 +22,10 @@
 
 <body>
 	<div id="cabecera">
-		<p id ="titulo">SMART <b>MAPS</b></p>
+		<a id ="titulo" href="principalRegistrado.html">SMART <b>MAPS</b></a>
 		<div id="perfil">
-			<p id="botonCerrarSesion" href="principalSinRegistrar.html">Cerrar Sesión</p>
-      <p id="imgPipo" href="usuario.html"><img src="../img/user1.png" alt="PIPO!"></p>
+			<a class="boton" id="buttonHeader" href="principalSinRegistrar.html">Cerrar Sesión</a>
+			<a id="imgPipo" href="usuario.html"><img src="../img/user1.png" alt="PIPO!"></a>
 		</div>
 	</div>
 
@@ -35,14 +37,14 @@
 
 		<div id="content">
 			<div id="pestañas">
-				<p id=pestaña>Mis Sensores</p>
-				<p id=pestañaSel>Sensores Favoritos</p>
-				<p id=pestaña>Configurar Perfil</p>
+				<a class=pestaña id=pestaña href="usuario.html">Mis Sensores</a>
+				<a class=pestaña id=pestañaSel>Sensores Favoritos</a>
+				<a class=pestaña id=pestaña href="configuracion_perfil.html">Configurar Perfil</a>
 			</div>
 			<div id="opciones">
-				<p class="añadirSensor" id="botonAñadir">+</p>
-				<p class="añadirSensor" id="textoAñadir">Añadir Sensor Favorito</p>
-				<input id="buscador" type="text" value="Buscar sensor...">
+				<p class="boton" id="botonAñadir">+</p>
+				<p id="textoAñadir">Añadir Sensor Favorito</p>
+				<input id="buscador" type="text" placeholder="Buscar sensor...">
 			</div>
 			<div id="tablaSensores">
 				<table id="tabla">
@@ -51,42 +53,52 @@
 				    <th>Estado</th>
 				    <th>Tiempo de funcionamiento</th>
             <th>Dueño</th>
-				    <th>Eliminar de Favoritos</th>
+				    <th>Eliminar</th>
 				  </tr>
 				  <tr>
-				    <td>Temperatura - RF875</td>
+				    <td id="nombreSensor">Temperatura - RF875</td>
 				    <td>Funcionando</td>
 				    <td>2 horas</td>
-            <td>Persona</td>
-				    <td>-</td>
+            <td>Rahim_</td>
+				    <td>
+              <div class="boton" id="botonEliminar">-</div>
+            </td>
 				  </tr>
 				  <tr>
-				    <td>Humedad - KW965</td>
+				    <td id="nombreSensor">Humedad - KW965</td>
 				    <td>Fallo</td>
 				    <td>3 días</td>
-            <td>Persona</td>
-				    <td>-</td>
+            <td>Ju4nillo</td>
+            <td>
+              <div class="boton" id="botonEliminar">-</div>
+            </td>
 				  </tr>
 				  <tr>
-				    <td>Iluminación - BF852</td>
+				    <td id="nombreSensor">Iluminación - BF852</td>
 				    <td>Funcionando</td>
 				    <td>5.8 horas</td>
-            <td>Persona Negra</td>
-				    <td>-</td>
+            <td>AytoVLL</td>
+            <td>
+              <div class="boton" id="botonEliminar">-</div>
+            </td>
 				  </tr>
 				  <tr>
-				    <td>Contaminación - PA785</td>
+				    <td id="nombreSensor">Contaminación - PA785</td>
 				    <td>Funcionando</td>
 				    <td>3 minutos</td>
-            <td>Persona Judía</td>
-				    <td>-</td>
+            <td>AytoVLL</td>
+            <td>
+              <div class="boton" id="botonEliminar">-</div>
+            </td>
 				  </tr>
 				  <tr>
-				    <td>Acústico - NS090</td>
+				    <td id="nombreSensor">Acústico - NS090</td>
 				    <td>Reparación</td>
 				    <td>1 Año 3 días</td>
-            <td>Persona</td>
-				    <td>-</td>
+            <td>Yaiza</td>
+            <td>
+              <div class="boton" id="botonEliminar">-</div>
+            </td>
 				  </tr>
 
 				</table>
