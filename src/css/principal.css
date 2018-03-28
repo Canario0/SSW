@@ -14,13 +14,12 @@ body {
 
 #actionBar div { /*Para cada elemento del action bar*/
     display: flex;
-    padding-top: 2em;
 }
 
 #buscador {
     width: 60%;
     justify-content: center;
-    margin: 2em 1em;
+    margin: 1em 1em;
 }
 
 .titulosBarraLateral {

@@ -27,6 +27,7 @@ body{
 
 #content{
   padding-top: 2em;
+  padding-right: 2em;
   width: 80%; /*80% del total horizontal de la pantalla*/
 }
 
@@ -107,21 +108,11 @@ body{
 /*CONFIGURAR PERFIL*/
 .row {
   display: flex;
-  margin-top: 1em;
   height: 20%;
 }
-
 
 #firstRow {
-  display: flex;
-  margin-top: 3em;
-  height: 20%;
-}
-
-
-#lastRow {
-  display: flex;
-  height: 20%;
+  margin-top: 2em;
 }
 
 #etiqueta {
@@ -159,10 +150,9 @@ body{
   appearance: none;
 }
 
-
 #botonGuardarCambios {
 	padding: 1em 3em;
-	margin: 0 40em;
+	margin: 0 32em;
 }
 
 #chartContainer {
@@ -186,19 +176,6 @@ a:link { color: black ; text-decoration: none}
 a:hover { color: rgb(0, 0, 0); text-decoration: none} 
 a:visited { color: black ; text-decoration: none }
 
-/*
-#cabecera{background: #00FF00;}
- #titulo{background: #FF0000;}
- #perfil{background: #FF0000;}
-  #imgPipo{background: #FF00FF;}
-#cuerpo{background: #0000FF;}
- #imgPipoBig{background: #00FF00;}
-  #underpipo{background: #FF0000;}
- #content{background: #FF0000;}
-  #pestañas{background: #00FF00;}
-   .pestaña{background: #FFFF00;}
-  #opciones{background: #00FFFF;}
-*/
 #botonesYfavoritos { 
 	display: flex;
 	justify-content: center;
@@ -212,5 +189,16 @@ a:visited { color: black ; text-decoration: none }
 	padding-top: 0.9em;
 }
 
-
-
+/*
+#cabecera{background: #00FF00;}
+ #titulo{background: #FF0000;}
+ #perfil{background: #FF0000;}
+  #imgPipo{background: #FF00FF;}
+#cuerpo{background: #0000FF;}
+ #imgPipoBig{background: #00FF00;}
+  #underpipo{background: #FF0000;}
+ #content{background: #FF0000;}
+  #pestañas{background: #00FF00;}
+   .pestaña{background: #FFFF00;}
+  #opciones{background: #00FFFF;}
+  */
