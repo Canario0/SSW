@@ -159,6 +159,8 @@ body{
 #botonGuardarCambios {
 	padding: 1em 3em;
 	margin: 0 32em;
+	width: 20em;
+	margin-top: 3em;
 }
 
 #chartContainer {
@@ -231,7 +233,10 @@ a:visited { color: black ; text-decoration: none }
 	margin-left: 2em;
 }
 
-
+#bottom {
+	display: flex;
+	justify-content: center;
+}
 /*
 #cabecera{background: #00FF00;}
  #titulo{background: #FF0000;}

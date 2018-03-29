@@ -38,9 +38,9 @@
     <div id="cuerpo">
       <div id="imgUserBig">
         <img src="../img/user1.png" alt="SENSOR">
-        <p class="texto3">Nombre:</p>
+        <p class="texto3">Nombre sensor:</p>
         <p id="underUser">
-          <input type="text" name="Nombre Sensor" size="11" value="         RF875">
+          <input type="text" name="Nombre Sensor" size="11" placeholder="Nombre sensor">
         </p>
       </div>
 
@@ -49,13 +49,13 @@
         <div id="pestañas">
           <a class=pestaña id="pestaña" href="usuario.html">Mis Sensores</a>
           <a class=pestaña id="pestaña" href="sensores_fav.html">Sensores Favoritos</a>
-          <a class=pestaña id="pestañaSel">Configurar Perfil</a>
+          <a class=pestaña id="pestaña" href="configuracion_perfil.html">Configurar Perfil</a>
         </div>
         <div id="formularioPrincipal">
           <div class="row, primera">
             <p>Descripción</p>
             <p>
-              <textarea name="descripción" rows="10" cols="33"></textarea>
+              <textarea name="descripción" rows="10" cols="33" placeholder="Breve descripción del sensor. Ej.: funcionamiento, características, tipos de medidas, etc."></textarea>
             </p>
             <div id="tipo-visibilidad">
               <div class="row, primera">
@@ -85,72 +85,9 @@
 
           <div class="row">
             <p>Localización</p>
-            <p>
-              <script>
-                var citymap = {
-                  zaragoza: {
-                    center: { lat: 41.647, lng: -0.890 },
-                    population: 271485
-                  },
-                  valladolid: {
-                    center: { lat: 41.593, lng: -4.697 },
-                    population: 100000
-                  },
-                  madrid: {
-                    center: { lat: 40.428, lng: -3.789 },
-                    population: 385779
-                  },
-                  sevilla: {
-                    center: { lat: 37.399, lng: -5.938 },
-                    population: 603502
-                  }
-                };
-
-                function initMap() {
-                  // Create the map.
-                  var map = new google.maps.Map(document.getElementById('map'), {
-                    zoom: 6.5,
-                    center: { lat: 40.428, lng: -3.789 }
-                  });
-
-                  var flightPlanCoordinates = [
-                    { lat: 37.399, lng: -5.938 },
-                    { lat: 39.046, lng: -1.784 },
-                    { lat: 40.865, lng: -2.498 },
-                    { lat: 41.647, lng: -0.890 }
-                  ];
-
-                  var flightPath = new google.maps.Polyline({
-                    path: flightPlanCoordinates,
-                    geodesic: true,
-                    strokeColor: '#2E9AFE',
-                    strokeOpacity: 1.0,
-                    strokeWeight: 2
-                  });
-
-                  flightPath.setMap(map);
-
-                  // Construct the circle for each value in citymap.
-                  // Note: We scale the area of the circle based on the population.
-                  for (var city in citymap) {
-                    var cityCircle = new google.maps.Circle({
-                      // Add the circle for this city to the map.
-                      strokeColor: '#2E9AFE',
-                      strokeOpacity: 0.8,
-                      strokeWeight: 2,
-                      fillColor: '#2E9AFE',
-                      fillOpacity: 0.35,
-                      map: map,
-                      center: citymap[city].center,
-                      radius: Math.sqrt(citymap[city].population) * 100
-                    });
-                  }
-                }
-              </script>
-              <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBRjO3Gm24tyvsh4gvX31esp3dFS-oyJ3g&callback=initMap" asyncdefer></script>
-            </p>
+            <img id="imgMapa" src="../img/mapa.jpg" alt="mapa">
             <p class="texto3">Coordenadas:</p>
-            <p><input type="text" name="Coordenadas" size="20"></p>
+            <p><input id="inputCoordenadas" type="text" name="Coordenadas" size="20" placeholder="Introducir latitud y longitud"></p>
           </div>
         </div>
       </div>
