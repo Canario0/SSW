@@ -22,28 +22,28 @@
 
 <body>
 	<div id="cabecera">
-		<a id="titulo" href="principalRegistrado.html">SMART <b>MAPS</b></a>
+		<a id ="titulo" href="principalRegistrado.html">SMART <b>MAPS</b></a>
 		<div id="perfil">
 			<a class="boton" id="buttonHeader" href="principalSinRegistrar.html">Cerrar Sesión</a>
-			<a id="imgPipo" href="usuario.html"><img src="../img/user1.png" alt="user logo"></a>
+			<a id="imgPipo" href="usuario.html"><img src="../img/user1.png" alt="PIPO!"></a>
 		</div>
 	</div>
 
 	<div id="cuerpo">
 		<div id="imgPipoBig">
-			<img src="../img/user1.png" alt="user img">
+			<img src="../img/user1.png" alt="PIPO!">
 			<p id="underpipo">Jhon21</p>
 		</div>
 
 		<div id="content">
 			<div id="pestañas">
-				<a class=pestaña id=pestañaSel>Mis Sensores</a>
-				<a class=pestaña id=pestaña href="sensores_fav.html">Sensores Favoritos</a>
+				<a class=pestaña id=pestaña href="usuario.html">Mis Sensores</a>
+				<a class=pestaña id=pestañaSel>Sensores Favoritos</a>
 				<a class=pestaña id=pestaña href="configuracion_perfil.html">Configurar Perfil</a>
 			</div>
 			<div id="opciones">
 				<p class="boton" id="botonAñadir">+</p>
-				<p id="textoAñadir">Añadir Sensor</p>
+				<p id="textoAñadir">Añadir Sensor Favorito</p>
 				<input id="buscador" type="text" placeholder="Buscar sensor...">
 			</div>
 			<div id="tablaSensores">
@@ -52,13 +52,15 @@
 				    <th>Sensor</th>
 				    <th>Estado</th>
 				    <th>Tiempo de funcionamiento</th>
+            <th>Dueño</th>
 				    <th>Eliminar</th>
 				  </tr>
 				  <tr>
-				    <td id="nombreSensor"><a href="info_sensor.html">Temperatura - RF875</a></td>
+				    <td id="nombreSensor">Temperatura - RF875</td>
 				    <td>Funcionando</td>
 				    <td>2 horas</td>
-            <td>
+            <td>Rahim_</td>
+				    <td>
               <div class="boton" id="botonEliminar">-</div>
             </td>
 				  </tr>
@@ -66,6 +68,7 @@
 				    <td id="nombreSensor">Humedad - KW965</td>
 				    <td>Fallo</td>
 				    <td>3 días</td>
+            <td>Ju4nillo</td>
             <td>
               <div class="boton" id="botonEliminar">-</div>
             </td>
@@ -74,6 +77,7 @@
 				    <td id="nombreSensor">Iluminación - BF852</td>
 				    <td>Funcionando</td>
 				    <td>5.8 horas</td>
+            <td>AytoVLL</td>
             <td>
               <div class="boton" id="botonEliminar">-</div>
             </td>
@@ -82,6 +86,7 @@
 				    <td id="nombreSensor">Contaminación - PA785</td>
 				    <td>Funcionando</td>
 				    <td>3 minutos</td>
+            <td>AytoVLL</td>
             <td>
               <div class="boton" id="botonEliminar">-</div>
             </td>
@@ -90,10 +95,12 @@
 				    <td id="nombreSensor">Acústico - NS090</td>
 				    <td>Reparación</td>
 				    <td>1 Año 3 días</td>
+            <td>Yaiza</td>
             <td>
               <div class="boton" id="botonEliminar">-</div>
             </td>
 				  </tr>
+
 				</table>
 			</div>
 		</div>

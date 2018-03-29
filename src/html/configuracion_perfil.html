@@ -12,37 +12,35 @@
     <meta charset="utf-8" />
 
     <!-- Links to necessary files to run the webpage -->
-  <link rel="stylesheet" type="text/css" href="../css/configuracion_perfil.css" />
-  <link rel="icon" type="image/png" href="../img/logo.png" />
+    <link rel="stylesheet" type="text/css" href="../css/perfil.css" />
+    <link rel="stylesheet" type="text/css" href="../css/botones.css" />
+    <link rel="stylesheet" type="text/css" href="../css/cabecera.css" />
+    <link rel="icon" type="image/png" href="../img/logo.png" />
 </head>
 
 <!-- WEBPAGE'S BODY -->
 
 <body>
-    <!-- Upper action bar with button -->
     <div id="cabecera">
-      <div id="titulo">
-        <p id ="tituloTexto">SMART <b>MAPS</b></p>
-    </div>
-    <div id="perfil">
-      <p id="botonCerrarSesion">Cerrar Sesión</p>
-      <p id="imgPipo"><img src="../img/user1.png" alt="PIPO!"></p>
-    </div>
-  </div>
+        <a id ="titulo" href="principalRegistrado.html">SMART <b>MAPS</b></a>
+		<div id="perfil">
+			<a class="boton" id="buttonHeader" href="principalSinRegistrar.html">Cerrar Sesión</a>
+			<a id="imgPipo" href="usuario.html"><img src="../img/user1.png" alt="PIPO!"></a>
+		</div>
+	</div>
 
-    <!-- Left sensor preview bar, static until the next release -->
     <div id="cuerpo">
-      <div id="imgPipoBig">
-        <img src="../img/user1.png" alt="SENSOR">
-        <p id="underpipo">Jhon21</p>
-      </div>
+		<div id="imgPipoBig">
+			<img src="../img/user1.png" alt="SENSOR">
+			<p id="underpipo">Jhon21</p>
+		</div>
 
     <!-- Different tabs within the profile -->
     <div id="content">
       <div id="pestañas">
-        <p id="pestaña">Mis Sensores</p>
-        <p id="pestaña">Sensores Favoritos</p>
-        <p id="pestañaSel">Configurar Perfil</p>
+        <a class=pestaña id="pestaña" href="usuario.html">Mis Sensores</a>
+        <a class=pestaña id="pestaña" href="sensores_fav.html">Sensores Favoritos</a>
+        <a class=pestaña id="pestañaSel">Configurar Perfil</a>
       </div>
 
       <div class="row" id="firstRow">
@@ -76,7 +74,7 @@
         <input id="textbox" type="text">
       </div>
 
-      <div class="row" id="lastRow">
+      <div class="row">
         <p id="etiqueta"> Empresa: </p>
         <input id="textbox" type="text">
         <p id="etiqueta"> Tfno: </p>
@@ -86,7 +84,7 @@
     </div>
   </div>
   <div id="bottom">
-    <p id="botonGuardarCambios">Guardar Cambios</p>
+    <p class="boton" id="botonGuardarCambios">Guardar Cambios</p>
   </div>
 
 </body>

@@ -6,91 +6,20 @@ body {
     background-size: 100%;
 }
 
-
-header nav {
-    display: flex;
-    border-bottom: solid black 2px;
-    background-color: white;
-} 
-
-#titulo{
-    width: 20%; /* cambiado de 20 a 10 */
-    margin:0px;
-}
-
-#titulo p:hover {
-    cursor: pointer;
-}
-
-#titulo p {
-    margin: 1em 1em;
-    font-size: 2em;
-}
-
-#perfil{
-    margin: 0.5em 1em;
-    justify-content: flex-end;
-    display: flex;   
-    margin-right: 4.9em; /* subirlo causa overflow */
-}
-
-#perfil p:hover {
-    cursor: pointer;
-}
-
-#buttonHeader1 {
-    transition-property: background-color, color;
-    transition-duration: 0.4s;
-    transition-timing-function: ease-out;
-    -webkit-transition-property: background-color, color;
-    -webkit-transition-duration: 0.4s;
-    -o-transition-property: background-color, color;
-    -o-transition-duration: 0.4s;
-    text-align: center;
-    background-color: #7db6eb;
-    color: black;
-    border-color:black;
-    font-family: sans-serif;
-    font-size: 1em;
-    text-decoration: none;
-    padding: 0.8em 3em;
-    border: solid 2px rgb(85, 84, 84);
-    margin: 1.8em 1em;
-    border-radius: 10px;
-    box-shadow: 2px 2px 5px rgb(32, 23, 23);
-  }
-  
-  #buttonHeader1:hover {
-    cursor: pointer;
-    position: relative;
-    transition-property: background-color, color;
-    transition-duration: 0.4s;
-    transition-timing-function: ease-out;
-    -webkit-transition-property: background-color, color;
-    -webkit-transition-duration: 0.4s;
-    -o-transition-property: background-color, color;
-    -o-transition-duration: 0.4s;
-    background-color:white;
-    color:black;
-  }
-
-#buttonHeader1:active{
-    transform:translateY(2px);
-    -webkit-transition-duration: 0s;
-    background-color:white;
-    box-shadow: 0 0 0 black;
-    transform: translateY(2px);
-}
-
-body section {
-    float: left;
-    min-height: 100%;
+#actionBar{
     width: 15%;  
+    padding: 2em;
     border-right: solid black 2px;
 }
 
-body section div {
-    margin: 1em;
+#actionBar div { /*Para cada elemento del action bar*/
+    display: flex;
+}
+
+#buscador {
+    width: 60%;
+    justify-content: center;
+    margin: 1em 1em;
 }
 
 .titulosBarraLateral {
@@ -108,38 +37,6 @@ hr {
     margin-bottom: 0.8em;
 }
 
-#buscador {
-    width: 60%;
-    justify-content: center;
-    margin: 2em 1em;
-}
-
-body section div #ir {
-    width: 15%;
-    justify-content: center;
-}
-
-
-#map {
-    width: 84.5%;
-    height: 100%;
-}
-
-html, body {
-    height: 93%;
-    margin: 0;
-    padding: 0;
-    
-}
-
-body section div div {
-    display: flex;
-}
-
-#actionBar div {
-    display: flex;
-}
-
 .titulosBarraLateral p {
     margin-right: 1em;
     font-weight: bold;
@@ -150,48 +47,13 @@ body section div div {
     margin-left: 1em;
 }
 
-nav #userImage {
-    display: flex;
-    justify-content: flex-end;
-    padding-top: 1em;
-    padding-right: 1em; 
-    width: 9%;
+#buttonFilters {
+    padding: 0.8em 3em;
+    margin: 1.8em 1em 1.8em;
 }
 
-#buttonFilters {
-    transition-property: background-color, color;
-    transition-duration: 0.4s;
-    transition-timing-function: ease-out;
-    -webkit-transition-property: background-color, color;
-    -webkit-transition-duration: 0.4s;
-    -o-transition-property: background-color, color;
-    -o-transition-duration: 0.4s;
-    text-align: center;
-    background-color: #7db6eb;
-    color: black;
-    border-color:black;
-    font-family: sans-serif;
-    font-size: 1em;
-    text-decoration: none;
-    padding: 0.8em 3em;
-    border: solid 2px rgb(85, 84, 84);
-    margin: 1.8em 1em 1.8em;
-    border-radius: 10px;
-    box-shadow: 2px 2px 5px rgb(32, 23, 23);
-}
-  
-  #buttonFilters:hover {
-    cursor: pointer;
-    position: relative;
-    transition-property: background-color, color;
-    transition-duration: 0.4s;
-    transition-timing-function: ease-out;
-    -webkit-transition-property: background-color, color;
-    -webkit-transition-duration: 0.4s;
-    -o-transition-property: background-color, color;
-    -o-transition-duration: 0.4s;
-    background-color: white;
-    color:black;
+#map{
+    width: 100%;
 }
 /* ------------------------------------------------------------------ */
 

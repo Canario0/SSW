@@ -12,35 +12,28 @@
     <meta charset="utf-8" />
 
     <!-- Links to necessary files to run the webpage -->
-    <link rel="stylesheet" type="text/css" href="../css/principal_registrado.css" />
-    <link rel="icon" type="image/png" href="logo.png" />
+    <link rel="stylesheet" type="text/css" href="../css/principal.css" />
+    <link rel="stylesheet" type="text/css" href="../css/botones.css" />
+    <link rel="stylesheet" type="text/css" href="../css/cabecera.css" />
+    <link rel="icon" type="image/png" href="../img/logo.png" />
 </head>
 
 <!-- WEBPAGE'S BODY -->
 
 <body>
+    <div id="cabecera">
+        <a id="titulo" href="principalRegistrado.html">SMART <b>MAPS</b></a>
+        <div id="perfil">
+            <a class="boton" id="buttonHeader" href="usuario.html">Mi Perfil</a>
+            <a class="boton" id="buttonHeader">Sensores Favoritos</a>
+            <a class="boton" id="buttonHeader">Añadir Sensor</a>
+            <a class="boton" id="buttonHeader" href="configuracion_perfil.html">Configuración</a>
+            <a class="boton" id="buttonHeader" href="principalSinRegistrar.html">Cerrar Sesión</a>
+            <a id="imgPipo" href="usuario.html"><img src="../img/user1.png" alt="user logo"></a>
+        </div>
+    </div>
 
-    <!-- Upper action bar with button -->
-    <header> 
-            <nav>
-                <div id="titulo"><p>SMART <b>MAPS</b></p></div>
-                <div id="perfil">
-                    <a id="buttonHeader1" href="usuario.html">Mi Perfil</a>
-                    <a id="buttonHeader1">Sensores Favoritos</a>
-                    <a id="buttonHeader1">Añadir Sensor</a>
-                    <a id="buttonHeader1" href="configuracion_perfil.html">Configuración</a>
-                    <a id="buttonHeader1" href="principalSinRegistrar.html">Cerrar Sesión</a>
-                </div>
-                <div id="userImage">
-                    <img src="../img/user1.png" alt="user logo" height="80em" width="80em">                
-                </div>
-
-            </nav>
-    </header>
-
-
-    <!-- Left action bar, static until the next release -->
-    <section>
+    <div id="cuerpo">
         <div id="actionBar">
             <form action="">
                 <input id="buscador" type="text" name="fname">
@@ -74,91 +67,74 @@
               </label><br>
             </div>
             <input type="range" min="1" max="100" value="50" class="slider2" id="myRange">
-              <p id="buttonFilters">Aplicar Filtros</p>
-            
-              
-          </div>
-    </section>
+            <p class="boton" id="buttonFilters">Aplicar Filtros</p>
+        </div>
 
+        <div id="map">
+            <script>
+                var citymap = {
+                    zaragoza: {
+                      center: {lat: 41.647, lng: -0.890},
+                      population: 271485
+                    },
+                    valladolid: {
+                      center: {lat: 41.593, lng: -4.697},
+                      population: 100000
+                    },
+                    madrid: {
+                      center: {lat: 40.428, lng: -3.789},
+                      population: 385779
+                    },
+                    sevilla: {
+                      center: {lat: 37.399, lng: -5.938},
+                      population: 603502
+                    }
+                };
 
-    <div id="map"></div>
-    <script>
-        var citymap = {
-        zaragoza: {
-          center: {lat: 41.647, lng: -0.890},
-          population: 271485
-        },
-        valladolid: {
-          center: {lat: 41.593, lng: -4.697},
-          population: 100000
-        },
-        madrid: {
-          center: {lat: 40.428, lng: -3.789},
-          population: 385779
-        },
-        sevilla: {
-          center: {lat: 37.399, lng: -5.938},
-          population: 603502
-        }
-      };
+                function initMap() {
+                    // Create the map.
+                    var map = new google.maps.Map(document.getElementById('map'), {
+                        zoom: 6.5,
+                        center: {lat: 40.428, lng: -3.789}
+                    });
 
-        function initMap() {
-        // Create the map.
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 6.5,
-          center: {lat: 40.428, lng: -3.789}
-        });
+                    var flightPlanCoordinates = [
+                        {lat: 37.399, lng: -5.938},
+                        {lat: 39.046, lng: -1.784},
+                        {lat: 40.865, lng: -2.498},
+                        {lat: 41.647, lng: -0.890}
+                    ];
 
-        var flightPlanCoordinates = [
-          {lat: 37.399, lng: -5.938},
-          {lat: 39.046, lng: -1.784},
-          {lat: 40.865, lng: -2.498},
-          {lat: 41.647, lng: -0.890}
-        ];
+                    var flightPath = new google.maps.Polyline({
+                        path: flightPlanCoordinates,
+                        geodesic: true,
+                        strokeColor: '#2E9AFE',
+                        strokeOpacity: 1.0,
+                        strokeWeight: 2
+                    });
 
-        var flightPath = new google.maps.Polyline({
-          path: flightPlanCoordinates,
-          geodesic: true,
-          strokeColor: '#2E9AFE',
-          strokeOpacity: 1.0,
-          strokeWeight: 2
-        });
+                    flightPath.setMap(map);
 
-        flightPath.setMap(map);
-
-        // Construct the circle for each value in citymap.
-        // Note: We scale the area of the circle based on the population.
-        for (var city in citymap) {
-          var cityCircle = new google.maps.Circle({
-          // Add the circle for this city to the map.
-            strokeColor: '#2E9AFE',
-            strokeOpacity: 0.8,
-            strokeWeight: 2,
-            fillColor: '#2E9AFE',
-            fillOpacity: 0.35,
-            map: map,
-            center: citymap[city].center,
-            radius: Math.sqrt(citymap[city].population) * 100
-          });
-        }
-      }
-
-    </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBRjO3Gm24tyvsh4gvX31esp3dFS-oyJ3g&callback=initMap" async
-        defer></script>
-
-
-
-    <!--
-        <footer>
-            <div>
-                <nav>
-                    <p>&copy; 2017 SSW UVa</p>
-                    <p>Smart Maps</p>
-                </nav>
-            </div>
-        </footer>
-        -->
+                    // Construct the circle for each value in citymap.
+                    // Note: We scale the area of the circle based on the population.
+                    for (var city in citymap) {
+                        var cityCircle = new google.maps.Circle({
+                            // Add the circle for this city to the map.
+                            strokeColor: '#2E9AFE',
+                            strokeOpacity: 0.8,
+                            strokeWeight: 2,
+                            fillColor: '#2E9AFE',
+                            fillOpacity: 0.35,
+                            map: map,
+                            center: citymap[city].center,
+                            radius: Math.sqrt(citymap[city].population) * 100
+                        });
+                    }
+                }
+            </script>
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBRjO3Gm24tyvsh4gvX31esp3dFS-oyJ3g&callback=initMap" async defer></script>
+        </div>
+    </div>
 </body>
 
 </html>

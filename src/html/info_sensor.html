@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<!-- WEBPAGE'S HEAD -->
+
+<head>
+
+    <!-- Page's title -->
+    <title>Smart Maps</title>
+
+    <!-- Character ccodifcation -->
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8" />
+
+    <!-- Links to necessary files to run the webpage -->
+	<link rel="stylesheet" type="text/css" href="../css/perfil.css" />
+	<link rel="stylesheet" type="text/css" href="../css/cabecera.css" />
+	<link rel="stylesheet" type="text/css" href="../css/botones.css" />
+    <link rel="icon" type="image/png" href="../img/logo.png" />
+</head>
+
+<!-- WEBPAGE'S BODY -->
+
+
+<body>
+	<div id="cabecera">
+		<a id ="titulo" href="principalRegistrado.html">SMART <b>MAPS</b></a>
+		<div id="perfil">
+			<a class="boton" id="buttonHeader" href="principalSinRegistrar.html">Cerrar Sesión</a>
+			<a id="imgPipo" href="usuario.html"><img src="../img/user1.png" alt="PIPO!"></a>
+		</div>
+	</div>
+
+	<div id="cuerpo">
+		<div id="imgPipoBig">
+			<img src="../img/user1.png" alt="PIPO!">
+			<p id="underpipo">Jhon21</p>
+		</div>
+
+		<div id="content">
+			<div id="pestañas">
+				<a class=pestaña id=pestañaSel href="usuario.html">Mis Sensores</a>
+				<a class=pestaña id=pestaña href="sensores_fav.html">Sensores Favoritos</a>
+				<a class=pestaña id=pestaña href="configuracion_perfil.html">Configurar Perfil</a>
+			</div>
+			
+			<script>
+				window.onload = function () {
+				
+				var chart = new CanvasJS.Chart("chartContainer", {
+					animationEnabled: true,
+					theme: "light2",
+					title:{
+						text: "Temperatura - RF875"
+					},
+					axisY:{
+						title: "Temperatura (Cº)",
+						includeZero: false
+					},
+					axisX:{
+						title: "Tiempo (Horas)",
+						includeZero: false
+					},
+					data: [{        
+						type: "line",       
+						dataPoints: [
+							{ x: 11, y: 18 },
+							{ x: 12, y: 19 },
+							{ x: 13, y: 19.5 },
+							{ x: 14, y: 21 },
+							{ x: 15, y: 21.3, indexLabel: "highest",markerColor: "red", markerType: "triangle" },
+							{ x: 16, y: 20 },
+							{ x: 17, y: 20.5 },
+							{ x: 18, y: 19.8 },
+							{ x: 19, y: 18 },
+							{ x: 20, y: 17.5, indexLabel: "lowest",markerColor: "DarkSlateGrey", markerType: "cross" }
+						]
+					}]
+				});
+				chart.render();
+				
+				}
+			</script>
+			<div class="tablaYultimasMedidas">
+				<div id="chartContainer"></div>
+				<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+				<div id="tablaSensores">
+					<table id="tablaMedidas">
+					  <tr>
+						<th>Últimas Medidas</th>
+					  </tr>
+						<tr>
+							<td>17.5º</td>
+						</tr>
+						<tr>
+							<td>18º</td>
+						</tr>
+						<tr>
+							<td>19.8º</td>
+						</tr>
+						<tr>
+							<td>20.5º</td>
+						</tr>
+						<tr>
+							<td>20º</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<div id="botonesYfavoritos">
+				<p class="boton" id="botonesbajos">Añadir Medición</p>
+				<p class="boton" id="botonesbajos">Limpiar Medidas</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
