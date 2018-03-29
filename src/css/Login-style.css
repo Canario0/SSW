@@ -66,6 +66,7 @@ section a{
     transition-delay: 0.4s;
     transition-property: color;
     transition-timing-function: ease;
+    cursor: pointer;
 }
 
 section a:hover{
@@ -143,6 +144,7 @@ input[type=submit]{
     border: solid 2px rgb(85, 84, 84);
     border-radius: 10px;
     box-shadow: 2px 2px 5px rgb(32, 23, 23);
+    cursor:pointer;
 }
 
 input[type=submit]:hover{
