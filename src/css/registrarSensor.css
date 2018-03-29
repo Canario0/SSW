@@ -23,34 +23,11 @@ input [type=radio]{
 }
 
 input[type=submit]{
-    align-content: center;
-    transition-property: background-color, color;
-    transition-duration: 0.4s;
-    transition-timing-function: ease-out;
-    -webkit-transition-property: background-color, color;
-    -webkit-transition-duration: 0.4s;
-    -o-transition-property: background-color, color;
-    -o-transition-duration: 0.4s;
-    text-align: center;
-    background-color: #7db6eb;
-    color: black;
-    border-color:black;
-    font-family: sans-serif;
-    font-size: 1em;
-    text-decoration: none;
     padding-top: 1em;
     padding-bottom: 1em;
     padding-left: 5.5em;
     padding-right: 5.5em;
     margin-left: 2em;
-    margin-top: 2em;
-    border: solid 2px rgb(85, 84, 84);
-    border-radius: 10px;
-    box-shadow: 2px 2px 5px rgb(32, 23, 23);
-}
-
-input[type=submit]:hover{
-    background-color:white;
 }
 
 .textoVisibiliad{

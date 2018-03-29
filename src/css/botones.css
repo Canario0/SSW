@@ -4,6 +4,7 @@ En el html se tiene que utilizar la clase "boton"
 */
 .boton{
     color: black;
+    font-size: 1em;
 	background-color: #7db6eb;
     border-color:black;
     border: solid 2px rgb(85, 84, 84);
