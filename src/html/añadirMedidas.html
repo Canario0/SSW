@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<!-- WEBPAGE'S HEAD -->
+
+<head>
+
+    <!-- Page's title -->
+    <title>Smart Maps</title>
+
+    <!-- Character ccodifcation -->
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8" />
+
+    <!-- Links to necessary files to run the webpage -->
+	<link rel="stylesheet" type="text/css" href="../css/perfil.css" />
+	<link rel="stylesheet" type="text/css" href="../css/cabecera.css" />
+	<link rel="stylesheet" type="text/css" href="../css/botones.css" />
+    <link rel="icon" type="image/png" href="../img/logo.png" />
+</head>
+
+<!-- WEBPAGE'S BODY -->
+
+
+<body>
+	<div id="cabecera">
+		<a id ="titulo" href="principalRegistrado.html">SMART <b>MAPS</b></a>
+		<div id="perfil">
+			<a class="boton" id="buttonHeader" href="principalSinRegistrar.html">Cerrar Sesión</a>
+			<a id="imgPipo" href="usuario.html"><img src="../img/user1.png" alt="PIPO!"></a>
+		</div>
+	</div>
+
+	<div id="cuerpo">
+		<div id="imgPipoBig">
+			<img src="../img/user1.png" alt="PIPO!">
+			<p id="underpipo">Jhon21</p>
+		</div>
+
+		<div id="content">
+			<div id="pestañas">
+				<a class=pestaña id=pestaña href="usuario.html">Mis Sensores</a>
+				<a class=pestaña id=pestaña href="sensores_fav.html">Sensores Favoritos</a>
+				<a class=pestaña id=pestaña href="configuracion_perfil.html">Configurar Perfil</a>
+			</div>
+			
+			<div>
+				<p id="tituloMedidas">Añadir Medidas</p>
+				<div id="formularioMedidas">
+					<p id="etiquetaMedidas">Fecha Medición</p>
+					<input id="textboxMedidas" type="text">
+					<p id="etiquetaMedidas">Medida</p>
+					<input id="textboxMedidas" type="text">
+					<a class="boton" id="botonMedidas" href="info_sensor.html">Añadir Medidas</a>
+				</div>
+				<div id="tablaSensores">
+					<table id="tabla">
+					<tr>
+						<th>Fecha</th>
+						<th>Medida</th>
+						<th>Estado del Sensor</th>
+					</tr>
+					<tr>
+						<td>23/12/2017 - 10:23 a.m</td>
+						<td>5º</td>
+						<td>Funcionando</td>
+					</tr>
+					<tr>
+						<td>24/12/2017 - 11:00 a.m</td>
+						<td>6</td>
+						<td>Error</td>
+					</tr>
+					<tr>
+						<td>01/01/2018 - 16:56 p.m</td>
+						<td>12º</td>
+						<td>Funcionando</td>
+					</tr>
+					<tr>
+						<td>03/03/2018 - 10:45 a.m</td>
+						<td>12º</td>
+						<td>Funcionando</td>
+					</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
