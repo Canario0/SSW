@@ -202,7 +202,6 @@ a:visited { color: black ; text-decoration: none }
 }
 
 #formularioMedidas {
-	margin-top: 2em;
 	display: flex;
 }
 
@@ -222,6 +221,14 @@ a:visited { color: black ; text-decoration: none }
 	width: 20em;
 	height: 2em;
 	margin-top: 0.5em;
+}
+
+.imgInfo {
+	width: 3.5em;
+	height: 3.5em;
+	margin-right: 4em;
+	margin-top: 2.5em;
+	margin-left: 2em;
 }
 
 
