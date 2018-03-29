@@ -12,28 +12,24 @@
     <meta charset="utf-8" />
 
     <!-- Links to necessary files to run the webpage -->
-    <link rel="stylesheet" type="text/css" href="../css/principal_sin_registrar.css" />
-    <link rel="icon" type="image/png" href="logo.png" />
+    <link rel="stylesheet" type="text/css" href="../css/principal.css" />
+    <link rel="stylesheet" type="text/css" href="../css/botones.css" />
+    <link rel="stylesheet" type="text/css" href="../css/cabecera.css" />
+    <link rel="icon" type="image/png" href="../img/logo.png" />
 </head>
 
 <!-- WEBPAGE'S BODY -->
 
-<body >
+<body>
+    <div id="cabecera">
+        <a id="titulo" href="principalSinRegistrar.html">SMART <b>MAPS</b></a>
+        <div id="perfil">
+            <a class="boton" id="buttonHeader" href="Registrar.html">Registrarse</a>
+            <a class="boton" id="buttonHeader" href="Login.html" >Iniciar Sesión</a>
+        </div>
+    </div>
 
-    <!-- Upper action bar with button -->
-    <header>
-        <nav>
-            <div id="titulo"><p>SMART <b>MAPS</b></p></div>
-            <div id="perfil">
-                <a id="buttonHeader1" href="./Registrar.html">Registrarse</a>
-                <a id="buttonHeader2" href="./Login.html" >Iniciar Sesión</a>
-            </div>
-        </nav>
-    </header>
-
-
-    <!-- Left action bar, static until the next release -->
-    <section>
+    <div id="cuerpo">
         <div id="actionBar">
             <form action="">
                 <input id="buscador" type="text" name="fname">
@@ -53,86 +49,79 @@
             </div>
             <hr>
             <div>
-              <p>Activar / Desactivar</p>
-              <label class="switch">
+                <p>Activar / Desactivar</p>
+                <label class="switch">
                 <input type="checkbox">
                 <span class="slider round"></span>
-              </label><br>
+                </label><br>
             </div>
-              <input type="range" min="1" max="100" value="50" class="slider3" id="myRange">
-              <p id="buttonFilters">Aplicar Filtros</p>
-          </div>
-    </section>
+            <input type="range" min="1" max="100" value="50" class="slider3" id="myRange">
+            <p class="boton" id="buttonFilters">Aplicar Filtros</p>
+        </div>
 
+        <div id="map">
+            <script>
+                var citymap = {
+                    zaragoza: {
+                      center: {lat: 41.647, lng: -0.890},
+                      population: 271485
+                    },
+                    valladolid: {
+                      center: {lat: 41.593, lng: -4.697},
+                      population: 100000
+                    },
+                    madrid: {
+                      center: {lat: 40.428, lng: -3.789},
+                      population: 385779
+                    },
+                    sevilla: {
+                      center: {lat: 37.399, lng: -5.938},
+                      population: 603502
+                    }
+                };
 
-    <div id="map"></div>
-    <script>
-        var citymap = {
-        zaragoza: {
-          center: {lat: 41.647, lng: -0.890},
-          population: 271485
-        },
-        valladolid: {
-          center: {lat: 41.593, lng: -4.697},
-          population: 100000
-        },
-        madrid: {
-          center: {lat: 40.428, lng: -3.789},
-          population: 385779
-        },
-        sevilla: {
-          center: {lat: 37.399, lng: -5.938},
-          population: 603502
-        }
-      };
+                function initMap() {
+                    // Create the map.
+                    var map = new google.maps.Map(document.getElementById('map'), {
+                      zoom: 6.5,
+                      center: {lat: 40.428, lng: -3.789}
+                    });
 
-        function initMap() {
-        // Create the map.
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 6.5,
-          center: {lat: 40.428, lng: -3.789}
-        });
+                    var flightPlanCoordinates = [
+                        {lat: 37.399, lng: -5.938},
+                        {lat: 39.046, lng: -1.784},
+                        {lat: 40.865, lng: -2.498},
+                        {lat: 41.647, lng: -0.890}
+                    ];
 
-        var flightPlanCoordinates = [
-          {lat: 37.399, lng: -5.938},
-          {lat: 39.046, lng: -1.784},
-          {lat: 40.865, lng: -2.498},
-          {lat: 41.647, lng: -0.890}
-        ];
+                    var flightPath = new google.maps.Polyline({
+                        path: flightPlanCoordinates,
+                        geodesic: true,
+                        strokeColor: '#2E9AFE',
+                        strokeOpacity: 1.0,
+                        strokeWeight: 2
+                    });
 
-        var flightPath = new google.maps.Polyline({
-          path: flightPlanCoordinates,
-          geodesic: true,
-          strokeColor: '#2E9AFE',
-          strokeOpacity: 1.0,
-          strokeWeight: 2
-        });
+                    flightPath.setMap(map);
 
-        flightPath.setMap(map);
-
-        // Construct the circle for each value in citymap.
-        // Note: We scale the area of the circle based on the population.
-        for (var city in citymap) {
-          var cityCircle = new google.maps.Circle({
-          // Add the circle for this city to the map.
-            strokeColor: '#2E9AFE',
-            strokeOpacity: 0.8,
-            strokeWeight: 2,
-            fillColor: '#2E9AFE',
-            fillOpacity: 0.35,
-            map: map,
-            center: citymap[city].center,
-            radius: Math.sqrt(citymap[city].population) * 100
-          });
-        }
-      }
-
-    </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBRjO3Gm24tyvsh4gvX31esp3dFS-oyJ3g&callback=initMap" async
-        defer></script> 
-
-
-
-</body>
-
+                    // Construct the circle for each value in citymap.
+                    // Note: We scale the area of the circle based on the population.
+                    for (var city in citymap) {
+                        var cityCircle = new google.maps.Circle({
+                            // Add the circle for this city to the map.
+                            strokeColor: '#2E9AFE',
+                            strokeOpacity: 0.8,
+                            strokeWeight: 2,
+                            fillColor: '#2E9AFE',
+                            fillOpacity: 0.35,
+                            map: map,
+                            center: citymap[city].center,
+                            radius: Math.sqrt(citymap[city].population) * 100
+                        });
+                    }
+                }
+            </script>
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBRjO3Gm24tyvsh4gvX31esp3dFS-oyJ3g&callback=initMap" async defer></script> 
+        </div>
+    </body>
 </html>

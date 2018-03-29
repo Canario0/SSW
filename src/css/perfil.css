@@ -1,0 +1,204 @@
+body{
+    font-family:'Roboto', sans-serif;
+    font-weight:300;
+    background-image: url(../img/fondo.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+#imgPipoBig{
+	width: 20%; /*20% del total horizontal de la pantalla*/
+	height: 25em; /*Para que no se vaya hasta abajo si la página es larga*/
+	margin: 3em;
+	padding: 2em 0;
+	border-radius: 2em;
+	text-align: center;
+}
+
+#imgPipoBig img{
+	width: 80%; /*80% del contenedor de la imagen*/
+}
+
+#underpipo {
+  font-weight: bold;
+  font-size: 1.5em;
+  margin-top: 2em;
+}
+
+#content{
+  padding-top: 2em;
+  padding-right: 2em;
+  width: 80%; /*80% del total horizontal de la pantalla*/
+}
+
+#pestañas{
+	display: flex;
+	padding: 2em 5em;
+	justify-content: space-around;
+}
+
+.pestaña, .pestaña:link, .pestaña:visited{
+	font-size: 2em;
+	border-bottom: 0.1em ridge black;
+	text-decoration: none;
+	color: black;
+	cursor:pointer;
+}
+
+#pestañaSel{
+	border-bottom: 0.1em ridge #7db6eb;
+}
+
+/*MIS SENSORES*/
+#opciones{
+	display:flex;
+	justify-content: center;
+}
+
+#tituloSensor {
+	font-size: 2em;
+}
+
+#botonAñadir{
+	font-size: 1.5em;
+	border-radius: 5px;
+	width: 2em;
+	margin-right: 1em;
+}
+#textoAñadir{
+	font-size: 1.5em;
+}
+
+#buscador{
+	border-radius: 10px;
+	margin: 2em 15em;
+	width: 25em;
+}
+
+#tablaSensores{
+	font-size: 1.2em;
+	display:flex;
+	justify-content:center;
+}
+
+#tablaSensores th{
+	padding: 1em 3em;
+	background-color: #7db6eb;
+	color: white;
+}
+
+#tablaSensores td{
+	text-align: left;
+	padding: 0.5em;
+	text-align: center;
+}
+
+#nombreSensor {
+	font-weight: bold;
+}
+#botonEliminar{
+	font-size: 1.5em;
+	margin: 0 1.5em;
+	border-radius: 5px;
+}
+#tablaSensores tr:nth-child(even){background-color: #FFFFFF;}
+#tablaSensores tr:nth-child(odd) {background-color: #BBBBBB;}
+/*#tablaSensores tr:hover {background-color: #888888;}*/
+
+/*CONFIGURAR PERFIL*/
+.row {
+  display: flex;
+  height: 20%;
+}
+
+#firstRow {
+  margin-top: 2em;
+}
+
+#etiqueta {
+  text-align: center;
+  font-size: 1em;
+  margin-left: 4em;
+  width: 7em;
+  text-align: left;
+  font-size: 1.2em;
+  /* margin-right: 5% */
+}
+
+#textbox {
+  margin-top: 0.5em;
+  margin-bottom: 2.5em;
+  margin-left: 1em;
+  width: 25em;
+  height: 2em;
+  /*height: 1em;
+  padding: 1em 0em 0em 1em;
+  background-color: #00FF00;
+  margin-top: 0.5em;
+  font-size: 1.2em;*/
+}
+
+#combobox {
+  margin-top: 0.5em;
+  margin-left: 1em;
+  width: 8em;
+  height: 3em;
+  border: solid;
+  box-shadow: none;
+  background-color: white;
+  background-image: none;
+  appearance: none;
+}
+
+#botonGuardarCambios {
+	padding: 1em 3em;
+	margin: 0 32em;
+}
+
+#chartContainer {
+	margin-top: 4em;
+	height: 30em;
+	width: 80%;
+}
+
+.tablaYultimasMedidas {
+	display: flex;
+}
+
+#tablaMedidas{
+	display:flex;
+	justify-content:center;
+	margin-top: 4em;
+	width: 10%;
+}
+
+a:link { color: black ; text-decoration: none} 
+a:hover { color: rgb(0, 0, 0); text-decoration: none} 
+a:visited { color: black ; text-decoration: none }
+
+#botonesYfavoritos { 
+	display: flex;
+	justify-content: center;
+	height: 18%;
+}
+
+#botonesbajos {
+	height: 2em;
+	margin: 3em 3em;
+	width: 10em;
+	padding-top: 0.9em;
+}
+
+/*
+#cabecera{background: #00FF00;}
+ #titulo{background: #FF0000;}
+ #perfil{background: #FF0000;}
+  #imgPipo{background: #FF00FF;}
+#cuerpo{background: #0000FF;}
+ #imgPipoBig{background: #00FF00;}
+  #underpipo{background: #FF0000;}
+ #content{background: #FF0000;}
+  #pestañas{background: #00FF00;}
+   .pestaña{background: #FFFF00;}
+  #opciones{background: #00FFFF;}
+  */
