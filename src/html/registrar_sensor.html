@@ -4,92 +4,161 @@
 
 <head>
 
-    <!-- Page's title -->
-    <title>Smart Maps</title>
+  <!-- Page's title -->
+  <title>Smart Maps</title>
 
-    <!-- Character ccodifcation -->
-    <meta name="viewport" content="initial-scale=1.0">
-    <meta charset="utf-8" />
+  <!-- Character ccodifcation -->
+  <meta name="viewport" content="initial-scale=1.0">
+  <meta charset="utf-8" />
 
-    <!-- Links to necessary files to run the webpage -->
-    <link rel="stylesheet" type="text/css" href="../css/perfil.css" />
-    <link rel="stylesheet" type="text/css" href="../css/botones.css" />
-    <link rel="stylesheet" type="text/css" href="../css/cabecera.css" />
-    <link rel="stylesheet" type="text/css" href="../css/registrarSensor.css" />
+  <!-- Links to necessary files to run the webpage -->
+  <link rel="stylesheet" type="text/css" href="../css/perfil.css" />
+  <link rel="stylesheet" type="text/css" href="../css/botones.css" />
+  <link rel="stylesheet" type="text/css" href="../css/cabecera.css" />
+  <link rel="stylesheet" type="text/css" href="../css/registrarSensor.css" />
 
-    <link rel="icon" type="image/png" href="../img/logo.png" />
+  <link rel="icon" type="image/png" href="../img/logo.png" />
 </head>
 
 <!-- WEBPAGE'S BODY -->
 
 <body>
-    <div id="cabecera">
-        <a id ="titulo" href="principalRegistrado.html">SMART <b>MAPS</b></a>
-		<div id="perfil">
-			<a class="boton" id="buttonHeader" href="principalSinRegistrar.html">Cerrar Sesión</a>
-			<a id="imgPipo" href="usuario.html"><img src="../img/user1.png" alt="PIPO!"></a>
-		</div>
-	</div>
-<form>
-    <div id="cuerpo">
-		<div id="imgPipoBig">
-			<img src="../img/user1.png" alt="SENSOR">
-			<p id="underpipo"><input type="text" name="Nombre Sensor" size="11" value="         RF875"></p>
-		</div>
-
-    <!-- Different tabs within the profile -->
-    <div id="content">
-      <div id="pestañas">
-        <a class=pestaña id="pestaña" href="usuario.html">Mis Sensores</a>
-        <a class=pestaña id="pestaña" href="sensores_fav.html">Sensores Favoritos</a>
-        <a class=pestaña id="pestañaSel">Configurar Perfil</a>
-      </div>
-
-      <div id="prueba"></div>
-      <div class="row" id="firstRow">
-        <p id="etiqueta"> Nombre: </p>
-        <input id="textbox" type="text">
-        <p id="etiqueta"> Fecha de nacimiento: </p>
-        <select id="combobox">
-          <option value="opcion-1">Día</option>
-        </select>
-
-        <select id="combobox">
-          <option value="opcion-1">Mes</option>
-        </select>
-
-        <select id="combobox">
-          <option value="opcion-1">Año</option>
-        </select>
-      </div>
-
-      <div class="row">
-        <p id="etiqueta"> Apellido 1: </p>
-        <input id="textbox" type="text">
-        <p id="etiqueta"> Nick-name: </p>
-        <input id="textbox" type="text">
-      </div>
-
-      <div class="row">
-        <p id="etiqueta"> Apellido 2: </p>
-        <input id="textbox" type="text">
-        <p id="etiqueta"> Dirección: </p>
-        <input id="textbox" type="text">
-      </div>
-
-      <div class="row">
-        <p id="etiqueta"> Empresa: </p>
-        <input id="textbox" type="text">
-        <p id="etiqueta"> Tfno: </p>
-        <input id="textbox" type="text">
-      </div>
-
+  <div id="cabecera">
+    <a id="titulo" href="principalRegistrado.html">SMART
+      <b>MAPS</b>
+    </a>
+    <div id="perfil">
+      <a class="boton" id="buttonHeader" href="principalSinRegistrar.html">Cerrar Sesión</a>
+      <a id="imgPipo" href="usuario.html">
+        <img src="../img/user1.png" alt="PIPO!">
+      </a>
     </div>
   </div>
-  <div id="bottom">
-    <p class="boton" id="botonGuardarCambios">Guardar Cambios</p>
-  </div>
-</form>
+  <form>
+    <div id="cuerpo">
+      <div id="imgPipoBig">
+        <img src="../img/user1.png" alt="SENSOR">
+        <p id="underpipo">
+          <input type="text" name="Nombre Sensor" size="11" value="         RF875">
+        </p>
+      </div>
+
+      <!-- Different tabs within the profile -->
+      <div id="content">
+        <div id="pestañas">
+          <a class=pestaña id="pestaña" href="usuario.html">Mis Sensores</a>
+          <a class=pestaña id="pestaña" href="sensores_fav.html">Sensores Favoritos</a>
+          <a class=pestaña id="pestañaSel">Configurar Perfil</a>
+        </div>
+        <div id="formularioPrincipal">
+          <div class="row, primera">
+            <p>Descripción</p>
+            <p>
+              <textarea name="descripción" rows="10" cols="33"></textarea>
+            </p>
+            <div id="tipo-visibilidad">
+              <div class="row, primera">
+                <p>Tipo de Sensor</p>
+                <select name="rating">
+                  <option selected>Temperatura</option>
+                  <option>Humedad</option>
+                  <option>Iluminación</option>
+                  <option>Contaminación</option>
+                  <option>Ruido</option>
+                </select>
+              </div>
+              <div class="row">
+                <p>Visibilidad</p>
+                <p>
+                  <input name="howtosite" type="radio" value="public" checked>
+                  <span class="textoVisibiliad">Público</span>
+                </p>
+                <p>
+
+                  <input name="howtosite" type="radio" value="private">
+                  <span class="textoVisibiliad">Privado</span>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <p>Localización</p>
+            <p>
+              <script>
+                var citymap = {
+                  zaragoza: {
+                    center: { lat: 41.647, lng: -0.890 },
+                    population: 271485
+                  },
+                  valladolid: {
+                    center: { lat: 41.593, lng: -4.697 },
+                    population: 100000
+                  },
+                  madrid: {
+                    center: { lat: 40.428, lng: -3.789 },
+                    population: 385779
+                  },
+                  sevilla: {
+                    center: { lat: 37.399, lng: -5.938 },
+                    population: 603502
+                  }
+                };
+
+                function initMap() {
+                  // Create the map.
+                  var map = new google.maps.Map(document.getElementById('map'), {
+                    zoom: 6.5,
+                    center: { lat: 40.428, lng: -3.789 }
+                  });
+
+                  var flightPlanCoordinates = [
+                    { lat: 37.399, lng: -5.938 },
+                    { lat: 39.046, lng: -1.784 },
+                    { lat: 40.865, lng: -2.498 },
+                    { lat: 41.647, lng: -0.890 }
+                  ];
+
+                  var flightPath = new google.maps.Polyline({
+                    path: flightPlanCoordinates,
+                    geodesic: true,
+                    strokeColor: '#2E9AFE',
+                    strokeOpacity: 1.0,
+                    strokeWeight: 2
+                  });
+
+                  flightPath.setMap(map);
+
+                  // Construct the circle for each value in citymap.
+                  // Note: We scale the area of the circle based on the population.
+                  for (var city in citymap) {
+                    var cityCircle = new google.maps.Circle({
+                      // Add the circle for this city to the map.
+                      strokeColor: '#2E9AFE',
+                      strokeOpacity: 0.8,
+                      strokeWeight: 2,
+                      fillColor: '#2E9AFE',
+                      fillOpacity: 0.35,
+                      map: map,
+                      center: citymap[city].center,
+                      radius: Math.sqrt(citymap[city].population) * 100
+                    });
+                  }
+                }
+              </script>
+              <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBRjO3Gm24tyvsh4gvX31esp3dFS-oyJ3g&callback=initMap" asyncdefer></script>
+            </p>
+            <p><input type="text" name="Coordenadas" size="20"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="bottom">
+      <p id="botonGuardarCambios">
+        <input type="submit" value="Registrar Sensor">
+      </p>
+    </div>
+  </form>
 </body>
 
 </html>
