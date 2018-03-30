@@ -1,0 +1,56 @@
+.row{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.primera{
+     margin-right: 3em;
+}
+#formularioPrincipal{
+    display: flex;
+    flex-direction: row;
+    margin-left: 9em;
+    font-size: 1.2em;
+}
+
+#tipo-visibilidad{
+    display: flex;
+    
+}
+
+input [type=radio]{
+    margin-left: 2em;
+}
+
+input[type=submit]{
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 5.5em;
+    padding-right: 5.5em;
+    margin-left: 2em;
+    width: 20em;
+}
+
+.textoVisibiliad{
+    margin-right: 2em;
+}
+
+ .texto3{
+    margin-bottom: 0;
+    font-size: 1.2em;
+} 
+
+#imgMapa {
+    width: 30em;
+    height: 20em;
+}
+
+#parteBajaSensor {
+    display: flex;
+    justify-content: center;
+}
+
+#inputCoordenadas {
+    width: 30em;
+}

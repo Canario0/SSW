@@ -1,0 +1,27 @@
+/*
+Animaciones de los botones
+En el html se tiene que utilizar la clase "boton"
+*/
+.boton{
+    color: black;
+    font-size: 1em;
+	background-color: #7db6eb;
+    border-color:black;
+    border: solid 2px rgb(85, 84, 84);
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgb(32, 23, 23);
+	text-align: center;
+    text-decoration: none;
+	margin-top: auto;
+	margin-bottom: auto;
+	cursor: pointer;
+	-webkit-transition-duration: 0.4s;
+}
+.boton:hover{
+	background-color: white;
+}
+.boton:active{
+	transform:translateY(2px);
+	box-shadow: 0 0 0 black;
+	-webkit-transition-duration: 0s;
+}

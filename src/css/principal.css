@@ -1,0 +1,210 @@
+body {
+    font-family:'Roboto', sans-serif;
+    font-weight:300;
+    background-image: url(../img/fondo.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+#actionBar{
+    width: 15%;  
+    padding: 2em;
+    border-right: solid black 2px;
+}
+
+#actionBar div { /*Para cada elemento del action bar*/
+    display: flex;
+}
+
+#buscador {
+    width: 60%;
+    justify-content: center;
+    margin: 1em 1em;
+}
+
+.titulosBarraLateral {
+    margin: 1em 0 0.2em 0;
+}
+
+hr {
+    margin: 0;
+    margin-right: 4em;
+    margin-bottom: 1em;
+}
+
+#cbox {
+    margin-right: 1em;
+    margin-bottom: 0.8em;
+}
+
+.titulosBarraLateral p {
+    margin-right: 1em;
+    font-weight: bold;
+}
+
+.switch {
+    margin-top: 0.8em;
+    margin-left: 1em;
+}
+
+#buttonFilters {
+    padding: 0.8em 3em;
+    margin: 1.8em 1em 1.8em;
+}
+
+#map{
+    width: 100%;
+}
+/* ------------------------------------------------------------------ */
+
+ /* The switch - the box around the slider */
+ .switch {
+    position: relative;
+    display: inline-block;
+    width: 3em;
+    height: 1.7em;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {display:none;}
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 0.5px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+  /* ------------------------------------------------------------- */
+
+/* The slider itself */
+.slider2 {
+    -webkit-appearance: none;  
+    appearance: none;
+    width: 90%;
+    height: 25px;
+    outline: none; 
+    opacity: 0.7; 
+    -webkit-transition: .2s; 
+    transition: opacity .2s; 
+}
+.slider2 {
+    -webkit-appearance: none;  
+    appearance: none;
+    width: 90%;
+    height: 25px;
+    outline: none; 
+    opacity: 0.7; 
+    -webkit-transition: .2s; 
+    transition: opacity .2s; 
+    margin-bottom: 10%;
+}
+/* Mouse-over effects */
+.slider2:hover {
+    opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider2::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 20px; /* Set a specific slider handle width */
+    height: 20px; /* Slider handle height */
+    background: rgb(24, 117, 192); /* Green background */
+    cursor: pointer; /* Cursor on hover */
+    border-radius: 30px;
+}
+
+.slider2::-moz-range-thumb {
+    width: 20px; /* Set a specific slider handle width */
+    height: 20px; /* Slider handle height */
+    background: rgb(24, 117, 192); /* Green background */
+    cursor: pointer; /* Cursor on hover */
+    border-radius: 30px;
+}
+.slider3 {
+    -webkit-appearance: none;  
+    appearance: none;
+    width: 90%;
+    height: 25px;
+    outline: none; 
+    opacity: 0.7; 
+    -webkit-transition: .2s; 
+    transition: opacity .2s; 
+    margin-bottom: 10%;
+}
+.slider3 {
+    -webkit-appearance: none;  
+    appearance: none;
+    width: 90%;
+    height: 25px;
+    outline: none; 
+    opacity: 0.7; 
+    -webkit-transition: .2s; 
+    transition: opacity .2s; 
+    margin-bottom: 65%;
+}
+/* Mouse-over effects */
+.slider3:hover {
+    opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider3::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 20px; /* Set a specific slider handle width */
+    height: 20px; /* Slider handle height */
+    background: rgb(24, 117, 192); /* Green background */
+    cursor: pointer; /* Cursor on hover */
+    border-radius: 30px;
+}
+
+.slider3::-moz-range-thumb {
+    width: 20px; /* Set a specific slider handle width */
+    height: 20px; /* Slider handle height */
+    background: rgb(24, 117, 192); /* Green background */
+    cursor: pointer; /* Cursor on hover */
+    border-radius: 30px;
+}

@@ -1,0 +1,52 @@
+/*
+Formato de la cabecera para todas las páginas
+El html tiene que contener:
+
+cabecera: <div> que contiene todos los elementos de la cabecera
+titulo: <a> que contiene el título SMART MAPS
+perfil: <div> que contiene los botones y la imagen de usuario
+buttonHeader: <a> un botón de cabecera
+imgUser: <a> la imagen del usuario
+cuerpo: <div> que contiene el resto de la página
+*/
+#cabecera{
+	width: 100%;
+    min-height: 5.5em; /*Cuando no hay imagen hay que alargarla*/
+	display: flex;
+	position: fixed; /*Flotante*/
+    z-index: 100; /*Siempre en el frente*/
+	margin: -0.5em 0em 0em -0.5em; /*Desplazamiento para quitar huecos*/
+	background-color: #FFFFFF; /*Para que al hacer scroll no se vea el contenido de la página por detrás*/
+	border-bottom: solid black 2px;
+	justify-content: space-between; /*Título a la izquierda y bototes a la derecha*/
+}
+
+#titulo{
+	font-size: 2em;
+	padding-left: 2em;
+	margin-top: auto;
+	margin-bottom:auto;
+	text-decoration: none;
+	color: black;
+	cursor: pointer;
+}
+
+#perfil{
+	display: flex;
+	padding-right: 2em;
+}
+
+#buttonHeader {
+    padding: 1em 2em;
+    margin-right: 1em;
+}
+
+#imgUser img {
+	width: 5em;
+	height: 5em;
+}
+
+#cuerpo{
+    padding-top: 4.9em; /*Padding arriba para que no se meta en la cabecera*/
+    display: flex;
+}
