@@ -93,10 +93,35 @@
 
                 function initMap() {
                     // Create the map.
+
+                    var contentString = '<p>Tipo: Temperatura</p>' +
+                        '<p>Modelo: RJ-485</p>'+
+                        '<p>Estado: Funcionando</p>'+
+                        '<p> </p>'+
+                        '<p>Ultima Medida: 24.23 C</p>' ;
+
+                    var infowindow = new google.maps.InfoWindow({
+                    content: contentString
+                    });
+
                     var map = new google.maps.Map(document.getElementById('map'), {
                         zoom: 6.5,
                         center: {lat: 40.428, lng: -3.789}
                     });
+                    
+                    var valencia = {lat: 39.443, lng: -0.414};
+
+                    var marker = new google.maps.Marker({
+                        position: valencia,
+                        map: map,
+                        title: 'RJ-SENSOR-INFO'
+                    });
+
+
+                    marker.addListener('mouseover', function() {
+                    infowindow.open(map, marker);
+                    });
+
 
                     var flightPlanCoordinates = [
                         {lat: 37.399, lng: -5.938},
