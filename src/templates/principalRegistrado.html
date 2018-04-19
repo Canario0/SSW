@@ -25,11 +25,11 @@
         <a id="titulo" href="principalRegistrado.html">SMART <b>MAPS</b></a>
         <div id="perfil">
             <a class="boton" id="buttonHeader" href="usuario.html">Mi Perfil</a>
-            <a class="boton" id="buttonHeader">Sensores Favoritos</a>
-            <a class="boton" id="buttonHeader">Añadir Sensor</a>
+            <a class="boton" id="buttonHeader" href="sensores_fav.html">Sensores Favoritos</a>
+            <a class="boton" id="buttonHeader" href="registrar_sensor.html">Añadir Sensor</a>
             <a class="boton" id="buttonHeader" href="configuracion_perfil.html">Configuración</a>
             <a class="boton" id="buttonHeader" href="principalSinRegistrar.html">Cerrar Sesión</a>
-            <a id="imgPipo" href="usuario.html"><img src="../img/user1.png" alt="user logo"></a>
+            <a id="imgUser" href="usuario.html"><img src="../img/user1.png" alt="user logo"></a>
         </div>
     </div>
 
@@ -93,10 +93,35 @@
 
                 function initMap() {
                     // Create the map.
+
+                    var contentString = '<p>Tipo: Temperatura</p>' +
+                        '<p>Modelo: RJ-485</p>'+
+                        '<p>Estado: Funcionando</p>'+
+                        '<p> </p>'+
+                        '<p>Ultima Medida: 24.23 C</p>' ;
+
+                    var infowindow = new google.maps.InfoWindow({
+                    content: contentString
+                    });
+
                     var map = new google.maps.Map(document.getElementById('map'), {
                         zoom: 6.5,
                         center: {lat: 40.428, lng: -3.789}
                     });
+                    
+                    var valencia = {lat: 39.443, lng: -0.414};
+
+                    var marker = new google.maps.Marker({
+                        position: valencia,
+                        map: map,
+                        title: 'RJ-SENSOR-INFO'
+                    });
+
+
+                    marker.addListener('mouseover', function() {
+                    infowindow.open(map, marker);
+                    });
+
 
                     var flightPlanCoordinates = [
                         {lat: 37.399, lng: -5.938},

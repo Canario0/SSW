@@ -6,7 +6,7 @@ body{
     background-size: 100%;
 }
 
-#imgPipoBig{
+#imgUserBig{
 	width: 20%; /*20% del total horizontal de la pantalla*/
 	height: 25em; /*Para que no se vaya hasta abajo si la página es larga*/
 	margin: 3em;
@@ -15,11 +15,11 @@ body{
 	text-align: center;
 }
 
-#imgPipoBig img{
+#imgUserBig img{
 	width: 80%; /*80% del contenedor de la imagen*/
 }
 
-#underpipo {
+#underUser{
   font-weight: bold;
   font-size: 1.5em;
   margin-top: 2em;
@@ -159,6 +159,8 @@ body{
 #botonGuardarCambios {
 	padding: 1em 3em;
 	margin: 0 32em;
+	width: 20em;
+	margin-top: 3em;
 }
 
 #chartContainer {
@@ -202,7 +204,6 @@ a:visited { color: black ; text-decoration: none }
 }
 
 #formularioMedidas {
-	margin-top: 2em;
 	display: flex;
 }
 
@@ -224,15 +225,26 @@ a:visited { color: black ; text-decoration: none }
 	margin-top: 0.5em;
 }
 
+.imgInfo {
+	width: 3.5em;
+	height: 3.5em;
+	margin-right: 4em;
+	margin-top: 2.5em;
+	margin-left: 2em;
+}
 
+#bottom {
+	display: flex;
+	justify-content: center;
+}
 /*
 #cabecera{background: #00FF00;}
  #titulo{background: #FF0000;}
  #perfil{background: #FF0000;}
-  #imgPipo{background: #FF00FF;}
+  #imgUser{background: #FF00FF;}
 #cuerpo{background: #0000FF;}
- #imgPipoBig{background: #00FF00;}
-  #underpipo{background: #FF0000;}
+ #imgUserBig{background: #00FF00;}
+  #underUser{background: #FF0000;}
  #content{background: #FF0000;}
   #pestañas{background: #00FF00;}
    .pestaña{background: #FFFF00;}

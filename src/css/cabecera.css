@@ -6,7 +6,7 @@ cabecera: <div> que contiene todos los elementos de la cabecera
 titulo: <a> que contiene el título SMART MAPS
 perfil: <div> que contiene los botones y la imagen de usuario
 buttonHeader: <a> un botón de cabecera
-imgPipo: <a> la imagen del usuario
+imgUser: <a> la imagen del usuario
 cuerpo: <div> que contiene el resto de la página
 */
 #cabecera{
@@ -41,7 +41,7 @@ cuerpo: <div> que contiene el resto de la página
     margin-right: 1em;
 }
 
-#imgPipo img {
+#imgUser img {
 	width: 5em;
 	height: 5em;
 }
