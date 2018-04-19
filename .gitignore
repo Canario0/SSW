@@ -1,2 +1,4 @@
 */.DS_Store
 */menv/*
+*__pycache__/*
+*.vscode/*
