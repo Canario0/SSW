@@ -1,13 +1,19 @@
 from flask import Flask, render_template, request
+
 app = Flask(__name__)
 
 @app.route("/")
+@app.route("/index")
 def index():
     return render_template('principalSinRegistrar.html')
 
-@app.route("/Registrar")
+@app.route("/registrar")
 def register():
     return render_template('Registrar.html')
+
+@app.route("/login")
+def login():
+    return render_template('Login.html')
 
 
 @app.route("/HolaMundo")
