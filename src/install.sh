@@ -4,7 +4,7 @@
 # Create virtual environment if does not exists
 if [ ! -d menv ] 
 then
-    virtualenv -p python3 venv
+    virtualenv -p python3 menv
 fi
 
 # Source virtual environment
