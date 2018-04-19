@@ -8,7 +8,7 @@ then
 fi
 
 # Source virtual environment
-source venv/bin/activate
+source menv/bin/activate
 
 # Install python requirements from requirements 
 pip install -r requirements.txt
