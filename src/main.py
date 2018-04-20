@@ -27,6 +27,17 @@ def profile(user):
 def fav(user):
     return render_template('sensores_fav.html', user = user)
 
+@app.route("/<user>/registrar_sensor")
+def registrar_sensor(user):
+    return render_template('registrar_sensor.html', user = user)
+
+@app.route("/<user>/configuracion")
+def config(user):
+    return render_template('configuracion_perfil.html' user = user)
+
+
+
+
 @app.route("/HolaMundo")
 def hello():
     return "Hello World3!"
