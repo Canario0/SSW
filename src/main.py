@@ -15,6 +15,7 @@ def register():
 def login():
     return render_template('Login.html')
 
+@app.route("/<user>/")
 @app.route("/<user>/index")
 def logged_index(user):
     return render_template('principalRegistrado.html', user = user)
@@ -33,7 +34,7 @@ def registrar_sensor(user):
 
 @app.route("/<user>/configuracion")
 def config(user):
-    return render_template('configuracion_perfil.html' user = user)
+    return render_template('configuracion_perfil.html', user = user)
 
 
 

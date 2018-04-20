@@ -12,10 +12,10 @@
   <meta charset="utf-8" />
 
   <!-- Links to necessary files to run the webpage -->
-  <link rel="stylesheet" type="text/css" href="../css/perfil.css" />
-  <link rel="stylesheet" type="text/css" href="../css/botones.css" />
-  <link rel="stylesheet" type="text/css" href="../css/cabecera.css" />
-  <link rel="stylesheet" type="text/css" href="../css/registrarSensor.css" />
+  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/perfil.css') }}" />
+  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/botones.css') }}" />
+  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/cabecera.css') }}" />
+  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/registrarSensor.css') }}" />
 
   <link rel="icon" type="image/png" href="../img/logo.png" />
 </head>
@@ -30,14 +30,14 @@
     <div id="perfil">
       <a class="boton" id="buttonHeader" href="principalSinRegistrar.html">Cerrar Sesión</a>
       <a id="imgUser" href="usuario.html">
-        <img src="../img/user1.png" alt="PIPO!">
+        <img src="{{url_for('static', filename='img/user1.png') }}" alt="PIPO!">
       </a>
     </div>
   </div>
   <form>
     <div id="cuerpo">
       <div id="imgUserBig">
-        <img src="../img/user1.png" alt="SENSOR">
+        <img src="{{url_for('static', filename='img/user1.png') }}" alt="SENSOR">
         <p class="texto3">Nombre sensor:</p>
         <p id="underUser">
           <input type="text" name="Nombre Sensor" size="11" placeholder="Nombre sensor">
