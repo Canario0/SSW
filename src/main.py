@@ -23,6 +23,9 @@ def logged_index(user):
 def profile(user):
     return render_template('usuario.html', user = user)
 
+@app.route("/<user>/sensores_favoritos")
+def fav(user):
+    return render_template('sensores_fav.html', user = user)
 
 @app.route("/HolaMundo")
 def hello():

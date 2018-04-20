@@ -2,3 +2,4 @@
 */menv/*
 src/.vscode/*
 src/__pycache__/*
+*.swp
