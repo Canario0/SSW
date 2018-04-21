@@ -36,6 +36,34 @@ def login():
         #else:
             #Usuario y contraseña incorrectos
 
+@app.route("/<user>/configuracion", methods=['POST', 'GET'])
+def config(user):
+    if request.method == 'GET':
+        return render_template('configuracion_perfil.html', user = user)
+    elif request.method == 'POST':
+        if 'nombre' in request.form:
+            nombre = request.form['nombre']
+            #Guardar nombre en la base de datos
+        if 'ap1' in request.form:
+            ap1 = request.form['ap1']
+            #Lo mismo con ap1
+        if 'ap2' in request.form:
+            ap2 = request.form['ap2']
+        if 'user' in request.form:
+            newuser = request.form['user']
+        if 'direccion' in request.form:
+            direccion = request.form['direccion']
+        if 'empresa' in request.form:
+            empresa = request.form['empresa']
+        if 'tfno' in request.form:
+            tfno = request.form['tfno']
+        if 'imagen' in request.files:
+            imagen = request.files['imagen']
+            if imagen.filename != '':
+                imagen.save('static/img/users/' + user)
+        
+        return redirect(url_for('config', user=user))
+
 @app.route("/<user>/")
 @app.route("/<user>/index")
 def logged_index(user):
@@ -53,9 +81,6 @@ def fav(user):
 def registrar_sensor(user):
     return render_template('registrar_sensor.html', user = user)
 
-@app.route("/<user>/configuracion")
-def config(user):
-    return render_template('configuracion_perfil.html', user = user)
 
 
 

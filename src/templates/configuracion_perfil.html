@@ -14,7 +14,7 @@
     <!-- Links to necessary files to run the webpage -->
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/perfil.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/botones.css') }}" />
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/cabecera.css') }}" />
+    <link rel="stylesheet" type="text/css" href="../static/css/cabecera.css" />
     <link rel="icon" type="image/png" href="../img/logo.png" />
 </head>
 
@@ -31,11 +31,10 @@
 
     <div id="cuerpo">
 		<div id="imgUserBig">
-			<img src="{{ url_for('static', filename='img/user1.png') }}" alt="SENSOR">
+            <img src="../static/img/users/{{ user }}" alt="USUARIO" onerror="this.src='../static/img/users/default.png';" />
 			<p id="underUser">Jhon21</p>
 		</div>
 
-    <!-- Different tabs within the profile -->
     <div id="content">
       <div id="pestañas">
         <a class=pestaña id="pestaña" href="usuario.html">Mis Sensores</a>
@@ -43,9 +42,10 @@
         <a class=pestaña id="pestañaSel">Configurar Perfil</a>
       </div>
 
+    <form method="POST" action="/{{ user }}/configuracion" enctype=multipart/form-data>
       <div class="row" id="firstRow">
         <p id="etiqueta"> Nombre: </p>
-        <input id="textbox" type="text">
+        <input id="textbox" type="text" name="nombre">
         <p id="etiqueta"> Fecha de nacimiento: </p>
         <select id="combobox">
           <option value="opcion-1">Día</option>
@@ -194,30 +194,36 @@
 
       <div class="row">
         <p id="etiqueta"> Apellido 1: </p>
-        <input id="textbox" type="text">
+        <input id="textbox" type="text" name="ap1">
         <p id="etiqueta"> Nick-name: </p>
-        <input id="textbox" type="text">
+        <input id="textbox" type="text" name="nick-name">
       </div>
 
       <div class="row">
         <p id="etiqueta"> Apellido 2: </p>
-        <input id="textbox" type="text">
+        <input id="textbox" type="text" name="ap2">
         <p id="etiqueta"> Dirección: </p>
-        <input id="textbox" type="text">
+        <input id="textbox" type="text" name="direccion">
       </div>
 
       <div class="row">
         <p id="etiqueta"> Empresa: </p>
-        <input id="textbox" type="text">
+        <input id="textbox" type="text" name="empresa">
         <p id="etiqueta"> Tfno.: </p>
-        <input id="textbox" type="text">
+        <input id="textbox" type="text" name="tfno">
+      </div>
+
+      <div class="row">
+        <p id="etiqueta"> Cambiar imagen: </p>
+        <input id="textbox" type="file" accept="image/*" name="imagen">
       </div>
 
     </div>
   </div>
   <div id="bottom">
-    <p class="boton" id="botonGuardarCambios">Guardar Cambios</p>
+    <input class="boton" id="botonGuardarCambios" type="submit" value="Guardar Cambios">
   </div>
+</form>
 
 </body>
 
