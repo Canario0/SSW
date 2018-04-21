@@ -1,4 +1,5 @@
-from flask import Flask, render_template, request
+#coding: utf-8
+from flask import Flask, render_template, request, redirect, url_for
 
 app = Flask(__name__)
 
@@ -7,13 +8,33 @@ app = Flask(__name__)
 def index():
     return render_template('principalSinRegistrar.html')
 
-@app.route("/registrar")
+@app.route("/registrar", methods=['POST', 'GET'])
 def register():
-    return render_template('Registrar.html')
+    if request.method == 'GET':
+        return render_template('Registrar.html')
+    elif request.method == 'POST':
+        user = request.form['nick-name']
+        password = request.form['contraseña']
+        repassword = request.form['recontraseña']
+        #if password == repassword:
+            #if no existe user:
+        return redirect(url_for('logged_index', user=user))
+            #else:
+            #usuario ya existe
+        #else:
+            #No coinciden las contraseñas
 
-@app.route("/login")
+@app.route("/login", methods=['POST', 'GET'])
 def login():
-    return render_template('Login.html')
+    if request.method == 'GET':
+        return render_template('Login.html')
+    elif request.method == 'POST':
+        user = request.form['nick-name']
+        password = request.form['contraseña']
+        #if existe user y passwd
+        return redirect(url_for('logged_index', user=user))
+        #else:
+            #Usuario y contraseña incorrectos
 
 @app.route("/<user>/")
 @app.route("/<user>/index")
