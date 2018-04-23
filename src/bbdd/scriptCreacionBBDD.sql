@@ -38,7 +38,7 @@ CREATE TABLE FAVORITO (
   nickname VARCHAR(20),
   id INTEGER NOT NULL,
   PRIMARY KEY (nickname, id),
-  FOREIGN KEY (nickname) REFERENCES USUARIO(nickname)
+  FOREIGN KEY (nickname) REFERENCES USUARIO(nickname),
   FOREIGN KEY (id) REFERENCES SENSOR(id));
 
 -- -----------------------------------------------------
@@ -48,7 +48,7 @@ CREATE TABLE LIKED (
   nickname VARCHAR(20),
   id INTEGER NOT NULL,
   PRIMARY KEY (nickname, id),
-  FOREIGN KEY (nickname) REFERENCES USUARIO(nickname)
+  FOREIGN KEY (nickname) REFERENCES USUARIO(nickname),
   FOREIGN KEY (id) REFERENCES SENSOR(id));
 
 -- -----------------------------------------------------
