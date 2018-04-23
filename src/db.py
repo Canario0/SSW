@@ -1,5 +1,5 @@
 from peewee import *
-import configparser
+import configparser, datetime
 
 conf = configparser.ConfigParser()
 conf.read('config.txt')
@@ -44,6 +44,16 @@ class Like(Model):
     class Meta:
         database = db
         primary_key = CompositeKey('nickname', 'tag')
+
+class Medicion(Model):
+    id = ForeignKeyField(Sensor, backref='mediciones')
+    fechaSubida = DateTimeField(default=datetime.datetime.now, primary_key=True) #este valor se autogenera
+    fechaMedicion = DateField(null = False)
+    valor = IntegerField(null = False)
+    class Meta:
+        database = db
+
+db.connect()
 
 
 
