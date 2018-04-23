@@ -1,7 +1,7 @@
-drop table USUARIO;
-drop table SENSOR;
-drop table LIKED;
-drop table MEDICION;
+DROP TABLE IF EXISTS USUARIO;
+DROP TABLE IF EXISTS SENSOR;
+DROP TABLE IF EXISTS LIKED;
+DROP TABLE IF EXISTS MEDICION;
 
 -- -----------------------------------------------------
 -- Table "mydb"."USUARIO"
@@ -39,7 +39,7 @@ CREATE TABLE FAVORITO (
   id INTEGER NOT NULL,
   PRIMARY KEY (nickname, id),
   FOREIGN KEY (nickname) REFERENCES USUARIO(nickname)
-  FOREIGN KEY (id) REFERENCES USUARIO(id));
+  FOREIGN KEY (id) REFERENCES SENSOR(id));
 
 -- -----------------------------------------------------
 -- Table "mydb"."FAVORITO"
@@ -49,7 +49,7 @@ CREATE TABLE LIKED (
   id INTEGER NOT NULL,
   PRIMARY KEY (nickname, id),
   FOREIGN KEY (nickname) REFERENCES USUARIO(nickname)
-  FOREIGN KEY (id) REFERENCES USUARIO(id));
+  FOREIGN KEY (id) REFERENCES SENSOR(id));
 
 -- -----------------------------------------------------
 -- Table "mydb"."MEDICION"
