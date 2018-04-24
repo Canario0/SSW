@@ -72,7 +72,15 @@ def create_Usuario(nickname, password):
         Usuario.create(nickname=nickname, password=password)
 
 
-db.connect()
+#db.connect()
+@app.before_request
+def before_request():
+    db.connect()
+
+@app.after_request
+def after_request(response):
+    db.close()
+    return response
 
 if __name__ == "__main__":
     create_Usuario('pipo', '1235aaaa')

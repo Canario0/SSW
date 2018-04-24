@@ -3,3 +3,4 @@
 src/.vscode/*
 src/__pycache__/*
 *.swp
+*.pyc
