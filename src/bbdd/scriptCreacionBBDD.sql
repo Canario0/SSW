@@ -8,7 +8,7 @@ DROP TABLE IF EXISTS MEDICION;
 -- -----------------------------------------------------
 CREATE TABLE USUARIO(
   nickname VARCHAR(20) NOT NULL,
-  email VARCHAR(45) NOT NULL,
+  email VARCHAR(45),
   password VARCHAR(10) NOT NULL,
   nombre VARCHAR(10),
   apellidos VARCHAR(20),

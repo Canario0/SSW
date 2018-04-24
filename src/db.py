@@ -6,12 +6,12 @@ conf = configparser.ConfigParser()
 conf.read('config.txt')
 
 db = MySQLDatabase(conf['DataBase']['name'], user=conf['DataBase']['user'], password=conf['DataBase']
-                   ['password'], host=conf['DataBase']['host'], port=conf['DataBase']['port'])
+                   ['password'], host=conf['DataBase']['host'], port=int(conf['DataBase']['port']))
 
 
 class Usuario(Model):
     nickname = CharField(max_length=20, primary_key=True)
-    email = CharField(max_length=45,null=False)
+    email = CharField(max_length=45,null=True)
     password = CharField(max_length=10, null=False)
     nombre = CharField(max_length=10, null=True)
     apellidos = CharField(max_length=20, null=True)
@@ -67,4 +67,16 @@ class Medicion(Model):
         database = db
 
 
+def create_Usuario(nickname, password):
+    with db.atomic():
+        Usuario.create(nickname=nickname, password=password)
+
+
 db.connect()
+
+if __name__ == "__main__":
+    create_Usuario('pipo', '1235aaaa')
+    user = list(Usuario.select().where(Usuario.nickname=='pokachu').dicts())
+    print(user)
+    user = list(Usuario.select().where(Usuario.nickname=='pipo').dicts())
+
