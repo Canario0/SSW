@@ -14,7 +14,7 @@ CREATE TABLE USUARIO(
   nombre VARCHAR(10),
   apellidos VARCHAR(20),
   direccion VARCHAR(100),
-  fechaNacimiento DATE,
+  nacimiento DATE,
   empresa VARCHAR(30),
   telefono INTEGER,
   PRIMARY KEY (nickname));

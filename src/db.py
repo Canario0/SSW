@@ -71,20 +71,10 @@ def create_Usuario(nickname, password):
     with db.atomic():
         Usuario.create(nickname=nickname, password=password)
 
-
-#db.connect()
-@app.before_request
-def before_request():
+def ini():
     db.connect()
 
-@app.after_request
-def after_request(response):
+def fin():
     db.close()
-    return response
 
-if __name__ == "__main__":
-    create_Usuario('pipo', '1235aaaa')
-    user = list(Usuario.select().where(Usuario.nickname=='pokachu').dicts())
-    print(user)
-    user = list(Usuario.select().where(Usuario.nickname=='pipo').dicts())
 
