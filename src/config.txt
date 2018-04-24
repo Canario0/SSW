@@ -1,6 +1,6 @@
 [DataBase]
-name = 
-user = 
-password = 
-host =
-port =
+name = ssw
+user = root
+password = Sergio23121997
+host = localhost
+port = 3306 
