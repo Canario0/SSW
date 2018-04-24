@@ -12,10 +12,10 @@
     <meta charset="utf-8" />
 
     <!-- Links to necessary files to run the webpage -->
-	<link rel="stylesheet" type="text/css" href="../css/perfil.css" />
-	<link rel="stylesheet" type="text/css" href="../css/cabecera.css" />
-	<link rel="stylesheet" type="text/css" href="../css/botones.css" />
-    <link rel="icon" type="image/png" href="../img/logo.png" />
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/perfil.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/botones.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/cabecera.css') }}" />
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/logo.png') }}" />
 </head>
 
 <!-- WEBPAGE'S BODY -->
@@ -23,24 +23,24 @@
 
 <body>
 	<div id="cabecera">
-		<a id ="titulo" href="principalRegistrado.html">SMART <b>MAPS</b></a>
+		<a id ="titulo" href="/{{ user }}/index">SMART <b>MAPS</b></a>
 		<div id="perfil">
-			<a class="boton" id="buttonHeader" href="principalSinRegistrar.html">Cerrar Sesión</a>
-			<a id="imgUser" href="usuario.html"><img src="../img/user1.png" alt="PIPO!"></a>
+			<a class="boton" id="buttonHeader" href="/index">Cerrar Sesión</a>
+			<a id="imgUser" href="/{{ user }}/profile"><img src="../static/img/users/{{ user }}" alt="Usuario" onerror="this.src='../static/img/users/default.png';" /></a>
 		</div>
 	</div>
 
 	<div id="cuerpo">
 		<div id="imgUserBig">
-			<img src="../img/user1.png" alt="PIPO!">
+			<img src="../static/img/users/{{ user }}" alt="Usuario" onerror="this.src='../static/img/users/default.png';" />
 			<p id="underUser">Jhon21</p>
 		</div>
 
 		<div id="content">
 			<div id="pestañas">
-				<a class=pestaña id=pestaña href="usuario.html">Mis Sensores</a>
-				<a class=pestaña id=pestaña href="sensores_fav.html">Sensores Favoritos</a>
-				<a class=pestaña id=pestaña href="configuracion_perfil.html">Configurar Perfil</a>
+				<a class=pestaña id=pestaña href="/{{ user }}/index">Mis Sensores</a>
+				<a class=pestaña id=pestaña href="/{{ user }}/sensores_favoritos">Sensores Favoritos</a>
+				<a class=pestaña id=pestaña href="/{{ user }}/configuracion">Configurar Perfil</a>
 			</div>
 			
 			<div>

@@ -12,32 +12,30 @@
   <meta charset="utf-8" />
 
   <!-- Links to necessary files to run the webpage -->
-  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/perfil.css') }}" />
-  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/botones.css') }}" />
-  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/cabecera.css') }}" />
-  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/registrarSensor.css') }}" />
-
-  <link rel="icon" type="image/png" href="../img/logo.png" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/perfil.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/botones.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/cabecera.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/registrarSensor.css') }}" />
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/logo.png') }}" />
 </head>
 
 <!-- WEBPAGE'S BODY -->
 
 <body>
   <div id="cabecera">
-    <a id="titulo" href="principalRegistrado.html">SMART
+    <a id="titulo" href="/{{ user }}/index">SMART
       <b>MAPS</b>
     </a>
     <div id="perfil">
-      <a class="boton" id="buttonHeader" href="principalSinRegistrar.html">Cerrar Sesión</a>
-      <a id="imgUser" href="usuario.html">
-        <img src="{{url_for('static', filename='img/user1.png') }}" alt="PIPO!">
-      </a>
+      <a class="boton" id="buttonHeader" href="/index">Cerrar Sesión</a>
+      <a id="imgUser" href="/{{ user }}/profile"><img src="../static/img/users/{{ user }}" alt="Usuario" onerror="this.src='../static/img/users/default.png';" /></a>
     </div>
   </div>
   <form>
     <div id="cuerpo">
       <div id="imgUserBig">
-        <img src="{{url_for('static', filename='img/user1.png') }}" alt="SENSOR">
+        <img src="../static/img/users/{{ user }}" alt="Usuario" onerror="this.src='../static/img/users/default.png';" />
+			<p id="underUser">{{ user }}</p>
         <p class="texto3">Nombre sensor:</p>
         <p id="underUser">
           <input type="text" name="Nombre Sensor" size="11" placeholder="Nombre sensor">
