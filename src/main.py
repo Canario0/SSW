@@ -86,10 +86,6 @@ def fav(user):
 def registrar_sensor(user):
     return render_template('registrar_sensor.html', user = user)
 
-@app.route("/HolaMundo")
-def hello():
-    return "Hello World3!"
-
 @app.before_request
 def before_request():
     ini()
