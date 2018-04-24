@@ -10,7 +10,7 @@ DROP TABLE IF EXISTS sensor;
 DROP TABLE IF EXISTS usuario;
 
 -- -----------------------------------------------------
--- Table "mydb"."usuario"
+-- Table "ssw"."usuario"
 -- -----------------------------------------------------
 CREATE TABLE usuario(
   nickname VARCHAR(20) NOT NULL,
@@ -25,7 +25,7 @@ CREATE TABLE usuario(
   PRIMARY KEY (nickname));
   
 -- -----------------------------------------------------
--- Table "mydb"."sensor"
+-- Table "ssw"."sensor"
 -- -----------------------------------------------------
 CREATE TABLE sensor (
   id INTEGER NOT NULL,
@@ -38,7 +38,7 @@ CREATE TABLE sensor (
   PRIMARY KEY (id));
 
 -- -----------------------------------------------------
--- Table "mydb"."favorito"
+-- Table "ssw"."favorito"
 -- -----------------------------------------------------
 CREATE TABLE favorito (
   nickname VARCHAR(20),
@@ -48,7 +48,7 @@ CREATE TABLE favorito (
   FOREIGN KEY (id) REFERENCES sensor(id));
 
 -- -----------------------------------------------------
--- Table "mydb"."favorito"
+-- Table "ssw"."favorito"
 -- -----------------------------------------------------
 CREATE TABLE liked (
   nickname VARCHAR(20),
@@ -58,7 +58,7 @@ CREATE TABLE liked (
   FOREIGN KEY (id) REFERENCES sensor(id));
 
 -- -----------------------------------------------------
--- Table "mydb"."medicion"
+-- Table "ssw"."medicion"
 -- -----------------------------------------------------
 CREATE TABLE medicion (
   id INTEGER NOT NULL,

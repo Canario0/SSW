@@ -46,7 +46,7 @@ class Favorito(Model):
         primary_key = CompositeKey('nickname', 'tag')
 
 
-class Like(Model):
+class Liked(Model):
     nickname = ForeignKeyField(Usuario)
     id = ForeignKeyField(Sensor)
 
@@ -66,13 +66,44 @@ class Medicion(Model):
     class Meta:
         database = db
 
-
+#-----------------------------------------------------------------------------
+#           Creación de las tuplas
+#-----------------------------------------------------------------------------
 def create_Usuario(nickname, password):
     with db.atomic():
         Usuario.create(nickname=nickname, password=password)
 
+def create_Sensor(id, nombre, descripcion, tipo, visible, x, y):
+    with db.atomic():
+        Sensor.create(id = id, nombre = nombre, descripcion = descripcion, tipo = tipo, visible = visible, x = x, y = y)
+
+def create_Favorito(nickname, id):
+    with db.atomic():
+        Favorito.create(nickname=nickname, id=id)
+
+def create_Liked(nickname, id):
+    with db.atomic():
+        Liked.create(nickname=nickname, id=id)
+
+def create_Medicion(id, fechaMedicion, valor):
+    with db.atomic():
+        Medicion.create(id = id, fechaMedicion = fechaMedicion, valor = valor)
+#----------------------------------------------------------------------------
+
+#----------------------------------------------------------------------------
+#       Consultas
+#----------------------------------------------------------------------------
 def get_Usuario(nickname):
     return list (Usuario.select().where(Usuario.nickname == nickname).dicts())
+
+def get_Sensor(id):
+    return list (Sensor.select().where(Sensor.id == id).dicts())
+
+def get_Mediciones(id):
+    sensor= Sensor.select().where(Sensor.id == id)
+    return list(sensor.mediciones.dicts()) if len(list(sensor))>0 else []
+
+#----------------------------------------------------------------------------
 
 
 def ini():
