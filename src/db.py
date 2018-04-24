@@ -72,8 +72,7 @@ def create_Usuario(nickname, password):
         Usuario.create(nickname=nickname, password=password)
 
 def get_Usuario(nickname):
-    user= list (Usuario.select().where(Usuario.nickname == nickname).dicts)
-    return user if len(list(user))>0 else []
+    list (Usuario.select().where(Usuario.nickname == nickname).dicts)
 
 
 def ini():
