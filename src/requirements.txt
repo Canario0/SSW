@@ -2,4 +2,4 @@ Flask
 Flask-ini
 peewee
 configparser
-mysqlclient
+pymysql
