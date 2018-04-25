@@ -9,3 +9,13 @@ insert into usuario values ('HomerJSimpson', 'homer.j@simpson.com', 'homero', 'H
 insert into usuario values ('JVegas', 'vegas@apple.com', 'aloha', 'J', 'Vegas', null, str_to_date('11-02-1973', '%d-%m-%Y'), 'UVa', 983123456);
 insert into usuario values ('CVaca', 'cesar@infor.uva.es', 'n00b', 'Cesar', 'Vaca', null, str_to_date('01-07-1979', '%d-%m-%Y'), 'UVa', 983123456);
 insert into usuario values ('Benja', 'ben@ja.min', 'minjaben', 'Benjamin', 'Sahelices', 'Campus Universitario Miguel Delibes', str_to_date('24-06-1971', '%d-%m-%Y'), 'UVa', 983123123);
+
+
+insert into medicion values (1, Date_format(now(),'%Y-%M-%d %h:%i:%s %p'), Date_format(now(), '%Y-%M-%d'), 20.15); 
+insert into medicion values (1, Date_format(now(),'%Y-%M-%d %h:%i:%s %p'), Date_format(now(), '%Y-%M-%d'), 20.14); 
+insert into medicion values (1, Date_format(now(),'%Y-%M-%d %h:%i:%s %p'), Date_format(now(), '%Y-%M-%d'), 20.13); 
+insert into medicion values (1, Date_format(now(),'%Y-%M-%d %h:%i:%s %p'), Date_format(now(), '%Y-%M-%d'), 20.16); 
+insert into medicion values (1, Date_format(now(),'%Y-%M-%d %h:%i:%s %p'), Date_format(now(), '%Y-%M-%d'), 20.17); 
+insert into medicion values (1, Date_format(now(),'%Y-%M-%d %h:%i:%s %p'), Date_format(now(), '%Y-%M-%d'), 20.11); 
+insert into medicion values (1, Date_format(now(),'%Y-%M-%d %h:%i:%s %p'), Date_format(now(), '%Y-%M-%d'), 20.19); 
+insert into medicion values (1, Date_format(now(),'%Y-%M-%d %h:%i:%s %p'), Date_format(now(), '%Y-%M-%d'), 20.13); 

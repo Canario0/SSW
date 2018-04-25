@@ -1,5 +1,5 @@
 #coding: utf-8
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, flash
 from peewee import Model, MySQLDatabase,BooleanField, CharField, IntegerField, DateField, DateTimeField, ForeignKeyField, CompositeKey, DoubleField
 import configparser
 import datetime
@@ -19,10 +19,13 @@ def register():
         return render_template('Registrar.html')
     elif request.method == 'POST':
         user = request.form['nick-name']
-        password = request.form['contraseña']
-        repassword = request.form['recontraseña']
-        #if password == repassword:
-            #if no existe user:
+    		if (len(get_Usuario(user)) == 0):	
+					if password == repassword:
+						password = request.form['contraseña']
+						repassword = request.form['recontraseña']
+						create_Usuario(user, password)
+					flash('bad password')	
+           	if no existe user:
         return redirect(url_for('logged_index', user=user))
             #else:
             #usuario ya existe
@@ -85,6 +88,10 @@ def fav(user):
 @app.route("/<user>/registrar_sensor")
 def registrar_sensor(user):
     return render_template('registrar_sensor.html', user = user)
+
+@app.route("/sensor/<id>")
+def informacion_sensor(id):
+		return render_template('info_sensor.html', id = id)
 
 @app.before_request
 def before_request():
