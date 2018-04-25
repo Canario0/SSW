@@ -26,16 +26,12 @@ def register():
         if len(get_Usuario(user)) == 0:
             if password == repassword:
                 create_Usuario(user, password)
+                return redirect(url_for('logged_index', user=user))
             else:
                 flash('bad password')
         else:
             flash('User: ya existe')
-        if no existe user:
-        return redirect(url_for('logged_index', user=user))
-        # else:
-        # usuario ya existe
-        # else:
-        # No coinciden las contraseñas
+
 
 
 @app.route("/login", methods=['POST', 'GET'])
