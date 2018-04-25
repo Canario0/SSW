@@ -1,17 +1,19 @@
 #coding: utf-8
 from flask import Flask, render_template, request, redirect, url_for, flash
-from peewee import Model, MySQLDatabase,BooleanField, CharField, IntegerField, DateField, DateTimeField, ForeignKeyField, CompositeKey, DoubleField
+from peewee import Model, MySQLDatabase, BooleanField, CharField, IntegerField, DateField, DateTimeField, ForeignKeyField, CompositeKey, DoubleField
 import configparser
 import datetime
-from db import * 
+from db import *
 
 
 app = Flask(__name__)
+
 
 @app.route("/")
 @app.route("/index")
 def index():
     return render_template('principalSinRegistrar.html')
+
 
 @app.route("/registrar", methods=['POST', 'GET'])
 def register():
@@ -19,18 +21,19 @@ def register():
         return render_template('Registrar.html')
     elif request.method == 'POST':
         user = request.form['nick-name']
-    		if len(get_Usuario(user)) == 0:	
-					if password == repassword:
-						password = request.form['contraseña']
-						repassword = request.form['recontraseña']
-						create_Usuario(user, password)
-					flash('bad password')	
-           	if no existe user:
+        if len(get_Usuario(user)) == 0:
+            if password == repassword:
+                password = request.form['contraseña']
+                repassword = request.form['recontraseña']
+                create_Usuario(user, password)
+            flash('bad password')
+        if no existe user:
         return redirect(url_for('logged_index', user=user))
-            #else:
-            #usuario ya existe
-        #else:
-            #No coinciden las contraseñas
+        # else:
+        # usuario ya existe
+        # else:
+        # No coinciden las contraseñas
+
 
 @app.route("/login", methods=['POST', 'GET'])
 def login():
@@ -39,22 +42,23 @@ def login():
     elif request.method == 'POST':
         user = request.form['nick-name']
         password = request.form['contraseña']
-        #if existe user y passwd
+        # if existe user y passwd
         return redirect(url_for('logged_index', user=user))
-        #else:
-            #Usuario y contraseña incorrectos
+        # else:
+        # Usuario y contraseña incorrectos
+
 
 @app.route("/<user>/configuracion", methods=['POST', 'GET'])
 def config(user):
     if request.method == 'GET':
-        return render_template('configuracion_perfil.html', user = user)
+        return render_template('configuracion_perfil.html', user=user)
     elif request.method == 'POST':
         if 'nombre' in request.form:
             nombre = request.form['nombre']
-            #Guardar nombre en la base de datos
+            # Guardar nombre en la base de datos
         if 'ap1' in request.form:
             ap1 = request.form['ap1']
-            #Lo mismo con ap1
+            # Lo mismo con ap1
         if 'ap2' in request.form:
             ap2 = request.form['ap2']
         if 'user' in request.form:
@@ -69,33 +73,40 @@ def config(user):
             imagen = request.files['imagen']
             if imagen.filename != '':
                 imagen.save('static/img/users/' + user)
-        
+
         return redirect(url_for('config', user=user))
+
 
 @app.route("/<user>/")
 @app.route("/<user>/index")
 def logged_index(user):
-    return render_template('principalRegistrado.html', user = user)
+    return render_template('principalRegistrado.html', user=user)
+
 
 @app.route("/<user>/profile")
 def profile(user):
-    return render_template('usuario.html', user = user)
+    return render_template('usuario.html', user=user)
+
 
 @app.route("/<user>/sensores_favoritos")
 def fav(user):
-    return render_template('sensores_fav.html', user = user)
+    return render_template('sensores_fav.html', user=user)
+
 
 @app.route("/<user>/registrar_sensor")
 def registrar_sensor(user):
-    return render_template('registrar_sensor.html', user = user)
+    return render_template('registrar_sensor.html', user=user)
+
 
 @app.route("/sensor/<id>")
 def informacion_sensor(id):
-		return render_template('info_sensor.html', id = id)
+    return render_template('info_sensor.html', id=id)
+
 
 @app.before_request
 def before_request():
     ini()
+
 
 @app.after_request
 def after_request(response):
