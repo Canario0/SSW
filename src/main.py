@@ -94,7 +94,3 @@ def before_request():
 def after_request(response):
     fin()
     return response
-create_Usuario("El retrasito", "25239559")
-print(get_Usuario("pipo"))
-
-
