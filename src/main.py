@@ -21,12 +21,15 @@ def register():
         return render_template('Registrar.html')
     elif request.method == 'POST':
         user = request.form['nick-name']
+        password = request.form['contraseña']
+        repassword = request.form['recontraseña']
         if len(get_Usuario(user)) == 0:
             if password == repassword:
-                password = request.form['contraseña']
-                repassword = request.form['recontraseña']
                 create_Usuario(user, password)
-            flash('bad password')
+            else:
+                flash('bad password')
+        else:
+            flash('User: ya existe')
         if no existe user:
         return redirect(url_for('logged_index', user=user))
         # else:
