@@ -19,7 +19,7 @@ def register():
         return render_template('Registrar.html')
     elif request.method == 'POST':
         user = request.form['nick-name']
-    		if (len(get_Usuario(user)) == 0):	
+    		if len(get_Usuario(user)) == 0:	
 					if password == repassword:
 						password = request.form['contraseña']
 						repassword = request.form['recontraseña']
