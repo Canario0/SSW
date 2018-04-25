@@ -7,5 +7,5 @@ insert into usuario values ('0ravla', 'alvaro.berruezo@alumnos.uva.es', '1234', 
 insert into usuario values ('PeterGriffin', 'peter.griffin@alumnos.uva.es', 'grifffffin', 'Peter', 'Griffin', 'Calle Spooner 31', str_to_date('12-08-1975', '%d-%m-%Y'), 'Padre de Familia', 693728612);
 insert into usuario values ('HomerJSimpson', 'homer.j@simpson.com', 'homero', 'Homer', 'Simpson', 'Evergreen Terrace 742', str_to_date('22-02-1980', '%d-%m-%Y'), 'Los Simpson', 649334821);
 insert into usuario values ('JVegas', 'vegas@apple.com', 'aloha', 'J', 'Vegas', null, str_to_date('11-02-1973', '%d-%m-%Y'), 'UVa', 983123456);
-insert into usuario values ('CVaca', 'cesar@infor.uva.es', 'n00b', 'Cesar', 'Vaca', null, str_to_date('01-07-1979', '%d-%m-%Y'), 'UVa', 983321321321);
+insert into usuario values ('CVaca', 'cesar@infor.uva.es', 'n00b', 'Cesar', 'Vaca', null, str_to_date('01-07-1979', '%d-%m-%Y'), 'UVa', 983123456);
 insert into usuario values ('Benja', 'ben@ja.min', 'minjaben', 'Benjamin', 'Sahelices', 'Campus Universitario Miguel Delibes', str_to_date('24-06-1971', '%d-%m-%Y'), 'UVa', 983123123);
