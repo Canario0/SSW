@@ -97,8 +97,11 @@ def create_Medicion(id, fechaMedicion, valor):
 #----------------------------------------------------------------------------
 def update_Usuario(user):
      with db.atomic():
-        Usuario.update(**user).where(Usuario.nickname ==user['nickname']).execute()
+        Usuario.update(**user).where(Usuario.nickname == user['nickname']).execute()
 
+def update_Sensor(sensor):
+     with db.atomic():
+        Sensor.update(**sensor).where(Sensor.id == sensor['id']).execute()
 
 
 #----------------------------------------------------------------------------
