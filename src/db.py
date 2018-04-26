@@ -117,7 +117,7 @@ def get_Sensor_ById(id):
 
 def get_Sensor_ByUser(nickname):
     user = Usuario.get(Usuario.nickname == nickname)
-    print(list(user.sensores.dicts()))
+    return list(user.sensores.dicts())
 #return  user.sensores
     
 

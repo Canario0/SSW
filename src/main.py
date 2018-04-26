@@ -92,7 +92,7 @@ def profile(user):
 #	sensoresUsuario = get_Usuario()
 #	for messages in sensoresUsuario.sensores[0]:
 #		print(messages)
-    rows = get_Sensor_ByUser('pipo')
+    rows = get_Sensor_ByUser(user)
     return render_template('usuario.html', user=user, rows=rows)
 
 
