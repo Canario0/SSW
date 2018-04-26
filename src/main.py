@@ -65,14 +65,14 @@ def config(user):
             telefono=usuario['telefono'])
 
     elif request.method == 'POST':
-        print (request.form)
-        usuario['email'] = request.form['email'] if(request.form['email']!= '') else usuario['email']
-        usuario['nombre'] = request.form['nombre'] if(request.form['nombre']!= '') else usuario['nombre']
-        usuario['apellido1'] = request.form['apellido1'] if(request.form['appelido1']!= '') else usuario['apellido1']
-        usuario['apellido2'] = request.form['apellido2'] if(request.form['apellido2']!= '') else usuario['apellido2']
-        usuario['direccion'] = request.form['direccion'] if(request.form['direccion']!= '') else usuario['direccion']
-        usuario['empresa'] = request.form['empresa'] if(request.form['empresa']!= '') else usuario['empresa']
-        usuario['telefono'] = request.form['telefono'] if(request.form['telefono']!= '') else usuario['telefono']
+        form = {x: y for x, y in request.form.items()}
+        usuario['email'] = form['email'] if(form['email']!= '') else usuario['email']
+        usuario['nombre'] = form['nombre'] if(form['nombre']!= '') else usuario['nombre']
+        usuario['apellido1'] = form['apellido1'] if(form['apellido1']!= '') else usuario['apellido1']
+        usuario['apellido2'] = form['apellido2'] if(form['apellido2']!= '') else usuario['apellido2']
+        usuario['direccion'] = form['direccion'] if(form['direccion']!= '') else usuario['direccion']
+        usuario['empresa'] = form['empresa'] if(form['empresa']!= '') else usuario['empresa']
+        usuario['telefono'] = form['telefono'] if(request.form['telefono']!= '') else usuario['telefono']
         if 'imagen' in request.files:
             imagen = request.files['imagen']
             if imagen.filename != '':
@@ -89,9 +89,9 @@ def logged_index(user):
 
 @app.route("/<user>/profile")
 def profile(user):
-	sensoresUsuario = get_Usuario()
-	for messages in sensoresUsuario.sensores[0]:
-		print(messages)
+#	sensoresUsuario = get_Usuario()
+#	for messages in sensoresUsuario.sensores[0]:
+#		print(messages)
     return render_template('usuario.html', user=user)
 
 
