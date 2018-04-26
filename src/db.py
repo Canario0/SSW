@@ -116,7 +116,7 @@ def get_Sensor_ById(id):
     return list (Sensor.select().where(Sensor.id == id).dicts())
 
 def get_Sensor_ByUser(nickname):
-    return list (Sensor.select().where(Sensor.nickname == nickname).dicts())
+    return list (Sensor.select().where(Sensor.nickname % nickname).dicts())
     
 
 def get_Mediciones(id):
