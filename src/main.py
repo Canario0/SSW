@@ -73,7 +73,7 @@ def config(user):
         usuario['direccion'] = request.form['direccion'] if(request.form['direccion']!= '') else usuario['direccion']
         usuario['empresa'] = request.form['empresa'] if(request.form['empresa']!= '') else usuario['empresa']
         usuario['telefono'] = request.form['telefono'] if(request.form['telefono']!= '') else usuario['telefono']
-                    # imagen = request.files['imagen']
+        imagen = request.files['imagen']
             # if imagen.filename != '':
                 # imagen.save('static/img/users/' + user)
 
