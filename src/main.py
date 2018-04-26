@@ -92,7 +92,8 @@ def profile(user):
 #	sensoresUsuario = get_Usuario()
 #	for messages in sensoresUsuario.sensores[0]:
 #		print(messages)
-    return render_template('usuario.html', user=user)
+    rows = get_Sensor_ByUser(user)
+    return render_template('usuario.html', user=user, rows=rows)
 
 
 @app.route("/<user>/sensores_favoritos")

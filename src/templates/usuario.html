@@ -48,6 +48,7 @@
 			</div>
 			<div id="tablaSensores">
 				<table id="tabla">
+					{% for row in rows %}
 				  <tr>
 				    <th>Sensor</th>
 				    <th>Estado</th>
@@ -55,7 +56,7 @@
 				    <th>Eliminar</th>
 				  </tr>
 				  <tr>
-				    <td id="nombreSensor"><a href="info_sensor.html">Temperatura - RF875</a></td>
+				    <td id="nombreSensor"><a href="info_sensor.html">{{ row.nombre }}</a></td>
 				    <td>Funcionando</td>
 				    <td>2 horas</td>
             <td>
@@ -63,7 +64,7 @@
             </td>
 				  </tr>
 				  <tr>
-				    <td id="nombreSensor"><a href="info_sensor.html">Humedad - KW965</a></td>
+				    <td id="nombreSensor"><a href="info_sensor.html">{{ row.nombre }}</a></td>
 				    <td>Fallo</td>
 				    <td>3 días</td>
             <td>
@@ -71,7 +72,7 @@
             </td>
 				  </tr>
 				  <tr>
-				    <td id="nombreSensor"><a href="info_sensor.html">Iluminación - BF852</a></td>
+				    <td id="nombreSensor"><a href="info_sensor.html">{{ row.nombre }}}</a></td>
 				    <td>Funcionando</td>
 				    <td>5.8 horas</td>
             <td>
@@ -79,7 +80,7 @@
             </td>
 				  </tr>
 				  <tr>
-				    <td id="nombreSensor"><a href="info_sensor.html">Contaminación - PA785</a></td>
+				    <td id="nombreSensor"><a href="info_sensor.html">{{ row.nombre }}</a></td>
 				    <td>Funcionando</td>
 				    <td>3 minutos</td>
             <td>
@@ -87,13 +88,14 @@
             </td>
 				  </tr>
 				  <tr>
-				    <td id="nombreSensor"><a href="info_sensor.html">Acústico - NS090</a></td>
+				    <td id="nombreSensor"><a href="info_sensor.html">{{ row.nombre }}</a></td>
 				    <td>Reparación</td>
 				    <td>1 Año 3 días</td>
             <td>
               <div class="boton" id="botonEliminar">-</div>
             </td>
-				  </tr>
+					</tr>
+					{% endfor %}
 				</table>
 			</div>
 		</div>
