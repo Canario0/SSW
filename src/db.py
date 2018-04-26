@@ -97,7 +97,7 @@ def create_Medicion(id, fechaMedicion, valor):
 #----------------------------------------------------------------------------
 def update_Usuario(user):
      with db.atomic():
-         Usuario.save(**user)
+         Usuario.update(**user)
 
 
 
