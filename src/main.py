@@ -73,9 +73,10 @@ def config(user):
         usuario['direccion'] = request.form['direccion'] if(request.form['direccion']!= '') else usuario['direccion']
         usuario['empresa'] = request.form['empresa'] if(request.form['empresa']!= '') else usuario['empresa']
         usuario['telefono'] = request.form['telefono'] if(request.form['telefono']!= '') else usuario['telefono']
-        imagen = request.files['imagen']
-            # if imagen.filename != '':
-                # imagen.save('static/img/users/' + user)
+        if 'imagen' in request.files:
+            imagen = request.files['imagen']
+            if imagen.filename != '':
+                imagen.save('static/img/users/' + user)
 
         update_Usuario(usuario)
         return redirect(url_for('config', user=user))
