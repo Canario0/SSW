@@ -14,7 +14,8 @@ class Usuario(Model):
     email = CharField(max_length=45,null=True)
     password = CharField(max_length=10, null=False)
     nombre = CharField(max_length=10, null=True)
-    apellidos = CharField(max_length=20, null=True)
+    apellido1 = CharField(max_length=20, null=True)
+    apellido2 = CharField(max_length=20, null=True)
     direccion = CharField(max_length=100, null=True)
     nacimiento = DateField(null=True)
     empresa = CharField(max_length=30, null=True)
@@ -91,6 +92,15 @@ def create_Medicion(id, fechaMedicion, valor):
 #----------------------------------------------------------------------------
 
 #----------------------------------------------------------------------------
+#       Actualizaciones
+#----------------------------------------------------------------------------
+def update_Usuario()
+
+
+
+#----------------------------------------------------------------------------
+
+#----------------------------------------------------------------------------
 #       Consultas
 #----------------------------------------------------------------------------
 def get_Usuario(nickname):
@@ -102,7 +112,6 @@ def get_Sensor(id):
 def get_Mediciones(id):
     sensor= Sensor.select().where(Sensor.id == id)
     return list(sensor.mediciones.dicts()) if len(list(sensor))>0 else []
-
 #----------------------------------------------------------------------------
 
 
