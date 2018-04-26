@@ -61,7 +61,8 @@ def config(user):
         nac = usuario['nacimiento']
         emp = usuario['empresa']
         tel = usuario['telefono']
-        return render_template('configuracion_perfil.html', user=user, nombreUser=nombre, apellido1User=ap1, apellido2User=ap2, direccionUser=dir, empresaUser=emp, tfnoUser=tel)
+        mail = usuario['email']
+        return render_template('configuracion_perfil.html', user=user, nombreUser=nombre, apellido1User=ap1, apellido2User=ap2, direccionUser=dir, empresaUser=emp, tfnoUser=tel, emailUser=mail)
 
     elif request.method == 'POST':
         if 'nombre' in request.form:
