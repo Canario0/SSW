@@ -51,35 +51,27 @@ def login():
 
 @app.route("/<user>/configuracion", methods=['POST', 'GET'])
 def config(user):
+    usuario = get_Usuario(user)[0]
     if request.method == 'GET':
-        usuario = get_Usuario(user)[0]
         usuario = {i: usuario[i] if usuario[i] != None else '' for i in usuario}
-        nombre = usuario['nombre']
-        ap1 = usuario['apellido1']
-        ap2 = usuario['apellido2']
-        dir = usuario['direccion']
-        nac = usuario['nacimiento']
-        emp = usuario['empresa']
-        tel = usuario['telefono']
-        mail = usuario['email']
-        return render_template('configuracion_perfil.html', user=user, nombreUser=nombre, apellido1User=ap1, apellido2User=ap2, direccionUser=dir, empresaUser=emp, tfnoUser=tel, emailUser=mail)
+        return render_template('configuracion_perfil.html',
+            user=user,
+            email=usuario['email'],
+            nombre=usuario['nombre'],
+            apellido1=usuario['apellido1'],
+            apellido2=usuario['apellido2'],
+            direccion=usuario['direccion'],
+            empresa=usuario['empresa'],
+            telefono=usuario['telefono'])
 
     elif request.method == 'POST':
-        usuario = get_Usuario(user)[0]
-        if 'nombre' in request.form:
-            usuario['nombre'] = request.form['nombre']
-        if 'ap1' in request.form:
-            usuario['apellido1'] = request.form['ap1']
-        if 'ap2' in request.form:
-            usuario['apellido2'] = request.form['ap2']
-        if 'e-mail' in request.form:
-            usuario['email'] = request.form['emailUser']
-        if 'direccion' in request.form:
-            usuario['direccion'] = request.form['direccion']
-        if 'empresa' in request.form:
-            usuario['empresa'] = request.form['empresa']
-        if 'tfno' in request.form:
-            usuario['telefono'] = request.form['tfno']
+        if 'email' in request.form: usuario['email'] = request.form['email']
+        if 'nombre' in request.form: usuario['nombre'] = request.form['nombre']
+        if 'apellido1' in request.form: usuario['apellido1'] = request.form['apellido1']
+        if 'apellido2' in request.form: usuario['apellido2'] = request.form['apellido2']
+        if 'direccion' in request.form: usuario['direccion'] = request.form['direccion']
+        if 'empresa' in request.form: usuario['empresa'] = request.form['empresa']
+        if 'telefono' in request.form: usuario['telefono'] = request.form['telefono']
         if 'imagen' in request.files:
             imagen = request.files['imagen']
             if imagen.filename != '':
