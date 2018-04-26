@@ -27,7 +27,7 @@ class Usuario(Model):
 
 class Sensor(Model):
     id = IntegerField(primary_key=True)
-    nickname = ForeignKeyField(Usuario, backref="sensores")
+    nickname = ForeignKeyField(Usuario)
     nombre = CharField(max_length=10, null=False)
     descripcion = CharField(null=True)
     tipo = IntegerField(null=False)
@@ -116,8 +116,7 @@ def get_Sensor_ById(id):
     return list (Sensor.select().where(Sensor.id == id).dicts())
 
 def get_Sensor_ByUser(nickname):
-    user = Usuario.select().where(Usuario.nickname == nickname)
-    return list (user.sensores.dicts())
+    return list (Sensor.select().where(Sensor.nickname % nickname).dicts())
     
 
 def get_Mediciones(id):
