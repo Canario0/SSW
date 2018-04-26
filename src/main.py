@@ -51,8 +51,8 @@ def login():
 
 @app.route("/<user>/configuracion", methods=['POST', 'GET'])
 def config(user):
+    usuario = get_Usuario(user)[0]
     if request.method == 'GET':
-        usuario = get_Usuario(user)[0]
         nombre = usuario['nombre']
         ap1 = usuario['apellido1']
         ap2 = usuario['apellido2']
@@ -61,30 +61,29 @@ def config(user):
         emp = usuario['empresa']
         tel = usuario['telefono']
         return render_template('configuracion_perfil.html', user=user, nombreUser=nombre, apellido1User=ap1, apellido2User=ap2, nickname=user, direccionUser=dir, empresaUser=emp, tfnoUser=tel)
+
     elif request.method == 'POST':
         if 'nombre' in request.form:
-            nombre = request.form['nombre']
-            # Guardar nombre en la base de datos
+            usuario['nombre'] = request.form['nombre']
         if 'ap1' in request.form:
-            ap1 = request.form['ap1']
-            # Lo mismo con ap1
+            usuario['apellido1'] = request.form['ap1']
         if 'ap2' in request.form:
-            ap2 = request.form['ap2']
+            usuario['apellido2'] = request.form['ap2']
         if 'user' in request.form:
-            newuser = request.form['user']
+            usuario['nickname'] = request.form['user']
         if 'direccion' in request.form:
-            direccion = request.form['direccion']
+            usuario['direccion'] = request.form['direccion']
         if 'empresa' in request.form:
-            empresa = request.form['empresa']
+            usuario['empresa'] = request.form['empresa']
         if 'tfno' in request.form:
-            tfno = request.form['tfno']
+            usuario['telefono'] = request.form['tfno']
         if 'imagen' in request.files:
             imagen = request.files['imagen']
             if imagen.filename != '':
                 imagen.save('static/img/users/' + user)
 
+        update_Usuario(usuario)
         return redirect(url_for('config', user=user))
-
 
 @app.route("/<user>/")
 @app.route("/<user>/index")
