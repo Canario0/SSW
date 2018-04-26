@@ -52,7 +52,15 @@ def login():
 @app.route("/<user>/configuracion", methods=['POST', 'GET'])
 def config(user):
     if request.method == 'GET':
-        return render_template('configuracion_perfil.html', user=user)
+        usuario = get_Usuario(user)[0]
+        nombre = usuario['nombre']
+        ap1 = usuario['apellido1']
+        ap2 = usuario['apellido2']
+        dir = usuario['direccion']
+        nac = usuario['nacimiento']
+        emp = usuario['empresa']
+        tel = usuario['telefono']
+        return render_template('configuracion_perfil.html', user=user, nombreUser=nombre, apellido1User=ap1, apellido2User=ap2, nickname=user, direccionUser=dir, empresaUser=emp, tfnoUser=tel)
     elif request.method == 'POST':
         if 'nombre' in request.form:
             nombre = request.form['nombre']
