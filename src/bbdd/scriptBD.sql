@@ -1,11 +1,11 @@
+
+-- -----------------------------------------------------
+-- This script creates the tables and initializate them
+-- -----------------------------------------------------
+
 -- -----------------------------------------------------
 -- If tables already exists, delete them             
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS LIKED;
-DROP TABLE IF EXISTS FAVORITO;
-DROP TABLE IF EXISTS MEDICION;
-DROP TABLE IF EXISTS SENSOR;
-DROP TABLE IF EXISTS USUARIO;
 DROP TABLE IF EXISTS liked;
 DROP TABLE IF EXISTS favorito;
 DROP TABLE IF EXISTS medicion;
@@ -54,7 +54,7 @@ CREATE TABLE favorito (
   FOREIGN KEY (id) REFERENCES sensor(id));
 
 -- -----------------------------------------------------
--- Table "ssw"."favorito"
+-- Table "ssw"."liked"
 -- -----------------------------------------------------
 CREATE TABLE liked (
   nickname VARCHAR(20),
@@ -78,8 +78,6 @@ CREATE TABLE medicion (
 -- ----------------------------------------------------
 -- BBDD inizialiation
 -- ----------------------------------------------------
-
-
 -- ----------------------------------------------------
 -- Values for some users
 -- ----------------------------------------------------

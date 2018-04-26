@@ -1,8 +1,7 @@
-
 #! /bin/bash
 
-# Create virtual environment if does not exists
-if [ ! -d menv ] 
+# Create virtual environment if it not exist
+if [ ! -d menv ]
 then
     virtualenv -p python3 menv
 fi
@@ -10,7 +9,7 @@ fi
 # Source virtual environment
 source menv/bin/activate
 
-# Install python requirements from requirements 
+# Install python requirements from requirements
 pip install -r requirements.txt
 
 # Deactivate virtual environment
