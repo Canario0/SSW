@@ -45,7 +45,7 @@ class Favorito(Model):
 
     class Meta:
         database = db
-        primary_key = CompositeKey('nickname', 'tag')
+        primary_key = CompositeKey('nickname', 'id')
 
 
 class Liked(Model):
@@ -54,7 +54,7 @@ class Liked(Model):
 
     class Meta:
         database = db
-        primary_key = CompositeKey('nickname', 'tag')
+        primary_key = CompositeKey('nickname', 'id')
 
 
 class Medicion(Model):
@@ -116,7 +116,7 @@ def get_Sensor_ById(id):
     return list (Sensor.select().where(Sensor.id == id).dicts())
 
 def get_Sensor_ByUser(nickname):
-    return list (Sensor.select().where(Sensor.nickname % nickname).dicts())
+    return  Sensor.select().where(Sensor.nickname % nickname)
     
 
 def get_Mediciones(id):
