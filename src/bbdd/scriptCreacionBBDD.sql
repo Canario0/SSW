@@ -38,8 +38,7 @@ CREATE TABLE sensor (
   x DOUBLE PRECISION NOT NULL,
   y DOUBLE PRECISION NOT NULL,
   PRIMARY KEY (id),
-  FOREIGN KEY (nickname) REFERENCES usuario(nickname))
-  );
+  FOREIGN KEY (nickname) REFERENCES usuario(nickname));
 
 -- -----------------------------------------------------
 -- Table "ssw"."favorito"
