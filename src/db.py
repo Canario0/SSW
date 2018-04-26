@@ -97,7 +97,7 @@ def create_Medicion(id, fechaMedicion, valor):
 #----------------------------------------------------------------------------
 def update_Usuario(user):
      with db.atomic():
-        Usuario.update(**user).execute()
+        Usuario.update(**user).where(Usuario.nickname ==user['nickname']).execute()
 
 
 

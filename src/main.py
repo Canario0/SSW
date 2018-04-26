@@ -65,14 +65,14 @@ def config(user):
             telefono=usuario['telefono'])
 
     elif request.method == 'POST':
-        form = {x: y for x, y in request.form.items()}
-        usuario['email'] = form['email'] if(form['email']!= '') else usuario['email']
-        usuario['nombre'] = form['nombre'] if(form['nombre']!= '') else usuario['nombre']
-        usuario['apellido1'] = form['apellido1'] if(form['apellido1']!= '') else usuario['apellido1']
-        usuario['apellido2'] = form['apellido2'] if(form['apellido2']!= '') else usuario['apellido2']
-        usuario['direccion'] = form['direccion'] if(form['direccion']!= '') else usuario['direccion']
-        usuario['empresa'] = form['empresa'] if(form['empresa']!= '') else usuario['empresa']
-        usuario['telefono'] = form['telefono'] if(request.form['telefono']!= '') else usuario['telefono']
+        form = request.form
+        usuario['email'] = form.get('email') if(form.get('email')!= '') else usuario['email']
+        usuario['nombre'] = form.get('nombre') if(form.get('nombre')!= '') else usuario['nombre']
+        usuario['apellido1'] = form.get('apellido1') if(form.get('apellido1')!= '') else usuario['apellido1']
+        usuario['apellido2'] = form.get('apellido2') if(form.get('apellido2')!= '') else usuario['apellido2']
+        usuario['direccion'] = form.get('direccion') if(form.get('direccion')!= '') else usuario['direccion']
+        usuario['empresa'] = form.get('empresa') if(form.get('empresa')!= '') else usuario['empresa']
+        usuario['telefono'] = form.get('telefono') if(request.form.get('telefono')!= '') else usuario['telefono']
         if 'imagen' in request.files:
             imagen = request.files['imagen']
             if imagen.filename != '':
