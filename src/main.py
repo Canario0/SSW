@@ -5,15 +5,12 @@ import configparser
 import datetime
 from db import *
 
-
 app = Flask(__name__)
-
 
 @app.route("/")
 @app.route("/index")
 def index():
     return render_template('principalSinRegistrar.html')
-
 
 @app.route("/registrar", methods=['POST', 'GET'])
 def register():
@@ -23,16 +20,15 @@ def register():
         user = request.form['nick-name']
         password = request.form['contraseña']
         repassword = request.form['recontraseña']
-        if len(get_Usuario(user)) == 0:
+        #if len(get_Usuario(user)) == 0:
+        if get_Usuario(user) == []:
             if password == repassword:
                 create_Usuario(user, password)
                 return redirect(url_for('logged_index', user=user))
             else:
-                flash('bad password')
+                flash('Las contraseñas no coinciden')
         else:
-            flash('User: ya existe')
-
-
+            flash('Nick-name en uso')
 
 @app.route("/login", methods=['POST', 'GET'])
 def login():
@@ -41,11 +37,13 @@ def login():
     elif request.method == 'POST':
         user = request.form['nick-name']
         password = request.form['contraseña']
-        # if existe user y passwd
-        return redirect(url_for('logged_index', user=user))
-        # else:
-        # Usuario y contraseña incorrectos
-
+        if get_Usuario(user) != []:
+            if get_Usuario(user).password == password:
+                return redirect(url_for('logged_index', user=user))
+            else:
+                flash('Contrasñea incorrecta')
+        else:
+            flash('El usuario no existe')
 
 @app.route("/<user>/configuracion", methods=['POST', 'GET'])
 def config(user):
