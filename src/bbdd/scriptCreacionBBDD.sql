@@ -18,7 +18,7 @@ DROP TABLE IF EXISTS usuario;
 CREATE TABLE usuario(
   nickname VARCHAR(20) NOT NULL,
   email VARCHAR(45),
-  password VARCHAR(10) NOT NULL,
+  password VARCHAR(20) NOT NULL,
   nombre VARCHAR(10),
   apellido1 VARCHAR(20),
   apellido2 VARCHAR(20),
