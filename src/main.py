@@ -47,7 +47,7 @@ def login():
                 flash('Contrasñea incorrecta')
         else:
             flash('El usuario no existe')
-        return redirect(url_for(login))
+        return redirect(url_for('login'))
 
 @app.route("/<user>/configuracion", methods=['POST', 'GET'])
 def config(user):
