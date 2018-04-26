@@ -27,6 +27,7 @@ class Usuario(Model):
 
 class Sensor(Model):
     id = IntegerField(primary_key=True)
+    nickname = ForeignKeyField(Usuario, backref="sensores")
     nombre = CharField(max_length=10, null=False)
     descripcion = CharField(null=True)
     tipo = IntegerField(null=False)

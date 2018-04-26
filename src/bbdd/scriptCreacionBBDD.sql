@@ -30,13 +30,16 @@ CREATE TABLE usuario(
 -- -----------------------------------------------------
 CREATE TABLE sensor (
   id INTEGER NOT NULL,
+  nickname VARCHAR(20) NOT NULL,
   nombre VARCHAR(10) NOT NULL,
   descripcion VARCHAR(255),
   tipo INTEGER NOT NULL,
   visible BOOLEAN NOT NULL,
   x DOUBLE PRECISION NOT NULL,
   y DOUBLE PRECISION NOT NULL,
-  PRIMARY KEY (id));
+  PRIMARY KEY (id),
+  FOREIGN KEY (nickname) REFERENCES usuario(nickname))
+  );
 
 -- -----------------------------------------------------
 -- Table "ssw"."favorito"
@@ -73,7 +76,7 @@ CREATE TABLE medicion (
 -- ----------------------------------------------------
 -- BBDD inizialiation
 -- ----------------------------------------------------
-insert into usuario values ('popi', 'pipo@dog.com', 'opipopi', 'Pipo', 'Canino', null, null, str_to_date('24-04-2018', '%d-%m-%Y'), null, null);
+insert into usuario values ('pipo', 'pipo@dog.com', 'opipopi', 'Pipo', 'Canino', null, null, str_to_date('24-04-2018', '%d-%m-%Y'), null, null);
 insert into usuario values ('El Retrasito', 'el@retrasito.com', 'retrasito1', 'El', 'Retrasito',  null, null, str_to_date('21-09-2017', '%d-%m-%Y'), null, null);
 insert into usuario values ('Antimateria', 'sergio.esteban@alumnos.uva.es', '1234567890', 'Sergio', 'Esteban', null,'Calle Ciudad de la Habana 23', str_to_date('01-01-1997', '%d-%m-%Y'), null, 719537216);
 insert into usuario values ('Canario', 'pablo.renero@alumnos.uva.es', 'c4n4r10', 'Pablo', 'Renero', null, 'Calle Ciudad de la Habana 24', str_to_date('31-12-1997', '%d-%m-%Y'), null, 689340123);
@@ -85,7 +88,7 @@ insert into usuario values ('JVegas', 'vegas@apple.com', 'aloha', 'J', 'Vegas', 
 insert into usuario values ('CVaca', 'cesar@infor.uva.es', 'n00b', 'Cesar', 'Vaca', null, null, str_to_date('01-07-1979', '%d-%m-%Y'), 'UVa', 983123456);
 insert into usuario values ('Benja', 'ben@ja.min', 'minjaben', 'Benjamin', 'Sahelices', null, 'Campus Universitario Miguel Delibes', str_to_date('24-06-1971', '%d-%m-%Y'), 'UVa', 983123123);
 
-insert into sensor values (1, "HC05", "sesor de temperatura", 2, true, 236.25, 2547.36);
+insert into sensor values (1, 'pipo', "HC05", "sesor de temperatura", 2, true, 236.25, 2547.36);
 insert into medicion values (1, Date_format(now(),'%Y-%m-%d %h:%i:%s'), Date_format(now(), '%Y-%m-%d'), 20.15); 
 insert into medicion values (1, Date_format(now()+1,'%Y-%m-%d %h:%i:%s'), Date_format(now(), '%Y-%m-%d'), 20.11); 
 insert into medicion values (1, Date_format(now()+2,'%Y-%m-%d %h:%i:%s'), Date_format(now(), '%Y-%m-%d'), 20.12); 
