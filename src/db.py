@@ -27,7 +27,7 @@ class Usuario(Model):
 
 class Sensor(Model):
     id = IntegerField(primary_key=True)
-    nickname = ForeignKeyField(Usuario, backref='sensores')
+    nickname = ForeignKeyField(Usuario, backref='sensores', db_column='nickname')
     nombre = CharField(max_length=10, null=False)
     descripcion = CharField(null=True)
     tipo = IntegerField(null=False)
@@ -40,8 +40,8 @@ class Sensor(Model):
 
 
 class Favorito(Model):
-    nickname = ForeignKeyField(Usuario)
-    id = ForeignKeyField(Sensor)
+    nickname = ForeignKeyField(Usuario, db_column='nickname')
+    id = ForeignKeyField(Sensor,db_column='id')
 
     class Meta:
         database = db
@@ -49,8 +49,8 @@ class Favorito(Model):
 
 
 class Liked(Model):
-    nickname = ForeignKeyField(Usuario)
-    id = ForeignKeyField(Sensor)
+    nickname = ForeignKeyField(Usuario, db_column='nickname')
+    id = ForeignKeyField(Sensor, db_column='id')
 
     class Meta:
         database = db
@@ -58,7 +58,7 @@ class Liked(Model):
 
 
 class Medicion(Model):
-    id = ForeignKeyField(Sensor, backref='mediciones')
+    id = ForeignKeyField(Sensor, backref='mediciones', db_column='id')
     # este valor se autogenera
     fechaSubida = DateTimeField(
         default=datetime.datetime.now, primary_key=True)
