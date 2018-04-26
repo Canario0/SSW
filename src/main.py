@@ -89,9 +89,9 @@ def logged_index(user):
 
 @app.route("/<user>/profile")
 def profile(user):
-		sensoresUsuario = get_Usuario()
-		for messages in sensoresUsuario.sensores[0]:
-			print(messages)
+	sensoresUsuario = get_Usuario()
+	for messages in sensoresUsuario.sensores[0]:
+		print(messages)
     return render_template('usuario.html', user=user)
 
 
