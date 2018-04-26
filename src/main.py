@@ -3,9 +3,11 @@ from flask import Flask, render_template, request, redirect, url_for, flash
 from peewee import Model, MySQLDatabase, BooleanField, CharField, IntegerField, DateField, DateTimeField, ForeignKeyField, CompositeKey, DoubleField
 import configparser
 import datetime
+import os
 from db import *
 
 app = Flask(__name__)
+app.config['SECRET_KEY']=os.urandom(24)
 
 @app.route("/")
 @app.route("/index")
@@ -29,6 +31,7 @@ def register():
                 flash('Las contraseñas no coinciden')
         else:
             flash('Nick-name en uso')
+        return redirect(url_for('register'))
 
 @app.route("/login", methods=['POST', 'GET'])
 def login():
