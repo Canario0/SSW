@@ -65,17 +65,17 @@ def config(user):
             telefono=usuario['telefono'])
 
     elif request.method == 'POST':
-        if 'email' in request.form: usuario['email'] = request.form['email']
-        if 'nombre' in request.form: usuario['nombre'] = request.form['nombre']
-        if 'apellido1' in request.form: usuario['apellido1'] = request.form['apellido1']
-        if 'apellido2' in request.form: usuario['apellido2'] = request.form['apellido2']
-        if 'direccion' in request.form: usuario['direccion'] = request.form['direccion']
-        if 'empresa' in request.form: usuario['empresa'] = request.form['empresa']
-        if 'telefono' in request.form: usuario['telefono'] = request.form['telefono']
-        if 'imagen' in request.files:
-            imagen = request.files['imagen']
-            if imagen.filename != '':
-                imagen.save('static/img/users/' + user)
+        print (request.form)
+        usuario['email'] = request.form['email'] if(request.form['email']!= '') else usuario['email']
+        usuario['nombre'] = request.form['nombre'] if(request.form['nombre']!= '') else usuario['nombre']
+        usuario['apellido1'] = request.form['apellido1'] if(request.form['appelido1']!= '') else usuario['apellido1']
+        usuario['apellido2'] = request.form['apellido2'] if(request.form['apellido2']!= '') else usuario['apellido2']
+        usuario['direccion'] = request.form['direccion'] if(request.form['direccion']!= '') else usuario['direccion']
+        usuario['empresa'] = request.form['empresa'] if(request.form['empresa']!= '') else usuario['empresa']
+        usuario['telefono'] = request.form['telefono'] if(request.form['telefono']!= '') else usuario['telefono']
+                    # imagen = request.files['imagen']
+            # if imagen.filename != '':
+                # imagen.save('static/img/users/' + user)
 
         update_Usuario(usuario)
         return redirect(url_for('config', user=user))
