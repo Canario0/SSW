@@ -94,10 +94,10 @@ def create_Medicion(id, fechaMedicion, valor):
 #       Consultas
 #----------------------------------------------------------------------------
 def get_Usuario(nickname):
-    return list (Usuario.select().where(Usuario.nickname == nickname).dicts())
+    return Usuario.select().where(Usuario.nickname == nickname).dicts()
 
 def get_Sensor(id):
-    return list (Sensor.select().where(Sensor.id == id).dicts())
+    return Sensor.select().where(Sensor.id == id).dicts()
 
 def get_Mediciones(id):
     sensor= Sensor.select().where(Sensor.id == id)
