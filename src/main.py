@@ -3,11 +3,13 @@ from flask import Flask, render_template, request, redirect, url_for, flash
 from peewee import Model, MySQLDatabase, BooleanField, CharField, IntegerField, DateField, DateTimeField, ForeignKeyField, CompositeKey, DoubleField
 import configparser
 import datetime
+import os
 from db import *
 
 
 app = Flask(__name__)
 
+app.config['SECRET_KEY']=os.urandom(24)
 
 @app.route("/")
 @app.route("/index")
@@ -29,8 +31,12 @@ def register():
                 return redirect(url_for('logged_index', user=user))
             else:
                 flash('bad password')
+                print("passwwd")
         else:
             flash('User: ya existe')
+            print("usuario existe")
+        return redirect(url_for('register'))
+
 
 
 
