@@ -57,7 +57,7 @@ def config(user):
         return render_template('configuracion_perfil.html',
             user=user,
             email=usuario['email'],
-            nombre=usuario['nombre']
+            nombre=usuario['nombre'],
             apellido1=usuario['apellido1'],
             apellido2=usuario['apellido2'],
             direccion=usuario['direccion'],
