@@ -23,7 +23,7 @@ def register():
         password = request.form['contraseña']
         repassword = request.form['recontraseña']
         #if len(get_Usuario(user)) == 0:
-        if get_Usuario(user) == []:
+        if get_Usuario(user) == dict():
             if password == repassword:
                 create_Usuario(user, password)
                 return redirect(url_for('logged_index', user=user))
@@ -40,8 +40,8 @@ def login():
     elif request.method == 'POST':
         user = request.form['nick-name']
         password = request.form['contraseña']
-        if get_Usuario(user) != []:
-            if get_Usuario(user).password == password:
+        if get_Usuario(user)  == dict():
+            if get_Usuario(user)['password'] == password:
                 return redirect(url_for('logged_index', user=user))
             else:
                 flash('Contrasñea incorrecta')
