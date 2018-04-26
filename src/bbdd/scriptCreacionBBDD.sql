@@ -88,6 +88,8 @@ insert into usuario values ('CVaca', 'cesar@infor.uva.es', 'n00b', 'Cesar', 'Vac
 insert into usuario values ('Benja', 'ben@ja.min', 'minjaben', 'Benjamin', 'Sahelices', null, 'Campus Universitario Miguel Delibes', str_to_date('24-06-1971', '%d-%m-%Y'), 'UVa', 983123123);
 
 insert into sensor values (1, 'pipo', "HC05", "sesor de temperatura", 2, true, 236.25, 2547.36);
+insert into sensor values (2, 'pipo', "HC05-v42", "sensor del amor", 3, false, 230.7, 200.1);
+insert into sensor values (3, 'Smokt', "HC05-v14", "sensor de feromonas", 3, true, 203.7, 201.1);
 insert into medicion values (1, Date_format(now(),'%Y-%m-%d %h:%i:%s'), Date_format(now(), '%Y-%m-%d'), 20.15); 
 insert into medicion values (1, Date_format(now()+1,'%Y-%m-%d %h:%i:%s'), Date_format(now(), '%Y-%m-%d'), 20.11); 
 insert into medicion values (1, Date_format(now()+2,'%Y-%m-%d %h:%i:%s'), Date_format(now(), '%Y-%m-%d'), 20.12); 
