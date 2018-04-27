@@ -20,7 +20,7 @@ def index():
 def addMedition():
     if request.method == 'GET':
         return render_template('añadirMedidas.html')
-    elif request.method == 'POST'
+    elif request.method == 'POST':
         fechaMedicion = request.form['fecha-medicion']
         medida = request.form['medida']
         createMedicion(id, fechaMedicion, medida)
@@ -131,4 +131,4 @@ def before_request():
 @app.after_request
 def after_request(response):
     fin()
-    return responsE
+    return response
