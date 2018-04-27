@@ -3,7 +3,7 @@ import configparser
 import datetime
 
 conf = configparser.ConfigParser()
-conf.read('config.txt')
+conf.read('config.conf')
 
 db = MySQLDatabase(conf['DataBase']['name'], user=conf['DataBase']['user'], password=conf['DataBase']
                    ['password'], host=conf['DataBase']['host'], port=int(conf['DataBase']['port']))
