@@ -14,6 +14,18 @@ app.config['SECRET_KEY']=os.urandom(24)
 def index():
     return render_template('principalSinRegistrar.html')
 
+
+# esta interaccion no está probada, probarla por la mañana
+@app.route("/<id>/anadirMedidas", methods=['POST', 'GET'])
+def addMedition():
+    if request.method == 'GET':
+        return render_template('añadirMedidas.html')
+    elif request.method == 'POST'
+        fechaMedicion = request.form['fecha-medicion']
+        medida = request.form['medida']
+        createMedicion(id, fechaMedicion, medida)
+
+
 @app.route("/registrar", methods=['POST', 'GET'])
 def register():
     if request.method == 'GET':
@@ -119,4 +131,4 @@ def before_request():
 @app.after_request
 def after_request(response):
     fin()
-    return response
+    return responsE
