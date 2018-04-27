@@ -16,7 +16,7 @@ def index():
 
 
 # esta interaccion no está probada, probarla por la mañana
-@app.route("/<id>/anadirMedidas", methods=['POST', 'GET'])
+@app.route("/sensor/<id>/anadirMedidas", methods=['POST', 'GET'])
 def addMedition():
     if request.method == 'GET':
         return render_template('añadirMedidas.html')
