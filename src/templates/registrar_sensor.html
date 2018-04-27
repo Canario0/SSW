@@ -45,9 +45,9 @@
       <!-- Different tabs within the profile -->
       <div id="content">
         <div id="pestañas">
-          <a class=pestaña id="pestaña" href="usuario.html">Mis Sensores</a>
-          <a class=pestaña id="pestaña" href="sensores_fav.html">Sensores Favoritos</a>
-          <a class=pestaña id="pestaña" href="configuracion_perfil.html">Configurar Perfil</a>
+          <a class=pestaña id="pestaña" href="/{{ user }}/profile">Mis Sensores</a>
+          <a class=pestaña id="pestaña" href="/{{ user }}/sensores_favoritos">Sensores Favoritos</a>
+          <a class=pestaña id="pestaña" href="/{{ user }}/configuracion">Configurar Perfil</a>
         </div>
         <div id="formularioPrincipal">
           <div class="row, primera">
@@ -83,7 +83,7 @@
 
           <div class="row">
             <p>Localización</p>
-            <img id="imgMapa" src="../img/mapa.jpg" alt="mapa">
+            <img id="imgMapa" src="../static/img/mapa.jpg" alt="mapa">
             <p class="texto3">Coordenadas:</p>
             <p><input id="inputCoordenadas" type="text" name="Coordenadas" size="20" placeholder="Introducir latitud y longitud"></p>
           </div>
