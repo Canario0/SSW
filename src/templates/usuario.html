@@ -54,46 +54,16 @@
 				    <th>Tiempo de funcionamiento</th>
 				    <th>Eliminar</th>
 				  </tr>
+                  {% for row in rows %}
 				  <tr>
-				    <td id="nombreSensor"><a href="/sensor/{{ rows[0]['id'] }}">{{ rows[0]['nombre'] }}</a></td>
+				    <td id="nombreSensor"><a href="/sensor/{{ row['id'] }}">{{ row['nombre'] }}</a></td>
 				    <td>Funcionando</td>
 				    <td>2 horas</td>
-            <td>
-              <div class="boton" id="botonEliminar">-</div>
-            </td>
+                    <td>
+                      <div class="boton" id="botonEliminar">-</div>
+                    </td>
 				  </tr>
-				  <tr>
-				    <td id="nombreSensor"><a href="/sensor/{{ rows[1]['id'] }}">{{ rows[1]['nombre'] }}</a></td>
-				    <td>Fallo</td>
-				    <td>3 días</td>
-            <td>
-              <div class="boton" id="botonEliminar">-</div>
-            </td>
-				  </tr>
-				  <tr>
-				    <td id="nombreSensor"><a href="/sensor/{{ rows[2]['id'] }}">{{ rows[2]['nombre'] }}</a></td>
-				    <td>Funcionando</td>
-				    <td>5.8 horas</td>
-            <td>
-              <div class="boton" id="botonEliminar">-</div>
-            </td>
-				  </tr>
-				  <tr>
-				    <td id="nombreSensor"><a href="/sensor/{{ rows[3]['id'] }}">{{ rows[3]['nombre'] }}</a></td>
-				    <td>Funcionando</td>
-				    <td>3 minutos</td>
-            <td>
-              <div class="boton" id="botonEliminar">-</div>
-            </td>
-				  </tr>
-				  <tr>
-				    <td id="nombreSensor"><a href="/sensor/{{ rows[4]['id'] }}">{{ rows[4]['nombre'] }}</a></td>
-				    <td>Reparación</td>
-				    <td>1 Año 3 días</td>
-            <td>
-              <div class="boton" id="botonEliminar">-</div>
-            </td>
-					</tr>
+                  {% end for %}
 				</table>
 			</div>
 		</div>
