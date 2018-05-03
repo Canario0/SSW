@@ -23,7 +23,7 @@ def addMedition():
     elif request.method == 'POST':
         fechaMedicion = request.form['fecha-medicion']
         medida = request.form['medida']
-        createMedicion(id, fechaMedicion, medida)
+        create_Medicion(id, fechaMedicion, medida)
 
 
 @app.route("/registrar", methods=['POST', 'GET'])
