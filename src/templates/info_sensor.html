@@ -26,13 +26,13 @@
 		<a id ="titulo" href="/{{ user }}/index">SMART <b>MAPS</b></a>
 		<div id="perfil">
 			<a class="boton" id="buttonHeader" href="/index">Cerrar Sesión</a>
-			<a id="imgUser" href="/{{ user }}/profile"><img src="{{ url_for('static', filename='img/users' + user) }}" alt="Usuario" onerror="this.src='../static/img/users/default.png';" /></a>
+			<a id="imgUser" href="/{{ user }}/profile"><img src="{{ url_for('static', filename='img/users/' + user) }}" alt="Usuario" onerror="this.src='../static/img/users/default.png';" /></a>
 		</div>
 	</div>
 
 	<div id="cuerpo">
 		<div id="imgUserBig">
-			<img src="{{ url_for('static', filename='img/users' + user) }}" alt="Usuario" onerror="this.src='../static/img/users/default.png';" />
+			<img src="{{ url_for('static', filename='img/users/' + user) }}" alt="Usuario" onerror="this.src='../static/img/users/default.png';" />
 			<p id="underUser">Jhon21</p>
 		</div>
 
