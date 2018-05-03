@@ -31,7 +31,7 @@
 
     <div id="cuerpo">
 		<div id="imgUserBig">
-            <img src="{{ url_for('static', filename='img/users/' + user) }}" alt="Usuario" onerror="this.src='../static/img/users/default.png';" />
+            <img src="{{ url_for('static', filename='img/users/' + user) }}" alt="Usuario" onerror="{{ url_for('static', filename='img/default.png') }}" />
 			<p id="underUser">{{ user }}</p>
 		</div>
 

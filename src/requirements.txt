@@ -1,5 +1,6 @@
 Flask
 Flask-ini
+flask_security
 peewee
 configparser
 pymysql
