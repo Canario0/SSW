@@ -15,11 +15,10 @@ def index():
     return render_template('principalSinRegistrar.html')
 
 
-# esta interaccion no está probada, probarla por la mañana
-@app.route("/sensor/<id>/anadirMedidas", methods=['POST', 'GET'])
+@app.route("/sensor/<id>/registrar_medida", methods=['POST', 'GET'])
 def addMedition():
     if request.method == 'GET':
-        return render_template('añadirMedidas.html')
+        return render_template('registrar_medida.html')
     elif request.method == 'POST':
         fechaMedicion = request.form['fecha-medicion']
         medida = request.form['medida']
