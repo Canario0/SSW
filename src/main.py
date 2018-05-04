@@ -1,12 +1,13 @@
 #coding: utf-8
 from flask import Flask, render_template, request, redirect, url_for, flash
-from peewee import Model, MySQLDatabase, BooleanField, CharField, IntegerField, DateField, DateTimeField, ForeignKeyField, CompositeKey, DoubleField
+from flask_login import LoginManager
 import configparser
 import datetime
 import os
 from db import *
 
 app = Flask(__name__)
+loginmn = LoginManager(app)
 app.config['SECRET_KEY']=os.urandom(24)
 
 @app.route("/")

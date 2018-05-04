@@ -1,4 +1,6 @@
 from peewee import Model, MySQLDatabase,BooleanField, CharField, IntegerField, DateField, DateTimeField, ForeignKeyField, CompositeKey, DoubleField
+from flask_login import UserMixin
+from .main.py import loginmn
 import configparser
 import datetime
 
@@ -20,7 +22,9 @@ class Usuario(Model):
     nacimiento = DateField(null=True)
     empresa = CharField(max_length=30, null=True)
     telefono = IntegerField(null=True)
-
+    
+    def get_id(self):
+        return self.nickname
     class Meta:
         database = db
 
