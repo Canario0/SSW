@@ -4,11 +4,11 @@ from flask_login import LoginManager, current_user, login_user
 import configparser
 import datetime
 import os
+from db import *
+
 
 app = Flask(__name__)
 loginmn = LoginManager(app)
-
-from db import *
 
 app = Flask(__name__)
 loginmn = LoginManager(app)
@@ -139,3 +139,8 @@ def before_request():
 def after_request(response):
     fin()
     return response
+
+
+@loginmn.user_loader
+def loader_Usuario(nickname):
+    return Usuario.get(Usuario.nickname == nickname)

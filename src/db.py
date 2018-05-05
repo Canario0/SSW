@@ -1,6 +1,5 @@
 from peewee import Model, MySQLDatabase,BooleanField, CharField, IntegerField, DateField, DateTimeField, ForeignKeyField, CompositeKey, DoubleField
 from flask_login import UserMixin
-from app import loginmn
 import configparser
 import datetime
 
@@ -113,10 +112,6 @@ def update_Sensor(sensor):
 #----------------------------------------------------------------------------
 #       Consultas
 #----------------------------------------------------------------------------
-@loginmn.user_loader
-def loader_Usuario(nickname):
-    return Usuario.get(Usuario.nickname == nickname)
-
 def get_Usuario(nickname):
     return list (Usuario.select().where(Usuario.nickname == nickname).dicts())
 
