@@ -10,8 +10,6 @@ from db import *
 app = Flask(__name__)
 loginmn = LoginManager(app)
 loginmn.login_view = 'login'
-app = Flask(__name__)
-loginmn = LoginManager(app)
 app.config['SECRET_KEY']=os.urandom(24)
 
 @app.route("/")
