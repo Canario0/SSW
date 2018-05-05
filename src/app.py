@@ -1,6 +1,6 @@
 #coding: utf-8
 from flask import Flask, render_template, request, redirect, url_for, flash
-from flask_login import LoginManager, current_user, login_user
+from flask_login import LoginManager, current_user, login_user, logout_user, login_required
 import configparser
 import datetime
 import os
@@ -9,7 +9,7 @@ from db import *
 
 app = Flask(__name__)
 loginmn = LoginManager(app)
-
+login.login_view = 'login'
 app = Flask(__name__)
 loginmn = LoginManager(app)
 app.config['SECRET_KEY']=os.urandom(24)
@@ -21,6 +21,7 @@ def index():
 
 
 @app.route("/sensor/<id>/registrar_medida", methods=['POST', 'GET'])
+@login_required
 def addMedition():
     if request.method == 'GET':
         return render_template('registrar_medida.html')
@@ -33,6 +34,8 @@ def addMedition():
 @app.route("/registrar", methods=['POST', 'GET'])
 def register():
     if request.method == 'GET':
+        if current_user.is_authenticated:
+            return redirect(url_for('logged_index', user = current_user.nickname))
         return render_template('Registrar.html')
     elif request.method == 'POST':
         user = request.form['nick-name']
@@ -42,6 +45,7 @@ def register():
         if get_Usuario(user) == []:
             if password == repassword:
                 create_Usuario(user, password)
+                login_user(loader_Usuario(user))
                 return redirect(url_for('logged_index', user=user))
             else:
                 flash('Las contraseñas no coinciden')
@@ -61,14 +65,26 @@ def login():
         if get_Usuario(user) != []:
             if get_Usuario(user)[0]['password'] == password:
                 login_user(loader_Usuario(user))
-                return redirect(url_for('logged_index', user=user))
+                next_page = request.args.get('next')
+                if not next_page or url_parse(next_page).netloc != '':
+                    return redirect(url_for('logged_index', user=user))
+                else:
+                    return redirect(next_page)
             else:
                 flash('Contrasñea incorrecta')
         else:
             flash('El usuario no existe')
         return redirect(url_for('login'))
 
+
+@app.route('/logout')
+@login_required
+def logout():
+    logout_user()
+    return redirect(url_for('index'))
+
 @app.route("/<user>/configuracion", methods=['POST', 'GET'])
+@login_required
 def config(user):
     usuario = get_Usuario(user)[0]
     if request.method == 'GET':
@@ -102,11 +118,13 @@ def config(user):
 
 @app.route("/<user>/")
 @app.route("/<user>/index")
+@login_required
 def logged_index(user):
     return render_template('principalRegistrado.html', user=user)
 
 
 @app.route("/<user>/profile")
+@login_required
 def profile(user):
 #	sensoresUsuario = get_Usuario()
 #	for messages in sensoresUsuario.sensores[0]:
@@ -116,16 +134,19 @@ def profile(user):
 
 
 @app.route("/<user>/sensores_favoritos")
+@login_required
 def fav(user):
     return render_template('sensores_fav.html', user=user)
 
 
 @app.route("/<user>/registrar_sensor")
+@login_required
 def registrar_sensor(user):
     return render_template('registrar_sensor.html', user=user)
 
 
 @app.route("/sensor/<id>")
+@login_required
 def informacion_sensor(id):
     return render_template('info_sensor.html', id=id)
 
