@@ -53,7 +53,7 @@ def register():
 def login():
     if request.method == 'GET':
         if current_user.is_authenticated:
-            return redirect(url_for('logged_index', user = current_user.user.nickname))
+            return redirect(url_for('logged_index', user = current_user.nickname))
         return render_template('Login.html')
     elif request.method == 'POST':
         user = request.form['nick-name']
