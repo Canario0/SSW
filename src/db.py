@@ -1,6 +1,6 @@
 from peewee import Model, MySQLDatabase,BooleanField, CharField, IntegerField, DateField, DateTimeField, ForeignKeyField, CompositeKey, DoubleField
 from flask_login import UserMixin
-#from app import loginmn
+from app import loginmn
 import configparser
 import datetime
 
