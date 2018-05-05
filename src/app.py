@@ -10,6 +10,8 @@ loginmn = LoginManager(app)
 
 from db import *
 
+app = Flask(__name__)
+loginmn = LoginManager(app)
 app.config['SECRET_KEY']=os.urandom(24)
 
 @app.route("/")
@@ -37,7 +39,7 @@ def register():
         password = request.form['contraseña']
         repassword = request.form['recontraseña']
         #if len(get_Usuario(user)) == 0:
-        if not get_Usuario(user):
+        if get_Usuario(user) == []:
             if password == repassword:
                 create_Usuario(user, password)
                 return redirect(url_for('logged_index', user=user))
@@ -54,8 +56,8 @@ def login():
     elif request.method == 'POST':
         user = request.form['nick-name']
         password = request.form['contraseña']
-        if get_Usuario(user):
-            if get_Usuario(user)['password'] == password:
+        if get_Usuario(user) != []:
+            if get_Usuario(user)[0]['password'] == password:
                 return redirect(url_for('logged_index', user=user))
             else:
                 flash('Contrasñea incorrecta')
@@ -65,7 +67,7 @@ def login():
 
 @app.route("/<user>/configuracion", methods=['POST', 'GET'])
 def config(user):
-    usuario = get_Usuario(user)
+    usuario = get_Usuario(user)[0]
     if request.method == 'GET':
         usuario = {i: usuario[i] if usuario[i] != None else '' for i in usuario}
         return render_template('configuracion_perfil.html',
