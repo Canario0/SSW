@@ -115,7 +115,7 @@ def update_Sensor(sensor):
 #----------------------------------------------------------------------------
 @loginmn.user_loader
 def loader_Usuario(nickname):
-    return Usuario.get(nickname).dicts
+    return Usuario.get(nickname)
 
 def get_Usuario(nickname):
     return list (Usuario.select().where(Usuario.nickname == nickname).dicts())

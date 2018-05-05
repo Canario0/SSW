@@ -1,6 +1,6 @@
 #coding: utf-8
 from flask import Flask, render_template, request, redirect, url_for, flash
-from flask_login import LoginManager
+from flask_login import LoginManager, current_user
 import configparser
 import datetime
 import os
@@ -52,6 +52,8 @@ def register():
 @app.route("/login", methods=['POST', 'GET'])
 def login():
     if request.method == 'GET':
+        if current_user.is_authenticated:
+            return redirect(url_for('/{current_user.nickname}/index'))
         return render_template('Login.html')
     elif request.method == 'POST':
         user = request.form['nick-name']
