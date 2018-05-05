@@ -11,7 +11,7 @@ db = MySQLDatabase(conf['DataBase']['name'], user=conf['DataBase']['user'], pass
                    ['password'], host=conf['DataBase']['host'], port=int(conf['DataBase']['port']))
 
 
-class Usuario(Model):
+class Usuario(Model, UserMixin):
     nickname = CharField(max_length=20, primary_key=True)
     email = CharField(max_length=45,null=True)
     password = CharField(max_length=10, null=False)
@@ -115,7 +115,7 @@ def update_Sensor(sensor):
 #----------------------------------------------------------------------------
 @loginmn.user_loader
 def loader_Usuario(nickname):
-    return Usuario.get(nickname)
+    return Usuario.get(Usuario.nickname == nickname)
 
 def get_Usuario(nickname):
     return list (Usuario.select().where(Usuario.nickname == nickname).dicts())
