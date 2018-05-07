@@ -117,6 +117,7 @@
                         title: 'RJ-SENSOR-INFO'
                     });
 
+                    var sensores = JSON.parser({{ sensores }});
 
                     marker.addListener('mouseover', function() {
                     infowindow.open(map, marker);
