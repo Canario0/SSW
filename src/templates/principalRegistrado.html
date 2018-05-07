@@ -118,7 +118,8 @@
                     });
 
                     var sensores = JSON.parser({{ sensores }});
-                    Console.info(sensores);
+                    console.info(sensores);
+                    console.log(sensores);
                     var posicion = {lat: sensores[0]['x'], lng: sensores[0]['y']};
                     var sensor = new google.maps.Marker({
                         position: posicion,
