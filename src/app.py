@@ -85,7 +85,7 @@ def logout():
     logout_user()
     return redirect(url_for('index'))
 
-@app.route("/configuracion", methods=['POST', 'GET'])
+@app.route("/<user>/configuracion", methods=['POST', 'GET'])
 @login_required
 def config(user):
     if comprobar_Usuario(user):
@@ -139,7 +139,7 @@ def logged_index(user):
             return redirect(url_for('index', sensores=sensores))
 
 
-@app.route("/profile")
+@app.route("/<user>/profile")
 @login_required
 def profile(user):
 #	sensoresUsuario = get_Usuario()
@@ -155,7 +155,7 @@ def profile(user):
             return redirect(url_for('index'))
 
 
-@app.route("/sensores_favoritos")
+@app.route("/<user>/sensores_favoritos")
 @login_required
 def fav(user):
     if comprobar_Usuario(user):
@@ -167,7 +167,7 @@ def fav(user):
             return redirect(url_for('index'))
 
 
-@app.route("/registrar_sensor")
+@app.route("/<user>/registrar_sensor")
 @login_required
 def registrar_sensor(user):
     if comprobar_Usuario(user):
