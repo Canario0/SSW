@@ -125,11 +125,11 @@ def config(user):
             return redirect(url_for('index'))
 
 
-#@app.route("/<user>/")
-@app.route("/index")
+@app.route("/<user>/")
+@app.route("/<user>/index")
 @login_required
 def logged_index(user):
-    sensores = get_Sensores()
+    sensores = get_Sensors()
     sensores = json.dumps(sensores)
     if comprobar_Usuario(user):
         return render_template('principalRegistrado.html', user=user, sensores=sensores)
