@@ -129,7 +129,7 @@ def config(user):
 @app.route("/<user>/index")
 @login_required
 def logged_index(user):
-    sensores = get_Sensores()
+    sensores = get_Sensors()
     if comprobar_Usuario(user):
         return render_template('principalRegistrado.html', user=user, sensores=sensores)
     else:
