@@ -1,7 +1,7 @@
 #coding: utf-8
 from flask import Flask, render_template, request, redirect, url_for, flash
 from flask_login import LoginManager, current_user, login_user, logout_user, login_required
-from url_parse import url_parse
+from urllib.parse import urlparse
 import configparser
 import datetime
 import os
