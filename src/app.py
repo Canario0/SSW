@@ -5,6 +5,7 @@ from urllib.parse import urlparse
 import configparser
 import datetime
 import os
+import json
 from db import *
 
 
@@ -16,7 +17,9 @@ app.config['SECRET_KEY']=os.urandom(24)
 @app.route("/")
 @app.route("/index")
 def index():
-    return render_template('principalSinRegistrar.html')
+    sensores = get_Sensores()
+    sensores = json.dumps(sensores)
+    return render_template('principalSinRegistrar.html', sensores=sensores)
 
 
 @app.route("/sensor/<id>/registrar_medida", methods=['POST', 'GET'])
@@ -126,13 +129,14 @@ def config(user):
 @app.route("/index")
 @login_required
 def logged_index(user):
+    sensores = get_Sensores()
     if comprobar_Usuario(user):
-        return render_template('principalRegistrado.html', user=user)
+        return render_template('principalRegistrado.html', user=user, sensores=sensores)
     else:
         if current_user.is_authenticated:
-            return redirect(url_for('logged_index', user=current_user.nickname))
+            return redirect(url_for('logged_index', user=current_user.nickname, sensores=sensores))
         else:
-            return redirect(url_for('index'))
+            return redirect(url_for('index', sensores=sensores))
 
 
 @app.route("/profile")
