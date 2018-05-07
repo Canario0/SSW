@@ -125,8 +125,8 @@ def config(user):
             return redirect(url_for('index'))
 
 
-#@app.route("/<user>/")
-@app.route("/index")
+@app.route("/<user>/")
+@app.route("/<user>/index")
 @login_required
 def logged_index(user):
     sensores = get_Sensores()
