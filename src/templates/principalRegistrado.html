@@ -117,7 +117,7 @@
                         title: 'RJ-SENSOR-INFO'
                     });
 
-                    var sensores = JSON.parser({{ sensores }});
+                    var sensores = JSON.parser('{{ sensores }}');
                     console.info(sensores);
                     console.log(sensores);
                     var posicion = {lat: sensores[0]['x'], lng: sensores[0]['y']};
