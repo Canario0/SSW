@@ -124,7 +124,7 @@
 
                     var sensores = JSON.parse('{{ sensores | tojson | safe }}');
                     for (var i = 0; i < sensores.length; i++) {
-                        var contentString = '<p>Tipo: Temperatura</p>' +
+                        let contentString = '<p>Tipo: Temperatura</p>' +
                             '<p>Modelo: ' + sensores[i]['nombre'] + '</p>' +
                             '<p>Dueño: ' + sensores[i]['nickname'] + '</p>' +
                             '<p>Descripción: ' + sensores[i]['descripcion'] + '</p>' +
@@ -132,12 +132,11 @@
                             '<p> </p>' +
                             '<p>Ultima Medida: 24.23 C</p>';
 
-                        var infowindow = new google.maps.InfoWindow({
+                        let infowindow = new google.maps.InfoWindow({
                             content: contentString
                         });
-                        var posicion = { lat: sensores[i]['x'], lng: sensores[i]['y'] };
-                        var aux = new google.maps.Marker({
-                            position: posicion,
+                        let aux = new google.maps.Marker({
+                            position: { lat: sensores[i]['x'], lng: sensores[i]['y'] },
                             map: map,
                             title: sensores[i]['nombre']
                         });
