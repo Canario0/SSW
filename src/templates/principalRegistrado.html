@@ -15,21 +15,26 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/principal.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/botones.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/cabecera.css') }}" />
-    <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/logo.png') }}"/>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/logo.png') }}" />
 </head>
 
 <!-- WEBPAGE'S BODY -->
 
 <body>
     <div id="cabecera">
-        <a id="titulo" href="/{{ user }}/index">SMART <b>MAPS</b></a>
+        <a id="titulo" href="/{{ user }}/index">SMART
+            <b>MAPS</b>
+        </a>
         <div id="perfil">
             <a class="boton" id="buttonHeader" href="/{{ user }}/profile">Mi Perfil</a>
             <a class="boton" id="buttonHeader" href="/{{ user }}/sensores_favoritos">Sensores Favoritos</a>
             <a class="boton" id="buttonHeader" href="/{{ user }}/registrar_sensor">Añadir Sensor</a>
             <a class="boton" id="buttonHeader" href="/{{ user }}/configuracion">Configuración</a>
             <a class="boton" id="buttonHeader" href="/logout">Cerrar Sesión</a>
-            <a id="imgUser" href="/{{ user }}/profile"><img src="{{ url_for('static', filename='img/users/' + user) }}" alt="Usuario" onerror="this.src='../static/img/users/default.png';" /></a>
+            <a id="imgUser" href="/{{ user }}/profile">
+                <img src="{{ url_for('static', filename='img/users/' + user) }}" alt="Usuario" onerror="this.src='../static/img/users/default.png';"
+                />
+            </a>
         </div>
     </div>
 
@@ -38,33 +43,50 @@
             <form action="">
                 <input id="buscador" type="text" name="fname">
                 <input id="ir" type="submit" value="Ir">
-            </form> 
+            </form>
             <div class="titulosBarraLateral">
                 <p>Tipo de Sensor</p>
             </div>
             <hr>
-            <input type="checkbox" id="cbox" value="cbox1"><label for="cbox1">Temperatura</label><br>
-            <input type="checkbox" id="cbox" value="cbox2"><label for="cbox2">Humedad</label><br>
-            <input type="checkbox" id="cbox" value="cbox3"><label for="cbox3">Iluminación</label><br>
-            <input type="checkbox" id="cbox" value="cbox4"><label for="cbox4">Contaminación</label><br>
-            <input type="checkbox" id="cbox" value="cbox5"><label for="cbox5">Ruido</label><br>
+            <input type="checkbox" id="cbox" value="cbox1">
+            <label for="cbox1">Temperatura</label>
+            <br>
+            <input type="checkbox" id="cbox" value="cbox2">
+            <label for="cbox2">Humedad</label>
+            <br>
+            <input type="checkbox" id="cbox" value="cbox3">
+            <label for="cbox3">Iluminación</label>
+            <br>
+            <input type="checkbox" id="cbox" value="cbox4">
+            <label for="cbox4">Contaminación</label>
+            <br>
+            <input type="checkbox" id="cbox" value="cbox5">
+            <label for="cbox5">Ruido</label>
+            <br>
             <div class="titulosBarraLateral">
                 <p>Visibilidad</p>
             </div>
             <hr>
-            <input type="checkbox" id="cbox" value="cbox6"><label for="cbox6">Mis Sensores</label><br>
-            <input type="checkbox" id="cbox" value="cbox7"><label for="cbox7">Favoritos</label><br>
-            <input type="checkbox" id="cbox" value="cbox8"><label for="cbox8">Todos</label><br>
+            <input type="checkbox" id="cbox" value="cbox6">
+            <label for="cbox6">Mis Sensores</label>
+            <br>
+            <input type="checkbox" id="cbox" value="cbox7">
+            <label for="cbox7">Favoritos</label>
+            <br>
+            <input type="checkbox" id="cbox" value="cbox8">
+            <label for="cbox8">Todos</label>
+            <br>
             <div class="titulosBarraLateral">
                 <p>Radio Acción</p>
             </div>
             <hr>
             <div>
-              <p>Activar / Desactivar</p>
-              <label class="switch">
-                <input type="checkbox">
-                <span class="slider round"></span>
-              </label><br>
+                <p>Activar / Desactivar</p>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+                <br>
             </div>
             <input type="range" min="1" max="100" value="50" class="slider2" id="myRange">
             <p class="boton" id="buttonFilters">Aplicar Filtros</p>
@@ -74,20 +96,20 @@
             <script>
                 var citymap = {
                     zaragoza: {
-                      center: {lat: 41.647, lng: -0.890},
-                      population: 271485
+                        center: { lat: 41.647, lng: -0.890 },
+                        population: 271485
                     },
                     valladolid: {
-                      center: {lat: 41.593, lng: -4.697},
-                      population: 100000
+                        center: { lat: 41.593, lng: -4.697 },
+                        population: 100000
                     },
                     madrid: {
-                      center: {lat: 40.428, lng: -3.789},
-                      population: 385779
+                        center: { lat: 40.428, lng: -3.789 },
+                        population: 385779
                     },
                     sevilla: {
-                      center: {lat: 37.399, lng: -5.938},
-                      population: 603502
+                        center: { lat: 37.399, lng: -5.938 },
+                        population: 603502
                     }
                 };
 
@@ -95,21 +117,21 @@
                     // Create the map.
 
                     var contentString = '<p>Tipo: Temperatura</p>' +
-                        '<p>Modelo: RJ-485</p>'+
-                        '<p>Estado: Funcionando</p>'+
-                        '<p> </p>'+
-                        '<p>Ultima Medida: 24.23 C</p>' ;
+                        '<p>Modelo: RJ-485</p>' +
+                        '<p>Estado: Funcionando</p>' +
+                        '<p> </p>' +
+                        '<p>Ultima Medida: 24.23 C</p>';
 
                     var infowindow = new google.maps.InfoWindow({
-                    content: contentString
+                        content: contentString
                     });
 
                     var map = new google.maps.Map(document.getElementById('map'), {
                         zoom: 6.5,
-                        center: {lat: 40.428, lng: -3.789}
+                        center: { lat: 40.428, lng: -3.789 }
                     });
-                    
-                    var valencia = {lat: 39.443, lng: -0.414};
+
+                    var valencia = { lat: 39.443, lng: -0.414 };
 
                     var marker = new google.maps.Marker({
                         position: valencia,
@@ -118,23 +140,25 @@
                     });
 
                     var sensores = JSON.parse('{{ sensores | tojson | safe }}');
-                    var posicion = {lat: sensores[0]['x'], lng: sensores[0]['y']};
-                    var sensor = new google.maps.Marker({
-                        position: posicion,
-                        map: map,
-                        title: sensores[0]['nombre']
-                    });
+                    for (var i = 0; i < sensores.length; i++) {
+                        var posicion = { lat: sensores[i]['x'], lng: sensores[i]['y'] };
+                        var sensor = new google.maps.Marker({
+                            position: posicion,
+                            map: map,
+                            title: sensores[i]['nombre']
+                        });
+                    }
 
-                    marker.addListener('mouseover', function() {
-                    infowindow.open(map, marker);
+                    marker.addListener('mouseover', function () {
+                        infowindow.open(map, marker);
                     });
 
 
                     var flightPlanCoordinates = [
-                        {lat: 37.399, lng: -5.938},
-                        {lat: 39.046, lng: -1.784},
-                        {lat: 40.865, lng: -2.498},
-                        {lat: 41.647, lng: -0.890}
+                        { lat: 37.399, lng: -5.938 },
+                        { lat: 39.046, lng: -1.784 },
+                        { lat: 40.865, lng: -2.498 },
+                        { lat: 41.647, lng: -0.890 }
                     ];
 
                     var flightPath = new google.maps.Polyline({
@@ -164,7 +188,8 @@
                     }
                 }
             </script>
-            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBRjO3Gm24tyvsh4gvX31esp3dFS-oyJ3g&callback=initMap" async defer></script>
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBRjO3Gm24tyvsh4gvX31esp3dFS-oyJ3g&callback=initMap" async
+                defer></script>
         </div>
     </div>
 </body>
