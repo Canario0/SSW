@@ -138,8 +138,8 @@ insert into sensor values (1,
     'sensor temperatura',
     2,
     true,
-    236.25,
-    2547.36);
+    40.0,
+    -1,0);
 
 insert into sensor values (2, 
     'sergio',
@@ -147,8 +147,8 @@ insert into sensor values (2,
     'sensor temperatura',
     2,
     true,
-    356.25,
-    587.36);
+    40,417,
+    -3,703);
 
 insert into sensor values (3, 
     'alejandro',
@@ -156,8 +156,8 @@ insert into sensor values (3,
     'sensor humedad',
     3,
     true,
-    937.22,
-    243.37);
+    43,36,
+    -8,41);
 
 insert into sensor values (4, 
     'alvaro',
