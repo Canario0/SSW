@@ -18,7 +18,6 @@ app.config['SECRET_KEY']=os.urandom(24)
 @app.route("/index")
 def index():
     sensores = get_Sensors()
-    sensores = json.dumps(sensores)
     return render_template('principalSinRegistrar.html', sensores=sensores)
 
 

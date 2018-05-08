@@ -1,4 +1,5 @@
-<!DOCTYPE html> <html>
+<!DOCTYPE html>
+<html>
 <!-- WEBPAGE'S HEAD -->
 
 <head>
@@ -14,17 +15,19 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/principal.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/botones.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/cabecera.css') }}" />
-    <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/logo.png') }}"/>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/logo.png') }}" />
 </head>
 
 <!-- WEBPAGE'S BODY -->
 
 <body>
     <div id="cabecera">
-        <a id="titulo" href="/">SMART <b>MAPS</b></a>
+        <a id="titulo" href="/">SMART
+            <b>MAPS</b>
+        </a>
         <div id="perfil">
             <a class="boton" id="buttonHeader" href="/registrar">Registrarse</a>
-            <a class="boton" id="buttonHeader" href="/login" >Iniciar Sesión</a>
+            <a class="boton" id="buttonHeader" href="/login">Iniciar Sesión</a>
         </div>
     </div>
 
@@ -33,16 +36,26 @@
             <form action="">
                 <input id="buscador" type="text" name="fname">
                 <input id="ir" type="submit" value="Ir">
-            </form> 
+            </form>
             <div class="titulosBarraLateral">
                 <p>Tipo de Sensor</p>
             </div>
             <hr>
-            <input type="checkbox" id="cbox" value="cbox1"><label for="cbox1">Temperatura</label><br>
-            <input type="checkbox" id="cbox" value="cbox2"><label for="cbox2">Humedad</label><br>
-            <input type="checkbox" id="cbox" value="cbox3"><label for="cbox3">Iluminación</label><br>
-            <input type="checkbox" id="cbox" value="cbox4"><label for="cbox4">Contaminación</label><br>
-            <input type="checkbox" id="cbox" value="cbox5"><label for="cbox5">Ruido</label><br>
+            <input type="checkbox" id="cbox" value="cbox1">
+            <label for="cbox1">Temperatura</label>
+            <br>
+            <input type="checkbox" id="cbox" value="cbox2">
+            <label for="cbox2">Humedad</label>
+            <br>
+            <input type="checkbox" id="cbox" value="cbox3">
+            <label for="cbox3">Iluminación</label>
+            <br>
+            <input type="checkbox" id="cbox" value="cbox4">
+            <label for="cbox4">Contaminación</label>
+            <br>
+            <input type="checkbox" id="cbox" value="cbox5">
+            <label for="cbox5">Ruido</label>
+            <br>
             <div class="titulosBarraLateral">
                 <p>Radio Acción</p>
             </div>
@@ -50,9 +63,10 @@
             <div>
                 <p>Activar / Desactivar</p>
                 <label class="switch">
-                <input type="checkbox">
-                <span class="slider round"></span>
-                </label><br>
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+                <br>
             </div>
             <input type="range" min="1" max="100" value="50" class="slider3" id="myRange">
             <p class="boton" id="buttonFilters">Aplicar Filtros</p>
@@ -62,35 +76,62 @@
             <script>
                 var citymap = {
                     zaragoza: {
-                      center: {lat: 41.647, lng: -0.890},
-                      population: 271485
+                        center: { lat: 41.647, lng: -0.890 },
+                        population: 271485
                     },
                     valladolid: {
-                      center: {lat: 41.593, lng: -4.697},
-                      population: 100000
+                        center: { lat: 41.593, lng: -4.697 },
+                        population: 100000
                     },
                     madrid: {
-                      center: {lat: 40.428, lng: -3.789},
-                      population: 385779
+                        center: { lat: 40.428, lng: -3.789 },
+                        population: 385779
                     },
                     sevilla: {
-                      center: {lat: 37.399, lng: -5.938},
-                      population: 603502
+                        center: { lat: 37.399, lng: -5.938 },
+                        population: 603502
                     }
                 };
 
                 function initMap() {
                     // Create the map.
                     var map = new google.maps.Map(document.getElementById('map'), {
-                      zoom: 6.5,
-                      center: {lat: 40.428, lng: -3.789}
+                        zoom: 6.5,
+                        center: { lat: 40.428, lng: -3.789 }
                     });
 
+                    var sensores = JSON.parse('{{ sensores | tojson | safe }}');
+                    for (var i = 0; i < sensores.length; i++) {
+                        let contentString = '<p>Tipo: Temperatura</p>' +
+                            '<p>Modelo: ' + sensores[i]['nombre'] + '</p>' +
+                            '<p>Dueño: ' + sensores[i]['nickname'] + '</p>' +
+                            '<p>Descripción: ' + sensores[i]['descripcion'] + '</p>' +
+                            '<p>Estado: Funcionando</p>' +
+                            '<p> </p>' +
+                            '<p>Ultima Medida: 24.23 C</p>';
+
+                        let infowindow = new google.maps.InfoWindow({
+                            content: contentString
+                        });
+                        let aux = new google.maps.Marker({
+                            position: { lat: sensores[i]['x'], lng: sensores[i]['y'] },
+                            map: map,
+                            title: sensores[i]['nombre']
+                        });
+                        aux.addListener('mouseover', function () {
+                            infowindow.open(map, aux);
+                        });
+                        aux.addListener('mouseout', function () {
+                            infowindow.close(map, aux);
+                        });
+                    }
+
+
                     var flightPlanCoordinates = [
-                        {lat: 37.399, lng: -5.938},
-                        {lat: 39.046, lng: -1.784},
-                        {lat: 40.865, lng: -2.498},
-                        {lat: 41.647, lng: -0.890}
+                        { lat: 37.399, lng: -5.938 },
+                        { lat: 39.046, lng: -1.784 },
+                        { lat: 40.865, lng: -2.498 },
+                        { lat: 41.647, lng: -0.890 }
                     ];
 
                     var flightPath = new google.maps.Polyline({
@@ -120,7 +161,9 @@
                     }
                 }
             </script>
-            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBRjO3Gm24tyvsh4gvX31esp3dFS-oyJ3g&callback=initMap" async defer></script> 
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBRjO3Gm24tyvsh4gvX31esp3dFS-oyJ3g&callback=initMap" async
+                defer></script>
         </div>
-    </body>
+</body>
+
 </html>
