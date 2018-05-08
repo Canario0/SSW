@@ -143,6 +143,9 @@
                         aux.addListener('mouseover', function () {
                             infowindow.open(map, aux);
                         });
+                        aux.addListener('mouseclose', function () {
+                            infowindow.close(map, aux);
+                        });
                     }
 
 
