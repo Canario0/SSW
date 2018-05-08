@@ -117,14 +117,12 @@
                         title: 'RJ-SENSOR-INFO'
                     });
 
-                    var sensores = JSON.parser('{{ sensores }}');
-                    console.info(sensores);
-                    console.log(sensores);
+                    var sensores = JSON.parse('{{ sensores | tojson | safe }}');
                     var posicion = {lat: sensores[0]['x'], lng: sensores[0]['y']};
                     var sensor = new google.maps.Marker({
                         position: posicion,
                         map: map,
-                        title: 'RJ-SENSOR-INFO'
+                        title: sensores[0]['nombre']
                     });
 
                     marker.addListener('mouseover', function() {

@@ -130,7 +130,6 @@ def config(user):
 @login_required
 def logged_index(user):
     sensores = get_Sensors()
-    sensores = json.dumps(sensores)
     if comprobar_Usuario(user):
         return render_template('principalRegistrado.html', user=user, sensores=sensores)
     else:
