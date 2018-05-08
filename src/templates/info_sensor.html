@@ -45,12 +45,12 @@
 			
 			<script>
 				window.onload = function () {
-				
+				var sensor = JSON.parse('{{ sensor | tojson | safe }}');
 				var chart = new CanvasJS.Chart("chartContainer", {
 					animationEnabled: true,
 					theme: "light2",
 					title:{
-						text: "Temperatura - RF875"
+						text: "Temperatura " + sensor['nombre']
 					},
 					axisY:{
 						title: "Temperatura (Cº)",
