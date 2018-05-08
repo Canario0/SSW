@@ -181,8 +181,8 @@ def registrar_sensor(user):
 
 @app.route("/sensor/<id>")
 @login_required
-def informacion_sensor(id):
-    return render_template('info_sensor.html', id=id)
+def informacion_sensor(id, user):
+    return render_template('info_sensor.html', id=id, user=user)
 
 
 @app.before_request
