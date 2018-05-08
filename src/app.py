@@ -184,7 +184,7 @@ def registrar_sensor(user):
 def informacion_sensor(id):
     user = request.args.get('user')
     sensor = get_Sensor_ById(id)
-    return render_template('info_sensor.html', id=id, user=user)
+    return render_template('info_sensor.html', id=id, user=user, sensor=sensor)
 
 
 @app.before_request
