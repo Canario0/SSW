@@ -1,4 +1,4 @@
-from peewee import Model, MySQLDatabase,BooleanField, CharField, IntegerField, DateField, DateTimeField, ForeignKeyField, CompositeKey, DoubleField
+from peewee import Model, model_to_dict, MySQLDatabase,BooleanField, CharField, IntegerField, DateField, DateTimeField, ForeignKeyField, CompositeKey, DoubleField
 from flask_login import UserMixin
 import configparser
 import datetime
@@ -116,7 +116,7 @@ def get_Usuario(nickname):
     return list (Usuario.select().where(Usuario.nickname == nickname).dicts())
 
 def get_Sensor_ById(id):
-    return Sensor.get(Sensor.id == id)
+    return model_to_dict(Sensor.get(Sensor.id == id))
 
 def get_Sensors():
     return list(Sensor.select().dicts())
