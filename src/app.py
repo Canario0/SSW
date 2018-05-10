@@ -135,10 +135,10 @@ def logged_index(user):
     else:
         if current_user.is_authenticated:
             print("holi2")
-            return redirect(url_for('logged_index', user=current_user.nickname, sensores=sensores))
+            return redirect(url_for('logged_index'))
         else:
             print("holi3")
-            return redirect(url_for('index', sensores=sensores))
+            return redirect(url_for('index')
 
 
 @app.route("/<user>/profile")
