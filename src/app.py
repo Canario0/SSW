@@ -135,7 +135,7 @@ def logged_index(user):
     else:
         if current_user.is_authenticated:
             print("holi2")
-            return redirect(url_for('logged_index'))
+            return redirect(url_for('logged_index'), user=user)
         else:
             print("holi3")
             return redirect(url_for('index'))

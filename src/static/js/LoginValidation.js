@@ -5,7 +5,7 @@ function validateForm() {
         return false;
     }
 
-    var x = document.forms["myForm"]["password"].value;
+    var x = document.forms["myForm"]["contraseña"].value;
     if (x == "") {
         alert("Name must be filled out");
         return false;
