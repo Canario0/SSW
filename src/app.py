@@ -130,11 +130,14 @@ def config(user):
 def logged_index(user):
     sensores = get_Sensors()
     if comprobar_Usuario(user):
+        print("hooli1")
         return render_template('principalRegistrado.html', user=user, sensores=sensores)
     else:
         if current_user.is_authenticated:
+            print("holi2")
             return redirect(url_for('logged_index', user=current_user.nickname, sensores=sensores))
         else:
+            print("holi3")
             return redirect(url_for('index', sensores=sensores))
 
 
