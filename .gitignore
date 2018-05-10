@@ -1,6 +1,6 @@
 */.DS_Store
 */menv/*
-src/.vscode/*
+*/.vscode/*
 src/__pycache__/*
 *.swp
 *.pyc
