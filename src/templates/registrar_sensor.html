@@ -32,6 +32,7 @@
         </div>
     </div>
 
+    <form method='POST' action='/{{user}}/registrar_sensor'>
     <div id="cuerpo">
         <div id="imgUserBig">
             <img src="{{ url_for('static', filename='img/users/' + user) }}" alt="Usuario" onerror="this.src='../static/img/users/default.png';" />
@@ -48,12 +49,11 @@
                 <a class=pestaña id="pestaña" href="/{{ user }}/sensores_favoritos">Sensores Favoritos</a>
                 <a class=pestaña id="pestaña" href="/{{ user }}/configuracion">Configurar Perfil</a>
             </div>
-						<form method='POST' action='/{{user}}/registrar_sensor'>
             <div id='formularioPrincipal'>
                     <div class="row, primera">
                         <p>Descripción</p>
                         <p>
-                            <textarea name="descripción" rows="10" cols="33" placeholder="Breve descripción del sensor. Ej.: funcionamiento, características, tipos de medidas, etc."></textarea>
+                            <textarea name="descripcion" rows="10" cols="33" placeholder="Breve descripción del sensor. Ej.: funcionamiento, características, tipos de medidas, etc."></textarea>
                         </p>
                         <div id="tipo-visibilidad">
                             <div class="row, primera">
@@ -88,9 +88,9 @@
                         <p><input id="inputCoordenadas" type="text" name="Coordenadas" size="20" placeholder="Introducir latitud"></p>
                     </div>
             </div>
-            </form>
         </div>
     </div>
+    </form>
 
     <div id="bottom">
       <p id="botonGuardarCambios">
