@@ -40,9 +40,9 @@
 
 <section>
     <span id="tituloLogin">Iniciar Sesión</span>
-    <form name="myForm" method="POST" action="/login">
+    <form name="myForm" method="POST" action="/login" onsubmit="return validateForm()">
         <p class="textoTitulo">Nick-Name:</p> 
-        <p><input class="texto-login" name="nick-name" type="text" size="25" onsubmit="return validateForm()"></p>
+        <p><input class="texto-login" name="nick-name" type="text" size="25"></p>
         <p class="textoTitulo">Contraseña:</p>
         <a id="recuperar" href="">recuperar</a></p> 
         <p><input class="texto-login" name="contraseña" type="password" size="25"></p>
