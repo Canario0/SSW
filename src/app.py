@@ -169,13 +169,21 @@ def fav(user):
 @app.route("/<user>/registrar_sensor")
 @login_required
 def registrar_sensor(user):
-    if comprobar_Usuario(user):
-        return render_template('registrar_sensor.html', user=user)
-    else:
-        if current_user.is_authenticated:
-            return redirect(url_for('logged_index', user=current_user.nickname))
+    if request.method == 'GET':
+        if comprobar_Usuario(user):
+            return render_template('registrar_sensor.html', user=user)
         else:
-            return redirect(url_for('index'))
+            if current_user.is_authenticated:
+                return redirect(url_for('logged_index', user=current_user.nickname))
+            else:
+                return redirect(url_for('index'))
+    elif request.method == 'POST':
+        nombre = request.form['nombre']
+        desc = request.form['descripcion']
+        x = request.form['lat']
+        y = request.form['long']
+        createSensor(10, nombre, descripcion, 1, True, float(x), float(y))
+        return redirect(url_for('logged_index', user = current_user.nickname))
 
 
 @app.route("/sensor/<id>")
