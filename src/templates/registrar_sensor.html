@@ -49,7 +49,7 @@
           <a class=pestaña id="pestaña" href="/{{ user }}/sensores_favoritos">Sensores Favoritos</a>
           <a class=pestaña id="pestaña" href="/{{ user }}/configuracion">Configurar Perfil</a>
         </div>
-        <div id="formularioPrincipal">
+        <form method='POST' id='formularioPrincipal' action='/{{user}}/registrar_sensor'>
           <div class="row, primera">
             <p>Descripción</p>
             <p>
@@ -84,11 +84,13 @@
           <div class="row">
             <p>Localización</p>
             <img id="imgMapa" src="../static/img/mapa.jpg" alt="mapa">
-            <p class="texto3">Coordenadas:</p>
-            <p><input id="inputCoordenadas" type="text" name="Coordenadas" size="20" placeholder="Introducir latitud y longitud"></p>
+            <p class="texto3">Coordenadas (latitud):</p>
+            <p><input id="inputCoordenadas" type="text" name="Coordenadas" size="20" placeholder="Introducir latitud"></p>
+            <p class="texto3">Coordenadas (longitud):</p>
+            <p><input id="inputCoordenadas" type="text" name="Coordenadas" size="20" placeholder="Introducir longitud"></p>
           </div>
         </div>
-      </div>
+        </form>
     </div>
     <div id="bottom">
       <p id="botonGuardarCambios">

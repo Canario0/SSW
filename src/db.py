@@ -1,4 +1,5 @@
-from peewee import Model, model_to_dict, MySQLDatabase,BooleanField, CharField, IntegerField, DateField, DateTimeField, ForeignKeyField, CompositeKey, DoubleField
+from peewee import Model, MySQLDatabase,BooleanField, CharField, IntegerField, DateField, DateTimeField, ForeignKeyField, CompositeKey, DoubleField
+from playhouse.shortcuts import model_to_dict
 from flask_login import UserMixin
 import configparser
 import datetime
@@ -21,7 +22,7 @@ class Usuario(Model, UserMixin):
     nacimiento = DateField(null=True)
     empresa = CharField(max_length=30, null=True)
     telefono = IntegerField(null=True)
-    
+
     def get_id(self):
         return self.nickname
     class Meta:
