@@ -24,13 +24,13 @@
 <body>
     <div id="cabecera">
         <a id="titulo" href="/{{ user }}/index">SMART
-          <b>MAPS</b>
+            <b>MAPS</b>
         </a>
         <div id="perfil">
-          <a class="boton" id="buttonHeader" href="/logout">Cerrar Sesión</a>
-          <a id="imgUser" href="/{{ user }}/profile"><img src="{{ url_for('static', filename='img/users/' + user) }}" alt="Usuario" onerror="this.src='../static/img/users/default.png';" /></a>
+            <a class="boton" id="buttonHeader" href="/logout">Cerrar Sesión</a>
+            <a id="imgUser" href="/{{ user }}/profile"><img src="{{ url_for('static', filename='img/users/' + user) }}" alt="Usuario" onerror="this.src='../static/img/users/default.png';" /></a>
         </div>
-      </div>
+    </div>
 
     <div id="cuerpo">
         <div id="imgUserBig">
@@ -49,46 +49,47 @@
                 <a class=pestaña id="pestaña" href="/{{ user }}/configuracion">Configurar Perfil</a>
             </div>
 
-        <div id='formularioPrincipal'>
-            <form method='POST' action='/{{user}}/registrar_sensor'>
-                <div class="row, primera">
-                    <p>Descripción</p>
-                    <p>
-                        <textarea name="descripción" rows="10" cols="33" placeholder="Breve descripción del sensor. Ej.: funcionamiento, características, tipos de medidas, etc."></textarea>
-                    </p>
-                    <div id="tipo-visibilidad">
-                        <div class="row, primera">
-                            <p>Tipo de Sensor</p>
-                            <select name="rating">
-                                <option selected>Temperatura</option>
-                                <option>Humedad</option>
-                                <option>Iluminación</option>
-                                <option>Contaminación</option>
-                                <option>Ruido</option>
-                            </select>
-                        </div>
-                        <div class="row">
-                            <p>Visibilidad</p>
-                            <p>
-                                <input name="howtosite" type="radio" value="public" checked>
-                                <span class="textoVisibiliad">Público</span>
-                            </p>
-                            <p>
-                                <input name="howtosite" type="radio" value="private">
-                                <span class="textoVisibiliad">Privado</span>
-                            </p>
+            <div id='formularioPrincipal'>
+                <form method='POST' action='/{{user}}/registrar_sensor'>
+                    <div class="row, primera">
+                        <p>Descripción</p>
+                        <p>
+                            <textarea name="descripción" rows="10" cols="33" placeholder="Breve descripción del sensor. Ej.: funcionamiento, características, tipos de medidas, etc."></textarea>
+                        </p>
+                        <div id="tipo-visibilidad">
+                            <div class="row, primera">
+                                <p>Tipo de Sensor</p>
+                                <select name="rating">
+                                    <option selected>Temperatura</option>
+                                    <option>Humedad</option>
+                                    <option>Iluminación</option>
+                                    <option>Contaminación</option>
+                                    <option>Ruido</option>
+                                </select>
+                            </div>
+                            <div class="row">
+                                <p>Visibilidad</p>
+                                <p>
+                                    <input name="howtosite" type="radio" value="public" checked>
+                                    <span class="textoVisibiliad">Público</span>
+                                </p>
+                                <p>
+                                    <input name="howtosite" type="radio" value="private">
+                                    <span class="textoVisibiliad">Privado</span>
+                                </p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <p>Localización</p>
-                    <img id="imgMapa" src="../static/img/mapa.jpg" alt="mapa"/>
-                    <p> class="texto3">Coordenadas (latitud):</p>
-                    <p><input id="inputCoordenadas" type="text" name="Coordenadas" size="20" placeholder="Introducir latitud"></p>
-                    <p> class="texto3">Coordenadas (longitud):</p>
-                    <p><input id="inputCoordenadas" type="text" name="Coordenadas" size="20" placeholder="Introducir longitud"></p>
-                </div>
-            </form>
+                    <div class="row">
+                        <p>Localización</p>
+                        <img id="imgMapa" src="../static/img/mapa.jpg" alt="mapa"/>
+                        <p class="texto3">Coordenadas (latitud):</p>
+                        <p><input id="inputCoordenadas" type="text" name="Coordenadas" size="20" placeholder="Introducir latitud"></p>
+                        <p class="texto3">Coordenadas (longitud):</p>
+                        <p><input id="inputCoordenadas" type="text" name="Coordenadas" size="20" placeholder="Introducir longitud"></p>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 
