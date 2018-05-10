@@ -138,7 +138,7 @@ def logged_index(user):
             return redirect(url_for('logged_index'))
         else:
             print("holi3")
-            return redirect(url_for('index')
+            return redirect(url_for('index'))
 
 
 @app.route("/<user>/profile")
