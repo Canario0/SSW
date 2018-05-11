@@ -157,7 +157,7 @@ def profile(user):
             return redirect(url_for('index'))
 
 
-@app.route("/<user>/sensores_favoritos")
+@app.route("/<user>/sensores_favoritos", methods=['POST', 'GET'])
 @login_required
 def fav(user):
     if comprobar_Usuario(user):
