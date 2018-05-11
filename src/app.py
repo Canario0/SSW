@@ -157,7 +157,7 @@ def profile(user):
             return redirect(url_for('index'))
 
 
-@app.route("/<user>/sensores_favoritos", methods=['POST', 'GET'])
+@app.route("/<user>/sensores_favoritos")
 @login_required
 def fav(user):
     if comprobar_Usuario(user):
@@ -169,7 +169,7 @@ def fav(user):
             return redirect(url_for('index'))
 
 
-@app.route("/<user>/registrar_sensor")
+@app.route("/<user>/registrar_sensor", methods=['POST', 'GET'])
 @login_required
 def registrar_sensor(user):
     if request.method == 'GET':
@@ -185,7 +185,7 @@ def registrar_sensor(user):
         desc = request.form['descripcion']
         x = request.form['lat']
         y = request.form['long']
-        create_Sensor(10, nombre, desc, 1, True, float(x), float(y))
+        create_Sensor(nombre, desc, 1, True, float(x), float(y))
         return redirect(url_for('logged_index', user = current_user.nickname))
 
 
