@@ -135,7 +135,7 @@ def logged_index(user):
     else:
         if current_user.is_authenticated:
             print("holi2")
-            return redirect(url_for('logged_index'))
+            return redirect(url_for('logged_index', user=current_user.nickname))
         else:
             print("holi3")
             return redirect(url_for('index'))
@@ -185,7 +185,7 @@ def registrar_sensor(user):
         desc = request.form['descripcion']
         x = request.form['lat']
         y = request.form['long']
-        create_Sensor(nombre, desc, 1, True, float(x), float(y))
+        create_Sensor(user,nombre, desc, 1, True, float(x), float(y))
         return redirect(url_for('logged_index', user = current_user.nickname))
 
 
