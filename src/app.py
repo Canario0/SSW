@@ -14,6 +14,8 @@ loginmn = LoginManager(app)
 loginmn.login_view = 'login'
 app.config['SECRET_KEY']=os.urandom(24)
 
+tipos_sensor={"Temperatura":1, "Humedad":2, "Iluminación":3, "Contaminación":4, "Ruido":5}
+
 @app.route("/")
 @app.route("/index")
 def index():
@@ -130,14 +132,11 @@ def config(user):
 def logged_index(user):
     sensores = get_Sensors()
     if comprobar_Usuario(user):
-        print("hooli1")
         return render_template('principalRegistrado.html', user=user, sensores=sensores)
     else:
         if current_user.is_authenticated:
-            print("holi2")
             return redirect(url_for('logged_index', user=current_user.nickname))
         else:
-            print("holi3")
             return redirect(url_for('index'))
 
 
@@ -183,9 +182,11 @@ def registrar_sensor(user):
     elif request.method == 'POST':
         nombre = request.form['nombre']
         desc = request.form['descripcion']
+        tipo = request.form['Tipo']
+        visible = bool(request.form['visibilidad'])
         x = request.form['lat']
         y = request.form['long']
-        create_Sensor(user,nombre, desc, 1, True, float(x), float(y))
+        create_Sensor(user,nombre, desc, tipos_sensor[tipo], visible, float(x), float(y))
         return redirect(url_for('profile', user = current_user.nickname))
 
 
