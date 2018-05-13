@@ -186,7 +186,7 @@ def registrar_sensor(user):
         x = request.form['lat']
         y = request.form['long']
         create_Sensor(user,nombre, desc, 1, True, float(x), float(y))
-        return redirect(url_for('logged_index', user = current_user.nickname))
+        return redirect(url_for('profile', user = current_user.nickname))
 
 
 @app.route("/sensor/<id>")
