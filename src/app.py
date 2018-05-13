@@ -61,7 +61,7 @@ def login():
             return redirect(url_for('logged_index', user = current_user.nickname))
         return render_template('Login.html')
     elif request.method == 'POST':
-        user = request.form['nick-name']
+        user = request.form['nick-name'].lower()
         password = request.form['contraseña']
         if get_Usuario(user) != []:
             if get_Usuario(user)[0]['password'] == password:
@@ -135,7 +135,7 @@ def logged_index(user):
     else:
         if current_user.is_authenticated:
             print("holi2")
-            return redirect(url_for('logged_index'), user = current_user.nickname)
+            return redirect(url_for('logged_index'))
         else:
             print("holi3")
             return redirect(url_for('index'))
