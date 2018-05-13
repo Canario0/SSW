@@ -67,7 +67,7 @@ def login():
             if get_Usuario(user)[0]['password'] == password:
                 login_user(loader_Usuario(user))
                 next_page = request.args.get('next')
-                if not next_page or url_parse(next_page).netloc != '':
+                if not next_page or urlparse(next_page).netloc != '':
                     return redirect(url_for('logged_index', user=user))
                 else:
                     return redirect(next_page)
@@ -135,7 +135,7 @@ def logged_index(user):
     else:
         if current_user.is_authenticated:
             print("holi2")
-            return redirect(url_for('logged_index'))
+            return redirect(url_for('logged_index'), user = current_user.nickname)
         else:
             print("holi3")
             return redirect(url_for('index'))
