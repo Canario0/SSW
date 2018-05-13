@@ -81,7 +81,7 @@ def create_Usuario(nickname, password):
 
 def create_Sensor(nickname,nombre, descripcion, tipo, visible, x, y):
     with db.atomic():
-        Sensor.create(nombre = nombre, descripcion = descripcion, tipo = tipo, visible = visible, x = x, y = y)
+        Sensor.create(nickname = nickname,nombre = nombre, descripcion = descripcion, tipo = tipo, visible = visible, x = x, y = y)
 
 def create_Favorito(nickname, id):
     with db.atomic():
