@@ -32,7 +32,7 @@ CREATE TABLE usuario(
 -- Table "ssw"."sensor"
 -- -----------------------------------------------------
 CREATE TABLE sensor (
-  id INTEGER NOT NULL,
+  id INTEGER NOT NULL AUTO_INCREMENT,
   nickname VARCHAR(20) NOT NULL,
   nombre VARCHAR(10) NOT NULL,
   descripcion VARCHAR(255),
@@ -96,7 +96,7 @@ insert into usuario values (
 insert into usuario values (
     'pablo',
     'pablo.renero@alumnos.uva.es',
-    'pablo123456789',
+    'pablo',
     'Pablo',
     'Renero',
     'Balganon',
