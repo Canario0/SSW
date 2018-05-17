@@ -32,7 +32,7 @@
 	<div id="cuerpo">
 		<div id="imgUserBig">
 			<img src="{{ url_for('static', filename='img/users/' + user) }}" alt="Usuario" onerror="this.src='../static/img/users/default.png';" />
-			<p id="underUser">{{user}}</p>
+			<p id="underUser">{{ user }}</p>
 		</div>
 
 		<div id="content">
@@ -42,7 +42,7 @@
 				<a class=pestaña id=pestaña href="/{{ user }}/configuracion">Configurar Perfil</a>
 			</div>
 			<div id="opciones">
-				<a class="boton" href="/{{ user }}/registrar_sensor" id="botonAñadir">+</a>
+				<a class="boton" id="botonAñadir" href="/{{ user }}/registrar_sensor">+</a>
 				<p id="textoAñadir">Añadir Sensor</p>
 				<input id="buscador" type="text" placeholder="Buscar sensor...">
 			</div>
