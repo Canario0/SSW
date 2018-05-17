@@ -211,3 +211,9 @@ insert into medicion values (1,
     Date_format(now()+7, '%Y-%m-%d %h:%i:%s'),
     Date_format(now(), '%Y-%m-%d'), 
     20.18); 
+
+insert into favorito values('pablo',
+    3)
+
+insert into favorito values('pablo',
+    4)
