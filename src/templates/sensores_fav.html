@@ -52,55 +52,20 @@
 				    <th>Sensor</th>
 				    <th>Estado</th>
 				    <th>Tiempo de funcionamiento</th>
-            <th>Dueño</th>
+                    <th>Dueño</th>
 				    <th>Eliminar</th>
 				  </tr>
+                  {% for row in rows %}
 				  <tr>
-				    <td id="nombreSensor"><a href="info_sensor.html">Temperatura - RF875</a></td>
+				    <td id="nombreSensor"><a href="/sensor/{{ row['id'] }}?user={{ user }}">{{ row['descripcion']+" - "+row['nombre'] }}</a></td>
 				    <td>Funcionando</td>
 				    <td>2 horas</td>
-            <td>Rahim_</td>
+                    <td>Rahim_</td>
 				    <td>
-              <div class="boton" id="botonEliminar">-</div>
-            </td>
+                        <div class="boton" id="botonEliminar">-</div>
+                    </td>
 				  </tr>
-				  <tr>
-				    <td id="nombreSensor"><a href="info_sensor.html">Humedad - KW965</a></td>
-				    <td>Fallo</td>
-				    <td>3 días</td>
-            <td>Ju4nillo</td>
-            <td>
-              <div class="boton" id="botonEliminar">-</div>
-            </td>
-				  </tr>
-				  <tr>
-				    <td id="nombreSensor"><a href="info_sensor.html">Iluminación - BF852</a></td>
-				    <td>Funcionando</td>
-				    <td>5.8 horas</td>
-            <td>AytoVLL</td>
-            <td>
-              <div class="boton" id="botonEliminar">-</div>
-            </td>
-				  </tr>
-				  <tr>
-				    <td id="nombreSensor"><a href="info_sensor.html">Contaminación - PA785</a></td>
-				    <td>Funcionando</td>
-				    <td>3 minutos</td>
-            <td>AytoVLL</td>
-            <td>
-              <div class="boton" id="botonEliminar">-</div>
-            </td>
-				  </tr>
-				  <tr>
-				    <td id="nombreSensor"><a href="info_sensor.html">Acústico - NS090</a></td>
-				    <td>Reparación</td>
-				    <td>1 Año 3 días</td>
-            <td>Yaiza</td>
-            <td>
-              <div class="boton" id="botonEliminar">-</div>
-            </td>
-				  </tr>
-
+                  {% endfor %}
 				</table>
 			</div>
 		</div>
