@@ -59,7 +59,7 @@
                         <div id="tipo-visibilidad">
                             <div class="row, primera">
                                 <p>Tipo de Sensor</p>
-                                <select name="Tipo">
+                                <select name="rating">
                                     <option selected>Temperatura</option>
                                     <option>Humedad</option>
                                     <option>Iluminación</option>
@@ -70,11 +70,11 @@
                             <div class="row">
                                 <p>Visibilidad</p>
                                 <p>
-                                    <input name="visibilidad" type="radio" value=1 checked>
+                                    <input name="publico" type="radio" value="public" checked>
                                     <span class="textoVisibiliad">Público</span>
                                 </p>
                                 <p>
-                                    <input name="visibilidad" type="radio" value=0>
+                                    <input name="privado" type="radio" value="private">
                                     <span class="textoVisibiliad">Privado</span>
                                 </p>
                             </div>
@@ -83,21 +83,21 @@
                     <div class="row">
                         <p>Localización</p>
                         <img id="imgMapa" src="../static/img/mapa.jpg" alt="mapa"/>
-                        <p class="texto3">Coordenadas (latitud):</p>
-                        <p><input id="inputCoordenadas" type="text" name="lat" size="20" placeholder="Introducir latitud"></p>
                         <p class="texto3">Coordenadas (longitud):</p>
-                        <p><input id="inputCoordenadas" type="text" name="long" size="20" placeholder="Introducir longitud"></p>
+                        <p><input id="inputCoordenadas" type="text" name="lat" size="20" placeholder="Introducir longitud"></p>
+                        <p class="texto3">Coordenadas (latitud)</p>
+                        <p><input id="inputCoordenadas" type="text" name="long" size="20" placeholder="Introducir latitud"></p>
                     </div>
             </div>
         </div>
     </div>
+    </form>
 
     <div id="bottom">
-        <p id="botonGuardarCambios">
-            <input href='/{{ user }}/registrar_sensor' class="boton" type="submit" value="Registrar Sensor">
-        </p>
+      <p id="botonGuardarCambios">
+        <input class="boton" type="submit" value="Registrar Sensor">
+      </p>
     </div>
-    </form>
 </body>
 
 </html>

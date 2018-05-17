@@ -79,9 +79,9 @@ def create_Usuario(nickname, password):
     with db.atomic():
         Usuario.create(nickname=nickname, password=password)
 
-def create_Sensor(nickname,nombre, descripcion, tipo, visible, x, y):
+def create_Sensor(id, nombre, descripcion, tipo, visible, x, y):
     with db.atomic():
-        Sensor.create(nickname = nickname,nombre = nombre, descripcion = descripcion, tipo = tipo, visible = visible, x = x, y = y)
+        Sensor.create(id = id, nombre = nombre, descripcion = descripcion, tipo = tipo, visible = visible, x = x, y = y)
 
 def create_Favorito(nickname, id):
     with db.atomic():
@@ -119,7 +119,8 @@ def get_Usuario(nickname):
 def get_Sensor_ById(id):
     return model_to_dict(Sensor.get(Sensor.id == id))
 
-def get_Sensors(visible = 1):
+def get_Sensors(visible = True):
+    print (list(Sensor.select().where(Sensor.visible == visible).dicts()))
     return list(Sensor.select().where(Sensor.visible == visible).dicts())
 
 def get_Sensor_ByUser(nickname):
@@ -131,7 +132,7 @@ def get_Mediciones(id):
     return list(sensor.mediciones.dicts()) if len(list(sensor))>0 else []
 
 def get_Favoritos(nickname):
-    return list (Favorito.select().join(Sensores).where(Favorito.nickname == nickname).dicts())
+    return Favorito.select().join(Sensor).where(Favorito.nickname == nickname)
 #----------------------------------------------------------------------------
 
 
