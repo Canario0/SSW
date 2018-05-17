@@ -67,7 +67,7 @@ CREATE TABLE liked (
 -- Table "ssw"."medicion"
 -- -----------------------------------------------------
 CREATE TABLE medicion (
-  id INTEGER NOT NULL,
+  id INTEGER NOT NULL AUTO_INCREMENT,
   fechaSubida DATETIME,
   fechaMedicion DATE NOT NULL,
   valor DOUBLE PRECISION,
@@ -96,7 +96,7 @@ insert into usuario values (
 insert into usuario values (
     'pablo',
     'pablo.renero@alumnos.uva.es',
-    'pablo',
+    'pablo123456789',
     'Pablo',
     'Renero',
     'Balganon',

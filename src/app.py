@@ -14,8 +14,6 @@ loginmn = LoginManager(app)
 loginmn.login_view = 'login'
 app.config['SECRET_KEY']=os.urandom(24)
 
-tipos_sensor={"Temperatura":1, "Humedad":2, "Iluminación":3, "Contaminación":4, "Ruido":5}
-
 @app.route("/")
 @app.route("/index")
 def index():
@@ -23,16 +21,21 @@ def index():
     return render_template('principalSinRegistrar.html', sensores=sensores)
 
 
-@app.route("/sensor/<id>/registrar_medida", methods=['POST', 'GET'])
+@app.route("/sensor/<user>/<id>/registrar_medida", methods=['POST', 'GET'])
 @login_required
-def addMedition():
-    if request.method == 'GET':
-        return render_template('registrar_medida.html')
-    elif request.method == 'POST':
-        fechaMedicion = request.form['fecha-medicion']
-        medida = request.form['medida']
-        create_Medicion(id, fechaMedicion, medida)
-
+def addMedition(user):
+    if comprobarUsuario(user):
+        if request.method == 'GET':
+            return render_template('registrar_medida.html')
+        elif request.method == 'POST':
+            fechaMedicion = request.form['fecha-medicion']
+            medida = request.form['medida']
+            create_Medicion(id, fechaMedicion, medida)
+    else:
+        if current_user.is_authenticated:
+            return redirect(url_for('registrar_medicion.html', user=current_user.nickname))
+        else:
+            return redirect(url_for('index'))
 
 @app.route("/registrar", methods=['POST', 'GET'])
 def register():
@@ -63,13 +66,13 @@ def login():
             return redirect(url_for('logged_index', user = current_user.nickname))
         return render_template('Login.html')
     elif request.method == 'POST':
-        user = request.form['nick-name'].lower()
+        user = request.form['nick-name']
         password = request.form['contraseña']
         if get_Usuario(user) != []:
             if get_Usuario(user)[0]['password'] == password:
                 login_user(loader_Usuario(user))
                 next_page = request.args.get('next')
-                if not next_page or urlparse(next_page).netloc != '':
+                if not next_page or url_parse(next_page).netloc != '':
                     return redirect(url_for('logged_index', user=user))
                 else:
                     return redirect(next_page)
@@ -135,9 +138,9 @@ def logged_index(user):
         return render_template('principalRegistrado.html', user=user, sensores=sensores)
     else:
         if current_user.is_authenticated:
-            return redirect(url_for('logged_index', user=current_user.nickname))
+            return redirect(url_for('logged_index', user=current_user.nickname, sensores=sensores))
         else:
-            return redirect(url_for('index'))
+            return redirect(url_for('index', sensores=sensores))
 
 
 @app.route("/<user>/profile")
@@ -169,26 +172,16 @@ def fav(user):
             return redirect(url_for('index'))
 
 
-@app.route("/<user>/registrar_sensor", methods=['POST', 'GET'])
+@app.route("/<user>/registrar_sensor")
 @login_required
 def registrar_sensor(user):
-    if request.method == 'GET':
-        if comprobar_Usuario(user):
-            return render_template('registrar_sensor.html', user=user)
+    if comprobar_Usuario(user):
+        return render_template('registrar_sensor.html', user=user)
+    else:
+        if current_user.is_authenticated:
+            return redirect(url_for('logged_index', user=current_user.nickname))
         else:
-            if current_user.is_authenticated:
-                return redirect(url_for('logged_index', user=current_user.nickname))
-            else:
-                return redirect(url_for('index'))
-    elif request.method == 'POST':
-        nombre = request.form['nombre']
-        desc = request.form['descripcion']
-        tipo = request.form['Tipo']
-        visible = bool(request.form['visibilidad'])
-        x = request.form['lat']
-        y = request.form['long']
-        create_Sensor(user,nombre, desc, tipos_sensor[tipo], visible, float(x), float(y))
-        return redirect(url_for('profile', user = current_user.nickname))
+            return redirect(url_for('index'))
 
 
 @app.route("/sensor/<id>")
