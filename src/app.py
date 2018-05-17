@@ -19,7 +19,7 @@ tipos_sensor={"Temperatura":1, "Humedad":2, "Iluminación":3, "Contaminación":4
 @app.route("/")
 @app.route("/index")
 def index():
-    sensores = get_Sensors()
+    sensores = get_Sensors(False)
     return render_template('principalSinRegistrar.html', sensores=sensores)
 
 
