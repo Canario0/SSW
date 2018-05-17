@@ -119,8 +119,8 @@ def get_Usuario(nickname):
 def get_Sensor_ById(id):
     return model_to_dict(Sensor.get(Sensor.id == id))
 
-def get_Sensors():
-    return list(Sensor.select().dicts())
+def get_Sensors(visible = 1):
+    return list(Sensor.select().where(Sensor.visible == visible).dicts())
 
 def get_Sensor_ByUser(nickname):
     user = Usuario.get(Usuario.nickname == nickname)
