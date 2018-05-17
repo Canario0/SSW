@@ -14,6 +14,7 @@
     <!-- Links to necessary files to run the webpage -->
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/Login-style.css') }}" />
     <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/logo.png') }}" />
+    <script type="text/javascript" src="{{ url for('static', filename='js/LoginValidation.js') }}"></script>
 
 {% with messages = get_flashed_messages() %}
 	{% if messages %}
@@ -40,7 +41,7 @@
 
 <section>
     <span id="tituloLogin">Registrar Usuario</span>
-    <form method="POST" action="/registrar">
+    <form name="myForm" method="POST" action="/registrar" onsubmit="return validateForm()">
         <p class="textoTitulo">Nick-Name:</p> 
         <p><input class="texto-login" name="nick-name" type="text" size="25"></p>
         <p class="textoTitulo">Contraseña:
