@@ -17,14 +17,14 @@ app.config['SECRET_KEY']=os.urandom(24)
 @app.route("/")
 @app.route("/index")
 def index():
-    sensores = get_Sensors(False)
+    sensores = get_Sensors(0)
     return render_template('principalSinRegistrar.html', sensores=sensores)
 
 
 @app.route("/sensor/<user>/<id>/registrar_medida", methods=['POST', 'GET'])
 @login_required
 def addMedition(user):
-    if comprobarUsuario(user):
+    if comprobar_Usuario(user):
         if request.method == 'GET':
             return render_template('registrar_medida.html')
         elif request.method == 'POST':
