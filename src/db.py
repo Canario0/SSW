@@ -125,11 +125,13 @@ def get_Sensors():
 def get_Sensor_ByUser(nickname):
     user = Usuario.get(Usuario.nickname == nickname)
     return list(user.sensores.dicts())
-#return  user.sensores
 
 def get_Mediciones(id):
     sensor= Sensor.select().where(Sensor.id == id)
     return list(sensor.mediciones.dicts()) if len(list(sensor))>0 else []
+
+def getFavoritos(nickname)
+    return list (Favorito.select().join(Sensores).where(Favorito.nickname == nickname).dicts())
 #----------------------------------------------------------------------------
 
 
