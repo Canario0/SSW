@@ -14,6 +14,8 @@ loginmn = LoginManager(app)
 loginmn.login_view = 'login'
 app.config['SECRET_KEY']=os.urandom(24)
 
+tipos_sensor={"Temperatura":1, "Humedad":2, "Iluminación":3, "Contaminación":4, "Ruido":5}
+
 @app.route("/")
 @app.route("/index")
 def index():
@@ -172,16 +174,26 @@ def fav(user):
             return redirect(url_for('index'))
 
 
-@app.route("/<user>/registrar_sensor")
+@app.route("/<user>/registrar_sensor", methods=['POST', 'GET'])
 @login_required
 def registrar_sensor(user):
-    if comprobar_Usuario(user):
-        return render_template('registrar_sensor.html', user=user)
-    else:
-        if current_user.is_authenticated:
-            return redirect(url_for('logged_index', user=current_user.nickname))
+    if request.method == 'GET':
+        if comprobar_Usuario(user):
+            return render_template('registrar_sensor.html', user=user)
         else:
-            return redirect(url_for('index'))
+            if current_user.is_authenticated:
+                return redirect(url_for('logged_index', user=current_user.nickname))
+            else:
+                return redirect(url_for('index'))
+    elif request.method == 'POST':
+        nombre = request.form['nombre']
+        desc = request.form['descripcion']
+        tipo = request.form['Tipo']
+        visible = bool(request.form['visibilidad'])
+        x = request.form['lat']
+        y = request.form['long']
+        create_Sensor(user,nombre, desc, tipos_sensor[tipo], visible, float(x), float(y))
+        return redirect(url_for('profile', user = current_user.nickname))
 
 
 @app.route("/sensor/<id>")
