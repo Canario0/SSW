@@ -199,10 +199,15 @@ def registrar_sensor(user):
 @app.route("/sensor/<id>")
 @login_required
 def informacion_sensor(id):
-    user = request.args.get('user')
-    sensor = get_Sensor_ById(id)
-    return render_template('info_sensor.html', id=id, user=user, sensor=sensor)
-
+    if comprobar_Usuario(user):
+        user = request.args.get('user')
+        sensor = get_Sensor_ById(id)
+        return render_template('info_sensor.html', id=id, user=user, sensor=sensor)
+    else:
+        if current_user.is_authenticated:
+            return redirect(url_for('logged_index', user=current_user.nickname))
+        else:
+            return (redirect(url_for('index')))
 
 @app.before_request
 def before_request():
