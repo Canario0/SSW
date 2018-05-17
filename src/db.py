@@ -131,7 +131,7 @@ def get_Mediciones(id):
     return list(sensor.mediciones.dicts()) if len(list(sensor))>0 else []
 
 def getFavoritos(nickname)
-    return list (Favorito.select().join(Sensores).where(Favorito.nickname == nickname).dicts())
+    return list (Favorito.select().join(Sensor).where(Favorito.nickname == nickname).dicts())
 #----------------------------------------------------------------------------
 
 
