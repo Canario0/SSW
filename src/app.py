@@ -24,7 +24,7 @@ def index():
 @app.route("/sensor/<user>/<id>/registrar_medida", methods=['POST', 'GET'])
 @login_required
 def addMedition(user, id):
-    if comprobarUsuario(user):
+    if comprobar_Usuario(user):
         if request.method == 'GET':
             return render_template('registrar_medida.html')
         elif request.method == 'POST':
