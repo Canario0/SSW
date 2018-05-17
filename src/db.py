@@ -119,7 +119,7 @@ def get_Usuario(nickname):
 def get_Sensor_ById(id):
     return model_to_dict(Sensor.get(Sensor.id == id))
 
-def get_Sensors(visible = 1):
+def get_Sensors(visible = True):
     return list(Sensor.select().where(Sensor.visible == visible).dicts())
 
 def get_Sensor_ByUser(nickname):
@@ -131,7 +131,7 @@ def get_Mediciones(id):
     return list(sensor.mediciones.dicts()) if len(list(sensor))>0 else []
 
 def get_Favoritos(nickname):
-    return list (Favorito.select().join(Sensor).where(Favorito.nickname == nickname).dicts())
+    return Favorito.select().join(Sensor).where(Favorito.nickname == nickname)
 #----------------------------------------------------------------------------
 
 

@@ -213,7 +213,7 @@ insert into medicion values (1,
     20.18); 
 
 insert into favorito values('pablo',
-    3)
+    3);
 
 insert into favorito values('pablo',
-    4)
+    4);
