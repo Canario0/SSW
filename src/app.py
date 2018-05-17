@@ -160,7 +160,7 @@ def profile(user):
 @login_required
 def fav(user):
     if comprobar_Usuario(user):
-        rows = getFavoritos(user)
+        rows = get_Favoritos(user)
         return render_template('sensores_fav.html', user=user, rows=rows)
     else:
         if current_user.is_authenticated:
