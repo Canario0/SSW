@@ -189,7 +189,7 @@ def registrar_sensor(user):
         nombre = request.form['nombre']
         desc = request.form['descripcion']
         tipo = request.form['rating']
-        visible = request.form['visibilidad']
+        visible = int(request.form['visibilidad'])
         x = request.form['lat']
         y = request.form['long']
         print("Mis valores son: usuario:", user, " nombre: ", nombre, " tipo_sensor: " ,tipos_sensor[tipo], "visibilidad: ", visible, sep="")
