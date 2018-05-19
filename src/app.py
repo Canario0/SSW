@@ -140,7 +140,7 @@ def logged_index(user):
         return render_template('principalRegistrado.html', user=user, sensores=sensores)
     else:
         if current_user.is_authenticated:
-            return redirect(url_for('logged_index', user=current_user.nickname, sensores=sensores))
+            return redirect(url_for('logged_index', user=current_user.nickname))
         else:
             return redirect(url_for('index', sensores=sensores))
 
