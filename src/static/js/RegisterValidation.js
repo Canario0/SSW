@@ -1,5 +1,6 @@
 function validaForm() {
     var x = document.forms["myForm"]["nick-name"].value;
+    console.log(x);
     if(x == "") {
         alert("Nombre inválido");
         return false
