@@ -74,7 +74,7 @@ def login():
             if get_Usuario(user)[0]['password'] == password:
                 login_user(loader_Usuario(user))
                 next_page = request.args.get('next')
-                if not next_page or url_parse(next_page).netloc != '':
+                if not next_page or urlparse(next_page).netloc != '':
                     return redirect(url_for('logged_index', user=user))
                 else:
                     return redirect(next_page)
