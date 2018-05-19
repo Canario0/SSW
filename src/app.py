@@ -187,12 +187,19 @@ def registrar_sensor(user):
                 return redirect(url_for('index'))
     elif request.method == 'POST':
         nombre = request.form['nombre']
+        print(nombre)
         desc = request.form['descripcion']
-        tipo = request.form['Tipo']
+        print(desc)
+        tipo = request.form['rating']
+        print(tipo)
         visible = bool(request.form['visibilidad'])
+        print(visible)
         x = request.form['lat']
+        print(x)
         y = request.form['long']
+        print(y)
         create_Sensor(user,nombre, desc, tipos_sensor[tipo], visible, float(x), float(y))
+        print("Creado")
         return redirect(url_for('profile', user = current_user.nickname))
 
 

@@ -120,7 +120,7 @@ def get_Sensor_ById(id):
     return model_to_dict(Sensor.get(Sensor.id == id))
 
 def get_Sensors(visible = 1):
-    print (list(Sensor.select().where(Sensor.visible == visible).dicts()))
+    #print (list(Sensor.select().where(Sensor.visible == visible).dicts()))
     return list(Sensor.select().where(Sensor.visible == visible).dicts())
 
 def get_Sensor_ByUser(nickname):
