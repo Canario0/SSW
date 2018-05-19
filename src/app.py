@@ -19,7 +19,7 @@ tipos_sensor={"Temperatura":1, "Humedad":2, "Iluminación":3, "Contaminación":4
 @app.route("/")
 @app.route("/index")
 def index():
-    sensores = get_Sensors(0)
+    sensores = get_Sensors(1)
     return render_template('principalSinRegistrar.html', sensores=sensores)
 
 
@@ -189,9 +189,10 @@ def registrar_sensor(user):
         nombre = request.form['nombre']
         desc = request.form['descripcion']
         tipo = request.form['rating']
-        visible = bool(request.form['visibilidad'])
+        visible = request.form['visibilidad']
         x = request.form['lat']
         y = request.form['long']
+        print("Mis valores son: usuario:", user, " nombre: ", nombre, " tipo_sensor: " ,tipos_sensor[tipo], "visibilidad: ", visible, sep="")
         create_Sensor(user,nombre, desc, tipos_sensor[tipo], visible, float(x), float(y))
         return redirect(url_for('profile', user = current_user.nickname))
 
