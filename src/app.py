@@ -79,7 +79,7 @@ def login():
                 else:
                     return redirect(next_page)
             else:
-                flash('Contrasñea incorrecta')
+                flash('Contraseña incorrecta')
         else:
             flash('El usuario no existe')
         return redirect(url_for('login'))
