@@ -11,7 +11,7 @@ function validaForm() {
         return false;
     }
 
-    var x = document.forms["myForm"]["recontraseña"].valaue;
+    var x = document.forms["myForm"]["recontraseña"].value;
     if(x != y) {
         alert("La contraseña no coincide");
         return false;
