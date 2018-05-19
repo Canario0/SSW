@@ -135,9 +135,9 @@ def config(user):
 @app.route("/<user>/index")
 @login_required
 def logged_index(user):
-    sensores = get_Sensors()
+    sensores = get_Sensors() + get_Sensors(0)
+    sensores = [x for i in sensores if (x.visibilidad == 0 and x.nickname == current_user.nickname) or x.visibilidad ==1 ]
     if comprobar_Usuario(user):
-        sensores = list(set(sensores + get_Sensor_ByUser(current_user.nickname)))
         return render_template('principalRegistrado.html', user=user, sensores=sensores)
     else:
         if current_user.is_authenticated:
