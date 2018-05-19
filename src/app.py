@@ -196,9 +196,9 @@ def registrar_sensor(user):
         return redirect(url_for('profile', user = current_user.nickname))
 
 
-@app.route("/sensor/<id>")
+@app.route("/<user>/sensor/<id>")
 @login_required
-def informacion_sensor(id):
+def informacion_sensor(user,id):
     if comprobar_Usuario(user):
         user = request.args.get('user')
         sensor = get_Sensor_ById(id)

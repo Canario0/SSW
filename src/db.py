@@ -12,7 +12,7 @@ db = MySQLDatabase(conf['DataBase']['name'], user=conf['DataBase']['user'], pass
 
 
 class Usuario(Model, UserMixin):
-    nickname = CharField(max_length=20, primary_key=True)
+    nickname = CharField(max_length=20, primary_key=True, db_column='nickname')
     email = CharField(max_length=45,null=True)
     password = CharField(max_length=10, null=False)
     nombre = CharField(max_length=10, null=True)
@@ -30,7 +30,7 @@ class Usuario(Model, UserMixin):
 
 
 class Sensor(Model):
-    id = IntegerField(primary_key=True)
+    id = IntegerField(primary_key=True,  db_column='id')
     nickname = ForeignKeyField(Usuario, backref='sensores', db_column='nickname')
     nombre = CharField(max_length=10, null=False)
     descripcion = CharField(null=True)
@@ -81,8 +81,7 @@ def create_Usuario(nickname, password):
 
 def create_Sensor(nickname, nombre, descripcion, tipo, visible, x, y):
     with db.atomic():
-        #Añadir variable id automaticamente
-        Sensor.create(id = id, nickname = nickname, nombre = nombre, descripcion = descripcion, tipo = tipo, visible = visible, x = x, y = y)
+        Sensor.create(nickname = nickname, nombre = nombre, descripcion = descripcion, tipo = tipo, visible = visible, x = x, y = y)
 
 def create_Favorito(nickname, id):
     with db.atomic():
