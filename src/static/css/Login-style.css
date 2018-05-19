@@ -1,4 +1,9 @@
 
+a {
+    color:inherit;
+    text-decoration: none;
+   }
+   
 html{
     height: 100%;
     margin: 0;
