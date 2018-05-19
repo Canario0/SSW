@@ -12,6 +12,7 @@
     <meta charset="utf-8" />
 
     <!-- Links to necessary files to run the webpage -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/cabecera.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/Login-style.css') }}" />
     <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/logo.png') }}" /> {% with messages = get_flashed_messages() %} {% if messages %}
     <script>
