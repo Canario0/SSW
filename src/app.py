@@ -136,7 +136,7 @@ def config(user):
 @login_required
 def logged_index(user):
     sensores = get_Sensors() + get_Sensors(0)
-    sensores = [x for i in sensores if (x.visibilidad == 0 and x.nickname == current_user.nickname) or x.visibilidad ==1 ]
+    sensores = [i for i in sensores if (i['visible'] == 0 and i['nickname'] == current_user['nickname']) or i['visible'] ==1 ]
     if comprobar_Usuario(user):
         return render_template('principalRegistrado.html', user=user, sensores=sensores)
     else:
