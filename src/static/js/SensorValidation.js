@@ -1,5 +1,6 @@
 function validateSensor() {
     var name = document.forms["myForm"]["nombre"].value;
+    console.log(name);
     if (x == "") {
         alert("El campo ''Nombre Sensor'' es obligatorio");
         return false;
