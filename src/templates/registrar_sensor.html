@@ -40,7 +40,7 @@
         </div>
     </div>
 
-    <forma name = "myForm" method='POST' action='/{{user}}/registrar_sensor' onsubmit="return validateForm()">
+    <forma name = "myForm" method='POST' action='/{{user}}/registrar_sensor' onsubmit="return validateSensor()">
     <div id="cuerpo">
         <div id="imgUserBig">
             <img src="{{ url_for('static', filename='img/users/' + user) }}" alt="Usuario" onerror="this.src='../static/img/users/default.png';" />
