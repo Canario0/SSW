@@ -57,8 +57,8 @@
                   {% for row in rows %}
 				  <tr>
 				    <td id="nombreSensor"><a href="/sensor/{{ row['id'] }}?user={{ user }}">{{ row['nombre'] }}</a></td>
-				    <td id="nombreSensor"><a href="/sensor/{{ row['id'] }}?user={{ user }}">{{ row['descripcion'] }}</a></td>
-				    <td id="nombreSensor"><a href="/sensor/{{ row['id'] }}?user={{ user }}">{{ "lat:"+str(row['x'])+" - long:"+str(row['y']) }}</a></td>
+				    <td id="descripcion"><a href="/sensor/{{ row['id'] }}?user={{ user }}">{{ row['descripcion'] }}</a></td>
+				    <td>Lat y Long</td>
                     <td>
                       <div class="boton" id="botonEliminar">-</div>
                     </td>
