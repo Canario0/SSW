@@ -8,7 +8,7 @@ function validateSensor() {
 
 
     var x = document.forms["myForm"]["lat"].value;
-    if (typeof (x) != "number") {
+    if (typeof (x) != 'number') {
         alert("La latitud debe ser un valor entero");
         return false;
     }
@@ -18,7 +18,7 @@ function validateSensor() {
     }
 
     var x = document.forms["myForm"]["long"].value;
-    if (typeof (x) != "number") {
+    if (typeof (x) != 'number') {
         alert("La longitud debe ser un valor entero");
         return false;
     }
