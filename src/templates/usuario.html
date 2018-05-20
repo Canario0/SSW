@@ -50,15 +50,15 @@
 				<table id="tabla">
 				  <tr>
 				    <th>Sensor</th>
-				    <th>Estado</th>
-				    <th>Tiempo de funcionamiento</th>
+				    <th>Descripción</th>
+				    <th>Posición</th>
 				    <th>Eliminar</th>
 				  </tr>
                   {% for row in rows %}
 				  <tr>
-				    <td id="nombreSensor"><a href="/sensor/{{ row['id'] }}?user={{ user }}">{{ row['descripcion']+" - "+row['nombre'] }}</a></td>
-				    <td>Funcionando</td>
-				    <td>2 horas</td>
+				    <td id="nombreSensor"><a href="/sensor/{{ row['id'] }}?user={{ user }}">{{ row['nombre'] }}</a></td>
+				    <td id="nombreSensor"><a href="/sensor/{{ row['id'] }}?user={{ user }}">{{ row['descripcion'] }}</a></td>
+				    <td id="nombreSensor"><a href="/sensor/{{ row['id'] }}?user={{ user }}">{{ "lat:"+row['x']+" - long:"+row[y] }}</a></td>
                     <td>
                       <div class="boton" id="botonEliminar">-</div>
                     </td>
