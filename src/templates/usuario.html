@@ -56,10 +56,9 @@
 				  </tr>
                   {% for row in rows %}
 				  <tr>
-                    <!-- <td id="nombreSensor"><a href="/sensor/{{ row['id'] }}?user={{ user }}">{{ row['nombre'] }}</a></td>-->
-                    <td id="nombreSensor"><a href="{{ user }}/sensor/{{ row['id'] }}">{{ row['nombre'] }}</a></td>
-                    <td id="descripcion"><a href="{{ user }}/sensor/{{ row['id'] }}">{{ row['descripcion'] }}</a></td>
-                    <td id="coordenaas"><a href="{{ user }}/sensor/{{ row['id'] }}">{{ "Lat: "+row['str(x)']+",  Long: "+row['str(y)'] }}</a></td>
+                      <td id="nombreSensor"><a href="/{{ user }}/sensor/{{ row['id'] }}">{{ row['nombre'] }}</a></td>
+                      <td id="descripcion"><a href="/{{ user }}/sensor/{{ row['id'] }}">{{ row['descripcion'] }}</a></td>
+                    <td>Arreglar Coordenadas</td>
                     <td>
                       <div class="boton" id="botonEliminar">-</div>
                     </td>
