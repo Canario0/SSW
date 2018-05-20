@@ -202,7 +202,6 @@ def registrar_sensor(user):
 @login_required
 def informacion_sensor(user,id):
     if comprobar_Usuario(user):
-        user = request.args.get('user')
         sensor = get_Sensor_ById(id)
         return render_template('info_sensor.html', id=id, user=user, sensor=sensor)
     else:
