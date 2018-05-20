@@ -40,14 +40,14 @@
         </div>
     </div>
 
-    <form method='POST' action='/{{user}}/registrar_sensor' onsubmit="return validateForm()">
+    <form name = "myForm" method='POST' action='/{{user}}/registrar_sensor' onsubmit="return validateSensor()">
     <div id="cuerpo">
         <div id="imgUserBig">
             <img src="{{ url_for('static', filename='img/users/' + user) }}" alt="Usuario" onerror="this.src='../static/img/users/default.png';" />
             <p id="underUser">{{ user }}</p>
             <p class="texto3">Nombre sensor:</p>
             <p id="underUser">
-                <input type="text" name="nombre" size="11" placeholder="Nombre sensor">
+                <input type="text" name="nombre" size="11" placeholder="Nombre sensor" value = "">
             </p>
         </div>
 
@@ -98,13 +98,13 @@
             </div>
         </div>
     </div>
-    </form>
 
     <div id="bottom">
       <p id="botonGuardarCambios">
         <input class="boton" type="submit" value="Registrar Sensor">
       </p>
     </div>
+    </form>
 </body>
 
 </html>

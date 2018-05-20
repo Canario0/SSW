@@ -14,15 +14,10 @@
     <!-- Links to necessary files to run the webpage -->
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/Login-style.css') }}" />
     <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/logo.png') }}" />
-    <script type="text/javascript" src="{{ url for('static', filename='js/RegisterValidation.js') }}"></script>
-
-{% with messages = get_flashed_messages() %}
-	{% if messages %}
-		<script> 
-			alert("{{ messages[0] }}");
-		</script>
-	{% endif %}
-{% endwith %}
+    <script type="text/javascript" src="{{ url_for('static', filename='js/RegisterValidation.js') }}"></script> {% with messages = get_flashed_messages() %} {% if messages %}
+    <script> 
+        alert("{{ messages[0] }}");
+    </script> {% endif %} {% endwith %}
 </head>
 
 <!-- WEBPAGE'S BODY -->
@@ -32,25 +27,33 @@
     <!-- Upper action bar with button -->
     <header>
         <div id="titulo">
-            <p>SMART
-                <b>MAPS</b>
+            <p>
+                <a href="/">SMART
+                    <b>MAPS</b>
+                </a>
             </p>
         </div>
     </header>
 
 
-<section>
-    <span id="tituloLogin">Registrar Usuario</span>
-    <form name="myForm" method="POST" action="/registrar" onsubmit="return validateForm()">
-        <p class="textoTitulo">Nick-Name:</p> 
-        <p><input class="texto-login" name="nick-name" type="text" size="25"></p>
-        <p class="textoTitulo">Contraseña:
-        <p><input class="texto-login" name="contraseña" type="password" size="25"></p>
-        <p class="textoTitulo">Repetir contraseña:
-        <p><input class="texto-login" name="recontraseña" type="password" size="25"></p>
-        <a href="/registrar"><input type="submit" value="Registrarse"></a>
-    </form>
-</section>
+    <section>
+        <span id="tituloLogin">Registrar Usuario</span>
+        <form name="myForm" method="POST" action="/registrar" onsubmit="return validaForm()">
+            <p class="textoTitulo">Nick-Name:</p>
+            <p>
+                <input class="texto-login" name="nick-name" type="text" size="25" value="">
+            </p>
+            <p class="textoTitulo">Contraseña:
+                <p>
+                    <input class="texto-login" name="contraseña" type="password" size="25" value="">
+                </p>
+                <p class="textoTitulo">Repetir contraseña:
+                    <p>
+                        <input class="texto-login" name="recontraseña" type="password" size="25" value="">
+                    </p>
+                    <input type="submit" value="Registrarse">
+        </form>
+    </section>
 
 </body>
 

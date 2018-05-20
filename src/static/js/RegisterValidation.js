@@ -1,18 +1,22 @@
 function validaForm() {
     var x = document.forms["myForm"]["nick-name"].value;
-    if(x == '') {
-        alert("Name must be filled out");
+    //console.log(x);
+    if(x == "") {
+        alert("Nombre inválido");
+        return false
+    }
+
+    var y = document.forms["myForm"]["contraseña"].value;
+
+    if(y == "") {
+        alert("Introduzca una contraseña");
         return false;
     }
 
-    var x = document.forms["myForm"]["contraseña"].value;
-    if(x == '') {
-        alert("Password must be filled out");
+    var x = document.forms["myForm"]["recontraseña"].value;
+    
+    if(x != y) {
+        alert("La contraseña no coincide");
         return false;
-    }
-
-    var x = document.forms["myForm"]["recontraseña"].valaue;
-    if(x == '') {
-        alert("Every field must be filled out");
     }
 }

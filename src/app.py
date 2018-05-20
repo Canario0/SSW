@@ -19,7 +19,7 @@ tipos_sensor={"Temperatura":1, "Humedad":2, "Iluminación":3, "Contaminación":4
 @app.route("/")
 @app.route("/index")
 def index():
-    sensores = get_Sensors(0)
+    sensores = get_Sensors(1)
     return render_template('principalSinRegistrar.html', sensores=sensores)
 
 
@@ -79,7 +79,7 @@ def login():
                 else:
                     return redirect(next_page)
             else:
-                flash('Contrasñea incorrecta')
+                flash('Contraseña incorrecta')
         else:
             flash('El usuario no existe')
         return redirect(url_for('login'))
@@ -135,12 +135,13 @@ def config(user):
 @app.route("/<user>/index")
 @login_required
 def logged_index(user):
-    sensores = get_Sensors()
+    sensores = get_Sensors() + get_Sensors(0)
+    sensores = [i for i in sensores if (i['visible'] == 0 and i['nickname'] == current_user.nickname) or i['visible'] ==1 ]
     if comprobar_Usuario(user):
         return render_template('principalRegistrado.html', user=user, sensores=sensores)
     else:
         if current_user.is_authenticated:
-            return redirect(url_for('logged_index', user=current_user.nickname, sensores=sensores))
+            return redirect(url_for('logged_index', user=current_user.nickname))
         else:
             return redirect(url_for('index', sensores=sensores))
 
@@ -188,17 +189,18 @@ def registrar_sensor(user):
     elif request.method == 'POST':
         nombre = request.form['nombre']
         desc = request.form['descripcion']
-        tipo = request.form['Tipo']
-        visible = bool(request.form['visibilidad'])
+        tipo = request.form['rating']
+        visible = int(request.form['visibilidad'])
         x = request.form['lat']
         y = request.form['long']
+        print("Mis valores son: usuario:", user, " nombre: ", nombre, " tipo_sensor: " ,tipos_sensor[tipo], "visibilidad: ", visible, sep="")
         create_Sensor(user,nombre, desc, tipos_sensor[tipo], visible, float(x), float(y))
         return redirect(url_for('profile', user = current_user.nickname))
 
 
-@app.route("/sensor/<id>")
+@app.route("/<user>/sensor/<id>")
 @login_required
-def informacion_sensor(id):
+def informacion_sensor(user,id):
     if comprobar_Usuario(user):
         user = request.args.get('user')
         sensor = get_Sensor_ById(id)
