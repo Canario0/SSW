@@ -91,9 +91,9 @@
                         <p>Localización</p>
                         <img id="imgMapa" src="../static/img/mapa.jpg" alt="mapa"/>
                         <p class="texto3">Coordenadas (longitud):</p>
-                        <p><input id="inputCoordenadas" type="text" name="lat" size="20" placeholder="Introducir longitud" value ="NaN"></p>
+                        <p><input id="inputCoordenadas" type="number" min = "-90"  max = "90" pattern = "(-\d+|\d+)" name="lat" size="20" placeholder="Introducir latitud" ></p>
                         <p class="texto3">Coordenadas (latitud)</p>
-                        <p><input id="inputCoordenadas" type="text" name="long" size="20" placeholder="Introducir latitud" value ="NaN"></p>
+                        <p><input id="inputCoordenadas" type="number" min = "-180"  max = "180" pattern = "(-\d+|\d+)" name="long" size="20" placeholder="Introducir longitud" ></p>
                     </div>
             </div>
         </div>
