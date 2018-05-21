@@ -211,6 +211,19 @@ def informacion_sensor(user,id):
         else:
             return (redirect(url_for('index')))
 
+@app.route("/<user>/delete/<id>")
+@login_required
+def eliminar(user, id):
+    if comprobar_Usuario(user):
+        delete_Sensor(id)
+        return redirect(url_for('logged_index', user=user))
+    else:
+        if current_user.is_authenticated:
+            return redirect(url_for('logged_index', user=current_user.nickname))
+        else:
+            return (redirect(url_for('index')))
+
+
 @app.before_request
 def before_request():
     ini()

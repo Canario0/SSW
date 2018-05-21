@@ -56,11 +56,11 @@
 				  </tr>
                   {% for row in rows %}
 				  <tr>
-				    <td id="nombreSensor"><a href="/sensor/{{ row['id'] }}?user={{ user }}">{{ row['descripcion']+" - "+row['nombre'] }}</a></td>
-				    <td>Funcionando</td>
+							<td id="nombreSensor"><a href="/sensor/{{ row['id'] }}?user={{ user }}">{{ row['descripcion']+" - "+row['nombre'] }}</a></td>
+							<td>Funcionando</td>
 				    <td>2 horas</td>
                     <td>
-                      <div class="boton" id="botonEliminar">-</div>
+                      <div class="boton" id="botonEliminar"> <a href="/{{ user }}/delete/{{ row['id'] }}">-</a></div>
                     </td>
 				  </tr>
                   {% endfor %}

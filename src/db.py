@@ -107,6 +107,9 @@ def update_Sensor(sensor):
      with db.atomic():
         Sensor.update(**sensor).where(Sensor.id == sensor['id']).execute()
 
+def delete_Sensor(id):
+    with db.atomic():
+        Sensor.delete().where(id == id)
 
 #----------------------------------------------------------------------------
 
