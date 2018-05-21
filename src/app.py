@@ -15,11 +15,13 @@ loginmn.login_view = 'login'
 app.config['SECRET_KEY']=os.urandom(24)
 
 tipos_sensor={"Temperatura":1, "Humedad":2, "Iluminación":3, "Contaminación":4, "Ruido":5}
-
+tipos_sensor2={1:"Temperatura", 2:"Humedad", 3:"Iluminación", 4:"Contaminación", 5:"Ruido"}
 @app.route("/")
 @app.route("/index")
 def index():
     sensores = get_Sensors(1)
+    for x in sensors:
+        x['tipo'] = tipos_sensor2[x['tipo']]
     return render_template('principalSinRegistrar.html', sensores=sensores)
 
 
