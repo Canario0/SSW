@@ -31,7 +31,7 @@ class Usuario(Model, UserMixin):
 
 class Sensor(Model):
     id = IntegerField(primary_key=True,  db_column='id')
-    nickname = ForeignKeyField(Usuario, backref='sensores', db_column='nickname')
+    nickname = ForeignKeyField(Usuario, backref='sensores', db_column='nickname', on_delete='CASCADE')
     nombre = CharField(max_length=10, null=False)
     descripcion = CharField(null=True)
     tipo = IntegerField(null=False)
@@ -44,8 +44,8 @@ class Sensor(Model):
 
 
 class Favorito(Model):
-    nickname = ForeignKeyField(Usuario, db_column='nickname')
-    id = ForeignKeyField(Sensor,db_column='id')
+    nickname = ForeignKeyField(Usuario, db_column='nickname', on_delete='CASCADE')
+    id = ForeignKeyField(Sensor,db_column='id', on_delete='CASCADE')
 
     class Meta:
         database = db
@@ -53,8 +53,8 @@ class Favorito(Model):
 
 
 class Liked(Model):
-    nickname = ForeignKeyField(Usuario, db_column='nickname')
-    id = ForeignKeyField(Sensor, db_column='id')
+    nickname = ForeignKeyField(Usuario, db_column='nickname', on_delete='CASCADE')
+    id = ForeignKeyField(Sensor, db_column='id', on_delete='CASCADE')
 
     class Meta:
         database = db
@@ -62,7 +62,7 @@ class Liked(Model):
 
 
 class Medicion(Model):
-    id = ForeignKeyField(Sensor, backref='mediciones', db_column='id')
+    id = ForeignKeyField(Sensor, backref='mediciones', db_column='id', on_delete='CASCADE')
     # este valor se autogenera
     fechaSubida = DateTimeField(
         default=datetime.datetime.now, primary_key=True)

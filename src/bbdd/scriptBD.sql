@@ -41,7 +41,7 @@ CREATE TABLE sensor (
   x DOUBLE PRECISION NOT NULL,
   y DOUBLE PRECISION NOT NULL,
   PRIMARY KEY (id),
-  FOREIGN KEY (nickname) REFERENCES usuario(nickname));
+  FOREIGN KEY (nickname) REFERENCES usuario(nickname) ON DELETE CASCADE);
 
 -- -----------------------------------------------------
 -- Table "ssw"."favorito"
@@ -50,8 +50,8 @@ CREATE TABLE favorito (
   nickname VARCHAR(20),
   id INTEGER NOT NULL,
   PRIMARY KEY (nickname, id),
-  FOREIGN KEY (nickname) REFERENCES usuario(nickname),
-  FOREIGN KEY (id) REFERENCES sensor(id));
+  FOREIGN KEY (nickname) REFERENCES usuario(nickname) ON DELETE CASCADE,
+  FOREIGN KEY (id) REFERENCES sensor(id) ON DELETE CASCADE);
 
 -- -----------------------------------------------------
 -- Table "ssw"."liked"
@@ -60,8 +60,8 @@ CREATE TABLE liked (
   nickname VARCHAR(20),
   id INTEGER NOT NULL,
   PRIMARY KEY (nickname, id),
-  FOREIGN KEY (nickname) REFERENCES usuario(nickname),
-  FOREIGN KEY (id) REFERENCES sensor(id));
+  FOREIGN KEY (nickname) REFERENCES usuario(nickname), ON DELETE CASCADE
+  FOREIGN KEY (id) REFERENCES sensor(id) ON DELETE CASCADE);
 
 -- -----------------------------------------------------
 -- Table "ssw"."medicion"
@@ -72,7 +72,7 @@ CREATE TABLE medicion (
   fechaMedicion DATE NOT NULL,
   valor DOUBLE PRECISION,
   PRIMARY KEY (fechaSubida),
-  FOREIGN KEY (id) REFERENCES sensor(id));
+  FOREIGN KEY (id) REFERENCES sensor(id) ON DELETE CASCADE);
 
 
 -- ----------------------------------------------------
