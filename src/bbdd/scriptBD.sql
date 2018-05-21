@@ -60,7 +60,7 @@ CREATE TABLE liked (
   nickname VARCHAR(20),
   id INTEGER NOT NULL,
   PRIMARY KEY (nickname, id),
-  FOREIGN KEY (nickname) REFERENCES usuario(nickname), ON DELETE CASCADE
+  FOREIGN KEY (nickname) REFERENCES usuario(nickname) ON DELETE CASCADE,
   FOREIGN KEY (id) REFERENCES sensor(id) ON DELETE CASCADE);
 
 -- -----------------------------------------------------
