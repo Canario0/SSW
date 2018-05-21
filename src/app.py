@@ -216,7 +216,7 @@ def informacion_sensor(user,id):
 def eliminar(user, id):
     if comprobar_Usuario(user):
         delete_Sensor(id)
-        return redirect(url_for('logged_index', user=user))
+        return redirect(url_for('profile', user=user))
     else:
         if current_user.is_authenticated:
             return redirect(url_for('logged_index', user=current_user.nickname))
