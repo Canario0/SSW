@@ -19,7 +19,7 @@ tipos_sensor={"Temperatura":1, "Humedad":2, "Iluminación":3, "Contaminación":4
 @app.route("/default_img")
 def default_img():
     print("get img")
-    return url_for('static', filename='img/users/default.png')
+    return redirect(url_for('static', filename='img/users/default.png'))
 
 @app.route("/")
 @app.route("/index")
