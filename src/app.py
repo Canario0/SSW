@@ -37,6 +37,7 @@ def addMedition(user, id):
             fechaMedicion = request.form['fecha-medicion']
             medida = request.form['medida']
             create_Medicion(id, fechaMedicion, medida)
+            return render_template('registrar_medida.html', user=user, id=id)
     else:
         if current_user.is_authenticated:
             return redirect(url_for('registrar_medicion.html', user=current_user.nickname))
