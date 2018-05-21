@@ -16,6 +16,10 @@ app.config['SECRET_KEY']=os.urandom(24)
 
 tipos_sensor={"Temperatura":1, "Humedad":2, "Iluminación":3, "Contaminación":4, "Ruido":5}
 
+@app.route("/default_img")
+def default_img():
+    return redirect(url_for('static', filename='img/users/default.png'))
+
 @app.route("/")
 @app.route("/index")
 def index():
@@ -202,7 +206,8 @@ def registrar_sensor(user):
 @login_required
 def informacion_sensor(user,id):
     if comprobar_Usuario(user):
-        user = request.args.get('user')
+        '''user = request.args.get('user')'''
+        user = user
         sensor = get_Sensor_ById(id)
         return render_template('info_sensor.html', id=id, user=user, sensor=sensor)
     else:
