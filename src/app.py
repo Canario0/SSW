@@ -16,6 +16,10 @@ app.config['SECRET_KEY']=os.urandom(24)
 
 tipos_sensor={"Temperatura":1, "Humedad":2, "Iluminación":3, "Contaminación":4, "Ruido":5}
 
+@app.route("/default_img")
+def default_img():
+    return url_for('static', filename='img/users/default.png')
+
 @app.route("/")
 @app.route("/index")
 def index():

@@ -36,14 +36,14 @@
         </a>
         <div id="perfil">
             <a class="boton" id="buttonHeader" href="/logout">Cerrar Sesión</a>
-            <a id="imgUser" href="/{{ user }}/profile"><img src="{{ url_for('static', filename='img/users/' + user) }}" alt="Usuario" onerror="this.src='../static/img/users/default.png';" /></a>
+            <a id="imgUser" href="/{{ user }}/profile"><img src="{{ url_for('static', filename='img/users/' + user) }}" alt="Usuario" onerror="this.src='/default_img';" /></a>
         </div>
     </div>
 
     <form name = "myForm" method='POST' action='/{{user}}/registrar_sensor' onsubmit="return validateSensor()">
     <div id="cuerpo">
         <div id="imgUserBig">
-            <img src="{{ url_for('static', filename='img/users/' + user) }}" alt="Usuario" onerror="this.src='../static/img/users/default.png';" />
+            <img src="{{ url_for('static', filename='img/users/' + user) }}" alt="Usuario" onerror="this.src='default_img';" />
             <p id="underUser">{{ user }}</p>
             <p class="texto3">Nombre sensor:</p>
             <p id="underUser">
