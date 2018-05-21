@@ -43,7 +43,7 @@
     <form name = "myForm" method='POST' action='/{{user}}/registrar_sensor' onsubmit="return validateSensor()">
     <div id="cuerpo">
         <div id="imgUserBig">
-            <img src="{{ url_for('static', filename='img/users/' + user) }}" alt="Usuario" onerror="this.src='default_img';" />
+            <img src="{{ url_for('static', filename='img/users/' + user) }}" alt="Usuario" onerror="this.src='/default_img';" />
             <p id="underUser">{{ user }}</p>
             <p class="texto3">Nombre sensor:</p>
             <p id="underUser">
