@@ -20,7 +20,7 @@ tipos_sensor2={1:"Temperatura", 2:"Humedad", 3:"Iluminación", 4:"Contaminación
 @app.route("/index")
 def index():
     sensores = get_Sensors(1)
-    for x in sensors:
+    for x in sensores:
         x['tipo'] = tipos_sensor2[x['tipo']]
     return render_template('principalSinRegistrar.html', sensores=sensores)
 
