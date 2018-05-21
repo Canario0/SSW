@@ -50,7 +50,9 @@
                         <input id="textboxMedidas" type="text" name="fecha-medicion">
                         <p id="etiquetaMedidas">Medida</p>
                         <input id="textboxMedidas" type="text" name="medida">
-                        <a class="boton" id="botonMedidas" type=submit href="{{ '/sensor/' + user + '/' + id + '/registrar_medida' }}">Añadir Medidas</a>
+                        <a href="{{ '/sensor/' + user + '/' + id + '/registrar_medida' }}">
+                            <input class="boton" id="botonMedidas" type=submit value="Añadir medida">
+                        </a>
                     </div>
                 </form>
 				<div id="tablaSensores">
