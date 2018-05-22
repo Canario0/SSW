@@ -53,7 +53,7 @@
 					<tr>
 						<th>ID</th>
 						<th>Sensor</th>
-						<th>Descripcion</th>
+						<th>Tipo</th>
 						<th>Dueño</th>
 						<th>Eliminar</th>
 					</tr>
@@ -63,7 +63,7 @@
 						<td id="nombreSensor">
 							<a href="/{{ user }}/sensor/{{ row['id'] }}">{{ row['nombre'] }}</a>
 						</td>
-						<td>{{ row['descripcion'] }}</td>
+						<td>{{ row['tipo'] }}</td>
 						<td>{{ row['nickname'] }}</td>
 						<td>
 							<a href="/{{ user }}/deleteFav/{{ row['id'] }}">
