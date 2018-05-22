@@ -55,7 +55,6 @@
 				    <th>Sensor</th>
 				    <th>Tipo</th>
                     <th>Visibilidad</th>
-                    <th>Coordenadas</th>
 				    <th>Eliminar</th>
 				  </tr>
                   {% for row in rows %}
@@ -64,7 +63,6 @@
                     <td id="nombreSensor"><a href="/{{ user }}/sensor/{{ row['id'] }}">{{ row['nombre'] }}</a></td>
                     <td id="tipo"><a href="/{{ user }}/sensor/{{ row['id'] }}">{{ row['tipo'] }}</a></td>
                     <td id="visible"><a href="/{{ user }}/sensor/{{ row['id'] }}">{{ 'Púbico' if row['visible'] else 'Privado' }}</a></td>
-                    <td id="coord"><a href="/{{ user }}/sensor/{{ row['id'] }}">{{ '(%.2f, %.2f)' % (row['x'], row['y']) }}</a></td>
                     <td>
                       <div class="boton" id="botonEliminar">-</div>
                     </td>
