@@ -180,6 +180,7 @@ def profile(user):
 def fav(user):
     if comprobar_Usuario(user):
         rows = get_Favoritos(user)
+        convertir_tipos(rows)
         return render_template('sensores_fav.html', user=user, rows=rows)
     else:
         if current_user.is_authenticated:
