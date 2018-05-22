@@ -55,18 +55,18 @@
 			<div id="tablaSensores">
 				<table id="tabla">
 					<tr>
+						<th>ID</th>
 						<th>Sensor</th>
-						<th>Estado</th>
-						<th>Tiempo de funcionamiento</th>
+						<th>Descripcion</th>
 						<th>Eliminar</th>
 					</tr>
 					{% for row in rows %}
 					<tr>
+						<td>{{ row['id'] }}</td>
 						<td id="nombreSensor">
-							<a href="/sensor/{{ row['id'] }}?user={{ user }}">{{ row['descripcion']+" - "+row['nombre'] }}</a>
+							<a href="/sensor/{{ row['id'] }}?user={{ user }}">{{ row['nombre'] }}</a>
 						</td>
-						<td>Funcionando</td>
-						<td>2 horas</td>
+						<td>{{ row['descripcion'] }}</td>
 						<td>
 							<a href="/{{ user }}/delete/{{ row['id'] }}">
 								<div class="boton" id="botonEliminar"> -</div>
