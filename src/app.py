@@ -193,7 +193,6 @@ def registrar_sensor(user):
         visible = int(request.form['visibilidad'])
         x = request.form['lat']
         y = request.form['long']
-        print("Mis valores son: usuario:", user, " nombre: ", nombre, " tipo_sensor: " ,tipos_sensor[tipo], "visibilidad: ", visible, sep="")
         create_Sensor(user,nombre, desc, tipos_sensor[tipo], visible, float(x), float(y))
         return redirect(url_for('profile', user = current_user.nickname))
 
