@@ -51,14 +51,16 @@
 				  <tr>
 				    <th>Sensor</th>
 				    <th>Descripción</th>
-				    <th>Posición</th>
+				    <th>Tipo</th>
+                    <th>Visibilidad</th>
 				    <th>Eliminar</th>
 				  </tr>
                   {% for row in rows %}
 				  <tr>
-                      <td id="nombreSensor"><a href="/{{ user }}/sensor/{{ row['id'] }}">{{ row['nombre'] }}</a></td>
-                      <td id="descripcion"><a href="/{{ user }}/sensor/{{ row['id'] }}">{{ row['descripcion'] }}</a></td>
-                    <td>Arreglar Coordenadas</td>
+                    <td id="nombreSensor"><a href="/{{ user }}/sensor/{{ row['id'] }}">{{ row['nombre'] }}</a></td>
+                    <td id="descripcion"><a href="/{{ user }}/sensor/{{ row['id'] }}">{{ row['descripcion'] }}</a></td>
+                    <td id="tipo"><a href="/{{ user }}/sensor/{{ row['id'] }}">{{ row['tipo'] }}</a></td>
+                    <td id="visible"><a href="/{{ user }}/sensor/{{ row['id'] }}">{{ row['visible'] }}</a></td>
                     <td>
                       <div class="boton" id="botonEliminar">-</div>
                     </td>
