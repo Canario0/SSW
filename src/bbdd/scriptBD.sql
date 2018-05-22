@@ -84,7 +84,7 @@ CREATE TABLE medicion (
 insert into usuario values (
     'sergio',
     'sergio.esteban@alumnos.uva.es',
-    'sergio123456789',
+    'sergio',
     'Sergio',
     'Esteban',
     'Pellejero',
@@ -96,7 +96,7 @@ insert into usuario values (
 insert into usuario values (
     'pablo',
     'pablo.renero@alumnos.uva.es',
-    'pablo123456789',
+    'pablo',
     'Pablo',
     'Renero',
     'Balganon',
@@ -108,7 +108,7 @@ insert into usuario values (
 insert into usuario values (
     'alvaro',
     'alvaro.berruezo@alumnos.uva.es',
-    'alvaro123456789',
+    'alvaro',
     'Alvaro',
     'Berruezo',
     'Franco',
@@ -120,7 +120,7 @@ insert into usuario values (
 insert into usuario values (
     'alejandro',
     'alejandro.martinez@alumnos.uva.es',
-    'alejandro123456789',
+    'alejandro',
     'Alejandro',
     'Martinez',
     'Andres',
