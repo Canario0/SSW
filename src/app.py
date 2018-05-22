@@ -12,18 +12,23 @@ from db import *
 app = Flask(__name__)
 loginmn = LoginManager(app)
 loginmn.login_view = 'login'
-app.config['SECRET_KEY']=os.urandom(24)
+app.config['SECRET_KEY'] = os.urandom(24)
 
-tipos_sensor={"Temperatura":1, "Humedad":2, "Iluminación":3, "Contaminación":4, "Ruido":5}
-tipos_sensor2= ['Temperatura', 'Humedad', 'Iluminación', 'Contaminación', 'Ruido']
+tipos_sensor = {"Temperatura": 1, "Humedad": 2,
+                "Iluminación": 3, "Contaminación": 4, "Ruido": 5}
+tipos_sensor2 = ['Temperatura', 'Humedad',
+                 'Iluminación', 'Contaminación', 'Ruido']
+
 
 @app.route("/default_img")
 def default_img():
     return redirect(url_for('static', filename='img/users/default.png'))
 
+
 def convertir_tipos(sensores):
     for x in sensores:
         x['tipo'] = tipos_sensor2[x['tipo']]
+
 
 @app.route("/")
 @app.route("/index")
@@ -51,17 +56,18 @@ def addMedition(user, id):
         else:
             return redirect(url_for('index'))
 
+
 @app.route("/registrar", methods=['POST', 'GET'])
 def register():
     if request.method == 'GET':
         if current_user.is_authenticated:
-            return redirect(url_for('logged_index', user = current_user.nickname))
+            return redirect(url_for('logged_index', user=current_user.nickname))
         return render_template('Registrar.html')
     elif request.method == 'POST':
         user = request.form['nick-name']
         password = request.form['contraseña']
         repassword = request.form['recontraseña']
-        #if len(get_Usuario(user)) == 0:
+        # if len(get_Usuario(user)) == 0:
         if get_Usuario(user) == []:
             if password == repassword:
                 create_Usuario(user, password)
@@ -73,11 +79,12 @@ def register():
             flash('Nick-name en uso')
         return redirect(url_for('register'))
 
+
 @app.route("/login", methods=['POST', 'GET'])
 def login():
     if request.method == 'GET':
         if current_user.is_authenticated:
-            return redirect(url_for('logged_index', user = current_user.nickname))
+            return redirect(url_for('logged_index', user=current_user.nickname))
         return render_template('Login.html')
     elif request.method == 'POST':
         user = request.form['nick-name']
@@ -103,32 +110,42 @@ def logout():
     logout_user()
     return redirect(url_for('index'))
 
+
 @app.route("/<user>/configuracion", methods=['POST', 'GET'])
 @login_required
 def config(user):
     if comprobar_Usuario(user):
         usuario = get_Usuario(user)[0]
         if request.method == 'GET':
-            usuario = {i: usuario[i] if usuario[i] != None else '' for i in usuario}
+            usuario = {i: usuario[i] if usuario[i]
+                       != None else '' for i in usuario}
             return render_template('configuracion_perfil.html',
-                user=user,
-                email=usuario['email'],
-                nombre=usuario['nombre'],
-                apellido1=usuario['apellido1'],
-                apellido2=usuario['apellido2'],
-                direccion=usuario['direccion'],
-                empresa=usuario['empresa'],
-                telefono=usuario['telefono'])
+                                   user=user,
+                                   email=usuario['email'],
+                                   fecha=usuario['nacimiento'],
+                                   nombre=usuario['nombre'],
+                                   apellido1=usuario['apellido1'],
+                                   apellido2=usuario['apellido2'],
+                                   direccion=usuario['direccion'],
+                                   empresa=usuario['empresa'],
+                                   telefono=usuario['telefono'])
 
         elif request.method == 'POST':
             form = request.form
-            usuario['email'] = form.get('email') if(form.get('email')!= '') else usuario['email']
-            usuario['nombre'] = form.get('nombre') if(form.get('nombre')!= '') else usuario['nombre']
-            usuario['apellido1'] = form.get('apellido1') if(form.get('apellido1')!= '') else usuario['apellido1']
-            usuario['apellido2'] = form.get('apellido2') if(form.get('apellido2')!= '') else usuario['apellido2']
-            usuario['direccion'] = form.get('direccion') if(form.get('direccion')!= '') else usuario['direccion']
-            usuario['empresa'] = form.get('empresa') if(form.get('empresa')!= '') else usuario['empresa']
-            usuario['telefono'] = form.get('telefono') if(request.form.get('telefono')!= '') else usuario['telefono']
+            usuario['email'] = form.get('email') if(
+                form.get('email') != '') else usuario['email']
+            usuario['nombre'] = form.get('nombre') if(
+                form.get('nombre') != '') else usuario['nombre']
+            usuario['apellido1'] = form.get('apellido1') if(
+                form.get('apellido1') != '') else usuario['apellido1']
+            usuario['apellido2'] = form.get('apellido2') if(
+                form.get('apellido2') != '') else usuario['apellido2']
+            usuario['direccion'] = form.get('direccion') if(
+                form.get('direccion') != '') else usuario['direccion']
+            usuario['empresa'] = form.get('empresa') if(
+                form.get('empresa') != '') else usuario['empresa']
+            usuario['telefono'] = form.get('telefono') if(
+                request.form.get('telefono') != '') else usuario['telefono']
             if 'imagen' in request.files:
                 imagen = request.files['imagen']
                 if imagen.filename != '':
@@ -148,7 +165,8 @@ def config(user):
 @login_required
 def logged_index(user):
     sensores = get_Sensors() + get_Sensors(0)
-    sensores = [i for i in sensores if (i['visible'] == 0 and i['nickname'] == current_user.nickname) or i['visible'] ==1 ]
+    sensores = [i for i in sensores if (
+        i['visible'] == 0 and i['nickname'] == current_user.nickname) or i['visible'] == 1]
     convertir_tipos(sensores)
     if comprobar_Usuario(user):
         return render_template('principalRegistrado.html', user=user, sensores=sensores)
@@ -162,9 +180,9 @@ def logged_index(user):
 @app.route("/<user>/profile")
 @login_required
 def profile(user):
-#	sensoresUsuario = get_Usuario()
-#	for messages in sensoresUsuario.sensores[0]:
-#		print(messages)
+    #	sensoresUsuario = get_Usuario()
+    #	for messages in sensoresUsuario.sensores[0]:
+    #		print(messages)
     if comprobar_Usuario(user):
         rows = get_Sensor_ByUser(user)
         convertir_tipos(rows)
@@ -208,13 +226,14 @@ def registrar_sensor(user):
         visible = int(request.form['visibilidad'])
         x = request.form['lat']
         y = request.form['long']
-        create_Sensor(user,nombre, desc, tipos_sensor[tipo], visible, float(x), float(y))
-        return redirect(url_for('profile', user = current_user.nickname))
+        create_Sensor(user, nombre, desc,
+                      tipos_sensor[tipo], visible, float(x), float(y))
+        return redirect(url_for('profile', user=current_user.nickname))
 
 
 @app.route("/<user>/sensor/<id>")
 @login_required
-def informacion_sensor(user,id):
+def informacion_sensor(user, id):
     if comprobar_Usuario(user):
         sensor = get_Sensor_ById(id)
         rows = get_Mediciones(id)
@@ -224,6 +243,7 @@ def informacion_sensor(user,id):
             return redirect(url_for('logged_index', user=current_user.nickname))
         else:
             return (redirect(url_for('index')))
+
 
 @app.route("/<user>/delete/<id>")
 @login_required
@@ -237,17 +257,20 @@ def eliminar(user, id):
         else:
             return (redirect(url_for('index')))
 
+
 @app.route("/<user>/deleteFav/<id>")
 @login_required
 def eliminarFav(user, id):
     if comprobar_Usuario(user):
-        delete_Favorito(user , id)
+        delete_Favorito(user, id)
         return redirect(url_for('fav', user=user))
     else:
         if current_user.is_authenticated:
             return redirect(url_for('logged_index', user=current_user.nickname))
         else:
             return (redirect(url_for('index')))
+
+
 @app.before_request
 def before_request():
     ini()
