@@ -99,8 +99,8 @@
 			<div id="botonesYfavoritos">
                 <a class="boton" id="botonesbajos" href="/{{ user }}/sensor/{{ id }}/registrar_medida">Añadir Medición</a>
 				<p class="boton" id="botonesbajos">Limpiar Medidas</p>
-				<img class="imgInfo" id="estrella" src="../static/img/estrella.svg" alt="favoritos">
-				<img class="imgInfo" src="../static/img/like.svg" alt="me gusta">
+                <img class="imgInfo" id="estrella" src="{{ url_for('static', filename='../static/img/estrella.svg') }}" alt="favoritos">
+                <img class="imgInfo" src="{{ url_for('static', filename='../static/img/like.svg') }}" alt="meGusta">
 			</div>
 		</div>
 	</div>
