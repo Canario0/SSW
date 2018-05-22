@@ -47,7 +47,7 @@ def addMedition(user, id):
             return render_template('registrar_medida.html', user=user, id=id, rows=rows)
         elif request.method == 'POST':
             fechaMedicion = request.form['fecha-medicion']
-            medida = request.form['medida']
+            medida = round(request.form['medida'], 4)
             create_Medicion(id, fechaMedicion, medida)
             return redirect(url_for('informacion_sensor', user=user, id=id))
     else:
