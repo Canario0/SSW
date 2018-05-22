@@ -15,24 +15,36 @@ loginmn.login_view = 'login'
 app.config['SECRET_KEY']=os.urandom(24)
 
 tipos_sensor={"Temperatura":1, "Humedad":2, "Iluminación":3, "Contaminación":4, "Ruido":5}
+tipos_sensor2= ['Temperatura', 'Humedad', 'Iluminación', 'Contaminación', 'Ruido']
+
+@app.route("/default_img")
+def default_img():
+    return redirect(url_for('static', filename='img/users/default.png'))
+
+def convertir_tipos(sensores):
+    for x in sensores:
+        x['tipo'] = tipos_sensor2[x['tipo']]
 
 @app.route("/")
 @app.route("/index")
 def index():
     sensores = get_Sensors(1)
+    convertir_tipos(sensores)
     return render_template('principalSinRegistrar.html', sensores=sensores)
 
 
-@app.route("/sensor/<user>/<id>/registrar_medida", methods=['POST', 'GET'])
+@app.route("/<user>/sensor/<id>/registrar_medida", methods=['POST', 'GET'])
 @login_required
 def addMedition(user, id):
     if comprobar_Usuario(user):
         if request.method == 'GET':
-            return render_template('registrar_medida.html')
+            rows = get_Mediciones(id)
+            return render_template('registrar_medida.html', user=user, id=id, rows=rows)
         elif request.method == 'POST':
             fechaMedicion = request.form['fecha-medicion']
             medida = request.form['medida']
             create_Medicion(id, fechaMedicion, medida)
+            return redirect(url_for('informacion_sensor', user=user, id=id))
     else:
         if current_user.is_authenticated:
             return redirect(url_for('registrar_medicion.html', user=current_user.nickname))
@@ -137,6 +149,7 @@ def config(user):
 def logged_index(user):
     sensores = get_Sensors() + get_Sensors(0)
     sensores = [i for i in sensores if (i['visible'] == 0 and i['nickname'] == current_user.nickname) or i['visible'] ==1 ]
+    convertir_tipos(sensores)
     if comprobar_Usuario(user):
         return render_template('principalRegistrado.html', user=user, sensores=sensores)
     else:
@@ -154,6 +167,7 @@ def profile(user):
 #		print(messages)
     if comprobar_Usuario(user):
         rows = get_Sensor_ByUser(user)
+        convertir_tipos(rows)
         return render_template('usuario.html', user=user, rows=rows)
     else:
         if current_user.is_authenticated:
@@ -167,6 +181,7 @@ def profile(user):
 def fav(user):
     if comprobar_Usuario(user):
         rows = get_Favoritos(user)
+        convertir_tipos(rows)
         return render_template('sensores_fav.html', user=user, rows=rows)
     else:
         if current_user.is_authenticated:
@@ -202,13 +217,37 @@ def registrar_sensor(user):
 def informacion_sensor(user,id):
     if comprobar_Usuario(user):
         sensor = get_Sensor_ById(id)
-        return render_template('info_sensor.html', id=id, user=user, sensor=sensor)
+        rows = get_Mediciones(id)
+        return render_template('info_sensor.html', id=id, user=user, sensor=sensor, rows=rows)
     else:
         if current_user.is_authenticated:
             return redirect(url_for('logged_index', user=current_user.nickname))
         else:
             return (redirect(url_for('index')))
 
+@app.route("/<user>/delete/<id>")
+@login_required
+def eliminar(user, id):
+    if comprobar_Usuario(user):
+        delete_Sensor(id)
+        return redirect(url_for('profile', user=user))
+    else:
+        if current_user.is_authenticated:
+            return redirect(url_for('logged_index', user=current_user.nickname))
+        else:
+            return (redirect(url_for('index')))
+
+@app.route("/<user>/deleteFav/<id>")
+@login_required
+def eliminarFav(user, id):
+    if comprobar_Usuario(user):
+        delete_Favorito(user , id)
+        return redirect(url_for('fav', user=user))
+    else:
+        if current_user.is_authenticated:
+            return redirect(url_for('logged_index', user=current_user.nickname))
+        else:
+            return (redirect(url_for('index')))
 @app.before_request
 def before_request():
     ini()
