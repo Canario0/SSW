@@ -33,17 +33,18 @@ def index():
     return render_template('principalSinRegistrar.html', sensores=sensores)
 
 
-@app.route("/sensor/<user>/<id>/registrar_medida", methods=['POST', 'GET'])
+@app.route("/<user>/sensor/<id>/registrar_medida", methods=['POST', 'GET'])
 @login_required
 def addMedition(user, id):
     if comprobar_Usuario(user):
         if request.method == 'GET':
-            return render_template('registrar_medida.html', user=user, id=id)
+            rows = get_Mediciones(id)
+            return render_template('registrar_medida.html', user=user, id=id, rows=rows)
         elif request.method == 'POST':
             fechaMedicion = request.form['fecha-medicion']
             medida = request.form['medida']
             create_Medicion(id, fechaMedicion, medida)
-            return render_template('registrar_medida.html', user=user, id=id)
+            return redirect(url_for('informacion_sensor', user=user, id=id))
     else:
         if current_user.is_authenticated:
             return redirect(url_for('registrar_medicion.html', user=current_user.nickname))
@@ -219,7 +220,8 @@ def informacion_sensor(user,id):
         '''user = request.args.get('user')'''
         user = user
         sensor = get_Sensor_ById(id)
-        return render_template('info_sensor.html', id=id, user=user, sensor=sensor)
+        rows = get_Mediciones(id)
+        return render_template('info_sensor.html', id=id, user=user, sensor=sensor, rows=rows)
     else:
         if current_user.is_authenticated:
             return redirect(url_for('logged_index', user=current_user.nickname))

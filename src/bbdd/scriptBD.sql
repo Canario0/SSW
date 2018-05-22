@@ -69,7 +69,7 @@ CREATE TABLE liked (
 CREATE TABLE medicion (
   id INTEGER NOT NULL AUTO_INCREMENT,
   fechaSubida DATETIME,
-  fechaMedicion DATE NOT NULL,
+  fechaMedicion VARCHAR(30),
   valor DOUBLE PRECISION,
   PRIMARY KEY (fechaSubida),
   FOREIGN KEY (id) REFERENCES sensor(id) ON DELETE CASCADE);
@@ -89,7 +89,7 @@ insert into usuario values (
     'Esteban',
     'Pellejero',
     'Valladolid - Parquesol',
-    str_to_date('24-04-2018', '%d-%m-%Y'),
+    str_to_date('23-02-2018', '%d-%m-%Y'), 
     'UVa',
     365412879);
 
@@ -101,7 +101,7 @@ insert into usuario values (
     'Renero',
     'Balganon',
     'Valladolid - Parquesol',
-    str_to_date('24-04-2018', '%d-%m-%Y'),
+    str_to_date('24-02-2018', '%d-%m-%Y'), 
     'UVa',
     965874123);
 
@@ -113,7 +113,7 @@ insert into usuario values (
     'Berruezo',
     'Franco',
     'Valladolid - Centro',
-    str_to_date('24-04-2018', '%d-%m-%Y'),
+    str_to_date('25-02-2018', '%d-%m-%Y'), 
     'UVa',
     548632158);
 
@@ -125,7 +125,7 @@ insert into usuario values (
     'Martinez',
     'Andres',
     'Valladolid - Parquesol',
-    str_to_date('24-04-2018', '%d-%m-%Y'),
+    str_to_date('26-02-2018', '%d-%m-%Y'), 
     'UVa',
     231254687);
 
@@ -174,42 +174,42 @@ insert into sensor values (4,
 -- ----------------------------------------------------
 insert into medicion values (1,
     Date_format(now(), '%Y-%m-%d %h:%i:%s'),
-    Date_format(now(), '%Y-%m-%d'), 
+    '25-89-2035 12:58:49',
     20.11); 
 
 insert into medicion values (1,
     Date_format(now()+1, '%Y-%m-%d %h:%i:%s'),
-    Date_format(now(), '%Y-%m-%d'), 
+    '25-89-2035 12:58:44',
     20.12); 
 
 insert into medicion values (1,
     Date_format(now()+2, '%Y-%m-%d %h:%i:%s'),
-    Date_format(now(), '%Y-%m-%d'), 
+    '25-89-2035 12:58:46',
     20.13); 
 
 insert into medicion values (1,
     Date_format(now()+3, '%Y-%m-%d %h:%i:%s'),
-    Date_format(now(), '%Y-%m-%d'), 
+    '25-89-2035 12:58:47',
     20.14); 
 
 insert into medicion values (1,
     Date_format(now()+4, '%Y-%m-%d %h:%i:%s'),
-    Date_format(now(), '%Y-%m-%d'), 
+    '25-89-2035 12:58:48',
     20.15); 
 
 insert into medicion values (1,
     Date_format(now()+5, '%Y-%m-%d %h:%i:%s'),
-    Date_format(now(), '%Y-%m-%d'), 
+    '25-89-2035 12:58:41',
     20.16); 
 
 insert into medicion values (1,
     Date_format(now()+6, '%Y-%m-%d %h:%i:%s'),
-    Date_format(now(), '%Y-%m-%d'), 
+    '25-89-2035 12:58:42',
     20.17); 
 
 insert into medicion values (1,
     Date_format(now()+7, '%Y-%m-%d %h:%i:%s'),
-    Date_format(now(), '%Y-%m-%d'), 
+    '25-89-2035 12:58:43',
     20.18); 
 
 insert into favorito values('pablo',

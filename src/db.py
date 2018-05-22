@@ -66,7 +66,7 @@ class Medicion(Model):
     # este valor se autogenera
     fechaSubida = DateTimeField(
         default=datetime.datetime.now, primary_key=True)
-    fechaMedicion = DateField(null=False)
+    fechaMedicion = CharField(max_length=20, null=False)
     valor = DoubleField(null=False)
 
     class Meta:
@@ -135,8 +135,8 @@ def get_Sensor_ByUser(nickname):
     return list(user.sensores.dicts())
 
 def get_Mediciones(id):
-    sensor= Sensor.select().where(Sensor.id == id)
-    return list(sensor.mediciones.dicts()) if len(list(sensor))>0 else []
+    sensor= Sensor.get(Sensor.id == id)
+    return list(sensor.mediciones.order_by(Medicion.fechaSubida.desc()).limit(5).dicts()) 
 
 def get_Favoritos(nickname):
     return list(Sensor.select().join(Favorito).where(Favorito.nickname == nickname).dicts())

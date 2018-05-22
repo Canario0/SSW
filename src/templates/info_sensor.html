@@ -84,33 +84,23 @@
 				<div id="chartContainer"></div>
 				<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 				<div id="tablaSensores">
-					<table id="tablaMedidas">
-					  <tr>
-						<th>Últimas Medidas</th>
-					  </tr>
+                    <table id="tablaMedidas">
+                        <tr>
+                            <th>Últimas Medidas</th>
+                        </tr>
+                        {% for row in rows %}
 						<tr>
-							<td>17.5º</td>
+							<td>{{ row['valor'] }}</td>
 						</tr>
-						<tr>
-							<td>18º</td>
-						</tr>
-						<tr>
-							<td>19.8º</td>
-						</tr>
-						<tr>
-							<td>20.5º</td>
-						</tr>
-						<tr>
-							<td>20º</td>
-						</tr>
+                        {% endfor %}
 					</table>
 				</div>
 			</div>
 			<div id="botonesYfavoritos">
-                <a class="boton" id="botonesbajos" href="/sensor/{{ user }}/{{ id }}/registrar_medida">Añadir Medición</a>
+                <a class="boton" id="botonesbajos" href="/{{ user }}/sensor/{{ id }}/registrar_medida">Añadir Medición</a>
 				<p class="boton" id="botonesbajos">Limpiar Medidas</p>
-				<img class="imgInfo" id="estrella" src="../static/img/estrella.svg" alt="favoritos">
-				<img class="imgInfo" src="../static/img/like.svg" alt="me gusta">
+                <img class="imgInfo" id="estrella" src="{{ url_for('static', filename='../static/img/estrella.svg') }}" alt="favoritos">
+                <img class="imgInfo" src="{{ url_for('static', filename='../static/img/like.svg') }}" alt="meGusta">
 			</div>
 		</div>
 	</div>
