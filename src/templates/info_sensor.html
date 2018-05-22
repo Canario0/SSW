@@ -84,25 +84,15 @@
 				<div id="chartContainer"></div>
 				<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 				<div id="tablaSensores">
-					<table id="tablaMedidas">
-					  <tr>
-						<th>Últimas Medidas</th>
-					  </tr>
+                    <table id="tablaMedidas">
+                        <tr>
+                            <th>Últimas Medidas</th>
+                        </tr>
+                        {% for row in rows %}
 						<tr>
-							<td>17.5º</td>
+							<td>{{ row['valor] }}<td>
 						</tr>
-						<tr>
-							<td>18º</td>
-						</tr>
-						<tr>
-							<td>19.8º</td>
-						</tr>
-						<tr>
-							<td>20.5º</td>
-						</tr>
-						<tr>
-							<td>20º</td>
-						</tr>
+                        {% for row in rows %}
 					</table>
 				</div>
 			</div>
