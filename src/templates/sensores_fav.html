@@ -4,35 +4,41 @@
 
 <head>
 
-    <!-- Page's title -->
-    <title>Smart Maps</title>
+	<!-- Page's title -->
+	<title>Smart Maps</title>
 
-    <!-- Character ccodifcation -->
-    <meta name="viewport" content="initial-scale=1.0">
-    <meta charset="utf-8" />
+	<!-- Character ccodifcation -->
+	<meta name="viewport" content="initial-scale=1.0">
+	<meta charset="utf-8" />
 
-    <!-- Links to necessary files to run the webpage -->
+	<!-- Links to necessary files to run the webpage -->
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/perfil.css') }}" />
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/botones.css') }}" />
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/cabecera.css') }}" />
-    <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/logo.png') }}" />
+	<link rel="icon" type="image/png" href="{{ url_for('static', filename='img/logo.png') }}" />
 </head>
 
 <!-- WEBPAGE'S BODY -->
 
 <body>
 	<div id="cabecera">
-		<a id ="titulo" href="/{{ user }}/index">SMART <b>MAPS</b></a>
+		<a id="titulo" href="/{{ user }}/index">SMART
+			<b>MAPS</b>
+		</a>
 		<div id="perfil">
 			<a class="boton" id="buttonHeader" href="/logout">Cerrar Sesión</a>
-			<a id="imgUser" href="/{{ user }}/profile"><img src="{{ url_for('static', filename='img/users/' + user) }}" alt="Usuario" onerror="this.src='../static/img/users/default.png';" /></a>
+			<a id="imgUser" href="/{{ user }}/profile">
+				<img src="{{ url_for('static', filename='img/users/' + user) }}" alt="Usuario" onerror="this.src='../static/img/users/default.png';"
+				/>
+			</a>
 		</div>
 	</div>
 
 	<div id="cuerpo">
 		<div id="imgUserBig">
-            <img src="{{ url_for('static', filename='img/users/' + user) }}" alt="Usuario" onerror="this.src='../static/img/users/default.png';" />
-            <p id="underUser">{{ user }}</p>
+			<img src="{{ url_for('static', filename='img/users/' + user) }}" alt="Usuario" onerror="this.src='../static/img/users/default.png';"
+			/>
+			<p id="underUser">{{ user }}</p>
 		</div>
 
 		<div id="content">
@@ -48,27 +54,30 @@
 			</div>
 			<div id="tablaSensores">
 				<table id="tabla">
-				  <tr>
-				    <th>Sensor</th>
-				    <th>Estado</th>
-				    <th>Tiempo de funcionamiento</th>
-                    <th>Dueño</th>
-				    <th>Eliminar</th>
-				  </tr>
-                  {% for row in rows %}
-				  <tr>
-				    <td id="nombreSensor"><a href="/sensor/{{ row['id'] }}?user={{ user }}">{{ row['descripcion']+" - "+row['nombre'] }}</a></td>
-				    <td>Funcionando</td>
-				    <td>2 horas</td>
-                    <td>Rahim_</td>
-				    <td>
-                        <div class="boton" id="botonEliminar">-</div>
-                    </td>
-				  </tr>
-                  {% endfor %}
+					<tr>
+						<th>ID</th>
+						<th>Sensor</th>
+						<th>Descripcion</th>
+						<th>Dueño</th>
+						<th>Eliminar</th>
+					</tr>
+					{% for row in rows %}
+					<tr>
+						<td>{{ row['id'] }}</td>
+						<td id="nombreSensor">
+							<a href="/sensor/{{ row['id'] }}?user={{ user }}">{{ row['nombre'] }}</a>
+						</td>
+						<td>{{ row['descripcion'] }}</td>
+						<td>{{ row['nickname'] }}</td>
+						<td>
+							<div class="boton" id="botonEliminar">-</div>
+						</td>
+					</tr>
+					{% endfor %}
 				</table>
 			</div>
 		</div>
 	</div>
 </body>
+
 </html>
