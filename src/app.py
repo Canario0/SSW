@@ -237,7 +237,10 @@ def informacion_sensor(user, id):
     if comprobar_Usuario(user):
         sensor = get_Sensor_ById(id)
         rows = get_Mediciones(id)
-        return render_template('info_sensor.html', id=id, user=user, sensor=sensor, rows=rows, logeado=1)
+        if user == sensor['nickname']['nickname']:
+            return render_template('info_sensor.html', id=id, user=user, sensor=sensor, rows=rows, logeado=1)
+        else:
+            return render_template('info_sensor.html', id=id, user=user, sensor=sensor, rows=rows, logeado=0)
     else:
         if current_user.is_authenticated:
             return redirect(url_for('logged_index', user=current_user.nickname))
