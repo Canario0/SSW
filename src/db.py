@@ -129,7 +129,7 @@ def get_Sensor_ByUser(nickname):
     return list(user.sensores.dicts())
 
 def get_Mediciones(id):
-    sensor= Sensor.select().where(Sensor.id == id)
+    sensor= Sensor.get(Sensor.id == id)
     return list(sensor.mediciones.dicts()) 
 
 def get_Favoritos(nickname):
