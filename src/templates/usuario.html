@@ -72,7 +72,9 @@
 							<a href="/{{ user }}/sensor/{{ row['id'] }}">{{ 'Púbico' if row['visible'] else 'Privado' }}</a>
 						</td>
 						<td>
-							<div class="boton" id="botonEliminar">-</div>
+							<a href="/{{ user }}/delete/{{ row['id'] }}">
+                                <div class="boton" id="botonEliminar">-</div>
+                            </a>
 						</td>
 					</tr>
 					{% endfor %}
