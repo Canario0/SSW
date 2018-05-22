@@ -27,7 +27,9 @@
 		</a>
 		<div id="perfil">
 			<a class="boton" id="buttonHeader" href="/logout">Cerrar Sesión</a>
-			<a id="imgUser" href="/{{ user }}/profile"><img src="{{ url_for('static', filename='img/users/' + user) }}" alt="Usuario" onerror="this.src='/default_img';" /></a>
+			<a id="imgUser" href="/{{ user }}/profile">
+				<img src="{{ url_for('static', filename='img/users/' + user) }}" alt="Usuario" onerror="this.src='/default_img';" />
+			</a>
 		</div>
 	</div>
 
@@ -50,24 +52,32 @@
 			</div>
 			<div id="tablaSensores">
 				<table id="tabla">
-				  <tr>
-					<th>ID</th>
-				    <th>Sensor</th>
-				    <th>Tipo</th>
-                    <th>Visibilidad</th>
-				    <th>Eliminar</th>
-				  </tr>
-                  {% for row in rows %}
-				  <tr>
-					<td>{{ row['id'] }}</td>
-                    <td id="nombreSensor"><a href="/{{ user }}/sensor/{{ row['id'] }}">{{ row['nombre'] }}</a></td>
-                    <td id="tipo"><a href="/{{ user }}/sensor/{{ row['id'] }}">{{ row['tipo'] }}</a></td>
-                    <td id="visible"><a href="/{{ user }}/sensor/{{ row['id'] }}">{{ 'Púbico' if row['visible'] else 'Privado' }}</a></td>
-                    <td>
-                      <div class="boton" id="botonEliminar">-</div>
-                    </td>
-				  </tr>
-                  {% endfor %}
+					<tr>
+						<th>ID</th>
+						<th>Sensor</th>
+						<th>Descripcion</th>
+						<th>Tipo</th>
+						<th>Visibilidad</th>
+						<th>Eliminar</th>
+					</tr>
+					{% for row in rows %}
+					<tr>
+						<td>{{ row['id'] }}</td>
+						<td id="nombreSensor">
+							<a href="/{{ user }}/sensor/{{ row['id'] }}">{{ row['nombre'] }}</a>
+						</td>
+						<td>{{ row['descripcion'] }}</td>
+						<td id="tipo">
+							<a href="/{{ user }}/sensor/{{ row['id'] }}">{{ row['tipo'] }}</a>
+						</td>
+						<td id="visible">
+							<a href="/{{ user }}/sensor/{{ row['id'] }}">{{ 'Púbico' if row['visible'] else 'Privado' }}</a>
+						</td>
+						<td>
+							<div class="boton" id="botonEliminar">-</div>
+						</td>
+					</tr>
+					{% endfor %}
 				</table>
 			</div>
 		</div>
