@@ -237,12 +237,18 @@ def informacion_sensor(user, id):
     if comprobar_Usuario(user):
         sensor = get_Sensor_ById(id)
         rows = get_Mediciones(id)
-        return render_template('info_sensor.html', id=id, user=user, sensor=sensor, rows=rows)
+        return render_template('info_sensor.html', id=id, user=user, sensor=sensor, rows=rows, logeado=1)
     else:
         if current_user.is_authenticated:
             return redirect(url_for('logged_index', user=current_user.nickname))
         else:
             return (redirect(url_for('index')))
+
+@app.route("/sensor/<id>")
+def informacion_sensor_sin_user(id):
+    sensor = get_Sensor_ById(id)
+    rows = get_Mediciones(id)
+    return render_template('info_sensor.html', id=id, user=str(sensor['nickname']['nickname']), sensor=sensor, rows=rows, logeado=0)
 
 
 @app.route("/<user>/delete/<id>")

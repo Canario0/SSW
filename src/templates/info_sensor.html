@@ -23,25 +23,33 @@
 
 <body>
 	<div id="cabecera">
-		<a id ="titulo" href="/{{ user }}/index">SMART <b>MAPS</b></a>
+        {% if logeado %}
+        <a id ="titulo" href="/{{ user }}/index">SMART <b>MAPS</b></a>
+        {% else %}
+        <a id ="titulo" href="/index">SMART <b>MAPS</b></a>
+        {% endif %}
 		<div id="perfil">
+            {% if logeado %}
 			<a class="boton" id="buttonHeader" href="/logout">Cerrar Sesión</a>
 			<a id="imgUser" href="/{{ user }}/profile"><img src="{{ url_for('static', filename='img/users/' + user) }}" alt="Usuario" onerror="this.src='/default_img';" /></a>
+            {% endif %}
 		</div>
 	</div>
 
 	<div id="cuerpo">
 		<div id="imgUserBig">
 			<img src="{{ url_for('static', filename='img/users/' + user) }}" alt="Usuario" onerror="this.src='/default_img';" />
-			<p id="underUser">Jhon21</p>
+            <p id="underUser">{{ user }}</p>
 		</div>
 
 		<div id="content">
+            {% if logeado %}
 			<div id="pestañas">
 				<a class=pestaña id=pestaña href="/{{ user }}/index">Mis Sensores</a>
 				<a class=pestaña id=pestaña href="/{{ user }}/sensores_favoritos">Sensores Favoritos</a>
 				<a class=pestaña id=pestaña href="/{{ user }}/configuracion">Configurar Perfil</a>
 			</div>
+            {% endif %}
 			
 			<script>
 				window.onload = function () {
@@ -97,8 +105,10 @@
 				</div>
 			</div>
 			<div id="botonesYfavoritos">
+                {% if logeado %}
                 <a class="boton" id="botonesbajos" href="/{{ user }}/sensor/{{ id }}/registrar_medida">Añadir Medición</a>
 				<p class="boton" id="botonesbajos">Limpiar Medidas</p>
+                {% endif %}
                 <img class="imgInfo" id="estrella" src="{{ url_for('static', filename='../static/img/estrella.svg') }}" alt="favoritos">
                 <img class="imgInfo" src="{{ url_for('static', filename='../static/img/like.svg') }}" alt="meGusta">
 			</div>
