@@ -47,9 +47,9 @@
                 <form method='POST' action="/{{ user }}/sensor/{{ id }}/registrar_medida">
                     <div id="formularioMedidas">
                         <p id="etiquetaMedidas">Fecha Medición</p>
-                        <input id="textboxMedidas" type="date" name="fecha-medicion">
+                        <input id="textboxMedidas" type="date" name="fecha-medicion" required>
                         <p id="etiquetaMedidas">Medida</p>
-                        <input id="textboxMedidas" type="text" name="medida">
+                        <input id="textboxMedidas" min ="-99999999" max ="999999999" type="number" step="any" name="medida" required>
                             <input class="boton" id="botonMedidas" type=submit value="Añadir medida">
                     </div>
                 </form>
