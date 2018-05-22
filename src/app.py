@@ -210,7 +210,8 @@ def informacion_sensor(user,id):
         '''user = request.args.get('user')'''
         user = user
         sensor = get_Sensor_ById(id)
-        return render_template('info_sensor.html', id=id, user=user, sensor=sensor)
+        rows = get_Mediciones(id)
+        return render_template('info_sensor.html', id=id, user=user, sensor=sensor, rows=rows)
     else:
         if current_user.is_authenticated:
             return redirect(url_for('logged_index', user=current_user.nickname))
