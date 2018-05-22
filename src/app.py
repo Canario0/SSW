@@ -160,7 +160,7 @@ def profile(user):
 #		print(messages)
     if comprobar_Usuario(user):
         rows = get_Sensor_ByUser(user)
-        return render_template('usuario.html', user=user, rows=rows)
+        return render_template('usuario.html', user=user, rows=rows, tipos=tipos_sensor_list)
     else:
         if current_user.is_authenticated:
             return redirect(url_for('logged_index', user=current_user.nickname))
