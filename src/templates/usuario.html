@@ -27,17 +27,13 @@
 		</a>
 		<div id="perfil">
 			<a class="boton" id="buttonHeader" href="/logout">Cerrar Sesión</a>
-			<a id="imgUser" href="/{{ user }}/profile">
-				<img src="{{ url_for('static', filename='img/users/' + user) }}" alt="Usuario" onerror="this.src='../static/img/users/default.png';"
-				/>
-			</a>
+			<a id="imgUser" href="/{{ user }}/profile"><img src="{{ url_for('static', filename='img/users/' + user) }}" alt="Usuario" onerror="this.src='/default_img';" /></a>
 		</div>
 	</div>
 
 	<div id="cuerpo">
 		<div id="imgUserBig">
-			<img src="{{ url_for('static', filename='img/users/' + user) }}" alt="Usuario" onerror="this.src='../static/img/users/default.png';"
-			/>
+			<img src="{{ url_for('static', filename='img/users/' + user) }}" alt="Usuario" onerror="this.src='/default_img';" />
 			<p id="underUser">{{ user }}</p>
 		</div>
 
@@ -54,26 +50,28 @@
 			</div>
 			<div id="tablaSensores">
 				<table id="tabla">
-					<tr>
-						<th>ID</th>
-						<th>Sensor</th>
-						<th>Descripcion</th>
-						<th>Eliminar</th>
-					</tr>
-					{% for row in rows %}
-					<tr>
-						<td>{{ row['id'] }}</td>
-						<td id="nombreSensor">
-							<a href="/sensor/{{ row['id'] }}?user={{ user }}">{{ row['nombre'] }}</a>
-						</td>
-						<td>{{ row['descripcion'] }}</td>
-						<td>
-							<a href="/{{ user }}/delete/{{ row['id'] }}">
-								<div class="boton" id="botonEliminar"> -</div>
-							</a>
-						</td>
-					</tr>
-					{% endfor %}
+				  <tr>
+					<th>ID</th>
+				    <th>Sensor</th>
+				    <th>Descripción</th>
+				    <th>Tipo</th>
+                    <th>Visibilidad</th>
+                    <th>Coordenadas</th>
+				    <th>Eliminar</th>
+				  </tr>
+                  {% for row in rows %}
+				  <tr>
+					<td>{{ row['id'] }}</td>
+                    <td id="nombreSensor"><a href="/{{ user }}/sensor/{{ row['id'] }}">{{ row['nombre'] }}</a></td>
+                    <td id="descripcion"><a href="/{{ user }}/sensor/{{ row['id'] }}">{{ row['descripcion'] }}</a></td>
+                    <td id="tipo"><a href="/{{ user }}/sensor/{{ row['id'] }}">{{ row['tipo'] }}</a></td>
+                    <td id="visible"><a href="/{{ user }}/sensor/{{ row['id'] }}">{{ 'Púbico' if row['visible'] else 'Privado' }}</a></td>
+                    <td id="coord"><a href="/{{ user }}/sensor/{{ row['id'] }}">{{ '(%.2f, %.2f)' % (row['x'], row['y']) }}</a></td>
+                    <td>
+                      <div class="boton" id="botonEliminar">-</div>
+                    </td>
+				  </tr>
+                  {% endfor %}
 				</table>
 			</div>
 		</div>

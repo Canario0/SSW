@@ -27,18 +27,14 @@
 		</a>
 		<div id="perfil">
 			<a class="boton" id="buttonHeader" href="/logout">Cerrar Sesión</a>
-			<a id="imgUser" href="/{{ user }}/profile">
-				<img src="{{ url_for('static', filename='img/users/' + user) }}" alt="Usuario" onerror="this.src='../static/img/users/default.png';"
-				/>
-			</a>
+			<a id="imgUser" href="/{{ user }}/profile"><img src="{{ url_for('static', filename='img/users/' + user) }}" alt="Usuario" onerror="this.src='/default_img';" /></a>
 		</div>
 	</div>
 
 	<div id="cuerpo">
 		<div id="imgUserBig">
-			<img src="{{ url_for('static', filename='img/users/' + user) }}" alt="Usuario" onerror="this.src='../static/img/users/default.png';"
-			/>
-			<p id="underUser">{{ user }}</p>
+            <img src="{{ url_for('static', filename='img/users/' + user) }}" alt="Usuario" onerror="this.src='/default_img';" />
+            <p id="underUser">{{ user }}</p>
 		</div>
 
 		<div id="content">
@@ -65,7 +61,7 @@
 					<tr>
 						<td>{{ row['id'] }}</td>
 						<td id="nombreSensor">
-							<a href="/sensor/{{ row['id'] }}?user={{ user }}">{{ row['nombre'] }}</a>
+							<a href="/{{ user }}/sensor/{{ row['id'] }}">{{ row['nombre'] }}</a>
 						</td>
 						<td>{{ row['descripcion'] }}</td>
 						<td>{{ row['nickname'] }}</td>

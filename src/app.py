@@ -15,8 +15,11 @@ loginmn.login_view = 'login'
 app.config['SECRET_KEY']=os.urandom(24)
 
 tipos_sensor={"Temperatura":1, "Humedad":2, "Iluminación":3, "Contaminación":4, "Ruido":5}
-tipos_sensor2={1:"Temperatura", 2:"Humedad", 3:"Iluminación", 4:"Contaminación", 5:"Ruido"}
+tipos_sensor2= ['Temperatura', 'Humedad', 'Iluminación', 'Contaminación', 'Ruido']
 
+@app.route("/default_img")
+def default_img():
+    return redirect(url_for('static', filename='img/users/default.png'))
 
 def convertir_tipos(sensores):
     for x in sensores:
@@ -35,11 +38,12 @@ def index():
 def addMedition(user, id):
     if comprobar_Usuario(user):
         if request.method == 'GET':
-            return render_template('registrar_medida.html')
+            return render_template('registrar_medida.html', user=user, id=id)
         elif request.method == 'POST':
             fechaMedicion = request.form['fecha-medicion']
             medida = request.form['medida']
             create_Medicion(id, fechaMedicion, medida)
+            return render_template('registrar_medida.html', user=user, id=id)
     else:
         if current_user.is_authenticated:
             return redirect(url_for('registrar_medicion.html', user=current_user.nickname))
@@ -162,6 +166,7 @@ def profile(user):
 #		print(messages)
     if comprobar_Usuario(user):
         rows = get_Sensor_ByUser(user)
+        convertir_tipos(rows)
         return render_template('usuario.html', user=user, rows=rows)
     else:
         if current_user.is_authenticated:
@@ -210,7 +215,8 @@ def registrar_sensor(user):
 @login_required
 def informacion_sensor(user,id):
     if comprobar_Usuario(user):
-        user = request.args.get('user')
+        '''user = request.args.get('user')'''
+        user = user
         sensor = get_Sensor_ById(id)
         return render_template('info_sensor.html', id=id, user=user, sensor=sensor)
     else:
