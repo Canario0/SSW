@@ -44,15 +44,13 @@
 			
 			<div>
 				<p id="tituloMedidas">Añadir Medidas</p>
-                <form method='POST' action="{{ '/sensor/' + user + '/' + id + '/registrar_medida' }}">
+                <form method='POST' action="/{{ user }}/sensor/{{ id }}/registrar_medida">
                     <div id="formularioMedidas">
                         <p id="etiquetaMedidas">Fecha Medición</p>
                         <input id="textboxMedidas" type="text" name="fecha-medicion">
                         <p id="etiquetaMedidas">Medida</p>
                         <input id="textboxMedidas" type="text" name="medida">
-                        <a href="{{ '/sensor/' + user + '/' + id + '/registrar_medida' }}">
                             <input class="boton" id="botonMedidas" type=submit value="Añadir medida">
-                        </a>
                     </div>
                 </form>
 				<div id="tablaSensores">
