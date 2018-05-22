@@ -58,30 +58,17 @@
 				<div id="tablaSensores">
 					<table id="tabla">
 					<tr>
+                        <th>Id</th>
 						<th>Fecha</th>
 						<th>Medida</th>
-						<th>Estado del Sensor</th>
 					</tr>
+                    {% for row in rows %}
 					<tr>
-						<td>23/12/2017 - 10:23 a.m</td>
-						<td>5º</td>
-						<td>Funcionando</td>
+                        <td>{{ row['id'] }}</td>
+                        <td>{{ row['fechaMedicion'] }}</td>
+                        <td>{{ row['valor'] }}</td>
 					</tr>
-					<tr>
-						<td>24/12/2017 - 11:00 a.m</td>
-						<td>6</td>
-						<td>Error</td>
-					</tr>
-					<tr>
-						<td>01/01/2018 - 16:56 p.m</td>
-						<td>12º</td>
-						<td>Funcionando</td>
-					</tr>
-					<tr>
-						<td>03/03/2018 - 10:45 a.m</td>
-						<td>12º</td>
-						<td>Funcionando</td>
-					</tr>
+                    {% endfor %}
 					</table>
 				</div>
 			</div>
