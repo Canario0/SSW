@@ -32,7 +32,8 @@ def index():
 def addMedition(user, id):
     if comprobar_Usuario(user):
         if request.method == 'GET':
-            return render_template('registrar_medida.html', user=user, id=id)
+            rows = get_Mediciones(id)
+            return render_template('registrar_medida.html', user=user, id=id, rows=rows)
         elif request.method == 'POST':
             fechaMedicion = request.form['fecha-medicion']
             medida = request.form['medida']
