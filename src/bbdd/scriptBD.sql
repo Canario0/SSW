@@ -174,42 +174,42 @@ insert into sensor values (4,
 -- ----------------------------------------------------
 insert into medicion values (1,
     Date_format(now(), '%Y-%m-%d %h:%i:%s'),
-    '25-89-2035 12:58:49',
+    '25-89-2035',
     20.11); 
 
 insert into medicion values (1,
     Date_format(now()+1, '%Y-%m-%d %h:%i:%s'),
-    '25-89-2035 12:58:44',
+    '25-89-2035',
     20.12); 
 
 insert into medicion values (1,
     Date_format(now()+2, '%Y-%m-%d %h:%i:%s'),
-    '25-89-2035 12:58:46',
+    '25-89-2035',
     20.13); 
 
 insert into medicion values (1,
     Date_format(now()+3, '%Y-%m-%d %h:%i:%s'),
-    '25-89-2035 12:58:47',
+    '25-89-2035',
     20.14); 
 
 insert into medicion values (1,
     Date_format(now()+4, '%Y-%m-%d %h:%i:%s'),
-    '25-89-2035 12:58:48',
+    '25-89-2035',
     20.15); 
 
 insert into medicion values (1,
     Date_format(now()+5, '%Y-%m-%d %h:%i:%s'),
-    '25-89-2035 12:58:41',
+    '25-89-2035',
     20.16); 
 
 insert into medicion values (1,
     Date_format(now()+6, '%Y-%m-%d %h:%i:%s'),
-    '25-89-2035 12:58:42',
+    '25-89-2035',
     20.17); 
 
 insert into medicion values (1,
     Date_format(now()+7, '%Y-%m-%d %h:%i:%s'),
-    '25-89-2035 12:58:43',
+    '25-89-2035',
     20.18); 
 
 insert into favorito values('pablo',
