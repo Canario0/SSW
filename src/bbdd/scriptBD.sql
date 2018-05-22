@@ -41,7 +41,7 @@ CREATE TABLE sensor (
   x DOUBLE PRECISION NOT NULL,
   y DOUBLE PRECISION NOT NULL,
   PRIMARY KEY (id),
-  FOREIGN KEY (nickname) REFERENCES usuario(nickname));
+  FOREIGN KEY (nickname) REFERENCES usuario(nickname) ON DELETE CASCADE);
 
 -- -----------------------------------------------------
 -- Table "ssw"."favorito"
@@ -50,8 +50,8 @@ CREATE TABLE favorito (
   nickname VARCHAR(20),
   id INTEGER NOT NULL,
   PRIMARY KEY (nickname, id),
-  FOREIGN KEY (nickname) REFERENCES usuario(nickname),
-  FOREIGN KEY (id) REFERENCES sensor(id));
+  FOREIGN KEY (nickname) REFERENCES usuario(nickname) ON DELETE CASCADE,
+  FOREIGN KEY (id) REFERENCES sensor(id) ON DELETE CASCADE);
 
 -- -----------------------------------------------------
 -- Table "ssw"."liked"
@@ -60,8 +60,8 @@ CREATE TABLE liked (
   nickname VARCHAR(20),
   id INTEGER NOT NULL,
   PRIMARY KEY (nickname, id),
-  FOREIGN KEY (nickname) REFERENCES usuario(nickname),
-  FOREIGN KEY (id) REFERENCES sensor(id));
+  FOREIGN KEY (nickname) REFERENCES usuario(nickname) ON DELETE CASCADE,
+  FOREIGN KEY (id) REFERENCES sensor(id) ON DELETE CASCADE);
 
 -- -----------------------------------------------------
 -- Table "ssw"."medicion"
@@ -72,7 +72,7 @@ CREATE TABLE medicion (
   fechaMedicion DATE NOT NULL,
   valor DOUBLE PRECISION,
   PRIMARY KEY (fechaSubida),
-  FOREIGN KEY (id) REFERENCES sensor(id));
+  FOREIGN KEY (id) REFERENCES sensor(id) ON DELETE CASCADE);
 
 
 -- ----------------------------------------------------
@@ -84,7 +84,7 @@ CREATE TABLE medicion (
 insert into usuario values (
     'sergio',
     'sergio.esteban@alumnos.uva.es',
-    'sergio123456789',
+    'sergio',
     'Sergio',
     'Esteban',
     'Pellejero',
@@ -96,7 +96,7 @@ insert into usuario values (
 insert into usuario values (
     'pablo',
     'pablo.renero@alumnos.uva.es',
-    'pablo123456789',
+    'pablo',
     'Pablo',
     'Renero',
     'Balganon',
@@ -108,7 +108,7 @@ insert into usuario values (
 insert into usuario values (
     'alvaro',
     'alvaro.berruezo@alumnos.uva.es',
-    'alvaro123456789',
+    'alvaro',
     'Alvaro',
     'Berruezo',
     'Franco',
@@ -120,7 +120,7 @@ insert into usuario values (
 insert into usuario values (
     'alejandro',
     'alejandro.martinez@alumnos.uva.es',
-    'alejandro123456789',
+    'alejandro',
     'Alejandro',
     'Martinez',
     'Andres',
@@ -135,7 +135,7 @@ insert into usuario values (
 insert into sensor values (1, 
     'sergio',
     'HFC05', 
-    'sensor temperatura',
+    'sensor humedad',
     2,
     true,
     40.0,
@@ -144,7 +144,7 @@ insert into sensor values (1,
 insert into sensor values (2, 
     'sergio',
     'HFC05', 
-    'sensor temperatura',
+    'sensor humedad',
     2,
     true,
     40.417,
@@ -153,7 +153,7 @@ insert into sensor values (2,
 insert into sensor values (3, 
     'alejandro',
     'JUI87', 
-    'sensor humedad',
+    'sensor iluminación',
     3,
     true,
     43.36,
@@ -162,7 +162,7 @@ insert into sensor values (3,
 insert into sensor values (4, 
     'alvaro',
     'AFJ56', 
-    'sensor ruido',
+    'sensor contaminación',
     4,
     true,
     36.15,
