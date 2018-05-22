@@ -62,7 +62,7 @@
                     <td id="descripcion"><a href="/{{ user }}/sensor/{{ row['id'] }}">{{ row['descripcion'] }}</a></td>
                     <td id="tipo"><a href="/{{ user }}/sensor/{{ row['id'] }}">{{ tipos[row['tipo']] }}</a></td>
                     <td id="visible"><a href="/{{ user }}/sensor/{{ row['id'] }}">{{ 'Púbico' if row['visible'] else 'Privado' }}</a></td>
-                    <td id="longitud"><a href="/{{ user }}/sensor/{{ row['id'] }}">{{ '(' + row['x'] + ',' + row['y'] }}</a></td>
+                    <td id="longitud"><a href="/{{ user }}/sensor/{{ row['id'] }}">{{ '(' + str(row['x']) + ',' + str(row['y']) }}</a></td>
                     <td>
                       <div class="boton" id="botonEliminar">-</div>
                     </td>
