@@ -29,7 +29,7 @@ def convertir_tipos(sensores):
 @app.route("/index")
 def index():
     sensores = get_Sensors(1)
-    convertir_tipos(sensores)    
+    convertir_tipos(sensores)
     return render_template('principalSinRegistrar.html', sensores=sensores)
 
 
@@ -149,7 +149,7 @@ def config(user):
 def logged_index(user):
     sensores = get_Sensors() + get_Sensors(0)
     sensores = [i for i in sensores if (i['visible'] == 0 and i['nickname'] == current_user.nickname) or i['visible'] ==1 ]
-    convertir_tipos(sensores)    
+    convertir_tipos(sensores)
     if comprobar_Usuario(user):
         return render_template('principalRegistrado.html', user=user, sensores=sensores)
     else:
@@ -208,7 +208,6 @@ def registrar_sensor(user):
         visible = int(request.form['visibilidad'])
         x = request.form['lat']
         y = request.form['long']
-        print("Mis valores son: usuario:", user, " nombre: ", nombre, " tipo_sensor: " ,tipos_sensor[tipo], "visibilidad: ", visible, sep="")
         create_Sensor(user,nombre, desc, tipos_sensor[tipo], visible, float(x), float(y))
         return redirect(url_for('profile', user = current_user.nickname))
 
@@ -217,8 +216,6 @@ def registrar_sensor(user):
 @login_required
 def informacion_sensor(user,id):
     if comprobar_Usuario(user):
-        '''user = request.args.get('user')'''
-        user = user
         sensor = get_Sensor_ById(id)
         rows = get_Mediciones(id)
         return render_template('info_sensor.html', id=id, user=user, sensor=sensor, rows=rows)
