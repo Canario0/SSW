@@ -230,7 +230,16 @@ def eliminar(user, id):
             return redirect(url_for('logged_index', user=current_user.nickname))
         else:
             return (redirect(url_for('index')))
-
+@app.route("/<user>/deleteFav/<id>")
+@login_required
+def eliminarFav(user, id):
+    if comprobar_Usuario(user):
+        delete_Favorito(user , id)
+        return redirect(url_for('fav', user=user))
+    else:
+        if current_user.is_authenticated:
+            return redirect(url_for('logged_index', user=current_user.nickname))
+        else:
 
 @app.before_request
 def before_request():

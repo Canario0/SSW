@@ -70,7 +70,9 @@
 						<td>{{ row['descripcion'] }}</td>
 						<td>{{ row['nickname'] }}</td>
 						<td>
-							<div class="boton" id="botonEliminar">-</div>
+							<a href="/{{ user }}/deleteFav/{{ row['id'] }}">
+								<div class="boton" id="botonEliminar">-</div>
+							</a>
 						</td>
 					</tr>
 					{% endfor %}

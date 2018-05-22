@@ -111,6 +111,10 @@ def delete_Sensor(id):
     with db.atomic():
         Sensor.delete().where(Sensor.id == id).execute()
 
+def delete_Favorito(user,id):
+    with db.atomic():
+        Favorito.delete().where(Favorito.id == id, Favorito.user == user).execute()
+
 #----------------------------------------------------------------------------
 
 #----------------------------------------------------------------------------
