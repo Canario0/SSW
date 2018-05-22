@@ -53,7 +53,6 @@
 				  <tr>
 					<th>ID</th>
 				    <th>Sensor</th>
-				    <th>Descripción</th>
 				    <th>Tipo</th>
                     <th>Visibilidad</th>
                     <th>Coordenadas</th>
@@ -63,7 +62,6 @@
 				  <tr>
 					<td>{{ row['id'] }}</td>
                     <td id="nombreSensor"><a href="/{{ user }}/sensor/{{ row['id'] }}">{{ row['nombre'] }}</a></td>
-                    <td id="descripcion"><a href="/{{ user }}/sensor/{{ row['id'] }}">{{ row['descripcion'] }}</a></td>
                     <td id="tipo"><a href="/{{ user }}/sensor/{{ row['id'] }}">{{ row['tipo'] }}</a></td>
                     <td id="visible"><a href="/{{ user }}/sensor/{{ row['id'] }}">{{ 'Púbico' if row['visible'] else 'Privado' }}</a></td>
                     <td id="coord"><a href="/{{ user }}/sensor/{{ row['id'] }}">{{ '(%.2f, %.2f)' % (row['x'], row['y']) }}</a></td>
