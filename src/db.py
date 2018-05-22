@@ -66,7 +66,7 @@ class Medicion(Model):
     # este valor se autogenera
     fechaSubida = DateTimeField(
         default=datetime.datetime.now, primary_key=True)
-    fechaMedicion = DateField(null=False)
+    fechaMedicion = CharField(max_length=20, null=False)
     valor = DoubleField(null=False)
 
     class Meta:
@@ -92,6 +92,7 @@ def create_Liked(nickname, id):
         Liked.create(nickname=nickname, id=id)
 
 def create_Medicion(id, fechaMedicion, valor):
+    print (type(fechaMedicion))
     with db.atomic():
         Medicion.create(id = id, fechaMedicion = fechaMedicion, valor = valor)
 #----------------------------------------------------------------------------
