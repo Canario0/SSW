@@ -43,7 +43,7 @@ def index():
 def addMedition(user, id):
     if comprobar_Usuario(user):
         if request.method == 'GET':
-            rows = get_Mediciones(id)
+            rows = get_Last_Mediciones(id)
             return render_template('registrar_medida.html', user=user, id=id, rows=rows)
         elif request.method == 'POST':
             fechaMedicion = request.form['fecha-medicion']
@@ -236,11 +236,12 @@ def registrar_sensor(user):
 def informacion_sensor(user, id):
     if comprobar_Usuario(user):
         sensor = get_Sensor_ById(id)
-        rows = get_Mediciones(id)
+        rows1 = get_Mediciones(id)
+        rows2 = get_Last_Mediciones(id)
         if user == sensor['nickname']['nickname']:
-            return render_template('info_sensor.html', id=id, user=user, sensor=sensor, rows=rows, logeado=1, tipo = tipos_sensor2)
+            return render_template('info_sensor.html', id=id, user=user, sensor=sensor, rows1=rows1, rows2=rows2, logeado=1, tipo = tipos_sensor2)
         else:
-            return render_template('info_sensor.html', id=id, user=user, sensor=sensor, rows=rows, logeado=0, tipo = tipos_sensor2)
+            return render_template('info_sensor.html', id=id, user=user, sensor=sensor, rows1=rows1, rows2=rows2, logeado=0, tipo = tipos_sensor2)
     else:
         if current_user.is_authenticated:
             return redirect(url_for('logged_index', user=current_user.nickname))
@@ -250,8 +251,9 @@ def informacion_sensor(user, id):
 @app.route("/sensor/<id>")
 def informacion_sensor_sin_user(id):
     sensor = get_Sensor_ById(id)
-    rows = get_Mediciones(id)
-    return render_template('info_sensor.html', id=id, user=str(sensor['nickname']['nickname']), sensor=sensor, rows=rows, logeado=0, tipo = tipos_sensor2)
+    rows1 = get_Mediciones(id)
+    rows2 = get_Last_Mediciones(id)
+    return render_template('info_sensor.html', id=id, user=user, sensor=sensor, rows1=rows1, rows2=rows2, logeado=0, tipo = tipos_sensor2)
 
 
 @app.route("/<user>/delete/<id>")

@@ -54,7 +54,7 @@
 			<script>
 				window.onload = function () {
 				var sensor = JSON.parse('{{ sensor | tojson | safe }}');
-				var rows = JSON.parse('{{ rows | tojson | safe }}');
+				var rows = JSON.parse('{{ rows1 | tojson | safe }}');
 				var chart = new CanvasJS.Chart("chartContainer", {
 					animationEnabled: true,
 					theme: "light2",
@@ -74,8 +74,7 @@
 						dataPoints: []
 					}]
 				});
-                console.log(rows.length);
-                for (var i=0; i<rows.length; rows++){
+                for (var i=0; i<rows.length; i++){
                     chart.options.data[0].dataPoints.push({
                         x: i, y: rows[i]['valor']
                     });
@@ -92,7 +91,7 @@
                         <tr>
                             <th>Últimas Medidas</th>
                         </tr>
-                        {% for row in rows %}
+                        {% for row in rows2 %}
 						<tr>
 							<td>{{ row['valor'] }}</td>
 						</tr>
