@@ -238,10 +238,7 @@ def informacion_sensor(user, id):
         sensor = get_Sensor_ById(id)
         rows1 = get_Mediciones(id)
         rows2 = get_Last_Mediciones(id)
-        if user == sensor['nickname']['nickname']:
-            return render_template('info_sensor.html', id=id, user=user, sensor=sensor, rows1=rows1, rows2=rows2, logeado=1, tipo = tipos_sensor2)
-        else:
-            return render_template('info_sensor.html', id=id, user=user, sensor=sensor, rows1=rows1, rows2=rows2, logeado=0, tipo = tipos_sensor2)
+        return render_template('info_sensor.html', id=id, user=user, sensor=sensor, rows1=rows1, rows2=rows2, logeado=1, tipo = tipos_sensor2)
     else:
         if current_user.is_authenticated:
             return redirect(url_for('logged_index', user=current_user.nickname))
@@ -267,6 +264,20 @@ def eliminar(user, id):
             return redirect(url_for('logged_index', user=current_user.nickname))
         else:
             return (redirect(url_for('index')))
+
+
+@app.route("/<user>/addFav/<id>")
+@login_required
+def eliminarFav(user, id):
+    if comprobar_Usuario(user):
+        create_Favorito(user, id)
+        return redirect(url_for('informacion_sensor', user=user, id = id))
+    else:
+        if current_user.is_authenticated:
+            return redirect(url_for('logged_index', user=current_user.nickname))
+        else:
+            return (redirect(url_for('index')))
+
 
 
 @app.route("/<user>/deleteFav/<id>")

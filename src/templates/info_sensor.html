@@ -99,12 +99,16 @@
 				</div>
 			</div>
 			<div id="botonesYfavoritos">
-                {% if logeado %}
+                {% if user == sensor['nickname']['nickname'] %}
                 <a class="boton" id="botonesbajos" href="/{{ user }}/sensor/{{ id }}/registrar_medida">Añadir Medición</a>
 				<p class="boton" id="botonesbajos">Limpiar Medidas</p>
                 {% endif %}
-                <img class="imgInfo" id="estrella" src="{{ url_for('static', filename='../static/img/estrella.svg') }}" alt="favoritos">
-                <img class="imgInfo" src="{{ url_for('static', filename='../static/img/like.svg') }}" alt="meGusta">
+				<img class="imgInfo" id="estrella" src="{{ url_for('static', filename='../static/img/estrella.svg') }}" alt="favoritos">
+				{% if logeado %}
+				<a href="/{{ user }}/addFav/{{ id }}"><img class="imgInfo boton" src="{{ url_for('static', filename='../static/img/like.svg') }}" alt="meGusta"></a>
+				{% else %}
+                <a href="/login"><img class="imgInfo boton" src="{{ url_for('static', filename='../static/img/like.svg') }}" alt="meGusta"></a>
+				{% endif %}
 			</div>
 		</div>
 	</div>
