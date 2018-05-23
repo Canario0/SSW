@@ -4,36 +4,40 @@
 
 <head>
 
-    <!-- Page's title -->
-    <title>Smart Maps</title>
+  <!-- Page's title -->
+  <title>Smart Maps</title>
 
-    <!-- Character ccodifcation -->
-    <meta name="viewport" content="initial-scale=1.0">
-    <meta charset="utf-8" />
+  <!-- Character ccodifcation -->
+  <meta name="viewport" content="initial-scale=1.0">
+  <meta charset="utf-8" />
 
-    <!-- Links to necessary files to run the webpage -->
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/perfil.css') }}" />
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/botones.css') }}" />
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/cabecera.css') }}" />
-    <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/logo.png') }}" />
+  <!-- Links to necessary files to run the webpage -->
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/perfil.css') }}" />
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/botones.css') }}" />
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/cabecera.css') }}" />
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/logo.png') }}" />
 </head>
 
 <!-- WEBPAGE'S BODY -->
 
 <body>
-    <div id="cabecera">
-        <a id ="titulo" href="/{{ user }}/index">SMART <b>MAPS</b></a>
-		<div id="perfil">
-			<a class="boton" id="buttonHeader" href="/logout">Cerrar Sesión</a>
-			<a id="imgUser" href="/{{ user }}/profile"><img src="{{ url_for('static', filename='img/users/' + user) }}" alt="Usuario" onerror="this.src='../static/img/users/default.png';" /></a>
-		</div>
-	</div>
+  <div id="cabecera">
+    <a id="titulo" href="/{{ user }}/index">SMART
+      <b>MAPS</b>
+    </a>
+    <div id="perfil">
+      <a class="boton" id="buttonHeader" href="/logout">Cerrar Sesión</a>
+      <a id="imgUser" href="/{{ user }}/profile">
+        <img src="{{ url_for('static', filename='img/users/' + user) }}" alt="Usuario" onerror="this.src='/default_img';" />
+      </a>
+    </div>
+  </div>
 
-    <div id="cuerpo">
-		<div id="imgUserBig">
-            <img src="{{ url_for('static', filename='img/users/' + user) }}" alt="Usuario" onerror="{{ url_for('static', filename='img/default.png') }}" />
-			<p id="underUser">{{ user }}</p>
-		</div>
+  <div id="cuerpo">
+    <div id="imgUserBig">
+      <img src="{{ url_for('static', filename='img/users/' + user) }}" alt="Usuario" onerror="this.src='/default_img';" />
+      <p id="underUser">{{ user }}</p>
+    </div>
 
     <div id="content">
       <div id="pestañas">
@@ -42,46 +46,46 @@
         <a class=pestaña id="pestañaSel">Configurar Perfil</a>
       </div>
 
-    <form method="POST" action="/{{ user }}/configuracion" enctype=multipart/form-data>
-      <div class="row" id="firstRow">
-        <p id="etiqueta"> Nombre: </p>
-        <input id="textbox" type="text" name="nombre" placeholder="{{ nombre  }}">
-        <p id="etiqueta"> Fecha de nacimiento: </p>
-        <input id="date" type="date" name="nacimiento">
-      </div>
+      <form method="POST" action="/{{ user }}/configuracion" enctype=multipart/form-data>
+        <div class="row" id="firstRow">
+          <p id="etiqueta"> Nombre: </p>
+          <input id="textbox" maxlength="10" type="text" name="nombre" placeholder="{{ nombre  }}">
+          <p id="etiqueta"> Fecha de nacimiento: </p>
+          <input id="date" type="date" name="nacimiento" value="{{ fecha }}">
+        </div>
 
-      <div class="row">
-        <p id="etiqueta"> Apellido 1: </p>
-        <input id="textbox" type="text" name="apellido1" placeholder="{{  apellido1  }}">
-        <p id="etiqueta"> Email: </p>
-        <input id="textbox" type="text" name="email" placeholder="{{  email }}">
-      </div>
+        <div class="row">
+          <p id="etiqueta"> Apellido 1: </p>
+          <input id="textbox" maxlength="20" type="text" name="apellido1" placeholder="{{  apellido1  }}">
+          <p id="etiqueta"> Email: </p>
+          <input id="textbox" maxlength="45" type="email" name="email" placeholder="{{  email }}">
+        </div>
 
-      <div class="row">
-        <p id="etiqueta"> Apellido 2: </p>
-        <input id="textbox" type="text" name="apellido2" placeholder="{{ apellido2  }}">
-        <p id="etiqueta"> Dirección: </p>
-        <input id="textbox" type="text" name="direccion" placeholder="{{ direccion  }}">
-      </div>
+        <div class="row">
+          <p id="etiqueta"> Apellido 2: </p>
+          <input id="textbox" maxlength="20" type="text" name="apellido2" placeholder="{{ apellido2  }}">
+          <p id="etiqueta"> Dirección: </p>
+          <input id="textbox" maxlength="100" type="text" name="direccion" placeholder="{{ direccion  }}">
+        </div>
 
-      <div class="row">
-        <p id="etiqueta"> Empresa: </p>
-        <input id="textbox" type="text" name="empresa" placeholder="{{ empresa  }}">
-        <p id="etiqueta"> Tfno.: </p>
-        <input id="textbox" type="text" name="telefono" placeholder="{{ telefono  }}">
-      </div>
+        <div class="row">
+          <p id="etiqueta"> Empresa: </p>
+          <input id="textbox" maxlength="30" type="text" name="empresa" placeholder="{{ empresa  }}">
+          <p id="etiqueta"> Tfno.: </p>
+          <input id="textbox" maxlength="9" type="text" name="telefono" placeholder="{{ telefono  }}">
+        </div>
 
-      <div class="row">
-        <p id="etiqueta"> Cambiar imagen: </p>
-        <input id="textbox" type="file" accept="image/*" name="imagen">
-      </div>
+        <div class="row">
+          <p id="etiqueta"> Cambiar imagen: </p>
+          <input id="textbox" type="file" accept="image/*" name="imagen">
+        </div>
 
     </div>
   </div>
   <div id="bottom">
     <input class="boton" id="botonGuardarCambios" type="submit" value="Guardar Cambios">
   </div>
-</form>
+  </form>
 
 </body>
 

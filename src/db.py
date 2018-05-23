@@ -12,7 +12,7 @@ db = MySQLDatabase(conf['DataBase']['name'], user=conf['DataBase']['user'], pass
 
 
 class Usuario(Model, UserMixin):
-    nickname = CharField(max_length=20, primary_key=True)
+    nickname = CharField(max_length=20, primary_key=True, db_column='nickname')
     email = CharField(max_length=45,null=True)
     password = CharField(max_length=10, null=False)
     nombre = CharField(max_length=10, null=True)
@@ -30,8 +30,8 @@ class Usuario(Model, UserMixin):
 
 
 class Sensor(Model):
-    id = IntegerField(primary_key=True)
-    nickname = ForeignKeyField(Usuario, backref='sensores', db_column='nickname')
+    id = IntegerField(primary_key=True,  db_column='id')
+    nickname = ForeignKeyField(Usuario, backref='sensores', db_column='nickname', on_delete='CASCADE')
     nombre = CharField(max_length=10, null=False)
     descripcion = CharField(null=True)
     tipo = IntegerField(null=False)
@@ -44,8 +44,8 @@ class Sensor(Model):
 
 
 class Favorito(Model):
-    nickname = ForeignKeyField(Usuario, db_column='nickname')
-    id = ForeignKeyField(Sensor,db_column='id')
+    nickname = ForeignKeyField(Usuario, db_column='nickname', on_delete='CASCADE')
+    id = ForeignKeyField(Sensor,db_column='id', on_delete='CASCADE')
 
     class Meta:
         database = db
@@ -53,8 +53,8 @@ class Favorito(Model):
 
 
 class Liked(Model):
-    nickname = ForeignKeyField(Usuario, db_column='nickname')
-    id = ForeignKeyField(Sensor, db_column='id')
+    nickname = ForeignKeyField(Usuario, db_column='nickname', on_delete='CASCADE')
+    id = ForeignKeyField(Sensor, db_column='id', on_delete='CASCADE')
 
     class Meta:
         database = db
@@ -62,11 +62,11 @@ class Liked(Model):
 
 
 class Medicion(Model):
-    id = ForeignKeyField(Sensor, backref='mediciones', db_column='id')
+    id = ForeignKeyField(Sensor, backref='mediciones', db_column='id', on_delete='CASCADE')
     # este valor se autogenera
     fechaSubida = DateTimeField(
         default=datetime.datetime.now, primary_key=True)
-    fechaMedicion = DateField(null=False)
+    fechaMedicion = CharField(max_length=20, null=False)
     valor = DoubleField(null=False)
 
     class Meta:
@@ -79,9 +79,9 @@ def create_Usuario(nickname, password):
     with db.atomic():
         Usuario.create(nickname=nickname, password=password)
 
-def create_Sensor(id, nombre, descripcion, tipo, visible, x, y):
+def create_Sensor(nickname, nombre, descripcion, tipo, visible, x, y):
     with db.atomic():
-        Sensor.create(id = id, nombre = nombre, descripcion = descripcion, tipo = tipo, visible = visible, x = x, y = y)
+        Sensor.create(nickname = nickname, nombre = nombre, descripcion = descripcion, tipo = tipo, visible = visible, x = x, y = y)
 
 def create_Favorito(nickname, id):
     with db.atomic():
@@ -107,6 +107,13 @@ def update_Sensor(sensor):
      with db.atomic():
         Sensor.update(**sensor).where(Sensor.id == sensor['id']).execute()
 
+def delete_Sensor(id):
+    with db.atomic():
+        Sensor.delete().where(Sensor.id == id).execute()
+
+def delete_Favorito(user,id):
+    with db.atomic():
+        Favorito.delete().where(Favorito.id == id, Favorito.nickname == user).execute()
 
 #----------------------------------------------------------------------------
 
@@ -120,7 +127,7 @@ def get_Sensor_ById(id):
     return model_to_dict(Sensor.get(Sensor.id == id))
 
 def get_Sensors(visible = 1):
-    print (list(Sensor.select().where(Sensor.visible == visible).dicts()))
+    #print (list(Sensor.select().where(Sensor.visible == visible).dicts()))
     return list(Sensor.select().where(Sensor.visible == visible).dicts())
 
 def get_Sensor_ByUser(nickname):
@@ -128,8 +135,8 @@ def get_Sensor_ByUser(nickname):
     return list(user.sensores.dicts())
 
 def get_Mediciones(id):
-    sensor= Sensor.select().where(Sensor.id == id)
-    return list(sensor.mediciones.dicts()) if len(list(sensor))>0 else []
+    sensor= Sensor.get(Sensor.id == id)
+    return list(sensor.mediciones.order_by(Medicion.fechaSubida.desc()).limit(5).dicts()) 
 
 def get_Favoritos(nickname):
     return list(Sensor.select().join(Favorito).where(Favorito.nickname == nickname).dicts())

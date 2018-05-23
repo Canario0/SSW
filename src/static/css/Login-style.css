@@ -11,6 +11,14 @@ html{
 
 }
 
+a {
+    text-decoration: none;
+   }
+
+a:visited {
+    text-decoration: none;
+   }
+
 body {
     font-weight:300;
     background-color: transparent #cccccc;
@@ -23,13 +31,18 @@ body {
     float: left;
     margin-left: 5%;
     margin-top: 2%;
-
+    text-decoration: none;
+	color: black;
+	cursor: pointer;
     
 }
 
 #titulo p {
     margin: 1em 1em;
     font-size: 2em;
+    text-decoration: none;
+	color: black;
+	cursor: pointer;
 }
 
 

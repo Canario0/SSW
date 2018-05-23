@@ -41,7 +41,7 @@ CREATE TABLE sensor (
   x DOUBLE PRECISION NOT NULL,
   y DOUBLE PRECISION NOT NULL,
   PRIMARY KEY (id),
-  FOREIGN KEY (nickname) REFERENCES usuario(nickname));
+  FOREIGN KEY (nickname) REFERENCES usuario(nickname) ON DELETE CASCADE);
 
 -- -----------------------------------------------------
 -- Table "ssw"."favorito"
@@ -50,8 +50,8 @@ CREATE TABLE favorito (
   nickname VARCHAR(20),
   id INTEGER NOT NULL,
   PRIMARY KEY (nickname, id),
-  FOREIGN KEY (nickname) REFERENCES usuario(nickname),
-  FOREIGN KEY (id) REFERENCES sensor(id));
+  FOREIGN KEY (nickname) REFERENCES usuario(nickname) ON DELETE CASCADE,
+  FOREIGN KEY (id) REFERENCES sensor(id) ON DELETE CASCADE);
 
 -- -----------------------------------------------------
 -- Table "ssw"."liked"
@@ -60,8 +60,8 @@ CREATE TABLE liked (
   nickname VARCHAR(20),
   id INTEGER NOT NULL,
   PRIMARY KEY (nickname, id),
-  FOREIGN KEY (nickname) REFERENCES usuario(nickname),
-  FOREIGN KEY (id) REFERENCES sensor(id));
+  FOREIGN KEY (nickname) REFERENCES usuario(nickname) ON DELETE CASCADE,
+  FOREIGN KEY (id) REFERENCES sensor(id) ON DELETE CASCADE);
 
 -- -----------------------------------------------------
 -- Table "ssw"."medicion"
@@ -69,10 +69,10 @@ CREATE TABLE liked (
 CREATE TABLE medicion (
   id INTEGER NOT NULL AUTO_INCREMENT,
   fechaSubida DATETIME,
-  fechaMedicion DATE NOT NULL,
+  fechaMedicion VARCHAR(30),
   valor DOUBLE PRECISION,
   PRIMARY KEY (fechaSubida),
-  FOREIGN KEY (id) REFERENCES sensor(id));
+  FOREIGN KEY (id) REFERENCES sensor(id) ON DELETE CASCADE);
 
 
 -- ----------------------------------------------------
@@ -84,48 +84,48 @@ CREATE TABLE medicion (
 insert into usuario values (
     'sergio',
     'sergio.esteban@alumnos.uva.es',
-    'sergio123456789',
+    'sergio',
     'Sergio',
     'Esteban',
     'Pellejero',
     'Valladolid - Parquesol',
-    str_to_date('24-04-2018', '%d-%m-%Y'),
+    str_to_date('23-02-2018', '%d-%m-%Y'), 
     'UVa',
     365412879);
 
 insert into usuario values (
     'pablo',
     'pablo.renero@alumnos.uva.es',
-    'pablo123456789',
+    'pablo',
     'Pablo',
     'Renero',
     'Balganon',
     'Valladolid - Parquesol',
-    str_to_date('24-04-2018', '%d-%m-%Y'),
+    str_to_date('24-02-2018', '%d-%m-%Y'), 
     'UVa',
     965874123);
 
 insert into usuario values (
     'alvaro',
     'alvaro.berruezo@alumnos.uva.es',
-    'alvaro123456789',
+    'alvaro',
     'Alvaro',
     'Berruezo',
     'Franco',
     'Valladolid - Centro',
-    str_to_date('24-04-2018', '%d-%m-%Y'),
+    str_to_date('25-02-2018', '%d-%m-%Y'), 
     'UVa',
     548632158);
 
 insert into usuario values (
     'alejandro',
     'alejandro.martinez@alumnos.uva.es',
-    'alejandro123456789',
+    'alejandro',
     'Alejandro',
     'Martinez',
     'Andres',
     'Valladolid - Parquesol',
-    str_to_date('24-04-2018', '%d-%m-%Y'),
+    str_to_date('26-02-2018', '%d-%m-%Y'), 
     'UVa',
     231254687);
 
@@ -135,7 +135,7 @@ insert into usuario values (
 insert into sensor values (1, 
     'sergio',
     'HFC05', 
-    'sensor temperatura',
+    'sensor humedad',
     2,
     true,
     40.0,
@@ -144,7 +144,7 @@ insert into sensor values (1,
 insert into sensor values (2, 
     'sergio',
     'HFC05', 
-    'sensor temperatura',
+    'sensor humedad',
     2,
     true,
     40.417,
@@ -153,7 +153,7 @@ insert into sensor values (2,
 insert into sensor values (3, 
     'alejandro',
     'JUI87', 
-    'sensor humedad',
+    'sensor iluminación',
     3,
     true,
     43.36,
@@ -162,7 +162,7 @@ insert into sensor values (3,
 insert into sensor values (4, 
     'alvaro',
     'AFJ56', 
-    'sensor ruido',
+    'sensor contaminación',
     4,
     true,
     36.15,
@@ -174,42 +174,42 @@ insert into sensor values (4,
 -- ----------------------------------------------------
 insert into medicion values (1,
     Date_format(now(), '%Y-%m-%d %h:%i:%s'),
-    Date_format(now(), '%Y-%m-%d'), 
+    '25-89-2035',
     20.11); 
 
 insert into medicion values (1,
     Date_format(now()+1, '%Y-%m-%d %h:%i:%s'),
-    Date_format(now(), '%Y-%m-%d'), 
+    '25-89-2035',
     20.12); 
 
 insert into medicion values (1,
     Date_format(now()+2, '%Y-%m-%d %h:%i:%s'),
-    Date_format(now(), '%Y-%m-%d'), 
+    '25-89-2035',
     20.13); 
 
 insert into medicion values (1,
     Date_format(now()+3, '%Y-%m-%d %h:%i:%s'),
-    Date_format(now(), '%Y-%m-%d'), 
+    '25-89-2035',
     20.14); 
 
 insert into medicion values (1,
     Date_format(now()+4, '%Y-%m-%d %h:%i:%s'),
-    Date_format(now(), '%Y-%m-%d'), 
+    '25-89-2035',
     20.15); 
 
 insert into medicion values (1,
     Date_format(now()+5, '%Y-%m-%d %h:%i:%s'),
-    Date_format(now(), '%Y-%m-%d'), 
+    '25-89-2035',
     20.16); 
 
 insert into medicion values (1,
     Date_format(now()+6, '%Y-%m-%d %h:%i:%s'),
-    Date_format(now(), '%Y-%m-%d'), 
+    '25-89-2035',
     20.17); 
 
 insert into medicion values (1,
     Date_format(now()+7, '%Y-%m-%d %h:%i:%s'),
-    Date_format(now(), '%Y-%m-%d'), 
+    '25-89-2035',
     20.18); 
 
 insert into favorito values('pablo',

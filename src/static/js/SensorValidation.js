@@ -1,10 +1,17 @@
 function validateSensor() {
-    var x = document.forms["myForm"]["inputCoordenadas"].value;
-    if(!isFloat(x)){
-        alert("Coordinates must be filled out");
+    var name = document.forms["myForm"]["nombre"].value;
+    if (name == "") {
+        alert("El campo ''Nombre Sensor'' es obligatorio");
         return false;
     }
-} 
-function isFloat(n){
-    return Number(n) === n && n % 1 !== 0;
+    var x = document.forms["myForm"]["lat"].value;
+    if (x == "") {
+        alert("Coordenadas incorrectas");
+        return false;
+    }
+    var x = document.forms["myForm"]["long"].value;
+    if (x == "") {
+        alert("Coordenadas incorrectas");
+        return false;
+    }
 }

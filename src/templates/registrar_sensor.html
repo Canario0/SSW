@@ -36,18 +36,18 @@
         </a>
         <div id="perfil">
             <a class="boton" id="buttonHeader" href="/logout">Cerrar Sesión</a>
-            <a id="imgUser" href="/{{ user }}/profile"><img src="{{ url_for('static', filename='img/users/' + user) }}" alt="Usuario" onerror="this.src='../static/img/users/default.png';" /></a>
+            <a id="imgUser" href="/{{ user }}/profile"><img src="{{ url_for('static', filename='img/users/' + user) }}" alt="Usuario" onerror="this.src='/default_img';" /></a>
         </div>
     </div>
 
-    <form method='POST' action='/{{user}}/registrar_sensor' onsubmit="return validateForm()">
+    <form name = "myForm" method='POST' action='/{{user}}/registrar_sensor' onsubmit="return validateSensor()">
     <div id="cuerpo">
         <div id="imgUserBig">
-            <img src="{{ url_for('static', filename='img/users/' + user) }}" alt="Usuario" onerror="this.src='../static/img/users/default.png';" />
+            <img src="{{ url_for('static', filename='img/users/' + user) }}" alt="Usuario" onerror="this.src='/default_img';" />
             <p id="underUser">{{ user }}</p>
             <p class="texto3">Nombre sensor:</p>
             <p id="underUser">
-                <input type="text" name="nombre" size="11" placeholder="Nombre sensor">
+                <input type="text" name="nombre" size="11" placeholder="Nombre sensor" value = "">
             </p>
         </div>
 
@@ -91,20 +91,20 @@
                         <p>Localización</p>
                         <img id="imgMapa" src="../static/img/mapa.jpg" alt="mapa"/>
                         <p class="texto3">Coordenadas (longitud):</p>
-                        <p><input id="inputCoordenadas" type="text" name="lat" size="20" placeholder="Introducir longitud"></p>
+                        <p><input id="inputCoordenadas" type="number" min = "-90"  max = "90" step = "any" name="lat" size="20" placeholder="Introducir latitud" value=""></p>
                         <p class="texto3">Coordenadas (latitud)</p>
-                        <p><input id="inputCoordenadas" type="text" name="long" size="20" placeholder="Introducir latitud"></p>
+                        <p><input id="inputCoordenadas" type="number" min = "-180"  max = "180" step = "any" name="long" size="20" placeholder="Introducir longitud" value="" ></p>
                     </div>
             </div>
         </div>
     </div>
-    </form>
 
     <div id="bottom">
       <p id="botonGuardarCambios">
         <input class="boton" type="submit" value="Registrar Sensor">
       </p>
     </div>
+    </form>
 </body>
 
 </html>
