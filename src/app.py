@@ -253,7 +253,7 @@ def informacion_sensor_sin_user(id):
     sensor = get_Sensor_ById(id)
     rows1 = get_Mediciones(id)
     rows2 = get_Last_Mediciones(id)
-    return render_template('info_sensor.html', id=id, user=user, sensor=sensor, rows1=rows1, rows2=rows2, logeado=0, tipo = tipos_sensor2)
+    return render_template('info_sensor.html', id=id, sensor=sensor, rows1=rows1, rows2=rows2, logeado=0, tipo = tipos_sensor2)
 
 
 @app.route("/<user>/delete/<id>")
