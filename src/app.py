@@ -268,7 +268,7 @@ def eliminar(user, id):
 
 @app.route("/<user>/addFav/<id>")
 @login_required
-def eliminarFav(user, id):
+def addFav(user, id):
     if comprobar_Usuario(user):
         create_Favorito(user, id)
         return redirect(url_for('informacion_sensor', user=user, id = id))
