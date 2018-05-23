@@ -71,9 +71,11 @@
 					data: [{        
 						type: "line",       
 						dataPoints: [
-                        {% for row in rows %}
-							{ x: row['fechaMedicion'], y: row['valor'] },
-                        {% endfor %}
+                        { x: row[0]['fechaMedicion'], y: row[0]['valor'] },
+                        { x: row[1]['fechaMedicion'], y: row[1]['valor'] },
+                        { x: row[2]['fechaMedicion'], y: row[2]['valor'] },
+                        { x: row[3]['fechaMedicion'], y: row[3]['valor'] },
+                        { x: row[4]['fechaMedicion'], y: row[4]['valor'] }
 						]
 					}]
 				});
