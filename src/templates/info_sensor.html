@@ -105,9 +105,9 @@
                 {% endif %}
 				
 				{% if logeado %}
-				<a href="/{{ user }}/addFav/{{ id }}"><img class="imgInfo boton" id="estrella" src="{{ url_for('static', filename='../static/img/estrella.svg') }}" alt="favoritos"></a>
+				<a href="/{{ user }}/addFav/{{ id }}"><img class="imgInfo" id="estrella" src="{{ url_for('static', filename='../static/img/estrella.svg') }}" alt="favoritos"></a>
 				{% else %}
-                <a href="/login"><img class="imgInfo boton" id="estrella" src="{{ url_for('static', filename='../static/img/estrella.svg') }}" alt="favoritos"></a>
+                <a href="/login"><img class="imgInfo" id="estrella" src="{{ url_for('static', filename='../static/img/estrella.svg') }}" alt="favoritos"></a>
 				{% endif %}
 				<img class="imgInfo" src="{{ url_for('static', filename='../static/img/like.svg') }}" alt="meGusta">
 			</div>
