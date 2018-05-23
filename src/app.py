@@ -240,7 +240,7 @@ def informacion_sensor(user, id):
         if user == sensor['nickname']['nickname']:
             return render_template('info_sensor.html', id=id, user=user, sensor=sensor, rows=rows, logeado=1, tipo = tipos_sensor2)
         else:
-            return render_template('info_sensor.html', id=id, user=user, sensor=sensor, rows=rows, logeado=0)
+            return render_template('info_sensor.html', id=id, user=user, sensor=sensor, rows=rows, logeado=0, tipo = tipos_sensor2)
     else:
         if current_user.is_authenticated:
             return redirect(url_for('logged_index', user=current_user.nickname))

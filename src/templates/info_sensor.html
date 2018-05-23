@@ -61,26 +61,19 @@
 						text: "{{ tipo[sensor['tipo']-1] }}" + " " + sensor['nombre']
 					},
 					axisY:{
-						title: "Temperatura (Cº)",
+						title: "Valor",
 						includeZero: false
 					},
 					axisX:{
-						title: "Tiempo (Horas)",
+						title: "Fecha",
 						includeZero: false
 					},
 					data: [{        
 						type: "line",       
 						dataPoints: [
-							{ x: 11, y: 18 },
-							{ x: 12, y: 19 },
-							{ x: 13, y: 19.5 },
-							{ x: 14, y: 21 },
-							{ x: 15, y: 21.3, indexLabel: "highest",markerColor: "red", markerType: "triangle" },
-							{ x: 16, y: 20 },
-							{ x: 17, y: 20.5 },
-							{ x: 18, y: 19.8 },
-							{ x: 19, y: 18 },
-							{ x: 20, y: 17.5, indexLabel: "lowest",markerColor: "DarkSlateGrey", markerType: "cross" }
+                        {% for row in rows %}
+							{ x: row['fechaMedicion'], y: row['valor'] },
+                        {% endfor %}
 						]
 					}]
 				});
