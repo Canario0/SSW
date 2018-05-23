@@ -23,59 +23,61 @@
 
 <body>
 	<div id="cabecera">
-		<a id ="titulo" href="/{{ user }}/index">SMART <b>MAPS</b></a>
+        {% if logeado %}
+        <a id ="titulo" href="/{{ user }}/index">SMART <b>MAPS</b></a>
+        {% else %}
+        <a id ="titulo" href="/index">SMART <b>MAPS</b></a>
+        {% endif %}
 		<div id="perfil">
+            {% if logeado %}
 			<a class="boton" id="buttonHeader" href="/logout">Cerrar Sesión</a>
 			<a id="imgUser" href="/{{ user }}/profile"><img src="{{ url_for('static', filename='img/users/' + user) }}" alt="Usuario" onerror="this.src='/default_img';" /></a>
+            {% endif %}
 		</div>
 	</div>
 
 	<div id="cuerpo">
 		<div id="imgUserBig">
-			<img src="{{ url_for('static', filename='img/users/' + user) }}" alt="Usuario" onerror="this.src='/default_img';" />
-			<p id="underUser">Jhon21</p>
+            <img src="{{ url_for('static', filename='img/users/' + sensor['nickname']['nickname']) }}" alt="Usuario" onerror="this.src='/default_img';" />
+            <p id="underUser">{{ sensor['nickname']['nickname'] }}</p>
 		</div>
 
 		<div id="content">
+            {% if logeado %}
 			<div id="pestañas">
-				<a class=pestaña id=pestaña href="/{{ user }}/index">Mis Sensores</a>
+				<a class=pestaña id=pestaña href="/{{ user }}/profile">Mis Sensores</a>
 				<a class=pestaña id=pestaña href="/{{ user }}/sensores_favoritos">Sensores Favoritos</a>
 				<a class=pestaña id=pestaña href="/{{ user }}/configuracion">Configurar Perfil</a>
 			</div>
+            {% endif %}
 			
 			<script>
 				window.onload = function () {
 				var sensor = JSON.parse('{{ sensor | tojson | safe }}');
+				var rows = JSON.parse('{{ rows1 | tojson | safe }}');
 				var chart = new CanvasJS.Chart("chartContainer", {
 					animationEnabled: true,
 					theme: "light2",
 					title:{
-						text: "Temperatura " + sensor['nombre']
+						text: "{{ tipo[sensor['tipo']-1] }}" + " " + sensor['nombre']
 					},
 					axisY:{
-						title: "Temperatura (Cº)",
+						title: "Valor",
 						includeZero: false
 					},
 					axisX:{
-						title: "Tiempo (Horas)",
-						includeZero: false
+                        valueFormatString:" "
 					},
 					data: [{        
 						type: "line",       
-						dataPoints: [
-							{ x: 11, y: 18 },
-							{ x: 12, y: 19 },
-							{ x: 13, y: 19.5 },
-							{ x: 14, y: 21 },
-							{ x: 15, y: 21.3, indexLabel: "highest",markerColor: "red", markerType: "triangle" },
-							{ x: 16, y: 20 },
-							{ x: 17, y: 20.5 },
-							{ x: 18, y: 19.8 },
-							{ x: 19, y: 18 },
-							{ x: 20, y: 17.5, indexLabel: "lowest",markerColor: "DarkSlateGrey", markerType: "cross" }
-						]
+						dataPoints: []
 					}]
 				});
+                for (var i=0; i<rows.length; i++){
+                    chart.options.data[0].dataPoints.push({
+                        x: i, y: rows[i]['valor']
+                    });
+                }
 				chart.render();
 				
 				}
@@ -88,7 +90,7 @@
                         <tr>
                             <th>Últimas Medidas</th>
                         </tr>
-                        {% for row in rows %}
+                        {% for row in rows2 %}
 						<tr>
 							<td>{{ row['valor'] }}</td>
 						</tr>
@@ -97,10 +99,17 @@
 				</div>
 			</div>
 			<div id="botonesYfavoritos">
+                {% if user == sensor['nickname']['nickname'] %}
                 <a class="boton" id="botonesbajos" href="/{{ user }}/sensor/{{ id }}/registrar_medida">Añadir Medición</a>
 				<p class="boton" id="botonesbajos">Limpiar Medidas</p>
-                <img class="imgInfo" id="estrella" src="{{ url_for('static', filename='../static/img/estrella.svg') }}" alt="favoritos">
-                <img class="imgInfo" src="{{ url_for('static', filename='../static/img/like.svg') }}" alt="meGusta">
+                {% endif %}
+				
+				{% if logeado %}
+				<a href="/{{ user }}/addFav/{{ id }}"><img class="imgInfo" id="estrella" src="{{ url_for('static', filename='../static/img/estrella.svg') }}" alt="favoritos"></a>
+				{% else %}
+                <a href="/login"><img class="imgInfo" id="estrella" src="{{ url_for('static', filename='../static/img/estrella.svg') }}" alt="favoritos"></a>
+				{% endif %}
+				<img class="imgInfo" src="{{ url_for('static', filename='../static/img/like.svg') }}" alt="meGusta">
 			</div>
 		</div>
 	</div>
