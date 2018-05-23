@@ -27,7 +27,7 @@ def default_img():
 
 def convertir_tipos(sensores):
     for x in sensores:
-        x['tipo'] = tipos_sensor2[x['tipo']]
+        x['tipo'] = tipos_sensor2[x['tipo']-1]
 
 
 @app.route("/")
