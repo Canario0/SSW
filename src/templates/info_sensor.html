@@ -103,12 +103,13 @@
                 <a class="boton" id="botonesbajos" href="/{{ user }}/sensor/{{ id }}/registrar_medida">Añadir Medición</a>
 				<p class="boton" id="botonesbajos">Limpiar Medidas</p>
                 {% endif %}
-				<img class="imgInfo" id="estrella" src="{{ url_for('static', filename='../static/img/estrella.svg') }}" alt="favoritos">
+				
 				{% if logeado %}
-				<a href="/{{ user }}/addFav/{{ id }}"><img class="imgInfo boton" src="{{ url_for('static', filename='../static/img/like.svg') }}" alt="meGusta"></a>
+				<a href="/{{ user }}/addFav/{{ id }}"><img class="imgInfo boton" id="estrella" src="{{ url_for('static', filename='../static/img/estrella.svg') }}" alt="favoritos"></a>
 				{% else %}
-                <a href="/login"><img class="imgInfo boton" src="{{ url_for('static', filename='../static/img/like.svg') }}" alt="meGusta"></a>
+                <a href="/login"><img class="imgInfo boton" id="estrella" src="{{ url_for('static', filename='../static/img/estrella.svg') }}" alt="favoritos"></a>
 				{% endif %}
+				<img class="imgInfo" src="{{ url_for('static', filename='../static/img/like.svg') }}" alt="meGusta">
 			</div>
 		</div>
 	</div>
