@@ -251,7 +251,7 @@ def informacion_sensor(user, id):
 def informacion_sensor_sin_user(id):
     sensor = get_Sensor_ById(id)
     rows = get_Mediciones(id)
-    return render_template('info_sensor.html', id=id, user=str(sensor['nickname']['nickname']), sensor=sensor, rows=rows, logeado=0)
+    return render_template('info_sensor.html', id=id, user=str(sensor['nickname']['nickname']), sensor=sensor, rows=rows, logeado=0, tipo = tipos_sensor2)
 
 
 @app.route("/<user>/delete/<id>")

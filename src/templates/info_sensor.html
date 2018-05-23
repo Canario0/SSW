@@ -74,8 +74,9 @@
 						dataPoints: []
 					}]
 				});
+                console.log(rows.length);
                 for (var i=0; i<rows.length; rows++){
-                    chart.optiones.data[i].dataPoints.push({
+                    chart.options.data[0].dataPoints.push({
                         x: i, y: rows[i]['valor']
                     });
                 }
