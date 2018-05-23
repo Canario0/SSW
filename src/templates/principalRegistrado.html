@@ -107,7 +107,8 @@
                             '<p>Modelo: ' + sensores[i]['nombre'] + '</p>' +
                             '<p>Dueño: ' + sensores[i]['nickname'] + '</p>' +
                             '<p> </p>' +
-                            '<p>Descripción: ' + sensores[i]['descripcion'] + '</p>'
+                            '<p>Descripción: ' + sensores[i]['descripcion'] + '</p>' +
+                            '<a href="/{{ user }}/sensor/' + sensores[i]['id'] + '"> Saber más</a>'
 
                         let infowindow = new google.maps.InfoWindow({
                             content: contentString
@@ -117,11 +118,8 @@
                             map: map,
                             title: sensores[i]['nombre']
                         });
-                        aux.addListener('mouseover', function () {
+                        aux.addListener('click', function () {
                             infowindow.open(map, aux);
-                        });
-                        aux.addListener('mouseout', function () {
-                            infowindow.close(map, aux);
                         });
                     }
 
