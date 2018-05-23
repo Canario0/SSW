@@ -238,7 +238,7 @@ def informacion_sensor(user, id):
         sensor = get_Sensor_ById(id)
         rows = get_Mediciones(id)
         if user == sensor['nickname']['nickname']:
-            return render_template('info_sensor.html', id=id, user=user, sensor=sensor, rows=rows, logeado=1)
+            return render_template('info_sensor.html', id=id, user=user, sensor=sensor, rows=rows, logeado=1, tipos = tipos_sensor_2]
         else:
             return render_template('info_sensor.html', id=id, user=user, sensor=sensor, rows=rows, logeado=0)
     else:

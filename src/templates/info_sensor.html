@@ -58,7 +58,7 @@
 					animationEnabled: true,
 					theme: "light2",
 					title:{
-						text: "Temperatura " + sensor['nombre']
+						text: {{ tipo[sensor['tipo']] }} + " " + sensor['nombre']
 					},
 					axisY:{
 						title: "Temperatura (Cº)",
