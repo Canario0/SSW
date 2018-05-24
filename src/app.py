@@ -223,9 +223,9 @@ def fav(user):
             convertir_tipos(aux)
             if aux:
                 rows=aux
-                return render_template('usuario.html', user=user, rows=rows, busqueda=True)
+                return render_template('sensores_fav.html', user=user, rows=rows)
             else:
-                return render_template('usuario.html', user=user, rows=rows, busqueda=False)
+                return render_template('sensores_fav.html', user=user, rows=rows)
     else:
         if current_user.is_authenticated:
             return redirect(url_for('logged_index', user=current_user.nickname))
