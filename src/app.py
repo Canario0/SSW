@@ -257,7 +257,7 @@ def informacion_sensor(user, id):
         rows1 = get_Mediciones(id)
         rows2 = get_Last_Mediciones(id)
         n_likes = get_InfoLikes(id)
-        return render_template('info_sensor.html', id=id, user=user, sensor=sensor, rows1=rows1, rows2=rows2, logeado=1, tipo = tipos_sensor2, likes=n_likes)
+        return render_template('info_sensor.html', id=id, user=user, sensor=sensor, rows1=rows1, rows2=rows2, logeado=1, tipo = tipos_sensor2, likes=n_likes, alreadyLiked=get_alreadyLiked(user, id))
     else:
         if current_user.is_authenticated:
             return redirect(url_for('logged_index', user=current_user.nickname))
@@ -318,9 +318,10 @@ def addLike(user, id):
     if comprobar_Usuario(user):
         if get_alreadyLiked(user, id):
             delete_Like(user,id)
+           return redirect(url_for('informacion_sensor', user=user, id=id))
         else:
            create_Liked(user, id)
-        return redirect(url_for('informacion_sensor', user=user, id=id))
+           return redirect(url_for('informacion_sensor', user=user, id=id))
     else:
         if current_user.is_authenticated:
             return redirect(url_for('logged_index', user=current_user.nickname))
