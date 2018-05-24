@@ -315,7 +315,10 @@ def eliminarFav(user, id):
 @login_required
 def addLike(user, id):
     if comprobar_Usuario(user):
-        create_Liked(user, id)
+        if get_alreadyLiked(user, id):
+            delete_Like(user,id)
+        else:
+           create_Liked(user, id)
         return redirect(url_for('informacion_sensor', user=user, id=id))
     else:
         if current_user.is_authenticated:
