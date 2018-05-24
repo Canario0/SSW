@@ -35,8 +35,14 @@
             <b>MAPS</b>
         </a>
         <div id="perfil">
+            <a class="boton" id="buttonHeader" href="/{{ user }}/profile">Mi Perfil</a>
+            <a class="boton" id="buttonHeader" href="/{{ user }}/sensores_favoritos">Sensores Favoritos</a>
+            <a class="boton" id="buttonHeader" href="/{{ user }}/registrar_sensor">Añadir Sensor</a>
+            <a class="boton" id="buttonHeader" href="/{{ user }}/configuracion">Configuración</a>
             <a class="boton" id="buttonHeader" href="/logout">Cerrar Sesión</a>
-            <a id="imgUser" href="/{{ user }}/profile"><img src="{{ url_for('static', filename='img/users/' + user) }}" alt="Usuario" onerror="this.src='/default_img';" /></a>
+            <a id="imgUser" href="/{{ user }}/profile">
+                <img src="{{ url_for('static', filename='img/users/' + user) }}" alt="Usuario" onerror="this.src='/default_img';"
+            </a>
         </div>
     </div>
 
