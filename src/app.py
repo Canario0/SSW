@@ -212,7 +212,19 @@ def fav(user):
     if comprobar_Usuario(user):
         rows = get_Favoritos(user)
         convertir_tipos(rows)
-        return render_template('sensores_fav.html', user=user, rows=rows)
+        if request.method == 'GET':
+            return render_template('sensores_fav.html', user=user, rows=rows)
+        elif request.method == 'POST':
+            sensor_buscado=request.form.get('sensor_buscado')
+            campo = request.form.get('campo')
+            if request.form.get('campo') =="tipo":
+                sensor_buscado= tipos_sensor[sensor_buscado.title()]
+            aux=get_BusquedaFav(campo ,sensor_buscado, user)
+            if aux:
+                rows=aux
+                return render_template('usuario.html', user=user, rows=rows, busqueda=True)
+            else:
+                return render_template('usuario.html', user=user, rows=rows, busqueda=False)
     else:
         if current_user.is_authenticated:
             return redirect(url_for('logged_index', user=current_user.nickname))
