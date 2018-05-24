@@ -219,7 +219,8 @@ def fav(user):
             campo = request.form.get('campo')
             if request.form.get('campo') =="tipo":
                 sensor_buscado= tipos_sensor[sensor_buscado.title()]
-            aux=get_BusquedaFav(campo ,sensor_buscado, user)
+            aux=get_BusquedaFav(campo ,sensor_buscado)
+            convertir_tipos(aux)
             if aux:
                 rows=aux
                 return render_template('usuario.html', user=user, rows=rows, busqueda=True)
