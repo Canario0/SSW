@@ -71,7 +71,7 @@ body{
 	margin-right: 1em;
 }
 #textoAñadir{
-    margin-top: 1em;
+    margin-top: 2em;
 	font-size: 1.5em;
 }
 
@@ -83,6 +83,7 @@ body{
 }
 
 #pBuscador {
+    margin-top: 2em;
     margin-left: 10em;
 }
 
