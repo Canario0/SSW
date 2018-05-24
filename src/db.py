@@ -79,7 +79,7 @@ def create_Usuario(nickname, password):
     with db.atomic():
         Usuario.create(nickname=nickname, password=password)
 
-def create_Sensor(nickname, nombre, descripcion, tipo, visible, x, y:
+def create_Sensor(nickname, nombre, descripcion, tipo, visible, x, y):
     with db.atomic():
         Sensor.create(nickname = nickname, nombre = nombre, descripcion = descripcion, tipo = tipo, visible = visible, x = x, y = y)
 
