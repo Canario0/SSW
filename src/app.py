@@ -189,13 +189,13 @@ def profile(user):
         if request.method == 'GET':
             return render_template('usuario.html', user=user, rows=rows)
         elif request.method == 'POST':
-            sensor_buscado=request.form.get('sensor_buscado')
+            sensor_buscado = request.form.get('sensor_buscado')
             campo = request.form.get('campo')
-            if request.form.get('campo') =="tipo":
-                sensor_buscado= tipos_sensor[sensor_buscado.title()]
-            aux=get_Busqueda(campo ,sensor_buscado, user)
+            if request.form.get('campo') == "tipo":
+                sensor_buscado = tipos_sensor[sensor_buscado.title()]
+            aux = get_Busqueda(campo, sensor_buscado, user)
             if aux:
-                rows=aux
+                rows = aux
                 return render_template('usuario.html', user=user, rows=rows, busqueda=True)
             else:
                 return render_template('usuario.html', user=user, rows=rows, busqueda=False)
@@ -215,14 +215,15 @@ def fav(user):
         if request.method == 'GET':
             return render_template('sensores_fav.html', user=user, rows=rows)
         elif request.method == 'POST':
-            sensor_buscado=request.form.get('sensor_buscado')
+            sensor_buscado = request.form.get('sensor_buscado')
             campo = request.form.get('campo')
-            if request.form.get('campo') =="tipo":
-                sensor_buscado= tipos_sensor[sensor_buscado.title()]
-            aux=get_BusquedaFav(campo ,sensor_buscado)
+            if request.form.get('campo') == "tipo":
+                sensor_buscado = tipos_sensor[sensor_buscado.title()]
+            aux = get_BusquedaFav(campo, sensor_buscado)
+            aux = [i for i in aux if (i["visible"] == 1 ) or (i["visible"] == 0 and i["nickname"] == user )]
             convertir_tipos(aux)
             if aux:
-                rows=aux
+                rows = aux
                 return render_template('sensores_fav.html', user=user, rows=rows)
             else:
                 return render_template('sensores_fav.html', user=user, rows=rows)
@@ -271,6 +272,7 @@ def informacion_sensor(user, id):
         else:
             return (redirect(url_for('index')))
 
+
 @app.route("/sensor/<id>")
 def informacion_sensor_sin_user(id):
     sensor = get_Sensor_ById(id)
@@ -298,7 +300,7 @@ def eliminar(user, id):
 def addFav(user, id):
     if comprobar_Usuario(user):
         create_Favorito(user, id)
-        return redirect(url_for('informacion_sensor', user=user, id = id))
+        return redirect(url_for('informacion_sensor', user=user, id=id))
     else:
         if current_user.is_authenticated:
             return redirect(url_for('logged_index', user=current_user.nickname))
