@@ -71,13 +71,20 @@ body{
 	margin-right: 1em;
 }
 #textoAñadir{
+    margin-top: 2.1em;
 	font-size: 1.5em;
 }
 
 #buscador{
 	border-radius: 10px;
-	margin: 2em 15em;
-	width: 25em;
+    margin-top: 2em;
+    margin-bottom: 2em;
+	width: 10em;
+}
+
+#pBuscador {
+    margin-top: 2em;
+    margin-left: 9em;
 }
 
 #tablaSensores{
