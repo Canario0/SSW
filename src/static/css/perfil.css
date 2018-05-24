@@ -239,6 +239,13 @@ a:visited { color: black ; text-decoration: none }
 	display: flex;
 	justify-content: center;
 }
+
+#contador {
+	display: flex;
+	color: green;
+	font-size: 1em;
+	
+}
 /*
 #cabecera{background: #00FF00;}
  #titulo{background: #FF0000;}
