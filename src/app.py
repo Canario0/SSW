@@ -263,7 +263,8 @@ def informacion_sensor(user, id):
         sensor = get_Sensor_ById(id)
         rows1 = get_Mediciones(id)
         rows2 = get_Last_Mediciones(id)
-        return render_template('info_sensor.html', id=id, user=user, sensor=sensor, rows1=rows1, rows2=rows2, logeado=1, tipo = tipos_sensor2)
+        n_likes = get_InfoLikes(id)
+        return render_template('info_sensor.html', id=id, user=user, sensor=sensor, rows1=rows1, rows2=rows2, logeado=1, tipo = tipos_sensor2, likes=n_likes, alreadyLiked=get_alreadyLiked(user, id))
     else:
         if current_user.is_authenticated:
             return redirect(url_for('logged_index', user=current_user.nickname))
@@ -275,7 +276,8 @@ def informacion_sensor_sin_user(id):
     sensor = get_Sensor_ById(id)
     rows1 = get_Mediciones(id)
     rows2 = get_Last_Mediciones(id)
-    return render_template('info_sensor.html', id=id, sensor=sensor, rows1=rows1, rows2=rows2, logeado=0, tipo = tipos_sensor2)
+    n_likes = get_InfoLikes(id)
+    return render_template('info_sensor.html', id=id, sensor=sensor, rows1=rows1, rows2=rows2, logeado=0, tipo = tipos_sensor2, likes = n_likes)
 
 
 @app.route("/<user>/delete/<id>")
@@ -304,7 +306,6 @@ def addFav(user, id):
             return (redirect(url_for('index')))
 
 
-
 @app.route("/<user>/deleteFav/<id>")
 @login_required
 def eliminarFav(user, id):
@@ -317,6 +318,22 @@ def eliminarFav(user, id):
         else:
             return (redirect(url_for('index')))
 
+
+@app.route("/<user>/addLike/<id>")
+@login_required
+def addLike(user, id):
+    if comprobar_Usuario(user):
+        if get_alreadyLiked(user, id):
+           delete_Like(user,id)
+           return redirect(url_for('informacion_sensor', user=user, id=id))
+        else:
+           create_Liked(user, id)
+           return redirect(url_for('informacion_sensor', user=user, id=id))
+    else:
+        if current_user.is_authenticated:
+            return redirect(url_for('logged_index', user=current_user.nickname))
+        else:
+            return redirect(url_fo('index'))
 
 @app.before_request
 def before_request():
