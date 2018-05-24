@@ -192,7 +192,7 @@ def profile(user):
             sensor_buscado=request.form.get('sensor_buscado')
             campo = request.form.get('campo')
             if request.form.get('campo') =="tipo":
-                sensor_buscado= tipos_sensor[sensor_buscado]
+                sensor_buscado= tipos_sensor[sensor_buscado.title()]
             aux=get_Busqueda(campo ,sensor_buscado, user)
             if aux:
                 rows=aux
