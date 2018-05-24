@@ -220,7 +220,7 @@ def fav(user):
             if request.form.get('campo') == "tipo":
                 sensor_buscado = tipos_sensor[sensor_buscado.title()]
             aux = get_BusquedaFav(campo, sensor_buscado)
-            aux = [i for i in aux if (aux["visible"] == 1 ) or (aux["visible"] == 0 and aux["nickname"] == user )]
+            aux = [i for i in aux if (i["visible"] == 1 ) or (i["visible"] == 0 and i["nickname"] == user )]
             convertir_tipos(aux)
             if aux:
                 rows = aux
