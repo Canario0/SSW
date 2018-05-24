@@ -107,11 +107,11 @@
 				{% if logeado %}
 				<a href="/{{ user }}/addFav/{{ id }}"><img class="imgInfo" id="estrella" src="{{ url_for('static', filename='../static/img/estrella.svg') }}" alt="favoritos"></a>
 				<a href="/{{ user }}/addLike/{{ id }}"><img class="imgInfo" src="{{ url_for('static', filename='../static/img/like.svg') }}" alt="meGusta"></a>
-				<p id="Contador">"{{ likes }}"</p>	
+				<p id="Contador">{{ likes }}</p>	
 				{% else %}
 				<a href="/login"><img class="imgInfo" id="estrella" src="{{ url_for('static', filename='../static/img/estrella.svg') }}" alt="favoritos"></a>
 				<a href="/login"><img class="imgInfo" src="{{ url_for('static', filename='../static/img/like.svg') }}" alt="meGusta"></a>
-				<p id="contador">"{{ likes }}"</p>	
+				<p id="contador">{{ likes }}</p>	
 				{% endif %}
 				
 			</div>
