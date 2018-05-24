@@ -56,7 +56,7 @@ body{
 
 /*MIS SENSORES*/
 #opciones{
-	display:flex;
+	display:inline;
 	justify-content: center;
 }
 
@@ -71,15 +71,19 @@ body{
 	margin-right: 1em;
 }
 #textoAñadir{
+    margin-top: 1em;
 	font-size: 1.5em;
 }
 
 #buscador{
 	border-radius: 10px;
-    margin-left: 15em;
     margin-top: 2em;
     margin-bottom: 2em;
 	width: 25em;
+}
+
+#pBuscador {
+    margin-left: 10em;
 }
 
 #tablaSensores{

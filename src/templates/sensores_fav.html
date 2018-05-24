@@ -46,6 +46,14 @@
 			<div id="opciones">
 				<a class="boton" id="botonAñadir" href="/{{ user }}/registrar_sensor">+</a>
 				<p id="textoAñadir">Añadir Sensor Favorito</p>
+                <p>Filtro Búsqueda:
+                    <select name="campo">
+                        <option selected value='tipo'>Tipo</option>
+                        <option value='id'>Id</option>
+                        <option value='nombre'>Nombre</option>
+                        <option>Ruido</option>
+                    </select>
+                </p>
 				<input id="buscador" type="text" placeholder="Buscar sensor...">
 			</div>
 			<div id="tablaSensores">
