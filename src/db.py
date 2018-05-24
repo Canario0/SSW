@@ -127,7 +127,6 @@ def get_Sensor_ById(id):
     return model_to_dict(Sensor.get(Sensor.id == id))
 
 def get_Sensors(visible = 1):
-    #print (list(Sensor.select().where(Sensor.visible == visible).dicts()))
     return list(Sensor.select().where(Sensor.visible == visible).dicts())
 
 def get_Sensor_ByUser(nickname):
@@ -144,6 +143,9 @@ def get_Mediciones(id):
 
 def get_Favoritos(nickname):
     return list(Sensor.select().join(Favorito).where(Favorito.nickname == nickname).dicts())
+
+def get_Busqueda(parametro, user):
+    return list(Sensor.select().where(Sensor.nombre == parametro, Sensor.nickname == user).dicts())
 #----------------------------------------------------------------------------
 
 

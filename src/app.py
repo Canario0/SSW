@@ -177,7 +177,7 @@ def logged_index(user):
             return redirect(url_for('index', sensores=sensores))
 
 
-@app.route("/<user>/profile")
+@app.route("/<user>/profile", methods=['POST', 'GET'])
 @login_required
 def profile(user):
     #	sensoresUsuario = get_Usuario()
@@ -186,7 +186,16 @@ def profile(user):
     if comprobar_Usuario(user):
         rows = get_Sensor_ByUser(user)
         convertir_tipos(rows)
-        return render_template('usuario.html', user=user, rows=rows)
+        if request.method == 'GET':
+            return render_template('usuario.html', user=user, rows=rows)
+        elif request.method == 'POST':
+            sensor_buscado=request.form.get('sensor_buscado')
+            aux=get_Busqueda(sensor_buscado, user)
+            if aux:
+                rows=aux
+                return render_template('usuario.html', user=user, rows=rows, busqueda=True)
+            else:
+                return render_template('usuario.html', user=user, rows=rows, busqueda=False)
     else:
         if current_user.is_authenticated:
             return redirect(url_for('logged_index', user=current_user.nickname))

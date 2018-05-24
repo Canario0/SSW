@@ -76,7 +76,9 @@ body{
 
 #buscador{
 	border-radius: 10px;
-	margin: 2em 15em;
+    margin-left: 15em;
+    margin-top: 2em;
+    margin-bottom: 2em;
 	width: 25em;
 }
 
