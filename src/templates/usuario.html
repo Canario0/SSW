@@ -12,6 +12,7 @@
 	<meta charset="utf-8" />
 
 	<!-- Links to necessary files to run the webpage -->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/principal.css') }}" />
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/perfil.css') }}" />
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/botones.css') }}" />
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/cabecera.css') }}" />
@@ -44,11 +45,6 @@
 		</div>
 
 		<div id="content">
-			<!--<div id="pestañas">
-				<a class=pestaña id=pestañaSel>Mis Sensores</a>
-				<a class=pestaña id=pestaña href="/{{ user }}/sensores_favoritos">Sensores Favoritos</a>
-				<a class=pestaña id=pestaña href="/{{ user }}/configuracion">Configurar Perfil</a>
-            </div> -->
 			<div id="opciones">
 				<a class="boton" id="botonAñadir" href="/{{ user }}/registrar_sensor">+</a>
 				<p id="textoAñadir">Añadir Sensor</p>
