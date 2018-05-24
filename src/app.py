@@ -190,7 +190,10 @@ def profile(user):
             return render_template('usuario.html', user=user, rows=rows)
         elif request.method == 'POST':
             sensor_buscado=request.form.get('sensor_buscado')
-            aux=get_Busqueda(sensor_buscado, user)
+            campo = request.form.get('campo')
+            if request.form.get('campo') =="tipo":
+                sensor_buscado= tipos_sensor[sensor_buscado.title()]
+            aux=get_Busqueda(campo ,sensor_buscado, user)
             if aux:
                 rows=aux
                 return render_template('usuario.html', user=user, rows=rows, busqueda=True)
@@ -203,7 +206,7 @@ def profile(user):
             return redirect(url_for('index'))
 
 
-@app.route("/<user>/sensores_favoritos")
+@app.route("/<user>/sensores_favoritos", methods=['POST', 'GET'])
 @login_required
 def fav(user):
     if comprobar_Usuario(user):
@@ -213,12 +216,16 @@ def fav(user):
             return render_template('sensores_fav.html', user=user, rows=rows)
         elif request.method == 'POST':
             sensor_buscado=request.form.get('sensor_buscado')
-            aux=get-Busqueda(sensor_buscado, user)
+            campo = request.form.get('campo')
+            if request.form.get('campo') =="tipo":
+                sensor_buscado= tipos_sensor[sensor_buscado.title()]
+            aux=get_BusquedaFav(campo ,sensor_buscado)
+            convertir_tipos(aux)
             if aux:
                 rows=aux
-                return render_template('sensores_fav.html', user=user, rows=rows, busqueda=True)
+                return render_template('sensores_fav.html', user=user, rows=rows)
             else:
-                return render_template('sensores_fav.html', user=user, rows=rows, busqueda=False)
+                return render_template('sensores_fav.html', user=user, rows=rows)
     else:
         if current_user.is_authenticated:
             return redirect(url_for('logged_index', user=current_user.nickname))

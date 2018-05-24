@@ -147,16 +147,29 @@ def get_Mediciones(id):
 
 def get_Favoritos(nickname):
     return list(Sensor.select().join(Favorito).where(Favorito.nickname == nickname).dicts())
-
+  
 def get_InfoLikes(id):
     return Liked.select().where(Liked.id == id).count()
 
 def get_alreadyLiked(nickname, id):
     aux = list(Liked.select().where(Liked.nickname == nickname, Liked.id == id)) 
     return True if len(aux) != 0 else False
+  
+def get_Busqueda(campo, parametro, user):
+    if(campo == "nombre"):
+        return list(Sensor.select().where(Sensor.nombre == parametro, Sensor.nickname == user).dicts())
+    elif(campo == "tipo"):
+        return list(Sensor.select().where(Sensor.tipo == parametro, Sensor.nickname == user).dicts())
+    else:
+        return list(Sensor.select().where(Sensor.id == parametro, Sensor.nickname == user).dicts())
 
-def get_Busqueda(parametro, user):
-    return list(Sensor.select().where(Sensor.nombre == parametro, Sensor.nickname == user).dicts())
+def get_BusquedaFav(campo, parametro):
+    if(campo == "nombre"):
+        return list(Sensor.select().where(Sensor.nombre == parametro).dicts())
+    elif(campo == "tipo"):
+        return list(Sensor.select().where(Sensor.tipo == parametro).dicts())
+    else:
+        return list(Sensor.select().where(Sensor.id == parametro).dicts())
 #----------------------------------------------------------------------------
 
 
