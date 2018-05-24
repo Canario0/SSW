@@ -190,7 +190,7 @@ def profile(user):
             return render_template('usuario.html', user=user, rows=rows)
         elif request.method == 'POST':
             sensor_buscado=request.form.get('sensor_buscado')
-            campo = request.form.get('campo')
+            campo = request.form.get('campo') if request.form.get('campo') !=tipo else tipos_sensor2[request.form.get('campo')]
             aux=get_Busqueda(campo ,sensor_buscado, user)
             if aux:
                 rows=aux
