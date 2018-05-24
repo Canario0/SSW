@@ -46,15 +46,17 @@
 			<div id="opciones">
 				<a class="boton" id="botonAñadir" href="/{{ user }}/registrar_sensor">+</a>
 				<p id="textoAñadir">Añadir Sensor Favorito</p>
-                <p id='pBuscador'>Filtro Búsqueda:
+                <form action="/{{ user }}/profile" method="POST">
+                    <p id='pBuscador'>Filtro Búsqueda:
                     <select name="campo">
                         <option selected value='tipo'>Tipo</option>
-                        <option value='id'>Id</option>
                         <option value='nombre'>Nombre</option>
-                        <option>Ruido</option>
+                        <option value='id'>Id</option>
                     </select>
-                </p>
-				<input id="buscador" type="text" placeholder="Buscar sensor...">
+                    <input id="buscador" type="text" maxlength="20" placeholder="Buscar sensor..." name="sensor_buscado">
+                    <input type="submit" value="¡Buscar!">
+                    </p>
+                </form>
 			</div>
 			<div id="tablaSensores">
 				<table id="tabla">
