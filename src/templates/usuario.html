@@ -12,9 +12,9 @@
 	<meta charset="utf-8" />
 
 	<!-- Links to necessary files to run the webpage -->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/cabecera.css') }}" />
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/perfil.css') }}" />
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/botones.css') }}" />
-	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/cabecera.css') }}" />
 	<link rel="icon" type="image/png" href="{{ url_for('static', filename='img/logo.png') }}" />
 </head>
 
@@ -26,10 +26,14 @@
 			<b>MAPS</b>
 		</a>
 		<div id="perfil">
-			<a class="boton" id="buttonHeader" href="/logout">Cerrar Sesión</a>
-			<a id="imgUser" href="/{{ user }}/profile">
-				<img src="{{ url_for('static', filename='img/users/' + user) }}" alt="Usuario" onerror="this.src='/default_img';" />
-			</a>
+            <a class="boton" id="buttonHeader" href="/{{ user }}/profile">Mi Perfil</a>
+            <a class="boton" id="buttonHeader" href="/{{ user }}/sensores_favoritos">Sensores Favoritos</a>
+            <a class="boton" id="buttonHeader" href="/{{ user }}/registrar_sensor">Añadir Sensor</a>
+            <a class="boton" id="buttonHeader" href="/{{ user }}/configuracion">Configuración</a>
+            <a class="boton" id="buttonHeader" href="/logout">Cerrar Sesión</a>
+            <a id="imgUser" href="/{{ user }}/profile">
+                <img src="{{ url_for('static', filename='img/users/' + user) }}" alt="Usuario" onerror="this.src='/default_img';"
+            </a>
 		</div>
 	</div>
 
@@ -40,17 +44,19 @@
 		</div>
 
 		<div id="content">
-			<div id="pestañas">
-				<a class=pestaña id=pestañaSel>Mis Sensores</a>
-				<a class=pestaña id=pestaña href="/{{ user }}/sensores_favoritos">Sensores Favoritos</a>
-				<a class=pestaña id=pestaña href="/{{ user }}/configuracion">Configurar Perfil</a>
-			</div>
 			<div id="opciones">
 				<a class="boton" id="botonAñadir" href="/{{ user }}/registrar_sensor">+</a>
 				<p id="textoAñadir">Añadir Sensor</p>
                 <form action="/{{ user }}/profile" method="POST">
-                    <input id="buscador" type="text" maxlength="20" placeholder="Buscar sensor..." name="sensor_buscado">
-                    <input type="submit" value="¡Buscar!">
+                    <p id='pBuscador'>Filtro Búsqueda:
+                        <select name="campo">
+                            <option selected value='tipo'>Tipo</option>
+                            <option value='nombre'>Nombre</option>
+                            <option value='id'>Id</option>
+                        </select>
+                        <input id="buscador" type="text" maxlength="20" placeholder="Buscar sensor..." name="sensor_buscado">
+                        <input type="submit" value="¡Buscar!">
+                    </p>
                 </form>
 			</div>
 			<div id="tablaSensores">
