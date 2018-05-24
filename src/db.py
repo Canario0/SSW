@@ -60,7 +60,7 @@ class Liked(Model):
         database = db
         primary_key = CompositeKey('nickname', 'id')
 
-
+ 
 class Medicion(Model):
     id = ForeignKeyField(Sensor, backref='mediciones', db_column='id', on_delete='CASCADE')
     # este valor se autogenera
@@ -79,7 +79,7 @@ def create_Usuario(nickname, password):
     with db.atomic():
         Usuario.create(nickname=nickname, password=password)
 
-def create_Sensor(nickname, nombre, descripcion, tipo, visible, x, y):
+def create_Sensor(nickname, nombre, descripcion, tipo, visible, x, y:
     with db.atomic():
         Sensor.create(nickname = nickname, nombre = nombre, descripcion = descripcion, tipo = tipo, visible = visible, x = x, y = y)
 
@@ -143,6 +143,9 @@ def get_Mediciones(id):
 
 def get_Favoritos(nickname):
     return list(Sensor.select().join(Favorito).where(Favorito.nickname == nickname).dicts())
+
+def get_InfoLikes(id):
+    return select count(id)
 
 def get_Busqueda(parametro, user):
     return list(Sensor.select().where(Sensor.nombre == parametro, Sensor.nickname == user).dicts())
