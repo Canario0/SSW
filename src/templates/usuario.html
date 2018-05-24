@@ -48,7 +48,10 @@
 			<div id="opciones">
 				<a class="boton" id="botonAñadir" href="/{{ user }}/registrar_sensor">+</a>
 				<p id="textoAñadir">Añadir Sensor</p>
-				<input id="buscador" type="text" placeholder="Buscar sensor...">
+                <form action="/{{ user }}/profile" method="POST">
+                    <input id="buscador" type="text" maxlength="20" placeholder="Buscar sensor..." name="sensor_buscado">
+                    <input type="submit" value="¡Buscar!">
+                </form>
 			</div>
 			<div id="tablaSensores">
 				<table id="tabla">
