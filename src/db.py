@@ -145,7 +145,7 @@ def get_Favoritos(nickname):
     return list(Sensor.select().join(Favorito).where(Favorito.nickname == nickname).dicts())
 
 def get_Busqueda(parametro):
-    return list(Sensor.select().where(Sensor.nombre == parametro, Sensor.id == parametro).dicts())
+    return list(Sensor.select().where((Sensor.nombre == parametro) | (Sensor.id == parametro).dicts()))
 #----------------------------------------------------------------------------
 
 
