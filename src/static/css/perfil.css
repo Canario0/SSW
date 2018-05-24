@@ -242,8 +242,9 @@ a:visited { color: black ; text-decoration: none }
 
 #contador {
 	display: flex;
-	font-size: 1em;
-	
+	font-size: 2em;
+	margin-top: 1.8em;
+	margin-left: 0em;
 }
 /*
 #cabecera{background: #00FF00;}
