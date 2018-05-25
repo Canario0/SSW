@@ -1,5 +1,11 @@
 # SSW
-Práctica SSW para el curso 2017/2018
+Práctica SSW para el curso 2017/2018.
+
+**Participantes**:
+- [Álvaro Berruezo Franco](https://github.com/berruezo)
+- [Sergio Esteban Pellejero](https://github.com/Antimateria117)
+- [Alejandro Martínez Andrés](https://github.com/Smokt)
+- [Pablo Renero Balgañón](https://github.com/Canario0)
 
 ## Requisitos
 Python3: en sistemas ubuntu se puede instalar así.
