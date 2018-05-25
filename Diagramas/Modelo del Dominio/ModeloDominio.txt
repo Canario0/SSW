@@ -8,9 +8,10 @@ class Usuario{
     - email :String
     - password :String
     - nombre :String
-    - apellidos :String
+    - apellido1 :String
+    - apellido2 :String
     - direccion :String
-    - fechaNacimiento :String
+    - nacimiento :String
     - empresa :String
     - telefono :int
 }
@@ -22,7 +23,6 @@ class Sensor{
     - tipo :SensorType
     - visible :boolean
     - localizacion :float[2]
-    - likes :int
 }
 
 class Medicion{
