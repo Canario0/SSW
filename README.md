@@ -1,5 +1,5 @@
 # SSW
-Práctica SSW
+Práctica SSW para el curso 2017/2018
 
 ## Requisitos
 Python3: en sistemas ubuntu se puede instalar así.
